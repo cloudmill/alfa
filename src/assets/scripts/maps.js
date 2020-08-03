@@ -129,19 +129,19 @@ const mapStyle = [
 ];
 
 const setMarker =
-  process.env.NODE_ENV === 'development'
+  NODE_ENV_PATH === 'development'
     ? "assets/images/icons/marker.svg"
     : "/local/templates/main/assets/images/icons/marker.svg";
 const setBubble =
-  process.env.NODE_ENV === 'development'
+  NODE_ENV_PATH === 'development'
     ? "assets/images/icons/bubble.svg"
     : "/local/templates/main/assets/images/icons/bubble.svg";
 const setBubble2 =
-  process.env.NODE_ENV === 'development'
+  NODE_ENV_PATH === 'development'
     ? "assets/images/icons/bubbleb.svg"
     : "/local/templates/main/assets/images/icons/bubbleb.svg";
 const setBubble3 =
-  process.env.NODE_ENV === 'development'
+  NODE_ENV_PATH === 'development'
     ? "assets/images/icons/bubblel.svg"
     : "/local/templates/main/assets/images/icons/bubblel.svg";
 

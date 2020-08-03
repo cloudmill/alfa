@@ -20,8 +20,9 @@
   "homepage": "https://github.com/ViralLka/noob-ui#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf dist && webpack --config webpack/webpack.config.js --env.NODE_ENV=production --mode=production -p --progress",
-    "dev": "webpack-dev-server --config webpack/webpack.config.js --env.NODE_ENV=development --mode=development --progress --open"
+    "bitrixBuild": "rimraf dist && webpack --config webpack/webpack.config.js --env.NODE_ENV=production --env.NODE_ENV_PATH=production --mode=production -p --progress",
+    "build": "rimraf dist && webpack --config webpack/webpack.config.js --env.NODE_ENV=production --env.NODE_ENV_PATH=development  --mode=production -p --progress",
+    "dev": "webpack-dev-server --config webpack/webpack.config.js --env.NODE_ENV=development  --env.NODE_ENV_PATH=development --mode=development --define ENABLE_API --progress --open"
   },
   "devDependencies": {
     "@babel/core": "7.10.4",

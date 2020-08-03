@@ -39,3 +39,8 @@ To build project run: (Result will be in ```dist/``` folder.)
 ```
 npm run build
 ```
+
+To build project for BITRIX run: (Result will be in ```dist/``` folder.)
+```
+npm run bitrixBuild
+```

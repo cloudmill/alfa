@@ -199,6 +199,10 @@ module.exports = env => {
 				]
 			}),
 
+      new webpack.DefinePlugin({
+        NODE_ENV_PATH: JSON.stringify(env.NODE_ENV_PATH)
+      }),
+
 			new SVGSpriteMapPlugin('src/sprites/**/*.svg', {
 				styles: path.join(__dirname, '../src/assets/styles/_sprites.scss'),
 				output: {
