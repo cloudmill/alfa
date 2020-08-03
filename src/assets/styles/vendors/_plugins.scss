@@ -220,8 +220,13 @@ $items:
   }
 }
 
-.parallax-box {
-  overflow: hidden;
+.parallax {
+  &-item {
+    position: relative;
+  }
+  &-box {
+    overflow: hidden;
+  }
 }
 
 .spinner {
