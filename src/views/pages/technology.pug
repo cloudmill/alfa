@@ -1,0 +1,13 @@
+extends ../layouts/master.pug
+
+block header
+  include ../partials/_header.pug
+
+block content
+  main.technology
+    +navTitle('Технологии')
+    .container.technology-container
+      +technology(index.technology)
+
+block footer
+  include ../partials/_footer.pug

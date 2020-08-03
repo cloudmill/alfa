@@ -1,0 +1,93 @@
+extends ../layouts/master.pug
+
+block header
+  include ../partials/_header.pug
+
+block content
+  main.page-about
+    +navTitle('О компании')
+    .container
+      +menuAdditionalNav(menu.aboutMenu, 'about')
+      section.about-mission
+        h3 Миссия и ценности
+        .row
+          .col.col__lg-4.col__md-4.col__xs-12
+          .col.col__lg-8.col__md-8.col__xs-12
+            .row.between__xs.about-mission-item
+              .col.col__lg-6.col__md-6.col__xs-12
+                p.text__lg Создание высокотехнологичной сервисной компании в области систем заканчивания скважин — лидера на российском рынке
+              .col.col__lg-6.col__md-6.col__xs-12
+                p Развитие комплекса услуг компании в области заканчивания:
+                ul.list--icons
+                  li производство оборудования
+                  li разработка компоновочных решений
+                  li сервис инжиниринга и проектирования
+                  li лабораторные исследования
+            .row.between__xs.about-mission-item
+              .col.col__lg-5.col__md-6.col__xs-12
+                p Привлечение инновационных технологий для систем заканчивания в рамках международного партнерства
+              .col.col__lg-6.col__md-6.col__xs-12
+                p Соответствие производственных процессов в компании требованиям системы качества международного уровня
+    section.harmonicSlider
+      .accordion
+        ul
+          li.active(tabindex='1')
+            div
+              h2 Производство
+              a.button(href='#')
+                | Подробнее #[br] о производстве
+                +img('about/link-arrow.svg')
+          li(tabindex='2')
+            div
+              h2 Проектный офис
+          li(tabindex='3')
+            div
+              h2 Лаборатория
+              a.button(href='#')
+                | Подробнее #[br] о лаборатории
+                +img('about/link-arrow.svg')
+    .container
+      section.about-history
+        .row
+          .col.col__lg-4.col__md-4.col__xs-12.about-history-items
+            h3 История
+            .swiper-pagination-about
+          .col.col__lg-8.col__md-8.col__xs-12.about-history-item
+            .aboutSlider.swiper-container
+              .swiper-wrapper
+                .swiper-slide(data-nav='2017')
+                  .col__xl-5.col__lg-6
+                    p Создание компании Альфа Горизонт на&nbsp;базе опытной команды сотрудников с&nbsp;большим опытом работы в&nbsp;области систем заканчивания
+                    p Организация производства проволочных фильтров АльфаШелл на&nbsp;базе завода СанТех оборудования
+                    p Первые поставки слотовых фильтров на российский рынок
+                    p Получение сертификатов качества ISO 9001
+                  .year 2017
+                .swiper-slide(data-nav='2018')
+                  .col__xl-5.col__lg-6
+                    p Создание компании Альфа Горизонт на&nbsp;базе опытной команды сотрудников с&nbsp;большим опытом работы в&nbsp;области систем заканчивания
+                    p Организация производства проволочных фильтров АльфаШелл на&nbsp;базе завода СанТех оборудования
+                    p Первые поставки слотовых фильтров на российский рынок
+                    p Получение сертификатов качества ISO 9001
+                  .year 2018
+                .swiper-slide(data-nav='2019')
+                  .col__xl-5.col__lg-6
+                    p Создание компании Альфа Горизонт на&nbsp;базе опытной команды сотрудников с&nbsp;большим опытом работы в&nbsp;области систем заканчивания
+                    p Организация производства проволочных фильтров АльфаШелл на&nbsp;базе завода СанТех оборудования
+                    p Первые поставки слотовых фильтров на российский рынок
+                    p Получение сертификатов качества ISO 9001
+                  .year 2019
+                .swiper-slide(data-nav='2020')
+                  .col__xl-5.col__lg-6
+                    p Создание компании Альфа Горизонт на&nbsp;базе опытной команды сотрудников с&nbsp;большим опытом работы в&nbsp;области систем заканчивания
+                    p Организация производства проволочных фильтров АльфаШелл на&nbsp;базе завода СанТех оборудования
+                    p Первые поставки слотовых фильтров на российский рынок
+                    p Получение сертификатов качества ISO 9001
+                  .year 2020
+              .swiper-button
+                .swiper-prev.swiper-prev-about: i.icon-prev
+                .swiper-next.swiper-next-about: i.icon-next
+    +nextBlock('Лаборатория')
+
+
+block footer
+  include ../partials/_footer.pug

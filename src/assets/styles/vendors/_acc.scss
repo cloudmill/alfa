@@ -1,0 +1,81 @@
+.acc {
+  &__card {
+    border-bottom: 2px solid $black;
+    transition: border-color .5s;
+    margin-bottom: 30px;
+    &:hover,
+    &.active {
+      border-color: $base-color-main;
+    }
+  }
+  &__title {
+    padding: 20px 0;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 130%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all .5s;
+    @media screen and (min-width: $screen-md-min) {
+      padding: 30px 0;
+      font-size: 25px;
+    }
+    &-desc {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      color: $gray-darken;
+      margin-top: 6px;
+    }
+    span {
+      display: block;
+      width: 19px;
+      height: 19px;
+      background: url("../images/icons/plus.svg") no-repeat center;
+      transition: background .5s;
+    }
+    &:hover,
+    &.active {
+      span {
+        background: url("../images/icons/plusb.svg") no-repeat center;
+      }
+    }
+  }
+  &__panel {
+    display: none;
+    padding: 10px 0;
+    @media screen and (min-width: $screen-md-min) {
+      padding: 30px;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      padding: 30px 90px 60px;
+    }
+  }
+}
+
+.showMore {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid $black;
+  padding: 30px 0;
+  margin-top: 80px;
+  max-width: 490px;
+  cursor: pointer;
+  @include transitionEaseInOut(border-color);
+  span {
+    display: block;
+    width: 19px;
+    height: 19px;
+    background: url("../images/icons/plus.svg") no-repeat center;
+    @include transitionEaseInOut(background);
+  }
+  &:hover {
+    border-color: $base-color-main;
+    span {
+      background: url("../images/icons/plusb.svg") no-repeat center;
+    }
+  }
+}

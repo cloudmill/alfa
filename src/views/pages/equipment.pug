@@ -1,0 +1,83 @@
+extends ../layouts/master.pug
+
+block header
+  include ../partials/_header.pug
+
+block content
+  main.equipment
+    +navTitle('Оборудование')
+    .container.equipment-container
+      .equipmentList
+        .equipmentList-item
+          .equipmentList-item__top
+            .equipmentList-item__num 01.
+            .equipmentList-item__title
+              h3: a(href='#') Скважинные фильтры
+              ul.equipMenu
+                li: a(href='#')
+                  +img('icons/menuArr.svg')
+                  | АльфаДирект
+                li: a(href='#')
+                  +img('icons/menuArr.svg')
+                  | АльфаСлот
+                li: a(href='#')
+                  +img('icons/menuArr.svg')
+                  | АльфаПолимер
+                li: a(href='#')
+                  +img('icons/menuArr.svg')
+                  | АльфаШелл
+                li: a(href='#')
+                  +img('icons/menuArr.svg')
+                  | АльфаКомпакт
+          .equipmentList-item__bottom
+            .equipmentList-item__mark.spinnerSlow: +img('equip/trademark.svg')
+            .equipmentList-item__logo
+              +img('equip/item-1.svg')
+              +img('equip/item-2.svg')
+              +img('equip/item-3.svg')
+              +img('equip/item-4.svg')
+              +img('equip/item-5.svg')
+            +img('equip/cat-1.jpg')
+        .equipmentList-item
+          .equipmentList-item__top
+            .equipmentList-item__num 02.
+            .equipmentList-item__title
+              h3: a(href='#') Устройства контроля притока
+              ul.equipMenu
+                li: a(href='#')
+                  +img('icons/menuArr.svg')
+                  | АльфаДирект AICV
+                li: a(href='#')
+                  +img('icons/menuArr.svg')
+                  | АльфаПорт
+                li: a(href='#')
+                  +img('icons/menuArr.svg')
+                  | АльфаДирект ICD
+          .equipmentList-item__bottom
+            .equipmentList-item__mark.spinnerSlow: +img('equip/trademark.svg')
+            .equipmentList-item__logo
+              +img('equip/item-6.svg')
+              +img('equip/item-7.svg')
+              +img('equip/item-8.svg')
+            +img('equip/cat-2.jpg')
+        .equipmentList-item
+          .equipmentList-item__top
+            .equipmentList-item__num 03.
+            .equipmentList-item__title
+              h3: a(href='#') Дополнительное оборудование
+              ul.equipMenu
+                li: a(href='#')
+                  +img('icons/menuArr.svg')
+                  | Муфта ГРП
+                li: a(href='#')
+                  +img('icons/menuArr.svg')
+                  | Пакер-Подвеска
+                li: a(href='#')
+                  +img('icons/menuArr.svg')
+                  | Гидромеханический пакер
+          .equipmentList-item__bottom
+            .equipmentList-item__mark.spinnerSlow: +img('equip/trademark.svg')
+            +img('equip/cat-3.jpg')
+
+block footer
+  include ../partials/_footer.pug

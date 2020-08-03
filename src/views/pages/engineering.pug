@@ -1,0 +1,144 @@
+extends ../layouts/master.pug
+
+block header
+  include ../partials/_header-fixed.pug
+
+
+block content
+  main.engineering
+    +navTitleBackOneArray('Проектирование и инжиниринг', 'Сервис', 'background-image: url("../assets/images/service/escort.jpg")', list.project, '')
+    .container.equipment-container
+      .row.row-add.equipment-template
+        .col.col__lg-8.col__md-5.col__xs-12
+          #description.equipment-template__item.template__item--js
+            h3 Описание
+            .equipment-template__block
+              p Компания Альфа Горизонт выполняет услуги проектирования и инженерных расчетов для моделирования работы скважины в конкретных геофизических условиях месторождения Заказчика. Целью этих работ является выработка рекомендаций по выбору компоновки системы заканчивания для повышения эффективности работы скважины.
+              br
+              br
+              h5 Общая схема выполнения этих работ включает следующие этапы:
+              .row.middle__xs
+                .col.col__xl-1.col__md-2.col__xs-2
+                  +img('service/arr.svg')
+                .col.col__xl-10.col__md-9.col__xs-8
+                  p Анализ гидродинамических и геологических данных модели резервуара месторождения для разработки дизайна окончания
+                  p Моделирование работы скважины-кандидата с установкой устройств контроля притока (УКП)
+                  p Расчет расстановки пакеров и фильтров и разбивка скважины на интервалы на основе данных бурения
+                  p Гидравлические расчеты систем заканчивания под определенные требования Заказчика
+                  p Моделирование силовых нагрузок на оборудование при спуске хвостовика до забоя
+          #character.equipment-template__item.template__item--js
+            h3 Характеристики
+            .swiper-button
+              .swiper-prev.swiper-prev-equip: i.icon-prev
+              .swiper-next.swiper-next-equip: i.icon-next
+            .indexSlider.swiper-container
+              .swiper-wrapper
+                .swiper-slide
+                  .equipment-template__card
+                    .row
+                      .col.col__md-6.col__xs-12
+                        .equipmentList-item__num  01.
+                        h5 Анализ скважинных условий
+                        p Предварительный анализ данных резервуара месторождения для моделирования системы окончания. К таким данным относятся:
+                        ul.list--icons
+                          li Характеристики резервуара
+                          li Свойства флюида
+                          li Данные по скважине
+                          li Планируемые показатели производительности
+                        p Данный анализ позволяет построить предварительную модель работы скважины для проведения расчетов профиля притока в зависимости от схемы заканчивания.
+                      .col.col__md-6.col__xs-12
+                        +img('service/slider-1.jpg')
+                .swiper-slide
+                  .equipment-template__card
+                    .row
+                      .col.col__md-6.col__xs-12
+                        .equipmentList-item__num  02.
+                        h5 Моделирование профиля притока
+                        p При задании дизайна хвостовика используются фильтры разных типоразмеров, устройства контроля притока (УКП) с разными характеристиками используемых штуцеров.
+                        p Производятся расчеты потерь давления на трение в трубе и на фильтроэлементах.
+                        p Оптимизация работы хвостовика с точки зрения выравнивания притока, повышении дебита.
+                        p Результаты моделирования представляются в виде графиков зонального притока, дебита по нефти и воде, уровню обводненности, а также рекомендаций по системе окончания.
+                        p Проводится анализ потенциальных зон прорыва воды и газа, а также способы их предотвращения.
+                      .col.col__md-6.col__xs-12
+                        +img('service/slider-2.jpg')
+                .swiper-slide
+                  .equipment-template__card
+                    .row
+                      .col.col__md-6.col__xs-12
+                        .equipmentList-item__num  03.
+                        h5 Подбор и расстановка элементов компоновки
+                        p Использование дополнительных данных бурения скважин для корректировки модели скважины и формирования плана разбивки скважины на зоны с установкой разобщающих пакеров.
+                        p Предварительный дизайн скважины для обоснования количества зон, количества управляемых фильтров
+                      .col.col__md-6.col__xs-12
+                        +img('service/slider-3.jpg')
+                .swiper-slide
+                  .equipment-template__card
+                    .row
+                      .col.col__md-6.col__xs-12
+                        .equipmentList-item__num  04.
+                        h5 Гидравлические расчеты
+                        p Гидравлические расчеты систем заканчивания под определенные требования Заказчика, включая:
+                        ul.list--icons
+                          li Выравнивание профиля притока (приемистости) или профиля депрессии (репрессии)
+                          li Расчеты на определенный момент времени для анализа борьбы с прорывами воды и газа
+                          li Проработка сценариев работы скважины в условия прорыва воды или газа
+                      .col.col__md-6.col__xs-12
+                        +img('service/slider-4.jpg')
+                .swiper-slide
+                  .equipment-template__card
+                    .row
+                      .col.col__md-6.col__xs-12
+                        .equipmentList-item__num  05.
+                        h5 Моделирование спуска хвостовика
+                        p Расчет силовых нагрузок на элементы хвостовика при операции спуске по заданной при бурении траектории ствола скважины. Определение безопасности спуска компоновки хвостовика и ее элементов.
+                      .col.col__md-6.col__xs-12
+                        +img('service/slider-5.jpg')
+              .swiper-pagination.swiper-pagination--dr
+          #advantages.equipment-template__item.template__item--js
+            h3 Преимущества
+            .equipment-template__block
+              ul.list--corner.row.between__xs
+                li.col.col__md-6.col__xs-12 Комплексный подход к задачам оптимизации заканчивания скважин
+                li.col.col__md-6.col__xs-12 Анализ требований и данных для выбора оптимального решения
+                li.col.col__md-6.col__xs-12 Снижение рисков для проведения важных технологический операций, например, безопасного спуска хвостовика
+                li.col.col__md-6.col__xs-12 Проработка сценариев использования разных конфигураций для заканчивания скважины стандартами качества
+                li.col.col__md-6.col__xs-12 Экономические обоснования предлагаемых решений
+          #projects.equipment-template__item.template__item--js
+            h3 Ключевые проекты
+            .swiper-button
+              .swiper-prev.swiper-prev-equip: i.icon-prev
+              .swiper-next.swiper-next-equip: i.icon-next
+            .indexSlider.swiper-container
+              .swiper-wrapper
+                - for (let x = 1; x < 5; x++)
+                  .swiper-slide
+                    .equipment-template__card
+                      .row
+                        .col.col__md-6.col__xs-12
+                          h4 Внедрение технологии AICV компании ООО «Альфа Горизонт»
+                          p.text__sm Норвегия   —   2016 год
+                        .col.col__md-6.col__xs-12
+                          +img('equip/proj.jpg')
+                    .equipment-template__card
+                      .row
+                        .col.col__md-6.col__xs-12
+                          h4 Внедрение технологии AICV компании ООО «Альфа Горизонт»
+                          p.text__sm Норвегия   —   2016 год
+                        .col.col__md-6.col__xs-12
+                          +img('equip/proj1.jpg')
+          #faq.template__item--js: +form('Задать вопрос', 'Вопрос', 'Спасибо! Мы получили ваш сообщение.')
+        .col.col__lg-4.col__md-6.col__xs-12
+          .sidebar
+            ul.equipmentNav.anchor
+              li.active: a(href='#description') Описание
+              li: a(href='#character') Характеристики
+              li: a(href='#advantages') Преимущества
+              li: a(href='#projects') Проекты
+              li: a(href='#faq') Задать вопрос
+            a.link-icon(href='#')
+              +img('icons/backLink.svg')
+              span Ко всем фильтрам
+    .container.stopper: +nextItem('Тестирование', 'service/next2.jpg', 'Следующая услуга', false)
+
+block footer
+  include ../partials/_footer.pug

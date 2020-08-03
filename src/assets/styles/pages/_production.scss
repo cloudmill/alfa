@@ -1,0 +1,134 @@
+.production {
+  &-item {
+    margin-top: 90px;
+    border-top: 2px solid $black;
+    padding-bottom: 60px;
+
+    .img, h4 {
+      margin-bottom: 80px;
+    }
+
+    &--sub {
+      padding-top: 70px;
+    }
+  }
+
+  &-info {
+    span {
+      font-weight: 300;
+      font-size: 385px;
+      line-height: 110%;
+      position: relative;
+      > sub {
+        font-weight: 600;
+        font-size: 70px;
+        line-height: 150%;
+        position: absolute;
+        top: 70px;
+        sub {
+          font-size: 40px;
+          position: absolute;
+          top: -10px;
+        }
+      }
+    }
+    p {
+      font-weight: 600;
+      font-size: 25px;
+      line-height: 130%;
+      display: inline-block;
+    }
+  }
+
+  &-list {
+    margin-bottom: 170px;
+  }
+
+  .indexSlider {
+    .swiper-pagination {
+      position: static;
+      margin-bottom: 20px;
+    }
+    .swiper-button {
+      position: absolute;
+      top: 87px;
+      right: 0;
+    }
+  }
+}
+
+
+.swiper-pagination--dr {
+  height: 67px;
+  .swiper-pagination-bullet {
+    color: $black;
+    font-size: 16px;
+    padding-bottom: 0;
+    padding-right: 60px;
+    height: 48px;
+    &:before {
+      background: $base-color-main;
+      width: 3px;
+    }
+    &:after {
+      background: $gray;
+    }
+    &-active {
+      color: $base-color-main;
+      font-size: 25px;
+      padding-bottom: 0;
+      padding-right: 60px;
+      height: 67px;
+    }
+  }
+}
+
+.swiper-button--bg {
+  z-index: 89;
+  width: 246px;
+  display: flex;
+  flex-direction: column;
+  transition: width .5s;
+  .swiper-next {
+    margin-left: auto;
+  }
+  > * {
+    background: #fff;
+    color: $base-color-main;
+    width: 101px;
+    height: 101px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    transition: all .5s;
+    cursor: pointer;
+    transition: background .5s;
+    i {
+      color: $base-color-main;
+      transition: color .5s;
+    }
+    &.swiper-next {
+      font-size: 57px;
+      width: 145px;
+      height: 145px;
+      color: #fff;
+      background: $base-color-main;
+      i {
+        color: #fff;
+      }
+    }
+    &:hover {
+      background: $black;
+      i {
+        color: #fff;
+      }
+    }
+  }
+  &-disabled {
+    cursor: inherit;
+    //opacity: .7;
+    //color: $base-color-main !important;
+    //background: $gray !important;
+  }
+}

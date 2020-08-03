@@ -1,0 +1,96 @@
+.management {
+  &-item {
+    h4 {
+      margin-top: 90px;
+      margin-bottom: 130px;
+    }
+  }
+  &-acc {
+    margin-bottom: 140px;
+  }
+  &-info {
+
+  }
+  &-desc {
+    margin-bottom: 120px;
+  }
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid $gray;
+    border-right: 1px solid $gray;
+    margin-top: 60px;
+    margin-bottom: 160px;
+    &__item {
+      @extend .col__lg-4;
+      @extend .col__md-6;
+      @extend .col__xs-12;
+      border-left: 1px solid $gray;
+      border-bottom: 1px solid $gray;
+      height: 410px;
+      padding: 45px 55px;
+      display: flex;
+      flex-direction: column;
+      &-title {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 150%;
+      }
+      &-desc {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+      }
+      &-img {
+        margin-top: auto;
+        margin-left: auto;
+      }
+    }
+  }
+  &-docs {
+    &-inner {
+      margin-top: 60px;
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 20px;
+    }
+    &__item {
+      border: 1px solid $gray;
+      height: 200px;
+      width: 290px;
+      padding: 20px 30px;
+      margin-left: 55px;
+      margin-bottom: 10px;
+      font-weight: 500;
+      font-size: 12px;
+      display: block;
+      @include transitionEaseInOut(all);
+
+      &-top {
+        display: flex;
+        justify-content: space-between;
+      }
+      &-size {
+        text-transform: uppercase;
+      }
+      &-title {
+        margin-top: 50px;
+      }
+      &-img {
+        color: $black;
+        @include transitionEaseInOut(color);
+        i {
+          font-size: 58px;
+          line-height: 1;
+        }
+      }
+      &:hover {
+        color: $base-color-main;
+        border-color: $base-color-main;
+        .management-docs__item-img {
+          color: $base-color-main;
+        }
+      }
+    }
+  }
+}

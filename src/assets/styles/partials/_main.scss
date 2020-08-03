@@ -1,0 +1,34 @@
+//
+// Partials -> Main
+// ------------------------------------
+
+main {
+  padding-top: 80px;
+  @media screen and (min-width: $screen-md-min) {
+    padding-top: 0;
+  }
+}
+
+.main__section {
+  position: relative;
+  @media screen and (min-width: $screen-md-min) {
+    padding-right: 90px;
+  }
+}
+
+
+.hideOnMobile {
+  @extend .hidden__sm;
+  @extend .hidden__xs;
+}
+
+.hideOnMobileAndTablet {
+  @extend .hidden__md;
+  @extend .hidden__sm;
+  @extend .hidden__xs;
+}
+
+.showOnMobile {
+  @extend .visible__sm;
+  @extend .visible__xs;
+}

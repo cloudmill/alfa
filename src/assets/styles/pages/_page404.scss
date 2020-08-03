@@ -1,0 +1,30 @@
+.page404 {
+  padding-top: 180px;
+  padding-bottom: 300px;
+  &-inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    &-left {
+      @extend .col__lg-4;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      h4 {
+        margin-top: 0;
+      }
+    }
+    &-center {
+      font-weight: 600;
+      font-size: 240px;
+      line-height: 0.7;
+    }
+    &-right {
+      @extend .col__lg-4;
+      text-align: right;
+    }
+  }
+}

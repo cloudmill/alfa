@@ -1,0 +1,275 @@
+//- mixins
+
+
+mixin abcTitle(items)
+  ul.glossary-abc.abc--js
+    each item in items
+      li(data-title=item.title)
+        i.icon-ok
+        span= item.title
+
+mixin accGoss(items)
+  .acc
+    each item in items
+      .acc__card(data-title=item.title)
+        .acc__title
+          .inner
+            = item.title
+            - if(item.subtitle !== '')
+              .acc__title-desc= item.subtitle
+          span
+        .acc__panel Анизотропия пласта - зависимость физических свойств пород пласта от направления. Наиболее распространенными направленно-зависимыми свойствами являются проницаемость и напряжение. Большинство пластов имеют анизотропию вертикальной и горизонтальной проницаемости, причем вертикальная проницаемость намного меньше (часто на порядок меньше), чем горизонтальная проницаемость. Анизотропию проницаемости характеризуют числовым параметром отношения вертикальной к горизонтальной проницаемости kv/kh. Анизотропия проницаемости плоской подстилающей поверхности пласта распространена при наличии естественных трещин. Анизотропия напряжения часто является наибольшей между нагрузкой кровли пласта и горизонтальным напряжением в плоскости залегания.  Анизотропия проницаемости иногда может быть связана с анизотропией напряжения пласта.
+
+mixin menuNav(items)
+  ul.menuNav
+    each item in items
+      li.menuNav__item
+        a.menuNav__link(href=item.href, title=item.title)= item.title
+
+mixin menuSubNav(items)
+  ul.menuSubNav
+    each item in items
+      li.menuSubNav__item
+        a.menuSubNav__link(href=item.href, title=item.title)= item.title
+
+mixin menuAdditionalNav(items, page)
+  ul.menuAdditionalNav
+    each item in items
+      - let active  = ''
+      - if(page === item.href) active='active'
+      li.menuAdditionalNav__item: a.menuAdditionalNav__link(href=item.href + '.html', class=active)
+          = item.title
+
+mixin navTitle(title, parent)
+  .nav-title
+    .container
+      ul.breadcrumbs
+        li.breadcrumbs__item
+          a.breadcrumbs__link(href="#") Главная
+        - if(parent)
+          li.breadcrumbs__item
+            a.breadcrumbs__link(href="#")= parent
+        li.breadcrumbs__item.active= title
+      .mainTitle
+        h1= title
+        +img('logo-title.svg')
+
+mixin navTitleBack(title, parent, src, items)
+  .nav-title.nav-background.parallax-box(data-hook="0")
+    .setImg.parallax-item(style=src)
+    .container
+      ul.breadcrumbs
+        li.breadcrumbs__item
+          a.breadcrumbs__link(href="#") Главная
+        - if(parent)
+          li.breadcrumbs__item
+            a.breadcrumbs__link(href="#")= parent
+        li.breadcrumbs__item.active= title
+      .row.end__xs
+        .col.col__lg-8
+          .mainTitle
+            h1= title
+      .row.m-auto.bottom__xs
+        .col.col__lg-4.nav-background__trade
+          +img('equip/trademarkw.svg', 'spinnerSlow')
+        - if(items)
+          .col.col__lg-7.nav-background__img
+            each item in items
+              +img(item.src)
+
+mixin navTitleBackOne(title, parent, src, logo, desc, pdf)
+  .nav-title.nav-background.parallax-box(data-hook="0")
+    .setImg.parallax-item(style=src)
+    .container
+      ul.breadcrumbs
+        li.breadcrumbs__item
+          a.breadcrumbs__link(href="#") Главная
+        - if(parent)
+          li.breadcrumbs__item
+            a.breadcrumbs__link(href="#")= parent
+        li.breadcrumbs__item.active= title
+      .row.end__xs
+        .col.col__lg-8
+          .mainTitle
+            h1= title
+          - if(desc)
+            .nav-background__desc= desc
+      .row.m-auto.bottom__xs
+        .col.col__lg-4.nav-background__link
+          a(href='#')
+            +img(pdf)
+            | Скачать #[br] презентацию
+        - if(logo)
+          .col.col__lg-7.nav-background__img
+            +img(logo)
+
+mixin navTitleBackOneArray(title, parent, src, items, pdf)
+  .nav-title.nav-background.parallax-box(data-hook="0")
+    .setImg.parallax-item(style=src)
+    .container
+      ul.breadcrumbs
+        li.breadcrumbs__item
+          a.breadcrumbs__link(href="#") Главная
+        - if(parent)
+          li.breadcrumbs__item
+            a.breadcrumbs__link(href="#")= parent
+        li.breadcrumbs__item.active= title
+      .row.end__xs
+        .col.col__lg-8
+          .mainTitle
+            h1= title
+          - if(items)
+            ul.list--bullet.row.between__xs
+              each item in items
+                li.col.col__xl-5.col__lg-6.col__xs-12
+                  span.long-arrow-right
+                  = item
+      if(pdf)
+        .row.m-auto.bottom__xs
+          .col.col__lg-4.nav-background__link
+            a(href='#')
+              +img(pdf)
+              | Скачать #[br] презентацию
+
+mixin nextBlock(title)
+  .container
+    a.nextBlock.combineArr(href='#')
+      .nextBlock-desc Смотрите также
+      .nextBlock-title= title
+      span.long-arrow-right
+
+mixin backLink(title)
+  .publications-soc
+    a.link-icon(href='#')
+      +img('icons/backLink.svg')
+      span= title
+    .social
+      p Поделиться
+      ul.social-list
+        li: a(href='#'): i.icon-fa
+        li: a(href='#'): i.icon-vk
+        li: a(href='#'): i.icon-tw
+
+mixin nextItem(title, src, link, date)
+  .nextItem
+    .row.row-add.nextItem-inner
+      .col.col__lg-8.col__md-6.col__xs-12
+        +img(src)
+      a.col.col__lg-4.col__md-6.col__xs-12.nextItem-desc.combineArr(href='#')
+        .publications-item-top
+          p.text__sm= link
+          - if(date)
+            .publications-item-date 20 августа #[br] 2020
+        h3= title
+        i: +img('nextBlock.svg')
+
+mixin projects(items)
+  .projects-main.filter-container
+    each item in items
+      a.projects-item.filtr-item(data-category=item.category, href='project.html')
+        .projects-item-left
+          .projects-item--title
+            h3= item.title
+            p= item.desc
+          .projects-item--bot
+            p.text__sm= item.catTitle
+            p.text__sm= item.date
+        .projects-item-right
+          .projects-item--img
+            +img(item.image)
+
+mixin technology(items)
+  .equipmentList
+    each item in items
+      .equipmentList-item
+        .equipmentList-item__top
+          .equipmentList-item__num: +img(item.ico)
+          .equipmentList-item__title
+            h3: a(href='#')= item.title
+            p.text__sm= item.desc
+        .equipmentList-item__bottom
+          .equipmentList-item__mark.spinnerSlow: +img('equip/trademark.svg')
+          +img(item.image)
+
+mixin button(title, className, src)
+  a.btn(href=src, class=`btn--${className}`)
+    span
+    = title
+
+//- reveal
+mixin reveal(items)
+  each item in items
+    .revealOut
+      span.revealIn(data-aos='')= item
+
+mixin revealIndep(items)
+  each item in items
+    .revealOut
+      span.revealIn= item
+
+mixin form(title, textarea, mess)
+  form.form#form(method='POST', action='')
+    .form-inner
+      h3= title
+      .row.row-add
+        .col.col__md-6.col__xs-12.form__group: +fieldInput('text', 'name', 'nameVac', 'Имя', true)
+        .col.col__md-6.col__xs-12.form__group: +fieldInput('email', 'email', 'emailVac', 'Email', true)
+        .col.col__xs-12.form__group: +fieldTextarea('content', 'content', textarea, 3)
+        .col.col__md-6.col__xs-12.form__group
+          .radio
+            input(type='radio', name='agreed', id='agreed')
+            label(for='agreed') Согласен на обработку персональных данных в соответствии с #[a(href='#') политикой конфиденциальности]
+        .col.col__md-6.col__xs-12.form__group
+          button.btn.btn--primary.form--js(type='submit')
+            span
+            | Отправить
+    .form-send
+      h3= mess
+      .form__group.form-back--js: +button('Отправить еще', 'primary', '#')
+
+
+//- form-input
+mixin fieldInput(type, name, id, label, required)
+    .input.input--hoshi
+      input.control.input__field.input__field--hoshi(type=type, name=name, id=id, required=required)
+      label.input__label.input__label--hoshi(for=id)
+        span.input__label-content.input__label-content--hoshi= label
+      .error-content
+
+//- form-textarea
+mixin fieldTextarea(name, id, label, rows)
+  .input.input--hoshi
+    textarea.control.input__field.input__field--hoshi(type=type, name=name, id=id, required=required)
+    label.input__label.input__label--hoshi(for=id)
+      span.input__label-content.input__label-content--hoshi= label
+
+//- form-checkbox
+mixin fieldCheckbox(name, id, checked)
+    .checkbox
+        input(type="checkbox", id=id, checked=checked)
+        label(for=id)= name
+
+//- form-radio
+mixin fieldRadio(name, id, label, checked)
+    .radio
+        input(type="radio", id=id, value=id, name=label, checked=checked)
+        label(for=id)=name
+
+//- img
+mixin img(src, className)
+  img(src=`assets/images/${src}`, alt='Alfa', class=className)
+
+
+//- maps-iframe
+- var map = 'iframe src="putMapURLhere" width="100%" height="400" frameborder="0" style="pointer-events: none;" allowfullscreen></iframe';
+
+
+//- article
+mixin article(title)
+  .article
+    .article-wrapper
+      h1= title
+      if block
+        block
+      else
+        p No content provided

@@ -1,0 +1,19 @@
+.engineering {
+  .swiper-pagination {
+    background-color: white;
+    width: 50%;
+    left: calc(50% + 15px);
+    bottom: auto;
+    top: 4a00px;
+    @media screen and (min-width: $screen-xxl-min) {
+      top: 77%;
+    }
+  }
+  .indexSlider {
+    h5 {
+      font-size: 20px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+  }
+}

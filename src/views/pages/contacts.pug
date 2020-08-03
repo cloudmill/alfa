@@ -1,0 +1,48 @@
+extends ../layouts/master.pug
+
+block header
+  include ../partials/_header.pug
+
+block content
+  main.contacts
+    +navTitle('Контакты')
+    section.container.contacts-container
+      .row.row-add.between__xs
+        .contacts-item.col.col__xl-4.col__lg-4
+        .contacts-item.col.col__xl-8.col__lg-8
+          h1 Офис
+        .contacts-item.col.col__xl-4.col__lg-4
+          p ПН – ПТ, 9 – 18
+        .contacts-item.col.col__xl-4.col__lg-8
+          .contacts-el: a(href='tel:88123290190') 8 812 329–01–90
+          .contacts-el: a(href='tel:88123290194') 8 812 329–01–94
+        .contacts-item.col.col__xl-4.col__lg-8
+          .page-footer-adr г. Санкт-Петербург, наб. реки Мойки, #[br] 75-79 лит. В, пом. 7Н
+          a.contacts-link(href='#') На карте
+        .contacts-item.col.col__xl-4.col__lg-4
+          p По общим вопросам
+          br
+          p Коммерческий департамент
+        .contacts-item.col.col__xl-4.col__lg-8
+          .contacts-el: a(href='mailto:info@alfahorizont.ru') info@alfahorizont.ru
+          .contacts-el: a(href='mailto:sales@alfahorizont.ru') sales@alfahorizont.ru
+        .contacts-item.col.col__xl-4.col__lg-8
+        .col.col__xl-4.col__lg-4
+          p Мы в соцсетях
+        .col.col__xl-6.col__lg-8
+          a.link-block(href='#')
+            .link-block__title.text__lg Следите за нашими #[br] публикациями на LinkedIn
+            .link-block__img: i.icon-in
+        .col.col__xl-2.col__lg-8
+          a.link-icon(href='#')
+            +img('icons/youtube.svg')
+            span YouTube
+    +img('contacts.jpg')
+    section.container.vacancy-container
+      .row.row-add.between__xs
+        .col.col__xl-4.col__lg-4
+        .col.col__xl-8.col__lg-8
+          +form('Напишите нам', 'Сопроводительное письмо', 'Мы получили ваше сообщение и ответим, как только сможем.')
+
+block footer
+  include ../partials/_footer.pug

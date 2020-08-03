@@ -1,0 +1,76 @@
+.laboratory {
+  &-item {
+    margin-top: 90px;
+    border-top: 2px solid $black;
+    padding-bottom: 60px;
+
+    h3 {
+      margin-bottom: $form-group-margin-bottom;
+    }
+
+    .list--icons {
+      li {
+        margin-bottom: 20px;
+      }
+    }
+
+    &--sub {
+      padding-bottom: 0;
+    }
+  }
+
+  &-counter {
+    margin-top: 155px;
+    display: flex;
+    font-weight: 500;
+    border-top: 2px solid $black;
+    padding-top: 15px;
+    span {
+      color: $black;
+      -webkit-text-fill-color: white;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: $black;
+      font-weight: 600;
+      font-size: 45px;
+      line-height: 1.22222;
+      margin-right: 25px;
+    }
+  }
+
+  &-slide {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .indexSlider {
+    margin-top: 20px;
+    img {
+      width: 100%;
+    }
+  }
+
+  .swiper-button {
+    position: static;
+    display: flex;
+    margin-top: auto;
+    .swiper-prev {
+      margin-right: 45px;
+    }
+    > * {
+      color: $black;
+      font-size: 40px;
+      transition: all .5s;
+      cursor: pointer;
+      transition: color .5s;
+      line-height: 1;
+      &:hover {
+        color: $base-color-main;
+      }
+    }
+    &-disabled {
+      cursor: inherit;
+      opacity: .7;
+      color: $black !important;
+    }
+  }
+}

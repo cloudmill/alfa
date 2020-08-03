@@ -1,0 +1,109 @@
+$a-height: 720px;
+
+.accordion {
+  width: 100%;
+  height: $a-height;
+  overflow: hidden;
+
+  ul {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    margin: 0;
+    padding: 0;
+    li {
+      cursor: pointer;
+      display: table-cell;
+      vertical-align: bottom;
+      position: relative;
+      width: calc(100% / 3);
+      height: $a-height;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+
+      transition: all 500ms ease;
+      div {
+        overflow: hidden;
+        display: block;
+        height: $a-height;
+        width: 100%;
+        position: relative;
+        z-index: 3;
+        padding: 30px 10px;
+        transition: all 200ms ease;
+        @media screen and (min-width: $screen-xxl-min) {
+          padding: 30px;
+        }
+        h2 {
+          font-weight: 600;
+          font-size: 22px;
+          line-height: 130%;
+          color: white;
+          transition: font-size .5s;
+        }
+        a {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          background: #222222;
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 150%;
+          color: #838383;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 50px 40px;
+          img {
+            margin-left: 50px;
+          }
+        }
+      }
+    }
+
+    // Background images
+    li:nth-child(1) {
+      background-image: url('../images/about/slider-1.jpg');
+    }
+
+    li:nth-child(2) {
+      background-image: url('../images/about/slider-2.jpg');
+    }
+
+    li:nth-child(3) {
+      background-image: url('../images/about/slider-3.jpg');
+    }
+
+    li {
+      width: 15% !important;
+      background-size: auto 100%;
+      @media screen and (min-width: $screen-xxl-min) {
+        width: 12.5% !important;
+      }
+      div {
+        background: rgba(0, 0, 0, .5);
+        a {
+          opacity: 0;
+          transition: opacity .5s;
+        }
+      }
+    }
+    li.active {
+      width: 70% !important;
+      background-size: cover;
+      @media screen and (min-width: $screen-xxl-min) {
+        width: 75% !important;
+      }
+      div {
+        background: transparent;
+        h2 {
+          font-size: 65px;
+        }
+        a {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "mainMenu": [
+    {
+      "title": "Технологии",
+      "href": "#",
+      "subitems": false
+    },
+    {
+      "title": "Оборудование",
+      "href": "#",
+      "subitems": false
+    },
+    {
+      "title": "Сервис",
+      "href": "#",
+      "subitems": false
+    },
+    {
+      "title": "О компании",
+      "href": "#",
+      "subitems": false
+    },
+    {
+      "title": "Проекты",
+      "href": "#",
+      "subitems": false
+    }
+  ],
+  "appMenu": [
+    {
+      "title": "Вакансии",
+      "href": "#",
+      "subitems": false
+    },
+    {
+      "title": "Новости",
+      "href": "#",
+      "subitems": false
+    },
+    {
+      "title": "Публикации",
+      "href": "#",
+      "subitems": false
+    },
+    {
+      "title": "Глоссарий",
+      "href": "#",
+      "subitems": false
+    },
+    {
+      "title": "Контакты",
+      "href": "#",
+      "subitems": false
+    }
+  ],
+  "aboutMenu": [
+    {
+      "title": "О компании",
+      "href": "about"
+    },
+    {
+      "title": "Производство",
+      "href": "production"
+    },
+    {
+      "title": "Интегрированная система менеджмента",
+      "href": "management"
+    },
+    {
+      "title": "Лаборатория",
+      "href": "laboratory"
+    }
+  ]
+}

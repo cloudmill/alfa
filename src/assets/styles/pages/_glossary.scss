@@ -1,0 +1,84 @@
+.glossary {
+  &-container {
+    @extend .mainContainer;
+  }
+
+  &-list {
+    margin-top: -30px;
+  }
+
+  &-search {
+    position: relative;
+    margin-bottom: 50px;
+    button {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 30px;
+      height: 20px;
+      margin: auto;
+      z-index: 9;
+      border: none;
+      outline: none;
+      background: none;
+      cursor: pointer;
+    }
+  }
+
+  &-results {
+    display: none;
+    font-weight: 500;
+    margin-bottom: 90px;
+    &-title {
+      margin-bottom: 10px;
+    }
+    &-desc {
+      font-size: 14px;
+      color: $gray-darken;
+    }
+    &.active {
+      display: block;
+    }
+  }
+
+  &-abc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -15px;
+    li {
+      cursor: pointer;
+      max-width: 51px;
+      margin: 0 15px 10px;
+      flex-grow: 1;
+      width: calc(100% * (1/5) - 30px - 1px);
+      padding-top: 20px;
+      padding-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid $gray;
+      transition: border-color .5s;
+      i {
+        font-size: 15px;
+        color: $gray;
+        transition: color .5s;
+      }
+      span {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 150%;
+        color: $black;
+        transition: color .5s;
+      }
+      &:hover,
+      &.active {
+        border-color: $base-color-main;
+        i, span {
+          color: $base-color-main;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,108 @@
+.about {
+  &-mission {
+    margin-top: 140px;
+    border-top: 2px solid $black;
+    &-item {
+      & + & {
+        margin-top: $form-group-margin-bottom;
+      }
+    }
+    h3 {
+      margin-bottom: $form-group-margin-bottom;
+    }
+  }
+  &-history {
+    border-top: 2px solid $black;
+    border-bottom: 1px solid $gray;
+    h3 {
+      margin-bottom: $form-group-margin-bottom;
+    }
+    &-items {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: 20px;
+    }
+    &-item {
+      padding: 30px 55px;
+      border-left: 1px solid $gray;
+      p {
+        margin-bottom: 35px;
+      }
+    }
+    .year {
+      margin-top: 80px;
+      font-weight: 600;
+      font-size: 95px;
+      line-height: 0.95;
+      text-align: right;
+      text-transform: uppercase;
+    }
+
+    .swiper-button {
+      font-size: 41px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 125px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 11;
+      > * {
+        cursor: pointer;
+        i {
+          color: $black;
+          &:hover {
+            color: $base-color-main;
+          }
+        }
+      }
+      &-disabled {
+        opacity: 0.5;
+      }
+    }
+
+    .swiper-pagination {
+      &-bullets {
+        opacity: 1;
+      }
+      &-bullet {
+        opacity: 1;
+        font-weight: 600;
+        margin-bottom: 30px;
+        overflow: hidden;
+        border-radius: 0;
+        position: relative;
+        transition: padding-left .5s;
+        &:before {
+          content: '';
+          background: url("../images/about/pagin-arrow.svg") no-repeat center;
+          width: 13px;
+          height: 14px;
+          position: absolute;
+          left: -50px;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          transition: left .5s;
+        }
+        &:hover {
+          color: $base-color-main;
+        }
+        &-active {
+          padding-left: 23px;
+          color: $base-color-main;
+          &:before {
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.harmonicSlider {
+  margin: 170px 0;
+}

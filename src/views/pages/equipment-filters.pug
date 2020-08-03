@@ -1,0 +1,65 @@
+extends ../layouts/master.pug
+
+block header
+  include ../partials/_header-fixed.pug
+
+
+block content
+  main.equipment
+    +navTitleBack('Скважинные фильтры', 'Оборудование', 'background-image: url("../assets/images/equip/maincat-1.jpg")', index.filters)
+    .container.equipment-container
+      .equipment-content.row.row-add
+        .col.col__md-6.col__xs-12
+          .equipment-el
+            .equipment-el__top
+              h4 АльфаДирект
+              .text__sm Фильтр скважинный щелевой бескаркасный
+            a.equipment-el__bottom(href="#")
+              .equipment-el__logo
+                +img('equip/item-1.svg')
+              +img('equip/filters/item-1.jpg')
+        .col.col__md-6.col__xs-12
+          .equipment-el
+            .equipment-el__top
+              h4 АльфаШелл
+              .text__sm Фильтр скважинный щелевой
+            a.equipment-el__bottom(href="#")
+              .equipment-el__logo
+                +img('equip/item-2.svg')
+              +img('equip/filters/item-2.jpg')
+        .col.col__md-6.col__xs-12
+          .equipment-el
+            .equipment-el__top
+              h4 АльфаСлот
+              .text__sm Система управляемых фильтров, совмещенная с системой МГРП
+            a.equipment-el__bottom(href="#")
+              .equipment-el__logo
+                +img('equip/item-3.svg')
+              +img('equip/filters/item-3.jpg')
+        .col.col__md-6.col__xs-12
+          .equipment-el
+            .equipment-el__top
+              h4 АльфаКомпакт
+              .text__sm Фильтр скважинный щелевой с прямой намоткой
+            a.equipment-el__bottom(href="#")
+              .equipment-el__logo
+                +img('equip/item-4.svg')
+              +img('equip/filters/item-4.jpg')
+        .col.col__md-6.col__xs-12
+          .equipment-el
+            .equipment-el__top
+              h4 АльфаПолимер
+              .text__sm Фильтр скважинный щелевой бескаркасный
+            a.equipment-el__bottom(href="#")
+              .equipment-el__logo
+                +img('equip/item-5.svg')
+              +img('equip/filters/item-5.jpg')
+      .row.row-add.equipment-info
+        .col.col__md-6.col__xs-12
+          h3 Скважинные фильтры
+        .col.col__md-6.col__xs-12
+          p Фильтр этого типа применяется в условиях переменного химического состава добываемой среды, когда возникает опасность коррозии и залипания железистыми и карбонатными отложениями, поскольку фильтр восстанавливает свою работоспособность после регенерации (промывка, кислотная обработка).
+          p Основная цель использования технологии регулирования притока заключается в оптимизации производительности добывающих скважин и повышения коэффициента извлекаеости нефти. В силу большой протяженности горизонтальных скважин пластовые условия резервуара вдоль скважины существенно меняются, что приводит неравномерности в притока флюида по зонам скважины.
+
+block footer
+  include ../partials/_footer.pug

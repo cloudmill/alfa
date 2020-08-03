@@ -1,0 +1,100 @@
+.vacancy {
+  &-container {
+    @extend .mainContainer;
+  }
+  &-link {
+    margin-top: 60px;
+    border-top: 2px solid $black;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (min-width: $screen-md-min) {
+      margin-top: 92px;
+    }
+    a {
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    span {
+      min-width: 180px;
+    }
+  }
+  &-notFound {
+    padding-top: 60px;
+    padding-bottom: 30px;
+    @media screen and (min-width: $screen-md-min) {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+    @media screen and (min-width: $screen-xl-min) {
+      padding-top: 140px;
+      padding-bottom: 140px;
+    }
+  }
+  &-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 75px;
+
+    > * {
+      margin-top: 15px;
+    }
+
+    .long-arrow-right {
+      width: 15px;
+      height: 15px;
+      transform: rotate(0);
+      color: $base-color-main;
+      position: absolute;
+      right: -20px;
+      top: -5px;
+      @include transitionEaseInOut(all);
+      &::before {
+        transform: rotate(-45deg);
+        width: 18px;
+      }
+    }
+    a {
+      margin-right: 70px;
+      position: relative;
+      &:hover {
+        color: $base-color-main;
+        .long-arrow-right {
+          top: -15px;
+          right: -30px;
+          &::before {
+            width: 28px;
+          }
+        }
+      }
+    }
+
+  }
+
+  .acc__card {
+    @media screen and (min-width: $screen-md-min) {
+      margin-bottom: $form-group-margin-bottom;
+    }
+
+    h5 {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      @media screen and (min-width: $screen-md-min) {
+        margin-top: 60px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+.link {
+  position: relative;
+  img {
+    position: absolute;
+    top: -8px;
+  }
+}

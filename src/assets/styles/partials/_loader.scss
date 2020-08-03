@@ -1,0 +1,114 @@
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  @include transitionEaseInOut(left, 1s);
+  &-main {
+    background-color: $base-color-main;
+  }
+  &-inner {
+    position: fixed;
+    top: calc(50% - 17px);
+    left: calc(50% - 145px);
+    z-index: 10;
+    opacity: 1;
+    transition:
+      top .5s cubic-bezier(0.76, 0, 0.24, 1),
+      left .5s cubic-bezier(0.76, 0, 0.24, 1),
+      opacity .2s cubic-bezier(0.76, 0, 0.24, 1) .5s;
+  }
+  &-hide {
+    position: relative;
+    background-color: $base-color-main;
+    overflow: hidden;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 9;
+      background-color: $base-color-main;
+      transition: opacity .1s .5s;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 0;
+      z-index: 9;
+      background-color: white;
+    }
+    &.showIt {
+      &:after {
+        animation-name: slideIt;
+        animation-duration: 1.5s;
+        animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+      }
+      &:before {
+        opacity: 0;
+      }
+    }
+  }
+
+  &.hidden {
+    left: 100%;
+    .loader-inner {
+      top: 60px;
+      left: 62px;
+      opacity: 0;
+    }
+    .loader-hide {
+      background-color: transparent;
+    }
+  }
+
+
+  &.hideIt {
+    left: 100%;
+    .loader-inner {
+      transition:
+        left .5s cubic-bezier(0.76, 0, 0.24, 1) 1s,
+        opacity .2s cubic-bezier(0.76, 0, 0.24, 1) .5s;
+      opacity: 0;
+      left: -100%;
+    }
+  }
+}
+
+.loaderInner {
+  .loader-inner {
+    top: calc(50% - 32px);
+    left: calc(50% - 36px);
+  }
+}
+
+@keyframes slideIt {
+  0% {
+    width: 0;
+  }
+  25% {
+    width: 100%;
+  }
+  50% {
+    width: 100%;
+  }
+  75% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 100%;
+    left: 100%;
+  }
+}

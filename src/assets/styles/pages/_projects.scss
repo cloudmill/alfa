@@ -1,0 +1,232 @@
+.projects {
+  &-container {
+    padding-top: 50px;
+    @media screen and (min-width: $screen-lg-min) {
+      padding-top: 150px;
+    }
+  }
+
+  &-main {}
+  &-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    border-top: 2px solid $black;
+    padding-top: 20px;
+    @media screen and (min-width: $screen-lg-min) {
+      margin-bottom: 90px;
+    }
+    p, h3 {
+      @include transitionEaseInOut(color);
+    }
+    &-left {
+      width: 100%;
+      margin-bottom: 20px;
+      @media screen and (min-width: $screen-lg-min) {
+        width: calc(100% - 580px);
+        margin-bottom: 0;
+      }
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    &-right {
+      width: 100%;
+      @media screen and (min-width: $screen-lg-min) {
+        width: 490px;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    &--title {
+      h3 {
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+      p {
+        color: $gray-darken;
+      }
+    }
+    &--bot {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $gray-darken;
+    }
+    &:hover {
+      h3 {
+        color: $base-color-main;
+      }
+      p {
+        color: $black;
+      }
+    }
+  }
+
+  #googleMaps {
+    margin-left: -4%;
+    margin-right: -4%;
+    width: 108%;
+  }
+
+  .showMore {
+    margin: 0 auto 170px;
+  }
+}
+
+#filters {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  margin-bottom: 40px;
+  overflow-x: auto;
+  @media screen and (min-width: $screen-lg-min) {
+    margin-bottom: 90px;
+  }
+  @media screen and (min-width: $screen-xxl-min) {
+    padding-top: 20px;
+  }
+  li {
+    cursor: pointer;
+    border-bottom: 2px solid $gray;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    @include transitionEaseInOut(all);
+    + li {
+      margin-left: 10px;
+    }
+    &:before {
+      content: '';
+      width: 14px;
+      min-width: 14px;
+      height: 14px;
+      display: block;
+      border-radius: 15px;
+      margin-right: 20px;
+    }
+
+    &:first-child {
+      &:before {
+        background-color: $base-color-main;
+      }
+    }
+    &:nth-child(2) {
+      &:before {
+        background-color: $color-type-1a;
+      }
+    }
+    &:last-child {
+      &:before {
+        background-color: $color-type-4a;
+      }
+    }
+
+    &.active,
+    &:hover {
+      &:first-child {
+        border-color: $base-color-main;
+      }
+      &:nth-child(2) {
+        border-color:  $color-type-1a;
+      }
+      &:last-child {
+        border-color:  $color-type-4a;
+      }
+    }
+
+    &.active {
+      &:first-child {
+        color: $base-color-main;
+      }
+      &:nth-child(2) {
+        color: $color-type-1a;
+      }
+      &:last-child {
+        color: $color-type-4a;
+      }
+    }
+  }
+}
+
+
+.filter-container {
+  .filtr-item {
+    width: 100% !important;
+  }
+}
+
+.project {
+  &-dates {
+    position: relative;
+    top: -140px;
+    color: $gray-darken;
+  }
+  .nav-background {
+    color: $black;
+    a {
+      color: $black;
+    }
+    .mainTitle {
+      border-color: $black;
+      margin-bottom: 90px;
+    }
+    .breadcrumbs {
+      color: $gray-darken;
+      .breadcrumbs__item,
+      .breadcrumbs__item::before,
+      a {
+        color: $gray-darken;
+      }
+    }
+  }
+  .indexSlider {
+    margin-top: 90px;
+    img {
+      width: 100%;
+    }
+    .swiper-pagination {
+      position: static;
+      margin-top: 30px;
+      padding-left: 95px;
+    }
+    .swiper-button {
+      position: absolute;
+      bottom: 97px;
+      right: 0;
+      top: auto;
+      width: 246px;
+      background-color: transparent;
+    }
+  }
+  .imageContainer {
+    margin-top: 90px;
+  }
+}
+
+
+.imageContainer {
+  position: relative;
+  &-logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 9;
+  }
+  &-bot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid $black;
+    padding: 30px 0;
+    > * {
+      margin: 0;
+    }
+  }
+}

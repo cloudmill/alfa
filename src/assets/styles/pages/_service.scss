@@ -1,0 +1,13 @@
+.service {
+  &-container {
+    @extend .mainContainer;
+  }
+
+  .equipmentList-item:last-child {
+    .equipmentList-item__bottom {
+      position: relative;
+      top: -100px;
+      z-index: -1;
+    }
+  }
+}

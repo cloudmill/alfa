@@ -1,0 +1,77 @@
+.technology {
+  &-container {
+    @extend .mainContainer;
+  }
+  &-containerS {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    @media screen and (min-width: $screen-md-min) {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      padding-top: 90px;
+      padding-bottom: 170px;
+    }
+  }
+
+  &-line {
+    margin-bottom: 40px;
+    @media screen and (min-width: $screen-md-min) {
+      margin-bottom: 70px;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      margin-bottom: 200px;
+    }
+  }
+
+  .nav-background {
+    color: $black;
+    a {
+      color: $black;
+    }
+    .mainTitle {
+      border-color: $black;
+      margin-bottom: $form-group-margin-bottom;
+      padding-right: 200px;
+    }
+    .nav-background__desc {
+      margin-top: 0;
+      max-width: 500px;
+    }
+    .breadcrumbs {
+      color: $gray-darken;
+      .breadcrumbs__item,
+      .breadcrumbs__item::before,
+      a {
+        color: $gray-darken;
+      }
+    }
+    .nav-background__img {
+      text-align: right;
+    }
+  }
+
+  .equipmentList-item__title {
+    p {
+      color: $gray-darken;
+    }
+    h3 {
+      margin-bottom: 30px;
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  .equipment-template {
+    h4 {
+      margin-bottom: 40px;
+    }
+    p {
+      @media screen and (min-width: $screen-lg-min) {
+        margin-bottom: $form-group-margin-bottom;
+      }
+    }
+  }
+}

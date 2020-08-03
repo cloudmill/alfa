@@ -1,0 +1,78 @@
+extends ../layouts/master.pug
+
+block header
+  include ../partials/_header.pug
+
+block content
+  main.laboratory
+    +navTitle('Лаборатория', 'О компании')
+    .container
+      +menuAdditionalNav(menu.aboutMenu, 'laboratory')
+    .parallax-box.text--center: .parallax-item: +img('about/lab/image.jpg')
+    .container
+      section.laboratory-item
+        h3 Лаборатория Альфа Горизонт тестирования скважинного #[span.br-style] оборудования является производственным #[span.br-style] подразделением компании
+        .row.between__xs.row-add
+          .col.col__lg-4
+          .col.col__lg-4
+            p Основное назначение лаборатории заключается в выполнении сертификационных испытаний оборудования с целью подтверждения качества их исполнения. Кроме этой задачи лаборатория выполняет специальные испытания оборудования по запросам заказчиков.
+          .col.col__lg-4
+            p Набор тестов реализуется по методикам, построенных по стандартам международных систем качества, позволяет проверять уникальные прочностные и фильтрационные характеристики скважинного оборудования. Лаборатория работает в сотрудничестве с зарубежными и отечественными научно-техническими центрами.
+          .col.col__lg-4
+            .laboratory-counter
+              span 01.
+              p Проведение сертификационных испытания оборудования с целью подтверждения качества их исполнения, выполнение тестов оборуджования по запросам Заказчиков
+          .col.col__lg-4
+            .laboratory-counter
+              span 02.
+              p Соответствие методикам, построенных по стандартам международных систем качества. Проверка уникальных прочностных и фильтрационных характеристик скважинного оборудования
+          .col.col__lg-4
+            .laboratory-counter
+              span 03.
+              p Сотрудничество с крупными отечественными и зарубежными научно-техническими центрами
+      section.laboratory-item
+        h3 Перечень испытаний, #[span.br-style] проводимых лабораторией
+        .row.between__xs.row-add
+          .col.col__lg-4
+          .col.col__lg-8
+            ul.row.list--icons
+              li.col.col__lg-6.col__xs-12 Прочностные испытания фильтров на&nbsp;механические усилия растяжения, изгиба и&nbsp;кручения
+              li.col.col__lg-6.col__xs-12 Тесты неразрушающего контроля
+              li.col.col__lg-6.col__xs-12 Испытания на прочность целостности фильтра: сдвиг стопорных замыкающих колец, отделение проволочной обмотки
+              li.col.col__lg-6.col__xs-12 Испытания на качество фильтрации песка и&nbsp;проницаемость фильтра при различных скважинных условиях
+              li.col.col__lg-6.col__xs-12 Лазерно-оптический аконтроль щелевых зазхоров фильтров
+      section.laboratory-item
+        .row.between__xs
+          .col.col__lg-4.laboratory-slide
+            h3 Механические #[span.br-style] прочностные тесты
+            ul.list--icons
+              li Тест на растяжение
+              li Тест на кручение
+              li Тест на изгиб конструкции
+              li Тест сдвиг опорных замыкающих колец
+              li Тест на отделение проволочной обмотки
+            .swiper-button
+              .swiper-prev.swiper-prev-lab: i.icon-prev
+              .swiper-next.swiper-next-lab: i.icon-next
+          .col.col__lg-8
+            .indexSlider.swiper-container(data-effect='fade')
+              .swiper-wrapper
+                - for (let x = 1; x < 6; x++)
+                  .swiper-slide
+                    +img('about/lab/slider.jpg', 'slider-img')
+      section.laboratory-item.laboratory-item--sub
+        h3 Преимущества работы #[span.br-style] лаборатории
+        .row.between__xs.row-add
+          .col.col__lg-4
+          .col.col__lg-8
+            ul.row.between__xs.list--corner
+              li.col.col__xl-5.col__lg-6 Современное оборудование для проведения экспертизы
+              li.col.col__xl-5.col__lg-6 Выполнение системы уникальных тестов для РФ
+              li.col.col__xl-5.col__lg-6 Возможность выполнение специальных тестов по требования заказчика
+              li.col.col__xl-5.col__lg-6 Кооперация с ведущими мировыми центрами экспертизы и научно-техническими лабораториями
+              li.col.col__xl-5.col__lg-6 Подбор оборудования под конкретные условия месторождения
+              li.col.col__xl-5.col__lg-6 Высокий уровень качества экспертизы и методик проведения испытаний в соответствии с международными стандартами качества
+    +nextBlock('О компании')
+
+block footer
+  include ../partials/_footer.pug

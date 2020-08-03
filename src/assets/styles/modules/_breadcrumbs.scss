@@ -1,0 +1,49 @@
+//
+// Modules -> Breadcrumbs
+// --------------------------------------------------
+
+@if $use-breadcrumb == true {
+  .breadcrumbs {
+    list-style: none;
+    display: flex;
+    margin-bottom: 10px;
+    @media screen and (min-width: $screen-md-min) {
+      padding: $breadcrumb-padding-vertical 0;
+      margin-top: 30px;
+      margin-bottom: $line-height-computed;
+    }
+
+    @media screen and (min-width: $screen-lg-min) {
+      margin-top: 90px;
+    }
+
+    &__item {
+      display: inline-block;
+      font-weight: 500;
+      font-size: 8px;
+      line-height: 150%;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      white-space: nowrap;
+
+      @media screen and (min-width: $screen-md-min) {
+        font-size: 13px;
+      }
+
+      & + & {
+        &:before {
+          content: "#{$breadcrumb-separator}";
+          padding: 0 5px;
+          color: $breadcrumb-color;
+        }
+      }
+
+      &.active {
+        color: $breadcrumb-active-color;
+      }
+    }
+    &__link {
+      color: $breadcrumb-color;
+    }
+  }
+}

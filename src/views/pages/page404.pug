@@ -1,0 +1,17 @@
+extends ../layouts/master.pug
+
+block header
+  include ../partials/_header.pug
+
+block content
+  main.page404
+    .container
+      .page404-inner
+        .page404-inner-left
+          h4 Страница больше неактуальна.
+          +button('Главная страница', 'primary', '/')
+        .page404-inner-center 404
+        .page404-inner-right: +img('logo-title.svg')
+
+block footer
+  include ../partials/_footer.pug

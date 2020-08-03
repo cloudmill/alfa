@@ -1,0 +1,314 @@
+//
+// Vendors -> Plugins
+// ------------------------------------
+
+//svg-icons
+$items:
+  facebook,
+  twitter,
+  percent_icon
+;
+
+.sprite-bg {
+  @include sprite('facebook');
+}
+
+.sprite {
+  display: inline-block;
+  &:before {
+    content: '';
+    display: block;
+  }
+  @each $item in $items {
+    &--#{$item} {
+      &:before {
+        width: map-get(map-get($sizes, $item), 'width');
+        height: map-get(map-get($sizes, $item), 'height');
+        background: url(map-get($sprites, $item)) center no-repeat;
+      }
+    }
+  }
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-in:before {
+  content: "\e907";
+}
+.icon-pdf:before {
+  content: "\e906";
+}
+.icon-fa:before {
+  content: "\e903";
+}
+.icon-tw:before {
+  content: "\e904";
+}
+.icon-vk:before {
+  content: "\e905";
+}
+.icon-ok:before {
+  content: "\e902";
+}
+.icon-prev:before {
+  content: "\e900";
+}
+.icon-next:before {
+  content: "\e901";
+}
+
+//svg-icons
+
+.tabsSimple {
+  .tabs__caption {
+    display: flex;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 130%;
+    li {
+      cursor: pointer;
+      transition: color .5s;
+      + li {
+        margin-left: 60px;
+      }
+      &:hover,
+      &.active {
+        color: $base-color-main;
+      }
+    }
+  }
+  .tabs__content {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.tabbed-content {
+  .tabs {
+    display: none;
+    @media screen and (min-width: $screen-md-min) {
+      display: block;
+    }
+    &--services {
+      margin-top: auto;
+      .tab {
+        display: block;
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 1.22222;
+        color: $black;
+        margin-bottom: 30px;
+        overflow: hidden;
+        position: relative;
+        @media screen and (min-width: $screen-xxl-min) {
+          font-size: 45px;
+        }
+
+        &:after {
+          content: '';
+          background: url("../images/icons/rightArrowBlue.svg") no-repeat center right;
+          width: 31px;
+          height: 31px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          left: -50px;
+          @include transitionEaseInOut(left);
+        }
+        &.active {
+          padding-left: 50px;
+          &:after {
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+  .tab {
+    cursor: pointer;
+    &.active,
+    &:hover {
+      color: $base-color-main;
+    }
+  }
+
+  .item {
+    opacity: 0;
+    @include transitionEaseInOut(opacity, 1s);
+    &-content {
+      display: none;
+    }
+    &.active {
+      opacity: 1;
+      .item-content {
+        display: block;
+      }
+    }
+
+    &::before {
+      content: attr(data-title);
+      @media screen and (min-width: $screen-md-min) {
+        display: none;
+      }
+    }
+  }
+}
+
+
+.swiper-pagination {
+  text-align: left;
+
+  &-bullet {
+    background: transparent;
+    display: block;
+    width: auto;
+    height: auto;
+  }
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0;
+}
+
+
+.revealOut {
+  overflow: hidden;
+  @media screen and (min-width: $screen-xxl) {
+    padding-bottom: 10px;
+  }
+}
+
+.revealIn {
+  display: inline-block;
+  transform: translateY(100px);
+  opacity: 0;
+  .swiper-slide &,
+  &.aos-init {
+    animation: verticalRevealRevert 1s cubic-bezier(0.19, 1, 0.22, 1);
+    animation-fill-mode: both;
+  }
+  .swiper-slide-active &,
+  &.aos-animate {
+    animation: verticalReveal 1s cubic-bezier(0.19, 1, 0.22, 1);
+    animation-fill-mode: both;
+    animation-delay: 0.5s;
+  }
+}
+
+.index-slider {
+  .swiper-wrapper.aos-animate[data-aos-delay="3000"]{
+    .revealIn {
+      //animation-delay: 3s;
+    }
+  }
+}
+
+.parallax-box {
+  overflow: hidden;
+}
+
+.spinner {
+  animation: spin 3s ease infinite;
+}
+
+.spinnerSlow {
+  animation: spin 15s ease infinite;
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes verticalReveal {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes verticalRevealRevert {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}
+
+
+
+//select
+.select2-container--default .select2-selection--single {
+  @extend .control;
+  .select2-selection__arrow {
+    height: 100%;
+  }
+  .select2-selection__rendered {
+    padding: 0;
+  }
+}
+.select2-container {
+  width: auto !important;
+  display: block;
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background: $base-color-main;
+}
+//select
+
+
+
+.long-arrow-left,
+.long-arrow-right {
+  transform: rotate(45deg);
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-width: 2px 2px 0 0;
+  border-style: solid;
+  color: #c4c4c4;
+  @include transitionEaseInOut(color);
+  &::before {
+    content: '';
+    right: 0;
+    top: -2px;
+    position: absolute;
+    height: 2px;
+    box-shadow: inset 0 0 0 32px;
+    transform: rotate(-45deg);
+    width: 29px;
+    -webkit-transform-origin: right top;
+    transform-origin: right top;
+    @include transitionEaseInOut(width);
+  }
+}
+.long-arrow-left {
+  transform: rotate(-135deg);
+}

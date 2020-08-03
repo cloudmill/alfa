@@ -1,0 +1,255 @@
+//
+// Partials -> Footer
+// ------------------------------------
+
+.footerTypes {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 130%;
+  @media screen and (min-width: $screen-md-min) {
+    font-size: 25px;
+  }
+
+  a {
+    color: $black;
+
+    &:hover {
+      color: $base-color-main;
+    }
+  }
+}
+
+.footerLinks {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 230%;
+  color: $gray-darken;
+}
+
+.page-footer {
+  padding: 40px 0;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid $gray;
+  @media screen and (min-width: $screen-md-min) {
+    background: url("../images/logo-footer.svg") no-repeat top 180px right;
+    padding: 70px 0;
+  }
+  @media screen and (min-width: $screen-xl-min) {
+    padding: 170px 0 100px;
+  }
+
+  &:after {
+    content: '';
+    height: 1px;
+    width: 100%;
+    background-color: $gray;
+    position: absolute;
+    left: 0;
+    top: -1px;
+    bottom: 0;
+  }
+
+  &-adr {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 160%;
+    color: $black;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    @media screen and (min-width: $screen-md-min) {
+      font-size: 16px;
+      margin-top: 0;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      margin-bottom: 0;
+    }
+  }
+
+  &-nav,
+  &-contact {
+    @media screen and (min-width: $screen-md-min) {
+      margin-bottom: 20px;
+    }
+    @media screen and (min-width: $screen-xl-min) {
+      margin-bottom: 100px;
+    }
+
+    br {
+      display: none;
+      @media screen and (min-width: $screen-lg-min) {
+        display: block;
+      }
+    }
+  }
+
+  &-menu {
+    @include list--unstyled;
+    @extend .footerTypes;
+
+    li {
+      margin-bottom: 20px;
+      @media screen and (min-width: $screen-md-min) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    @extend .first__lg;
+    @extend .text__lg--right;
+  }
+
+  &-smallTitle {
+    @extend .footerTypes;
+    position: relative;
+    padding: 10px 0;
+
+    &:after {
+      content: '';
+      left: -15px;
+      right: -15px;
+      top: 0;
+      height: 1px;
+      background-color: $gray;
+      display: block;
+      position: absolute;
+    }
+
+    @media screen and (min-width: $screen-md-min) {
+      margin-bottom: 20px;
+      border-top: none;
+      padding: 0;
+      &--up {
+        margin-top: 60px;
+      }
+
+      &:after {
+        height: 0;
+      }
+
+    }
+
+    &--js {
+      @media screen and (max-width: $screen-sm-max) {
+        background: url("../images/icons/footer.svg") no-repeat center right 15px;
+        + .page-footer-smallMenu {
+          display: none;
+          padding: 20px 0;
+        }
+        a {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &-smallMenu {
+    @include list--unstyled;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+
+    li:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    a {
+      color: $gray-darken;
+
+      &:hover {
+        color: $base-color-main;
+      }
+    }
+  }
+
+  &-copy {
+    @extend .footerLinks;
+  }
+
+  &-link {
+    @extend .footerLinks;
+
+    a {
+      color: $black;
+
+      &:hover {
+        color: $base-color-main;
+      }
+    }
+  }
+
+  .link-block {
+    &__title {
+      line-height: 110%;
+      @media screen and (min-width: $screen-xl-min) {
+        font-size: 45px;
+      }
+    }
+  }
+
+
+  @media screen and (max-width: $screen-sm-max) {
+    &-copylink {
+      order: 1;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+    &-menuLink {
+      position: relative;
+      order: 1;
+      padding-top: 30px;
+
+      &:after {
+        content: '';
+        left: -15px;
+        right: -15px;
+        top: 0;
+        height: 1px;
+        background-color: $gray;
+        display: block;
+        position: absolute;
+      }
+
+      .page-footer-menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+
+        > * {
+          width: 50%;
+        }
+      }
+
+      .m-auto {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 0;
+        margin-bottom: 20px;
+
+        > * {
+          width: 50%;
+        }
+      }
+    }
+
+    .navbar-youtube {
+      margin-top: 20px;
+    }
+
+    .navbar-phone,
+    .navbar-email {
+      margin-top: 10px;
+      display: block;
+      font-size: 18px;
+    }
+  }
+}
+
+
+.m-auto {
+  margin-top: auto;
+}

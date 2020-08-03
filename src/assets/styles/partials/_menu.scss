@@ -1,0 +1,163 @@
+//
+// Partials -> Menu
+// ------------------------------------
+
+.page-menu {
+  color: $base-color-main;
+  width: 30px;
+  position: fixed;
+  right: 15px;
+  top: 17px;
+  z-index: 100;
+  @media screen and (min-width: $screen-md-min) {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background-color: $base-color-main;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 90px;
+    padding: 60px 0;
+  }
+  &__logo {
+    perspective: 120px;
+    @extend .hidden__sm;
+    @extend .hidden__xs;
+  }
+  &__menu {
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    .menu {
+      width: 30px;
+      height: 12px;
+      @media screen and (min-width: $screen-md-min) {
+        width: 40px;
+        height: 24px;
+        margin: 0 auto 20px;
+      }
+      span {
+        width: 30px;
+        height: 2px;
+        margin: auto;
+        display: block;
+        background-color: $base-color-main;
+        @include transitionEaseInOut(all);
+        @media screen and (min-width: $screen-md-min) {
+          width: 42px;
+          background-color: white;
+        }
+        + span {
+          margin-top: 8px;
+          @media screen and (min-width: $screen-md-min) {
+            margin-top: 20px;
+          }
+        }
+      }
+
+      &.open {
+        span {
+          &:nth-child(1),
+          &:nth-child(2) {
+            margin: 0;
+            transform: translate(0px, 6px) rotate(-45deg);
+            @media screen and (min-width: $screen-md-min) {
+              transform: translate(0px, 11px) rotate(-45deg);
+            }
+          }
+          &:nth-child(2) {
+            transform: translate(0px, 4px) rotate(45deg);
+            @media screen and (min-width: $screen-md-min) {
+              transform: translate(0px, 9px) rotate(45deg);
+            }
+          }
+        }
+      }
+
+      + div {
+        display: none;
+        @media screen and (min-width: $screen-md-min) {
+          display: inline;
+        }
+      }
+    }
+
+    &:hover {
+      @media screen and (min-width: $screen-xl-min) {
+        span {
+          + span {
+            margin-top: -2px;
+          }
+        }
+      }
+    }
+  }
+  &__language {
+    font-weight: 500;
+    font-size: 20px;
+    @extend .hidden__sm;
+    @extend .hidden__xs;
+    a {
+      display: block;
+      text-decoration: none;
+      color: $base-color-dark;
+      + a {
+        margin-top: 30px;
+      }
+      &:hover,
+      &.active {
+        color: white;
+      }
+    }
+  }
+
+  &.scrolled {
+    @media screen and (max-width: $screen-sm-max) {
+      .menu {
+        span {
+          background-color: white;
+        }
+      }
+    }
+  }
+}
+
+
+.card {
+  height: 50px;
+  width: 50px;
+  position: relative;
+  @include transitionEaseInOut(all, 1s);
+  transform-style: preserve-3d;
+  //box-shadow: 1px 3px 3px rgba(0,0,0,0.2);
+  &:hover {
+    transform: rotateY(-180deg);
+  }
+  &-contents {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    background-color: $base-color-main;
+  }
+  &-depth {
+    perspective: inherit;
+  }
+  &-front {
+    transform-style: preserve-3d;
+  }
+  &-back {
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+  }
+}

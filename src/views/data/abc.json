@@ -1,0 +1,144 @@
+{
+  "ABCGloss": [
+    {
+      "title": "Автономные устройства контроля притока",
+      "subtitle": "AICV - autonomous inflow control valve"
+    },
+    {
+      "title": "Анализ NODAL",
+      "subtitle": "NODAL analysis"
+    },
+    {
+      "title": "Анализ методом конечных элементов",
+      "subtitle": "Anisotropic formation"
+    },
+    {
+      "title": "Анизотропия пласта",
+      "subtitle": "Anisotropic formation"
+    },
+    {
+      "title": "АНПД",
+      "subtitle": ""
+    },
+    {
+      "title": "Апертура фильтра",
+      "subtitle": "Aperture opening"
+    },
+    {
+      "title": "Анализ NODAL",
+      "subtitle": "NODAL analysis"
+    },
+    {
+      "title": "Анализ методом конечных элементов",
+      "subtitle": "Anisotropic formation"
+    },
+    {
+      "title": "Аппаратный комплекс PLT",
+      "subtitle": "PLT — production logging tools"
+    },
+    {
+      "title": "Буква Б",
+      "subtitle": "b"
+    },
+    {
+      "title": "Ветер",
+      "subtitle": ""
+    },
+    {
+      "title": "Город",
+      "subtitle": "city"
+    }
+  ],
+  "ABCTitle": [
+    {
+      "title": "А"
+    },
+    {
+      "title": "Б"
+    },
+    {
+      "title": "В"
+    },
+    {
+      "title": "Г"
+    },
+    {
+      "title": "Д"
+    },
+    {
+      "title": "Е"
+    },
+    {
+      "title": "Ж"
+    },
+    {
+      "title": "З"
+    },
+    {
+      "title": "И"
+    },
+    {
+      "title": "К"
+    },
+    {
+      "title": "Л"
+    },
+    {
+      "title": "М"
+    },
+    {
+      "title": "Н"
+    },
+    {
+      "title": "О"
+    },
+    {
+      "title": "П"
+    },
+    {
+      "title": "Р"
+    },
+    {
+      "title": "С"
+    },
+    {
+      "title": "Т"
+    },
+    {
+      "title": "У"
+    },
+    {
+      "title": "Ф"
+    },
+    {
+      "title": "Х"
+    },
+    {
+      "title": "Ц"
+    },
+    {
+      "title": "Ч"
+    },
+    {
+      "title": "Ш"
+    },
+    {
+      "title": "Щ"
+    },
+    {
+      "title": "Ъ"
+    },
+    {
+      "title": "Ы"
+    },
+    {
+      "title": "Э"
+    },
+    {
+      "title": "Ю"
+    },
+    {
+      "title": "Я"
+    }
+  ]
+}
