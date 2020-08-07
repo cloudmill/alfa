@@ -1,11 +1,25 @@
 .laboratory {
   &-item {
-    margin-top: 90px;
+    margin-top: 30px;
     border-top: 2px solid $black;
-    padding-bottom: 60px;
+    padding-bottom: 30px;
+    position: relative;
+    @media screen and (min-width: $screen-lg-min) {
+      margin-top: 60px;
+      padding-bottom: 60px;
+    }
+    @media screen and (min-width: $screen-xl-min) {
+      margin-top: 90px;
+    }
 
     h3 {
-      margin-bottom: $form-group-margin-bottom;
+      margin-bottom: $form-group-margin-bottom / 3;
+      @media screen and (min-width: $screen-md-min) {
+        margin-bottom: $form-group-margin-bottom;
+      }
+      @media screen and (max-width: $screen-sm-max) {
+        font-size: 15px;
+      }
     }
 
     .list--icons {
@@ -20,11 +34,17 @@
   }
 
   &-counter {
-    margin-top: 155px;
+    margin-top: 40px;
     display: flex;
     font-weight: 500;
     border-top: 2px solid $black;
     padding-top: 15px;
+    @media screen and (min-width: $screen-md-min) {
+      margin-top: 60px;
+    }
+    @media screen and (min-width: $screen-xl-min) {
+      margin-top: 155px;
+    }
     span {
       color: $black;
       -webkit-text-fill-color: white;
@@ -50,19 +70,30 @@
   }
 
   .swiper-button {
-    position: static;
+    position: absolute;
+    top: -50px;
+    right: 0;
     display: flex;
-    margin-top: auto;
+    @media screen and (min-width: $screen-md-min) {
+      position: static;
+      margin-top: auto;
+    }
     .swiper-prev {
-      margin-right: 45px;
+      margin-right: 21px;
+      @media screen and (min-width: $screen-md-min) {
+        margin-right: 45px;
+      }
     }
     > * {
       color: $black;
-      font-size: 40px;
+      font-size: 20px;
       transition: all .5s;
       cursor: pointer;
       transition: color .5s;
       line-height: 1;
+      @media screen and (min-width: $screen-md-min) {
+        font-size: 40px;
+      }
       &:hover {
         color: $base-color-main;
       }

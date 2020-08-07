@@ -2,8 +2,17 @@
 // Pages -> Index
 // ------------------------------------
 
+.page-main {
+  padding-top: 0;
+
+
+  .btn {
+    width: auto;
+  }
+}
+
 .row-add {
-  @media screen and (min-width: $screen-lg-min) {
+  @media screen and (min-width: $screen-xl-min) {
     margin-left: -40px;
     margin-right: -40px;
     > .col {
@@ -47,34 +56,63 @@
 }
 
 .nextBlock {
-  padding: 30px 55px;
+  padding: 20px 0;
   border-top: 2px solid $black;
   border-bottom: 2px solid $black;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   margin: 60px 0;
   color: $black;
   @include transitionEaseInOut(background-color);
   @media screen and (min-width: $screen-md-min) {
+    margin: 90px 0;
+    flex-wrap: nowrap;
+  }
+  @media screen and (min-width: $screen-lg-min) {
+    padding: 30px 55px;
+  }
+  @media screen and (min-width: $screen-xl-min) {
     margin: 170px 0;
   }
   &-desc {
     font-weight: 500;
-    font-size: 16px;
+    font-size: 11px;
     line-height: 150%;
+    width: 100%;
+    @media screen and (min-width: $screen-md-min) {
+      font-size: 16px;
+      width: auto;
+    }
   }
   &-title {
     font-weight: 600;
-    font-size: 35px;
+    font-size: 15px;
     line-height: 130%;
+    max-width: 70%;
+    width: 100%;
+    @media screen and (min-width: $screen-md-min) {
+      font-size: 20px;
+      max-width: inherit;
+      width: auto;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      font-size: 35px;
+    }
   }
   .long-arrow-right {
-    width: 43px;
-    height: 43px;
     color: $base-color-main;
-    &::before {
-      width: 57px;
+    top: -10px;
+    @media screen and (min-width: $screen-md-min) {
+      top: 0;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      width: 43px;
+      height: 43px;
+      &::before {
+        width: 57px;
+      }
     }
   }
 
@@ -91,8 +129,8 @@
     position: relative;
     &:after {
       content: '';
-      width: 57px;
-      height: 2px;
+      width: 15px;
+      height: 1px;
       background-color: $base-color-main;
       position: absolute;
       right: 2px;
@@ -100,11 +138,24 @@
       bottom: 0;
       margin: auto;
       @include transitionEaseInOut(width);
+      @media screen and (min-width: $screen-md-min) {
+        width: 40px;
+        height: 2px;
+      }
+      @media screen and (min-width: $screen-lg-min) {
+        width: 57px;
+      }
     }
   }
   &:hover {
     i::after {
-      width: 77px;
+      width: 30px;
+      @media screen and (min-width: $screen-md-min) {
+        width: 55px;
+      }
+      @media screen and (min-width: $screen-lg-min) {
+        width: 77px;
+      }
     }
   }
 }
@@ -133,23 +184,38 @@
     text-transform: uppercase;
     display: flex;
     align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    @media screen and (min-width: $screen-md-min) {
+      justify-content: flex-start;
+      width: auto;
+    }
     &-bullet {
+      flex: 1;
       background: transparent;
       display: block;
       color: white;
       width: auto;
       height: auto;
       font-weight: 500;
-      padding-left: 20px;
-      padding-right: 75px;
-      padding-bottom: 50px;
+      padding-left: 9px;
       transition: all .5s;
+      padding-bottom: 27px;
       position: relative;
       opacity: 1;
+      @media screen and (min-width: $screen-md-min) {
+        flex: inherit;
+        padding-left: 20px;
+        padding-right: 75px;
+        padding-bottom: 50px;
+      }
 
       &-active {
         font-size: 40px;
-        padding-bottom: 80px;
+        padding-bottom: 50px;
+        @media screen and (min-width: $screen-md-min) {
+          padding-bottom: 80px;
+        }
         &:before {
           @extend .paginationAnimate;
         }
@@ -219,11 +285,27 @@
       }
     }
     h2 {
-      font-size: 95px;
+      font-size: 32px;
       line-height: 1.18;
       font-weight: 400;
       text-transform: uppercase;
       margin: 0;
+      @media screen and (min-width: $screen-md-min) {
+        font-size: 60px;
+      }
+      @media screen and (min-width: $screen-lg-min) {
+        font-size: 70px;
+      }
+      @media screen and (min-width: $screen-xl-min) {
+        font-size: 95px;
+      }
+
+      img {
+        width: 50px;
+        @media screen and (min-width: $screen-md-min) {
+          width: auto;
+        }
+      }
 
       &:nth-child(2) {
         margin-left: 140px;
@@ -234,29 +316,61 @@
       }
     }
     &-title {
-      margin: auto 0;
+      margin-top: 125px;
+      @media screen and (min-width: $screen-md-min) {
+        margin-top: 25vh;
+      }
+      @media screen and (min-width: $screen-lg-min) {
+        margin: auto 0;
+      }
     }
     &-desc {
       font-weight: 500;
-      font-size: 26px;
+      font-size: 16px;
       line-height: 140%;
-      position: absolute;
-      bottom: 20px;
-      right: 25px;
+      margin-top: 40px;
+      @media screen and (min-width: $screen-md-min) {
+        font-size: 26px;
+      }
+      @media screen and (min-width: $screen-lg-min) {
+        position: absolute;
+        bottom: 3vh;
+        right: 25px;
+        margin-top: 0;
+        font-size: 22px;
+      }
+      @media screen and (min-width: $screen-lg-min) and (min-height: $screen-lg-min) {
+        bottom: 130px;
+        font-size: 26px;
+      }
+      @media screen and (min-width: $screen-xl-min) {
+        font-size: 26px;
+        bottom: 30px;
+      }
       @media screen and (min-width: $screen-xxl-min) {
         bottom: 60px;
       }
       p {
-        margin-bottom: 40px;
+        @media screen and (min-width: $screen-xl-min) {
+          margin-bottom: 40px;
+        }
       }
     }
   }
 
   &-services {
     position: relative;
+    overflow: hidden;
     .btn {
+      margin-left: 15px;
+      margin-top: 30px;
       @media screen and (min-width: $screen-md-min) {
         position: absolute;
+        bottom: 20px;
+        right: 20px;
+        margin: 0;
+      }
+      @media screen and (min-width: $screen-lg-min) {
         bottom: 60px;
         right: 90px;
       }
@@ -269,6 +383,14 @@
       padding: 8px 20px;
       display: inline-block;
       position: relative;
+      margin-top: 60px;
+      margin-bottom: 30px;
+      margin-left: 15px;
+      @media screen and (min-width: $screen-md-min) {
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+      }
 
       span {
         width: 13px;
@@ -313,10 +435,19 @@
     }
     &__item {
       @extend .indexItems;
-      padding: 60px 50px;
+      padding: 0;
+      @media screen and (min-width: $screen-md-min) {
+        padding: 20px 30px;
+      }
+      @media screen and (min-width: $screen-xl-min) {
+        padding: 60px 50px;
+      }
 
       img {
-        margin-top: -20px;
+        margin-top: 20px;
+        @media screen and (min-width: $screen-md-min) {
+          margin-top: -20px;
+        }
       }
 
       .list--bullet {
@@ -330,22 +461,47 @@
   }
 
   &-projects {
+    overflow: hidden;
     &__item {
       @extend .indexItems;
       padding-left: 0;
+      .index-services-title {
+        margin-left: 0;
+        margin-top: 40px;
+        @media screen and (min-width: $screen-md-min) {
+          margin-top: 0;
+        }
+      }
 
       &:first-child {
-        padding: 60px 50px;
+        padding: 20px 30px;
+        @media screen and (min-width: $screen-lg-min) {
+          padding: 60px 50px;
+        }
       }
+    }
+
+    .showOnMobile {
+      margin-left: 15px;
+      margin-top: 30px;
+      margin-bottom: 60px;
     }
   }
 }
 
 .menu-maps {
-  font-weight: 500;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 13px;
   line-height: 150%;
   color: $black;
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  @media screen and (min-width: $screen-md-min) {
+    font-size: 20px;
+    display: block;
+    overflow-x: visible;
+  }
   li {
     padding-bottom: 10px;
     margin-bottom: 30px;
@@ -354,12 +510,22 @@
     align-items: center;
     cursor: pointer;
     @include transitionEaseInOut(all);
+    white-space: nowrap;
+    margin-right: 20px;
+    @media screen and (min-width: $screen-md-min) {
+      white-space: normal;
+      margin-right: 0;
+    }
 
     span {
       width: 14px;
+      min-width: 14px;
       height: 14px;
       border-radius: 14px;
-      margin-right: 20px;
+      margin-right: 10px;
+      @media screen and (min-width: $screen-md-min) {
+        margin-right: 20px;
+      }
     }
     &:first-child span {
       background: $base-color-main;

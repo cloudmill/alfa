@@ -9,16 +9,16 @@ block content
     .container.service-container
       .equipmentList
         .equipmentList-item
-          .equipmentList-item__top
+          .equipmentList-item__top(data-aos='fade-up')
             .equipmentList-item__num 01.
-            .equipmentList-item__title
+            .equipmentList-item__title(data-aos='fade-up')
               h2: a(href='#')
                 span.long-arrow-right
                 | Проектирование и инжиниринг
-          .equipmentList-item__bottom
-            .row.bottom__xs
+          .equipmentList-item__bottom(data-aos='fade-up')
+            .row.bottom__lg.middle__xs
               .col.col__xl-3.col__lg-4.col__md-5.col__xs-12
-                ul.list--bullet
+                ul.list--bullet(data-aos='fade-up')
                   each value in list.project
                     li: a(href='#')
                       span.long-arrow-right
@@ -26,16 +26,16 @@ block content
               .col.col__xl-9.col__lg-8.col__md-7.col__xs-12.text--center
                 +img('tab2.jpg')
         .equipmentList-item
-          .equipmentList-item__top
+          .equipmentList-item__top(data-aos='fade-up')
             .equipmentList-item__num 02.
-            .equipmentList-item__title
+            .equipmentList-item__title(data-aos='fade-up')
               h2: a(href='#')
                 span.long-arrow-right
                 | Тестирование
-          .equipmentList-item__bottom
-            .row.bottom__xs
+          .equipmentList-item__bottom(data-aos='fade-up')
+            .row.bottom__lg.middle__xs
               .col.col__xl-3.col__lg-4.col__md-5.col__xs-12
-                ul.list--bullet
+                ul.list--bullet(data-aos='fade-up')
                   each value in list.testing
                     li: a(href='#')
                       span.long-arrow-right
@@ -43,16 +43,16 @@ block content
               .col.col__xl-9.col__lg-8.col__md-7.col__xs-12.text--center
                 +img('tab.jpg')
         .equipmentList-item
-          .equipmentList-item__top
+          .equipmentList-item__top(data-aos='fade-up')
             .equipmentList-item__num 03.
-            .equipmentList-item__title
+            .equipmentList-item__title(data-aos='fade-up')
               h2: a(href='#')
                 span.long-arrow-right
                 | Сопровождение
-          .equipmentList-item__bottom
-            .row.bottom__xs
+          .equipmentList-item__bottom(data-aos='fade-up')
+            .row.bottom__lg.middle__xs
               .col.col__xl-3.col__lg-4.col__md-5.col__xs-12
-                ul.list--bullet
+                ul.list--bullet(data-aos='fade-up')
                   each value in list.escort
                     li: a(href='#')
                       span.long-arrow-right

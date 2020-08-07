@@ -1,44 +1,95 @@
 .publications {
   &-container {
-    padding-top: 170px;
-    padding-bottom: 80px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @media screen and (min-width: $screen-md-min) {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      padding-top: 70px;
+      padding-bottom: 60px;
+    }
+    @media screen and (min-width: $screen-xl-min) {
+      padding-top: 170px;
+      padding-bottom: 80px;
+    }
   }
 
   .showMore {
     margin-top: 0;
-    margin-bottom: 90px;
+    margin-bottom: 30px;
+    padding-top: 0;
+    @media screen and (min-width: $screen-md-min) {
+      padding-top: 30px;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      margin-bottom: 90px;
+    }
   }
 
   &-item {
     border-top: 2px solid $black;
     padding-top: 20px;
-    margin-bottom: 90px;
+    margin-bottom: 60px;
+    display: block;
+    @media screen and (min-width: $screen-lg-min) {
+      margin-bottom: 90px;
+    }
 
     h3, h4 {
       margin-top: 0;
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 25px;
+      }
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 15px;
+      }
     }
 
     &-top {
       display: flex;
       justify-content: space-between;
-      height: 180px;
+      margin-bottom: 30px;
+      @media screen and (min-width: $screen-md-min) {
+        height: 110px;
+        margin-bottom: 0;
+      }
+      @media screen and (min-width: $screen-lg-min) {
+        height: 150px;
+      }
+      @media screen and (min-width: $screen-xl-min) {
+        height: 180px;
+      }
     }
     &-date {
       font-size: 16px;
       line-height: 150%;
       color: $gray-darken;
       text-align: right;
-      width: 150px;
-      min-width: 150px;
+      width: 120px;
+      min-width: 120px;
+      @media screen and (min-width: $screen-xl-min) {
+        width: 150px;
+        min-width: 150px;
+      }
     }
 
     &--inline {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       .publications-item-top {
-        width: 65%;
+        width: 100%;
+        @media screen and (min-width: $screen-lg-min) {
+          width: 65%;
+        }
       }
       img {
+        width: 100%;
+        @media screen and (min-width: $screen-lg-min) {
+          width: 30%;
+        }
         @media screen and (min-width: $screen-xl-min) {
           width: 30%;
         }
@@ -48,8 +99,13 @@
 
 
   &-soc {
-    padding-top: 190px;
-    max-width: 290px;
+    width: 100%;
+    margin-bottom: 30px;
+    @media screen and (min-width: $screen-lg-min) {
+      padding-top: 190px;
+      max-width: 290px;
+      margin-bottom: 0;
+    }
     .link-icon {
       font-weight: 500;
       font-size: 18px;
@@ -62,11 +118,19 @@
   .social {
     border-top: 2px solid $black;
     padding-top: 10px;
-    margin-top: 90px;
+    margin-top: 40px;
+    @media screen and (min-width: $screen-lg-min) {
+      margin-top: 90px;
+    }
+    p {
+      font-size: 18px;
+    }
     &-list {
       display: flex;
-      margin-top: 40px;
       margin-bottom: 0;
+      @media screen and (min-width: $screen-lg-min) {
+        margin-top: 40px;
+      }
       li {
         margin-right: 10px;
       }
@@ -104,12 +168,23 @@
   .breadcrumbs {
     padding-bottom: 0;
     margin-bottom: 50px;
+    @media screen and (max-width: $screen-md-max) {
+      overflow-x: auto;
+    }
+  }
+  .publications-item h3 {
+    @media screen and (max-width: $screen-md-max) {
+      font-size: 21px;
+    }
+    @media screen and (max-width: $screen-sm-max) {
+      font-size: 15px;
+    }
   }
 }
 
 
 .content {
-  span {
+  span:not(.revealIn) {
     font-style: italic;
     color: $base-color-main;
   }
@@ -122,26 +197,44 @@
   img,
   ol,
   ul {
-    margin-bottom: 90px;
+    margin-bottom: 40px;
+    @media screen and (min-width: $screen-lg-min) {
+      margin-bottom: 90px;
+    }
   }
   p {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    @media screen and (min-width: $screen-lg-min) {
+      margin-bottom: 50px;
+    }
   }
   h4 {
-    margin-top: 80px;
-    margin-bottom: 40px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    @media screen and (min-width: $screen-lg-min) {
+      margin-top: 80px;
+      margin-bottom: 40px;
+    }
   }
   &-img {
-    margin-bottom: 90px;
+    margin-bottom: 20px;
+    @media screen and (min-width: $screen-lg-min) {
+      margin-bottom: 90px;
+    }
     img {
-      margin-bottom: 30px;
+      margin-bottom: 10px;
+      @media screen and (min-width: $screen-md-min) {
+        margin-bottom: 30px;
+      }
     }
     p {
       margin-bottom: 0;
-      padding-left: 150px;
-      font-size: 14px;
       line-height: 150%;
       color: $gray-darken;
+      @media screen and (min-width: $screen-md-min) {
+        padding-left: 150px;
+        font-size: 14px;
+      }
     }
   }
 }
@@ -164,15 +257,35 @@
     h3 {
       margin-top: 0;
       @include transitionEaseInOut(color);
+      @media screen and (max-width: $screen-sm-max) {
+        font-size: 15px;
+      }
     }
     .publications-item-top {
       height: auto;
-      margin-bottom: 20px;
       width: 100%;
+      margin-top: 10px;
+      @media screen and (max-width: $screen-sm-max) {
+        margin-bottom: 0;
+      }
+      @media screen and (min-width: $screen-md-min) {
+        margin-bottom: 20px;
+        margin-top: 0;
+      }
     }
     i {
       margin-top: auto;
-      margin-left: 27px;
+      width: 11px;
+      margin-left: 10px;
+      display: none;
+      @media screen and (min-width: $screen-md-min) {
+        display: block;
+        margin-left: 27px;
+        width: 20px;
+      }
+      @media screen and (min-width: $screen-lg-min) {
+        width: auto;
+      }
     }
     &:hover {
       h3 {

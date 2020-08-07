@@ -38,7 +38,7 @@
 
 	<body class="page-main">
 		<!--[if lt IE 9]><p class="browsehappy">Данный сайт построен на передовых, современных технологиях и не поддерживает Ваш браузер. Настоятельно рекомендуем выбрать и установить любой из &nbsp;<a href="http://browsehappy.com/" target="_blank">современных браузеров.</a> Это бесплатно и займет всего несколько минут.</p><![endif]-->
-		<div class="page-menu">
+		<div class="page-menu" data-aos="fade-left" data-aos-delay="300">
 			<div class="page-menu__logo">
 				<div class="card">
 					<div class="card-contents card-front">
@@ -95,31 +95,31 @@
 			</div>
 		</div>
 		<div class="main__section">
-			<header class="page-header">
+			<header class="page-header" data-aos="fade-down">
 				<div class="container"><a class="logo" href="/"></a></div>
 			</header>
 			<main class="vacancy">
 				<div class="nav-title">
 					<div class="container">
-						<ul class="breadcrumbs">
-							<li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Главная</a></li>
-							<li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">О компании</a></li>
-							<li class="breadcrumbs__item active">Вакансии</li>
+						<ul class="breadcrumbs revealOut" data-aos="">
+							<li class="breadcrumbs__item"><a class="breadcrumbs__link revealIn" href="#">Главная</a></li>
+							<li class="breadcrumbs__item"><a class="breadcrumbs__link revealIn" href="#">О компании</a></li>
+							<li class="breadcrumbs__item active revealIn">Вакансии</li>
 						</ul>
-						<div class="mainTitle">
-							<h1>Вакансии</h1><img src="assets/images/logo-title.svg" alt="Alfa" />
+						<div class="mainTitle revealOut" data-aos="">
+							<h1 class="revealIn">Вакансии</h1><img class="revealIn" src="assets/images/logo-title.svg" alt="Alfa" />
 						</div>
 					</div>
 				</div>
 				<div class="container vacancy-container">
 					<div class="row row-add between__xs">
 						<aside class="col col__xl-3 col__lg-4 col__xs-12 hideOnMobileAndTablet">
-							<div class="vacancy-link">
+							<div class="vacancy-link" data-aos="fade-up">
 								<div><img src="assets/images/icons/hh.svg" alt="Alfa" /></div><span>Всегда активные <br> вакансии на сайте <br> <a href="#" target="_blank">hh.ru</a></span>
 							</div>
 						</aside>
 						<section class="col col__xl-8 col__lg-8 col__xs-12">
-							<div class="acc">
+							<div class="acc" data-aos="fade-up">
 								<div class="acc__card">
 									<div class="acc__title">Руководитель ОТК/Специалист по качеству<span></span></div>
 									<div class="acc__panel">
@@ -248,42 +248,42 @@
 								</div>
 							</div>
 							<div class="showOnMobile">
-								<div class="vacancy-link">
+								<div class="vacancy-link" data-aos="fade-up">
 									<div><img src="assets/images/icons/hh.svg" alt="Alfa" /></div><span>Всегда активные <br> вакансии на сайте <br> <a href="#" target="_blank">hh.ru</a></span>
 								</div>
 							</div>
-							<div class="vacancy-notFound">Если вы не нашли подходящей вакансии — присылайте резюме. <br> Мы всегда ищем талантливых специалистов.</div>
+							<div class="vacancy-notFound" data-aos="fade-up">Если вы не нашли подходящей вакансии — присылайте резюме. <br> Мы всегда ищем талантливых специалистов.</div>
 							<form class="form" id="form" method="POST" action="">
 								<div class="form-inner">
-									<h3>Отправить резюме</h3>
+									<h3 class="revealOut" data-aos=""><span class="revealIn">Отправить резюме</span></h3>
 									<div class="row row-add">
-										<div class="col col__md-6 col__xs-12 form__group">
+										<div class="col col__md-6 col__xs-12 form__group" data-aos="fade-up">
 											<div class="input input--hoshi"><input class="control input__field input__field--hoshi" type="text" name="name" id="nameVac" required="required" /><label class="input__label input__label--hoshi" for="nameVac"><span class="input__label-content input__label-content--hoshi">Имя</span></label>
 												<div class="error-content"></div>
 											</div>
 										</div>
-										<div class="col col__md-6 col__xs-12 form__group">
+										<div class="col col__md-6 col__xs-12 form__group" data-aos="fade-up">
 											<div class="input input--hoshi"><input class="control input__field input__field--hoshi" type="email" name="email" id="emailVac" required="required" /><label class="input__label input__label--hoshi" for="emailVac"><span class="input__label-content input__label-content--hoshi">Email</span></label>
 												<div class="error-content"></div>
 											</div>
 										</div>
-										<div class="col col__xs-12 form__group">
+										<div class="col col__xs-12 form__group" data-aos="fade-up">
 											<div class="input input--hoshi"><textarea class="control input__field input__field--hoshi" name="content" id="content"></textarea><label class="input__label input__label--hoshi" for="content"><span class="input__label-content input__label-content--hoshi">Сопроводительное письмо</span></label></div>
 										</div>
-										<div class="col col__xs-12 form__group">
+										<div class="col col__xs-12 form__group" data-aos="fade-up">
 											<div class="input__file"><input class="input__file-js" type="file">
 												<div class="input__text-js">Прикрепить файл<span><img src="assets/images/icons/dlink.svg" alt="Alfa" /></span></div>
 											</div>
 										</div>
-										<div class="col col__lg-6 col__md-7 col__xs-12 form__group">
+										<div class="col col__lg-6 col__md-7 col__xs-12 form__group" data-aos="fade-up">
 											<div class="radio"><input type="radio" name="agreed" id="agreed"><label for="agreed">Согласен на обработку персональных данных в соответствии с <a href="#">политикой конфиденциальности</a></label></div>
 										</div>
-										<div class="col col__lg-6 col__md-5 col__xs-12 form__group"><button class="btn btn--primary form--js" type="submit"><span></span>Отправить</button></div>
+										<div class="col col__lg-6 col__md-5 col__xs-12 form__group" data-aos="fade-up"><button class="btn btn--primary form--js" type="submit"><span></span>Отправить</button></div>
 									</div>
 								</div>
 								<div class="form-send">
-									<h3>Спасибо! Мы получили ваш сообщение. <br> На ответ на потребуется 2-3 дня. <br> Мы вышлем его на вашу электронную почту.</h3>
-									<div class="form__group form-back--js"><a class="btn btn--primary" href="#"><span></span>Отправить еще</a></div>
+									<h3 class="revealOut" data-aos=""><span class="revealIn">Спасибо! Мы получили ваш сообщение. <br> На ответ на потребуется 2-3 дня. <br> Мы вышлем его на вашу электронную почту.</span></h3>
+									<div class="form__group form-back--js" data-aos="fade-up"><a class="btn btn--primary" href="#"><span></span>Отправить еще</a></div>
 								</div>
 							</form>
 						</section>
@@ -292,18 +292,18 @@
 			</main>
 			<footer class="page-footer">
 				<div class="container">
-					<div class="row between__xs">
-						<div class="col col__lg-3 col__xs-12 page-footer-item first__lg last__xs">
+					<div class="row between__xs" data-aos="fade-up">
+						<div class="col col__lg-3 col__md-6 col__xs-12 page-footer-item first__lg last__xs">
 							<div class="page-footer-adr">г. Санкт-Петербург, наб. реки Мойки, <br> 75-79 лит. В, пом. 7Н</div>
 						</div>
-						<div class="col col__lg-8 col__xs-12">
+						<div class="col col__lg-8 col__md-6 col__xs-12">
 							<div class="page-footer-contact">
 								<div><a class="navbar-phone" href="tel:88123290190">8 812 329-01-90</a></div><br>
 								<div><a class="navbar-phone" href="mailto:info@alfahorizont.ru">info@alfahorizont.ru</a></div>
 							</div>
 						</div>
 					</div>
-					<div class="row between__xs page-footer-nav">
+					<div class="row between__xs page-footer-nav" data-aos="fade-up">
 						<div class="col col__lg-3 col__md-4 col__xs-12 page-footer-item page-footer-menuLink">
 							<ul class="page-footer-menu">
 								<li class="showOnMobile"><a href="#">Проекты</a></li>
@@ -354,7 +354,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="row bottom__xs between__xs">
+					<div class="row bottom__xs between__xs" data-aos="fade-up">
 						<div class="col col__lg-3 col__md-4 col__xs-12 page-footer-item page-footer-copylink">
 							<div class="page-footer-copy">© 2020 Альфа Горизонт</div>
 							<div class="page-footer-link">Сделано в <a href="https://cloudmill.ru" target="_blank">CloudMill</a></div>

@@ -8,13 +8,17 @@ if ($('.indexSlider').length > 0) {
     const prev = $this.parent().find(".swiper-prev")[0] || $('.swiper-prev-lab')[0];
     const next = $this.parent().find(".swiper-next")[0] || $('.swiper-next-lab')[0];
     const effect = $this.data('effect');
+    const adaptive = $this.data('adaptive');
+    const autoHeight = $this.data('autoheight');
 
     swiperInstances[index] = new Swiper($(this)[0], {
-      slidesPerView: 1,
+      slidesPerView: adaptive ? 'auto' : 1,
+      spaceBetween: adaptive ? 15 : 0,
       effect: effect || 'slide',
       // autoplay: {
       // delay: 5000,
       // },
+      autoHeight: !!autoHeight,
       pagination: {
         el: pagination,
         clickable: true,
@@ -25,6 +29,12 @@ if ($('.indexSlider').length > 0) {
       navigation: {
         prevEl: prev,
         nextEl: next,
+      },
+      breakpoints: {
+        768: {
+          spaceBetween: 0,
+          slidesPerView: 1,
+        }
       }
     });
 

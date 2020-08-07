@@ -4,7 +4,7 @@
 
 .br-style {
   display: inline;
-  @media screen and (min-width: $screen-lg-min) {
+  @media screen and (min-width: $screen-xl-min) {
     display: block;
   }
 }
@@ -57,8 +57,14 @@ h1, .alpha   {
   }
 }
 h2, .beta    {
-  font-size: $font-size-h2;
+  font-size: 18px;
   line-height: 1.23333;
+  @media screen and (min-width: $screen-md-min) {
+    font-size: $font-size-h2 * 0.8;
+  }
+  @media screen and (min-width: $screen-lg-min) {
+    font-size: $font-size-h2;
+  }
 }
 h3, .gamma   {
   line-height: 130%;
@@ -68,12 +74,21 @@ h3, .gamma   {
     font-size: $font-size-h3 * 0.7;
   }
   @media screen and (min-width: $screen-lg-min) {
+    font-size: $font-size-h3 * 0.9;
+  }
+  @media screen and (min-width: $screen-xl-min) {
     font-size: $font-size-h3;
   }
 }
 h4, .delta   {
   line-height: 150%;
-  font-size: $font-size-h4;
+  font-size: 18px;
+  @media screen and (min-width: $screen-md-min) {
+    font-size: 21px;
+  }
+  @media screen and (min-width: $screen-lg-min) {
+    font-size: $font-size-h4;
+  }
 }
 h5, .epsilon {
   line-height: 130%;
@@ -82,7 +97,10 @@ h5, .epsilon {
 h6, .zeta    {
   font-weight: 500;
   line-height: 150%;
-  font-size: $font-size-h6;
+  font-size: 15px;
+  @media screen and (min-width: $screen-md-min) {
+    font-size: $font-size-h6;
+  }
 }
 
 
@@ -133,10 +151,39 @@ b { font-weight: bold; }
 
 
 // Text size
-.text__xs { font-size: $font-size-tiny; }
-.text__sm { font-size: $font-size-small; }
-.text__md { font-size: $font-size-medium; }
-.text__lg { font-size: $font-size-large; }
+.text__xs {
+  font-size: 11px;
+  @media screen and (min-width: $screen-md-min) {
+    font-size: $font-size-tiny;
+  }
+}
+.text__sm {
+  font-size: 11px;
+  @media screen and (min-width: $screen-md-min) {
+    font-size: $font-size-small;
+  }
+  @media screen and (min-width: $screen-lg-min) {
+    font-size: 13px;
+  }
+  @media screen and (min-width: $screen-xl-min) {
+    font-size: $font-size-small;
+  }
+}
+.text__md {
+  font-size: 15px;
+  @media screen and (min-width: $screen-md-min) {
+    font-size: $font-size-medium;
+  }
+}
+.text__lg {
+  font-size: 13px;
+  @media screen and (min-width: $screen-md-min) {
+    font-size: 15px;
+  }
+  @media screen and (min-width: $screen-lg-min) {
+    font-size: $font-size-large;
+  }
+}
 
 
 @if $use-color-text == true {
@@ -215,13 +262,19 @@ ol {
     @include list--unstyled;
     color: $gray-darken-2;
     > li {
-      margin-bottom: 30px;
+      margin-bottom: 10px;
       padding-left: 35px;
       position: relative;
-      font-size: 16px;
+      font-size: 13px;
       @include transitionEaseInOut(padding-left);
-      &:last-child {
-        margin-bottom: 0;
+      @media screen and (min-width: $screen-md-min) {
+        margin-bottom: 25px;
+        font-size: 16px;
+      }
+      @media screen and (min-width: $screen-md-min) {
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
       a {
         display: block;
@@ -232,9 +285,12 @@ ol {
         height: 10px;
         color: #c4c4c4;
         position: absolute;
-        left: 0;
+        left: 10px;
         top: 7px;
         @include transitionEaseInOut(left);
+        @media screen and (min-width: $screen-lg-min) {
+          left: 0;
+        }
         &::before {
           width: 13px;
         }
@@ -246,7 +302,10 @@ ol {
         }
         .long-arrow-right {
           color: $base-color-main;
-          left: 10px;
+          left: 20px;
+          @media screen and (min-width: $screen-lg-min) {
+            left: 10px;
+          }
           &::before {
             width: 23px;
           }
@@ -260,8 +319,11 @@ ol {
     color: $gray-darken-2;
     > li {
       margin-bottom: 15px;
-      padding-left: 50px;
+      padding-left: 30px;
       position: relative;
+      @media screen and (min-width: $screen-md-min) {
+        padding-left: 50px;
+      }
 
       b {
         font-size: 18px;
@@ -282,27 +344,48 @@ ol {
         top: 8px;
       }
     }
+    &.row {
+      > li {
+        &::before {
+          left: 15px;
+        }
+      }
+    }
   }
 
   &--corner {
     @include list--unstyled;
     color: $gray-darken-2;
     > li {
-      margin-bottom: $form-group-margin-bottom;
+      margin-bottom: $form-group-margin-bottom / 3;
       padding-left: 56px;
       position: relative;
+      @media screen and (min-width: $screen-md-min) {
+        margin-bottom: $form-group-margin-bottom;
+      }
 
       &:last-child {
         margin-bottom: 0;
       }
       &::before {
         content: '';
-        width: 42px;
-        height: 57px;
+        width: 26px;
+        height: 35px;
         background: url("../images/icons/corner.svg");
         position: absolute;
         left: 0;
         top: -9px;
+        @media screen and (min-width: $screen-md-min) {
+          width: 42px;
+          height: 57px;
+        }
+      }
+    }
+    &.row {
+      > li {
+        &::before {
+          left: 15px;
+        }
       }
     }
   }
@@ -311,12 +394,26 @@ ol {
     @include list--unstyled;
     color: $gray-darken-2;
     border: 1px solid $gray;
-    padding: 0 90px;
-    font-size: 16px;
+    padding: 0 25px;
+    font-size: 13px;
+    margin-left: -15px;
+    margin-right: -15px;
+    @media screen and (min-width: $screen-md-min) {
+      padding: 0 35px;
+      font-size: 16px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      padding: 0 90px;
+    }
     > li {
-      padding: 30px 0;
+      padding: 20px 0;
       position: relative;
       border-bottom: 1px solid $gray;
+      @media screen and (min-width: $screen-md-min) {
+        padding: 30px 0;
+      }
 
       &:last-child {
         border-bottom: none;
@@ -326,7 +423,12 @@ ol {
 
   &--number {
     counter-reset: items;
-    padding-left: 140px;
+    @media screen and (min-width: $screen-lg-min) {
+      padding-left: 70px;
+    }
+    @media screen and (min-width: $screen-xl-min) {
+      padding-left: 140px;
+    }
     > li {
       margin-bottom: 20px;
       padding-left: 60px;

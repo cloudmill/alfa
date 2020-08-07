@@ -22,15 +22,14 @@
       margin-left: auto;
     }
     &--inline {
-      flex-direction: row;
-      align-items: flex-end;
-      bottom: auto;
-      width: 100%;
+      justify-content: space-between;
+      max-width: inherit;
+      width: 90%;
       h3 {
         margin: 0;
       }
-      .form__group {
-        margin-bottom: 0;
+      .form-back--js {
+        margin-left: auto;
       }
     }
   }
@@ -40,8 +39,23 @@
 .sign {
   border-top: 1px solid $gray;
   border-bottom: 1px solid $gray;
-  padding: 170px 0 110px;
+  padding: 40px 0;
+  @media screen and (min-width: $screen-md-min) {
+    padding: 60px 0;
+  }
+  @media screen and (min-width: $screen-lg-min) {
+    padding: 90px 0;
+  }
+  @media screen and (min-width: $screen-xl-min) {
+    padding: 170px 0 110px;
+  }
   h2 {
     margin: 0;
+    @media screen and (max-width: $screen-lg-max) {
+      font-size: 35px;
+    }
+    @media screen and (max-width: $screen-sm-max) {
+      font-size: 24px;
+    }
   }
 }

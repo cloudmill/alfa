@@ -44,7 +44,7 @@
       opacity: 0;
       transform: translate3d(0, 100px, 0);
 
-      @include transitionEaseInOut(all);
+      transition: transform .5s cubic-bezier(0.76, 0, 0.24, 1), opacity .5s cubic-bezier(0.76, 0, 0.24, 1);
     }
   }
 

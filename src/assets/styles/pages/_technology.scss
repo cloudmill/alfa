@@ -20,7 +20,7 @@
     @media screen and (min-width: $screen-md-min) {
       margin-bottom: 70px;
     }
-    @media screen and (min-width: $screen-lg-min) {
+    @media screen and (min-width: $screen-xl-min) {
       margin-bottom: 200px;
     }
   }
@@ -32,8 +32,10 @@
     }
     .mainTitle {
       border-color: $black;
-      margin-bottom: $form-group-margin-bottom;
-      padding-right: 200px;
+      @media screen and (min-width: $screen-md-min) {
+        margin-bottom: $form-group-margin-bottom;
+        padding-right: 200px;
+      }
     }
     .nav-background__desc {
       margin-top: 0;

@@ -3,21 +3,54 @@
     @extend .mainContainer;
   }
 
+  .page-footer-adr {
+    margin-bottom: 5px;
+    @media screen and (min-width: $screen-md-min) {
+      margin-bottom: 15px;
+    }
+  }
+
+  .link-icon {
+    margin-bottom: 30px;
+  }
+
   &-item {
-    margin-bottom: 90px;
+    margin-bottom: 30px;
+    @media screen and (min-width: $screen-md-min) {
+      margin-bottom: 60px;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      margin-bottom: 90px;
+    }
     p {
       margin-bottom: 20px;
-      margin-top: 10px;
+      @media screen and (min-width: $screen-md-min) {
+        margin-top: 10px;
+      }
+    }
+    &--mini {
+      @media screen and (min-width: $screen-md-min) {
+        margin-bottom: 20px;
+      }
     }
   }
   &-el {
     font-weight: 600;
-    font-size: 35px;
+    font-size: 15px;
     margin-bottom: 20px;
+    @media screen and (min-width: $screen-md-min) {
+      font-size: 24px;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      font-size: 35px;
+      line-height: 1.222;
+    }
   }
   &-link {
     color: $gray-darken;
-    margin-top: 20px;
     display: inline-block;
+    @media screen and (min-width: $screen-lg-min) {
+      margin-top: 20px;
+    }
   }
 }

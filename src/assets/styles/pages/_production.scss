@@ -1,47 +1,96 @@
 .production {
   &-item {
-    margin-top: 90px;
+    margin-top: 30px;
+    padding-bottom: 30px;
     border-top: 2px solid $black;
-    padding-bottom: 60px;
+    @media screen and (min-width: $screen-lg-min) {
+      margin-top: 60px;
+      padding-bottom: 60px;
+    }
+    @media screen and (min-width: $screen-xl-min) {
+      margin-top: 90px;
+    }
 
     .img, h4 {
-      margin-bottom: 80px;
+      margin-bottom: 40px;
+      @media screen and (max-width: $screen-sm-max) {
+        font-size: 15px;
+      }
+      @media screen and (min-width: $screen-md-min) {
+        margin-bottom: 60px;
+      }
+      @media screen and (min-width: $screen-lg-min) {
+        margin-bottom: 80px;
+      }
     }
 
     &--sub {
-      padding-top: 70px;
+      img {
+        margin-bottom: 30px;
+      }
+      @media screen and (min-width: $screen-xl-min) {
+        padding-top: 70px;
+      }
     }
   }
 
   &-info {
-    span {
+    @media screen and (min-width: $screen-md-min) {
+      display: flex;
+      align-items: flex-end;
+      margin: 30px 0;
+    }
+    @media screen and (min-width: $screen-xl-min) {
+      margin: 0;
+    }
+    > span {
       font-weight: 300;
-      font-size: 385px;
+      font-size: 32vw;
       line-height: 110%;
       position: relative;
+      @media screen and (min-width: $screen-md-min) {
+        font-size: 20.6vw;
+      }
       > sub {
         font-weight: 600;
-        font-size: 70px;
+        font-size: 8vw;
         line-height: 150%;
         position: absolute;
-        top: 70px;
+        top: 0;
+        @media screen and (min-width: $screen-md-min) {
+          font-size: 3.8vw;
+        }
         sub {
-          font-size: 40px;
           position: absolute;
-          top: -10px;
+          font-size: 4vw;
+          top: -7px;
+          @media screen and (min-width: $screen-md-min) {
+            font-size: 2vw;
+          }
+          @media screen and (min-width: $screen-lg-min) {
+            top: -14px;
+          }
         }
       }
     }
     p {
       font-weight: 600;
-      font-size: 25px;
       line-height: 130%;
-      display: inline-block;
+      margin-bottom: 40px;
+      @media screen and (min-width: $screen-lg-min) {
+        font-size: 25px;
+      }
     }
   }
 
   &-list {
-    margin-bottom: 170px;
+    margin-bottom: 40px;
+    @media screen and (min-width: $screen-lg-min) {
+      margin-bottom: 60px;
+    }
+    @media screen and (min-width: $screen-xl-min) {
+      margin-bottom: 170px;
+    }
   }
 
   .indexSlider {
@@ -62,10 +111,19 @@
   height: 67px;
   .swiper-pagination-bullet {
     color: $black;
-    font-size: 16px;
+    font-size: 11px;
     padding-bottom: 0;
-    padding-right: 60px;
-    height: 48px;
+    padding-right: 20px;
+    height: 27px;
+    @media screen and (min-width: $screen-md-min) {
+      font-size: 16px;
+      flex: inherit;
+      height: 48px;
+      padding-right: 30px;
+    }
+    @media screen and (min-width: $screen-xxl-min) {
+      padding-right: 60px;
+    }
     &:before {
       background: $base-color-main;
       width: 3px;
@@ -75,45 +133,74 @@
     }
     &-active {
       color: $base-color-main;
-      font-size: 25px;
+      font-size: 20px;
       padding-bottom: 0;
-      padding-right: 60px;
-      height: 67px;
+      padding-right: 20px;
+      height: 49px;
+      @media screen and (min-width: $screen-md-min) {
+        font-size: 25px;
+        padding-right: 30px;
+        height: 67px;
+      }
+      @media screen and (min-width: $screen-xxl-min) {
+        padding-right: 60px;
+      }
     }
   }
 }
 
 .swiper-button--bg {
   z-index: 89;
-  width: 246px;
+  width: 99px;
   display: flex;
   flex-direction: column;
   transition: width .5s;
+  @media screen and (min-width: $screen-md-min) {
+    width: 202px;
+  }
+  @media screen and (min-width: $screen-xl-min) {
+    width: 246px;
+  }
   .swiper-next {
     margin-left: auto;
   }
   > * {
     background: #fff;
     color: $base-color-main;
-    width: 101px;
-    height: 101px;
+    width: 40px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 40px;
+    font-size: 16px;
     transition: all .5s;
     cursor: pointer;
     transition: background .5s;
+    @media screen and (min-width: $screen-md-min) {
+      width: 101px;
+      height: 101px;
+      font-size: 40px;
+    }
     i {
       color: $base-color-main;
       transition: color .5s;
     }
     &.swiper-next {
-      font-size: 57px;
-      width: 145px;
-      height: 145px;
       color: #fff;
+      width: 58px;
+      height: 58px;
+      font-size: 24px;
       background: $base-color-main;
+      @media screen and (min-width: $screen-md-min) {
+        width: 101px;
+        height: 101px;
+        font-size: 40px;
+      }
+      @media screen and (min-width: $screen-xl-min) {
+        width: 145px;
+        height: 145px;
+        font-size: 57px;
+      }
       i {
         color: #fff;
       }

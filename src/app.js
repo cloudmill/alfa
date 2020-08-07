@@ -4,6 +4,8 @@ import AOS from 'aos';
 
 // Styles
 import 'Styles/_app.scss';
+import { sticky } from 'Scripts/customscripts';
+import { isMobileAndTabletOnly } from "./assets/scripts/utils";
 
 $(document).ready(() => {
 	// header
@@ -20,17 +22,20 @@ $(document).ready(() => {
 	require('Scripts/input');
 	require('Scripts/parallax');
 
+	if(!isMobileAndTabletOnly) {
+    sticky();
+  }
+
 	// backend
 	require('Scripts/backend');
 });
 
 
-// mobile sctipts
-const screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-if (screenWidth <= 767) {
-	console.log(screenWidth);
-}
-// mobile sctipts
+$(window).on("orientationchange", function() {
+  setTimeout(() => {
+    sticky();
+  }, 500);
+});
 
 
 $(window).on("load", function() {
@@ -38,6 +43,13 @@ $(window).on("load", function() {
   if($(".loaderInner").length) {
     $('body').css('overflow', 'visible');
     $('.loader').addClass('hideIt');
+
+    setTimeout(function () {
+      AOS.init({
+        offset: 50,
+      });
+    }, 500);
+
   } else {
     $('.loader-hide').addClass('showIt');
     setTimeout(function () {
@@ -48,6 +60,9 @@ $(window).on("load", function() {
         offset: 50,
       });
 
+      if(process.env.NODE_ENV === 'production') {
+        window.scrollTo(0, 0);
+      }
     }, 1600);
   }
 });

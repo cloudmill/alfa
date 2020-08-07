@@ -38,7 +38,7 @@
 
 	<body class="page-main">
 		<!--[if lt IE 9]><p class="browsehappy">Данный сайт построен на передовых, современных технологиях и не поддерживает Ваш браузер. Настоятельно рекомендуем выбрать и установить любой из &nbsp;<a href="http://browsehappy.com/" target="_blank">современных браузеров.</a> Это бесплатно и займет всего несколько минут.</p><![endif]-->
-		<div class="page-menu">
+		<div class="page-menu" data-aos="fade-left" data-aos-delay="300">
 			<div class="page-menu__logo">
 				<div class="card">
 					<div class="card-contents card-front">
@@ -95,7 +95,7 @@
 			</div>
 		</div>
 		<div class="main__section">
-			<header class="page-header page-header__fixed">
+			<header class="page-header page-header__fixed" data-aos="fade-down">
 				<div class="container"><a class="logo" href="/"></a></div>
 			</header>
 			<main class="page-main">
@@ -103,7 +103,33 @@
 					<div class="indexSlider swiper-container" data-effect="fade">
 						<div class="swiper-wrapper parallax-box" data-aos="" data-aos-delay="3000" data-hook="0">
 							<div class="swiper-slide">
-								<div class="slider-back parallax-item" style="background: url(&quot;assets/images/slide.jpg&quot;) no-repeat center / cover"></div>
+								<div class="slider-back parallax-item">
+									<div class="image" style="background: url(&quot;assets/images/slide.jpg&quot;) no-repeat center / cover"></div>
+								</div>
+								<div class="container relative">
+									<div class="index-slider-title">
+										<div class="revealOut" data-aos="">
+											<h2 class="revealIn">Фильтры</h2>
+										</div>
+										<div class="revealOut" data-aos="">
+											<h2 class="revealIn">прямой</h2>
+										</div>
+										<div class="revealOut" data-aos="">
+											<h2 class="revealIn">намотки</h2>
+										</div>
+										<div class="revealOut" data-aos="">
+											<h2 class="revealIn title-icon"><img src="assets/images/alfa.svg" alt="Alfa" /><span>АльфаДирект</span></h2>
+										</div>
+									</div>
+									<div class="index-slider-desc">
+										<p>Высокопрочные проволочные <br> фильтры для наземных <br> и&nbsp;оффшорных месторождений <br> нефти и газа</p><a class="btn btn--primary btn--transparent" href="#"><span></span>Подробнее</a>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="slider-back parallax-item">
+									<div class="image" style="background: url(&quot;assets/images/slide1.jpg&quot;) no-repeat center / cover"></div>
+								</div>
 								<div class="container relative">
 									<div class="index-slider-title">
 										<div class="revealOut" data-aos="">
@@ -125,7 +151,9 @@
 								</div>
 							</div>
 							<div class="swiper-slide">
-								<div class="slider-back" style="background: url(&quot;assets/images/slide1.jpg&quot;) no-repeat center / cover"></div>
+								<div class="slider-back parallax-item">
+									<div class="image" style="background: url(&quot;assets/images/slide.jpg&quot;) no-repeat center / cover"></div>
+								</div>
 								<div class="container relative">
 									<div class="index-slider-title">
 										<div class="revealOut" data-aos="">
@@ -142,34 +170,14 @@
 										</div>
 									</div>
 									<div class="index-slider-desc">
-										<p>Высокопрочные проволочные <br> фильтры для наземных <br> и&nbsp;оффшорных месторождений <br> нефти и газа</p><a class="btn btn--primary" href="#"><span></span>Подробнее</a>
+										<p>Высокопрочные проволочные <br> фильтры для наземных <br> и&nbsp;оффшорных месторождений <br> нефти и газа</p><a class="btn btn--primary btn--transparent" href="#"><span></span>Подробнее</a>
 									</div>
 								</div>
 							</div>
 							<div class="swiper-slide">
-								<div class="slider-back parallax-item" style="background: url(&quot;assets/images/slide.jpg&quot;) no-repeat center / cover"></div>
-								<div class="container relative">
-									<div class="index-slider-title">
-										<div class="revealOut" data-aos="">
-											<h2 class="revealIn">Фильтры</h2>
-										</div>
-										<div class="revealOut" data-aos="">
-											<h2 class="revealIn">прямой</h2>
-										</div>
-										<div class="revealOut" data-aos="">
-											<h2 class="revealIn">намотки</h2>
-										</div>
-										<div class="revealOut" data-aos="">
-											<h2 class="revealIn title-icon"><img src="assets/images/alfa.svg" alt="Alfa" /><span>АльфаДирект</span></h2>
-										</div>
-									</div>
-									<div class="index-slider-desc">
-										<p>Высокопрочные проволочные <br> фильтры для наземных <br> и&nbsp;оффшорных месторождений <br> нефти и газа</p><a class="btn btn--primary" href="#"><span></span>Подробнее</a>
-									</div>
+								<div class="slider-back parallax-item">
+									<div class="image" style="background: url(&quot;assets/images/slide1.jpg&quot;) no-repeat center / cover"></div>
 								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="slider-back" style="background: url(&quot;assets/images/slide1.jpg&quot;) no-repeat center / cover"></div>
 								<div class="container relative">
 									<div class="index-slider-title">
 										<div class="revealOut" data-aos="">
@@ -199,103 +207,109 @@
 				<section class="index-layout"></section>
 				<section class="index-services">
 					<div class="row tabbed-content">
-						<div class="col col__lg-4 col__md-6 col__xs-12 index-services__item">
-							<div class="index-services-title"><span></span>Сервис<span></span></div>
-							<div class="tabs tabs--services"><a class="tab active" href="#project">Проектирование <br> и инжиниринг</a><a class="tab" href="#test">Тестирование</a><a class="tab" href="#escort">Сопровождение</a></div>
+						<div class="col col__xl-4 col__lg-6 col__md-5 col__xs-12 index-services__item">
+							<div class="revealOut" data-aos="">
+								<div class="index-services-title revealIn"><span></span>Сервис<span></span></div>
+							</div>
+							<div class="tabs tabs--services"><a class="tab active" href="#project" data-aos="fade-up">Проектирование <br> и инжиниринг</a><a class="tab" href="#test" data-aos="fade-up">Тестирование</a><a class="tab" href="#escort" data-aos="fade-up">Сопровождение</a></div>
 						</div>
-						<div class="col col__lg-8 col__md-6 col__xs-12 index-services__item">
+						<div class="col col__xl-8 col__lg-6 col__md-7 col__xs-12 index-services__item">
 							<div class="item active" id="project" data-title="Проектирование и инжиниринг">
 								<div class="item-content">
 									<div class="row">
-										<div class="col col__md-6 cols__xs-12">
-											<ul class="list--bullet">
+										<div class="col col__lg-6 cols__xs-12">
+											<ul class="list--bullet" data-aos="fade-up">
 												<li><span class="long-arrow-right"></span>Механические тесты <span></span> на&nbsp;прочность фильтров</li>
 												<li><span class="long-arrow-right"></span>Лазерно-оптический контроль <span></span> щелевых зазоров</li>
 												<li><span class="long-arrow-right"></span>Тесты пропускной способности <span></span> фильтров</li>
 											</ul>
 										</div>
-										<div class="col col__md-6 cols__xs-12">
-											<ul class="list--bullet">
+										<div class="col col__lg-6 cols__xs-12">
+											<ul class="list--bullet" data-aos="fade-up">
 												<li><span class="long-arrow-right"></span>Гидравлические тесты на смятие <span></span> и&nbsp;разрыв</li>
 												<li><span class="long-arrow-right"></span>Тесты по методикам разрушающего <span></span> и&nbsp;неразрущающего контроля</li>
 											</ul>
 										</div>
-										<div class="col col__xs-12 text--center"><img src="assets/images/tab.jpg" alt="Alfa" /></div>
+										<div class="col col__xs-12 text--center" data-aos="fade-up"><img src="assets/images/tab.jpg" alt="Alfa" /></div>
 									</div>
 								</div>
 							</div>
 							<div class="item" id="test" data-title="Тестирование">
 								<div class="item-content">
 									<div class="row">
-										<div class="col col__md-6 cols__xs-12">
-											<ul class="list--bullet">
+										<div class="col col__lg-6 cols__xs-12">
+											<ul class="list--bullet" data-aos="fade-up">
 												<li><span class="long-arrow-right"></span>Анализ скважинных условий <span></span> для&nbsp;разработки дизайна хвостовика</li>
 												<li><span class="long-arrow-right"></span>Моделирование работы скважины <span></span> кандидата с&nbsp;различными УКП</li>
 												<li><span class="long-arrow-right"></span>Подбор и расстановка элементов <span></span> компоновки заканчивания по зонам</li>
 											</ul>
 										</div>
-										<div class="col col__md-6 cols__xs-12">
-											<ul class="list--bullet">
+										<div class="col col__lg-6 cols__xs-12">
+											<ul class="list--bullet" data-aos="fade-up">
 												<li><span class="long-arrow-right"></span>Гидравличекие расчеты с оценкой появления <span></span> потенциальных зон прорыва воды и газа</li>
 												<li><span class="long-arrow-right"></span>Моделирование спуска компоновки <span></span> хвостовика</li>
 											</ul>
 										</div>
-										<div class="col col__xs-12 text--center"><img src="assets/images/tab2.jpg" alt="Alfa" /></div>
+										<div class="col col__xs-12 text--center" data-aos="fade-up"><img src="assets/images/tab2.jpg" alt="Alfa" /></div>
 									</div>
 								</div>
 							</div>
 							<div class="item" id="escort" data-title="Сопровождение">
 								<div class="item-content">
 									<div class="row">
-										<div class="col col__md-6 cols__xs-12">
-											<ul class="list--bullet">
+										<div class="col col__lg-6 cols__xs-12">
+											<ul class="list--bullet" data-aos="fade-up">
 												<li><span class="long-arrow-right"></span>Тщательная проработка ТЗ <span></span> и&nbsp;условий контракта</li>
 												<li><span class="long-arrow-right"></span>Контроль качества на всех <span></span> этапах выполнения контракта</li>
 											</ul>
 										</div>
-										<div class="col col__md-6 cols__xs-12">
-											<ul class="list--bullet">
+										<div class="col col__lg-6 cols__xs-12">
+											<ul class="list--bullet" data-aos="fade-up">
 												<li><span class="long-arrow-right"></span>Мобилизация персонала <span></span> и&nbsp;оборудования для проведения ИТС</li>
 												<li><span class="long-arrow-right"></span>Выполнение технологических операций <span></span> на&nbsp;месторождениях Заказчика</li>
 											</ul>
 										</div>
-										<div class="col col__xs-12 text--center"><img src="assets/images/tab3.jpg" alt="Alfa" /></div>
+										<div class="col col__xs-12 text--center" data-aos="fade-up"><img src="assets/images/tab3.jpg" alt="Alfa" /></div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div><a class="btn btn--primary" href="#"><span></span>Все услуги</a>
+					</div><a class="btn btn--primary" href="#" data-aos="fade-up"><span></span>Все услуги</a>
 				</section>
 				<section class="index-projects">
 					<div class="row">
-						<div class="col col__lg-4 col__md-6 col__xs-12 index-projects__item">
-							<div class="index-services-title"><span></span>Проекты<span></span></div>
+						<div class="col col__xl-4 col__lg-6 col__md-5 col__xs-12 index-projects__item">
+							<div class="revealOut" data-aos="">
+								<div class="index-services-title revealIn"><span></span>Проекты<span></span></div>
+							</div>
 							<ul class="filters--js menu-maps">
-								<li data-icon="assets/images/icons/bubbleb.svg" data-group="assets/images/icons/markerb.svg" data-coordinates="[&quot;59.91701049, 30.31812429&quot;,&quot;59.91916157, 30.3251195&quot;]"><span></span>Сервис, поставки</li>
-								<li data-icon="assets/images/icons/bubblel.svg" data-group="assets/images/icons/markerl.svg" data-coordinates="[&quot;59.91756978, 30.31812429&quot;,&quot;59.92049517, 30.33250093&quot;,&quot;59.91701049, 30.3276515&quot;]"><span></span>Выставки и конференции</li>
-								<li data-icon="assets/images/icons/bubble.svg" data-group="assets/images/icons/marker.svg" data-coordinates="[&quot;59.92256978, 30.31812429&quot;,&quot;59.92349517, 30.33250093&quot;,&quot;59.92401049, 30.3276515&quot;]"><span></span>Партнерские проекты</li>
-							</ul><a class="btn btn--primary" href="#"><span></span>Все проекты</a>
+								<li data-aos="fade-up" data-icon="assets/images/icons/bubbleb.svg" data-group="assets/images/icons/markerb.svg" data-coordinates="[&quot;59.91701049, 30.31812429&quot;,&quot;59.91916157, 30.3251195&quot;]"><span></span>Сервис, поставки</li>
+								<li data-aos="fade-up" data-icon="assets/images/icons/bubblel.svg" data-group="assets/images/icons/markerl.svg" data-coordinates="[&quot;59.91756978, 30.31812429&quot;,&quot;59.92049517, 30.33250093&quot;,&quot;59.91701049, 30.3276515&quot;]"><span></span>Выставки и конференции</li>
+								<li data-aos="fade-up" data-icon="assets/images/icons/bubble.svg" data-group="assets/images/icons/marker.svg" data-coordinates="[&quot;59.92256978, 30.31812429&quot;,&quot;59.92349517, 30.33250093&quot;,&quot;59.92401049, 30.3276515&quot;]"><span></span>Партнерские проекты</li>
+							</ul>
+							<div class="hideOnMobile"><a class="btn btn--primary" href="#"><span></span>Все проекты</a></div>
 						</div>
-						<div class="col col__lg-8 col__md-6 col__xs-12 index-projects__item">
+						<div class="col col__xl-8 col__lg-6 col__md-7 col__xs-12 index-projects__item" data-aos="fade-up">
 							<div id="googleMaps"></div>
 						</div>
 					</div>
+					<div class="showOnMobile"><a class="btn btn--primary" href="#" data-aos="fade-up"><span></span>Все проекты</a></div>
 				</section>
 			</main>
 			<footer class="page-footer">
 				<div class="container">
-					<div class="row between__xs">
-						<div class="col col__lg-3 col__xs-12 page-footer-item first__lg last__xs">
+					<div class="row between__xs" data-aos="fade-up">
+						<div class="col col__lg-3 col__md-6 col__xs-12 page-footer-item first__lg last__xs">
 							<div class="page-footer-adr">г. Санкт-Петербург, наб. реки Мойки, <br> 75-79 лит. В, пом. 7Н</div>
 						</div>
-						<div class="col col__lg-8 col__xs-12">
+						<div class="col col__lg-8 col__md-6 col__xs-12">
 							<div class="page-footer-contact">
 								<div><a class="navbar-phone" href="tel:88123290190">8 812 329-01-90</a></div><br>
 								<div><a class="navbar-phone" href="mailto:info@alfahorizont.ru">info@alfahorizont.ru</a></div>
 							</div>
 						</div>
 					</div>
-					<div class="row between__xs page-footer-nav">
+					<div class="row between__xs page-footer-nav" data-aos="fade-up">
 						<div class="col col__lg-3 col__md-4 col__xs-12 page-footer-item page-footer-menuLink">
 							<ul class="page-footer-menu">
 								<li class="showOnMobile"><a href="#">Проекты</a></li>
@@ -346,7 +360,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="row bottom__xs between__xs">
+					<div class="row bottom__xs between__xs" data-aos="fade-up">
 						<div class="col col__lg-3 col__md-4 col__xs-12 page-footer-item page-footer-copylink">
 							<div class="page-footer-copy">© 2020 Альфа Горизонт</div>
 							<div class="page-footer-link">Сделано в <a href="https://cloudmill.ru" target="_blank">CloudMill</a></div>

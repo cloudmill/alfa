@@ -11,13 +11,19 @@
   cursor: pointer;
   text-decoration: none;
   background-image: none;
-  height: 58px;
+  height: 48px;
   border: 1px solid transparent;
   position: relative;
   font-weight: 500;
-  @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-medium, 1.2222, $btn-border-radius-base);
-
+  @include button-size($padding-base-vertical, $padding-base-horizontal, 15px, 1.2222, $btn-border-radius-base);
+  width: 100%;
   min-width: 160px;
+
+  @media screen and (min-width: $screen-md-min) {
+    width: auto;
+    height: 58px;
+    @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-medium, 1.2222, $btn-border-radius-base);
+  }
 
   &:hover,
   &:focus,
@@ -90,7 +96,7 @@
       &::before {
         content: '';
         position: absolute;
-        left: -1px;
+        left: -2px;
         top: -1px;
         width: 30%;
         height: 103%;
@@ -125,21 +131,10 @@
         }
       }
     }
-    &--success {
-      @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
-    }
-    &--info {
-      @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
-    }
-    &--warning {
-      @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
-    }
-    &--danger {
-      @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
-    }
-    &--outlined {
-      @include button-variant-tr($btn-outlined-color, $btn-outlined-bg, $btn-outlined-border);
-
+    &--transparent {
+      background-color: transparent;
+      color: white;
+      border-color: rgba(#E5E5E5, 0.4);
     }
   }
 

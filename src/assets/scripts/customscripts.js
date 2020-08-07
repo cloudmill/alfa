@@ -1,3 +1,5 @@
+import AOS from "aos";
+
 // accordion
 $('.accordion li').click(function (e) {
   e.preventDefault();
@@ -21,6 +23,13 @@ $(function() {
     }
 
     dropDown.stop(false, true).slideToggle();
+
+    setTimeout(() => {
+      AOS.init({
+        offset: 50,
+      });
+    }, 500);
+
     j.preventDefault();
   });
 });
@@ -64,6 +73,12 @@ export function showMoreFunc(block, counter, button, firstInit, filter) {
           $(this).hide();
         }
       }
+
+      setTimeout(() => {
+        AOS.init({
+          offset: 50,
+        });
+      }, 500);
     });
   }
 }
@@ -110,6 +125,12 @@ function filterLogic(value, condition, isCharacter, elem) {
       showMoreFunc(".acc .acc__card", 9, '.more--js', false);
     }
   }
+
+  setTimeout(() => {
+    AOS.init({
+      offset: 50,
+    });
+  }, 500);
 }
 
 $(".abc--js li").click(function () {
@@ -157,34 +178,36 @@ $('.form-back--js').click(function () {
 
 
 // sticky
-const $window = $(window);
-const $sidebar = $(".sidebar");
-if($sidebar.length) {
-  const $sidebarHeight = $sidebar.innerHeight();
-  const $footerOffsetTop = $(".stopper").offset().top;
-  const $sidebarOffset = $sidebar.offset();
+export function sticky() {
+  const $window = $(window);
+  const $sidebar = $(".sidebar");
+  if ($sidebar.length) {
+    const $sidebarHeight = $sidebar.innerHeight();
+    const $footerOffsetTop = $(".stopper").offset().top;
+    const $sidebarOffset = $sidebar.offset();
 
-  $window.scroll(function () {
-    const windScroll = $window.scrollTop();
+    $window.scroll(function () {
+      const windScroll = $window.scrollTop();
 
-    $('.template__item--js').each(function (i) {
-      if ($(this).position().top <= windScroll + 60) {
-        $('.equipmentNav li.active').removeClass('active');
-        $('.equipmentNav li').eq(i).addClass('active');
+      $('.template__item--js').each(function (i) {
+        if ($(this).position().top <= windScroll + 60) {
+          $('.equipmentNav li.active').removeClass('active');
+          $('.equipmentNav li').eq(i).addClass('active');
+        }
+      });
+
+      if (windScroll > $sidebarOffset.top) {
+        $sidebar.addClass("fixed");
+      } else {
+        $sidebar.removeClass("fixed");
+      }
+      if (windScroll + $sidebarHeight > $footerOffsetTop) {
+        $sidebar.css({"top": -(windScroll + $sidebarHeight - $footerOffsetTop)});
+      } else {
+        $sidebar.css({"top": "10px",});
       }
     });
-
-    if (windScroll > $sidebarOffset.top) {
-      $sidebar.addClass("fixed");
-    } else {
-      $sidebar.removeClass("fixed");
-    }
-    if (windScroll + $sidebarHeight > $footerOffsetTop) {
-      $sidebar.css({"top": -(windScroll + $sidebarHeight - $footerOffsetTop)});
-    } else {
-      $sidebar.css({"top": "0",});
-    }
-  });
+  }
 }
 // sticky
 

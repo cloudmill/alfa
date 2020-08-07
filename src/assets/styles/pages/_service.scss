@@ -4,10 +4,12 @@
   }
 
   .equipmentList-item:last-child {
-    .equipmentList-item__bottom {
-      position: relative;
-      top: -100px;
-      z-index: -1;
+    @media screen and (min-width: $screen-lg-min) {
+      .equipmentList-item__bottom {
+        position: relative;
+        top: -100px;
+        z-index: -1;
+      }
     }
   }
 }

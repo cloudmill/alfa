@@ -1,54 +1,92 @@
 .about {
   &-mission {
-    margin-top: 140px;
+    margin-top: 20px;
     border-top: 2px solid $black;
+    @media screen and (min-width: $screen-md-min) {
+      margin-top: 60px;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      margin-top: 140px;
+    }
     &-item {
       & + & {
         margin-top: $form-group-margin-bottom;
       }
     }
-    h3 {
+  }
+  h3 {
+    margin-bottom: $form-group-margin-bottom / 2;
+    @media screen and (min-width: $screen-md-min) {
       margin-bottom: $form-group-margin-bottom;
+    }
+    @media screen and (max-width: $screen-sm-max) {
+      font-size: 18px;
+      margin-top: 8px;
     }
   }
   &-history {
     border-top: 2px solid $black;
     border-bottom: 1px solid $gray;
-    h3 {
-      margin-bottom: $form-group-margin-bottom;
-    }
     &-items {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      padding-bottom: 20px;
+      @media screen and (min-width: $screen-md-min) {
+        justify-content: space-between;
+        padding-bottom: 20px;
+      }
     }
     &-item {
-      padding: 30px 55px;
-      border-left: 1px solid $gray;
-      p {
-        margin-bottom: 35px;
+      @media screen and (min-width: $screen-md-min) {
+        padding: 30px 55px;
+        border-left: 1px solid $gray;
+        p {
+          margin-bottom: 35px;
+        }
+      }
+      .swiper-slide {
+        padding-top: 128px;
+        position: relative;
+        @media screen and (min-width: $screen-md-min) {
+          padding-top: 0;
+        }
       }
     }
     .year {
-      margin-top: 80px;
       font-weight: 600;
-      font-size: 95px;
+      font-size: 45px;
       line-height: 0.95;
-      text-align: right;
       text-transform: uppercase;
+      position: absolute;
+      left: 0;
+      top: 58px;
+      @media screen and (min-width: $screen-md-min) {
+        font-size: 65px;
+        margin-top: 80px;
+        text-align: right;
+        position: static;
+      }
+      @media screen and (min-width: $screen-lg-min) {
+        font-size: 95px;
+      }
     }
 
     .swiper-button {
-      font-size: 41px;
+      font-size: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 125px;
+      width: 60px;
       position: absolute;
-      bottom: 0;
-      left: 0;
+      top: 11px;
+      right: 0;
       z-index: 11;
+      @media screen and (min-width: $screen-md-min) {
+        font-size: 41px;
+        width: 125px;
+        bottom: 0;
+        right: auto;
+        top: auto;
+      }
       > * {
         cursor: pointer;
         i {
@@ -70,11 +108,14 @@
       &-bullet {
         opacity: 1;
         font-weight: 600;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         overflow: hidden;
         border-radius: 0;
         position: relative;
         transition: padding-left .5s;
+        @media screen and (min-width: $screen-md-min) {
+          margin-bottom: 30px;
+        }
         &:before {
           content: '';
           background: url("../images/about/pagin-arrow.svg") no-repeat center;
@@ -104,5 +145,11 @@
 
 
 .harmonicSlider {
-  margin: 170px 0;
+  margin: 40px 0;
+  @media screen and (min-width: $screen-md-min) {
+    margin: 70px 0;
+  }
+  @media screen and (min-width: $screen-lg-min) {
+    margin: 170px 0;
+  }
 }

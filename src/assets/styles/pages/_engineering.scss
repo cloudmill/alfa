@@ -1,19 +1,67 @@
 .engineering {
+  padding-top: 0;
   .swiper-pagination {
     background-color: white;
-    width: 50%;
-    left: calc(50% + 15px);
+    width: 100%;
+    left: 0;
     bottom: auto;
-    top: 4a00px;
+    top: auto;
+    display: none;
+    @media screen and (min-width: $screen-md-min) {
+      display: flex;
+    }
+    @media screen and (min-width: $screen-xl-min) {
+      top: 370px;
+      width: 50%;
+      left: calc(50% + 15px);
+    }
     @media screen and (min-width: $screen-xxl-min) {
-      top: 77%;
+      top: 460px;
+    }
+  }
+  [data-autoheight='true'] {
+    .equipment-template__card {
+      img {
+        @media screen and (min-width: $screen-md-min) {
+          padding-bottom: 50px;
+        }
+        @media screen and (min-width: $screen-lg-min) {
+          padding-bottom: 100px;
+        }
+      }
+    }
+  }
+  #character {
+    .swiper-button {
+      display: flex;
+      top: 2px;
+      @media screen and (min-width: $screen-md-min) {
+        top: 10px;
+      }
     }
   }
   .indexSlider {
     h5 {
-      font-size: 20px;
-      margin-top: 30px;
+      font-size: 18px;
       margin-bottom: 10px;
+      @media screen and (min-width: $screen-md-min) {
+        font-size: 20px;
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .nav-background {
+    @media screen and (min-width: $screen-lg-min) {
+      height: 830px;
+    }
+    .setImg {
+      @media screen and (min-width: $screen-md-min) {
+        background-size: auto;
+      }
+    }
+    .mainTitle {
+      margin-bottom: 40px;
     }
   }
 }

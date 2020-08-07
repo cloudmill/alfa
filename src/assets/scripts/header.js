@@ -1,5 +1,6 @@
+import {isMobileOnly} from "./utils";
 
-//  menu
+// menu
 $('.menu--js').click(function() {
 	$(this).find('.menu').toggleClass('open');
 	$('.navbar').toggleClass('open');
@@ -17,11 +18,14 @@ $('.anchor').on('click', 'a', function(event) {
 });
 // anchor
 
-
+// footer
 $('.page-footer-smallTitle--js').on('click', 'a', function(event) {
-  event.preventDefault();
-  $(this).parent().next().slideToggle(500);
+  if(isMobileOnly) {
+    event.preventDefault();
+    $(this).parent().next().slideToggle(500);
+  }
 });
+// footer
 
 // scroll
 $(window).scroll(() => {

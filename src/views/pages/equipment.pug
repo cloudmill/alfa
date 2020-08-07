@@ -4,15 +4,18 @@ block header
   include ../partials/_header.pug
 
 block content
-  main.equipment
+  main.equipment.equipmentMain
     +navTitle('Оборудование')
     .container.equipment-container
       .equipmentList
-        .equipmentList-item
-          .equipmentList-item__top
+        .equipmentList-item(data-aos='fade-up')
+          .equipmentList-item__top(data-aos='fade-up')
             .equipmentList-item__num 01.
             .equipmentList-item__title
-              h3: a(href='#') Скважинные фильтры
+              h3
+                a(href='#')
+                  span.long-arrow-right
+                  | Скважинные фильтры
               ul.equipMenu
                 li: a(href='#')
                   +img('icons/menuArr.svg')
@@ -29,7 +32,7 @@ block content
                 li: a(href='#')
                   +img('icons/menuArr.svg')
                   | АльфаКомпакт
-          .equipmentList-item__bottom
+          .equipmentList-item__bottom(data-aos='fade-up')
             .equipmentList-item__mark.spinnerSlow: +img('equip/trademark.svg')
             .equipmentList-item__logo
               +img('equip/item-1.svg')
@@ -38,11 +41,14 @@ block content
               +img('equip/item-4.svg')
               +img('equip/item-5.svg')
             +img('equip/cat-1.jpg')
-        .equipmentList-item
-          .equipmentList-item__top
+        .equipmentList-item(data-aos='fade-up')
+          .equipmentList-item__top(data-aos='fade-up')
             .equipmentList-item__num 02.
             .equipmentList-item__title
-              h3: a(href='#') Устройства контроля притока
+              h3
+                a(href='#')
+                  span.long-arrow-right
+                  | Устройства контроля притока
               ul.equipMenu
                 li: a(href='#')
                   +img('icons/menuArr.svg')
@@ -53,18 +59,21 @@ block content
                 li: a(href='#')
                   +img('icons/menuArr.svg')
                   | АльфаДирект ICD
-          .equipmentList-item__bottom
+          .equipmentList-item__bottom(data-aos='fade-up')
             .equipmentList-item__mark.spinnerSlow: +img('equip/trademark.svg')
             .equipmentList-item__logo
               +img('equip/item-6.svg')
               +img('equip/item-7.svg')
               +img('equip/item-8.svg')
             +img('equip/cat-2.jpg')
-        .equipmentList-item
-          .equipmentList-item__top
+        .equipmentList-item(data-aos='fade-up')
+          .equipmentList-item__top(data-aos='fade-up')
             .equipmentList-item__num 03.
             .equipmentList-item__title
-              h3: a(href='#') Дополнительное оборудование
+              h3
+                a(href='#')
+                  span.long-arrow-right
+                  | Дополнительное оборудование
               ul.equipMenu
                 li: a(href='#')
                   +img('icons/menuArr.svg')
@@ -75,7 +84,7 @@ block content
                 li: a(href='#')
                   +img('icons/menuArr.svg')
                   | Гидромеханический пакер
-          .equipmentList-item__bottom
+          .equipmentList-item__bottom(data-aos='fade-up')
             .equipmentList-item__mark.spinnerSlow: +img('equip/trademark.svg')
             +img('equip/cat-3.jpg')
 

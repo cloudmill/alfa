@@ -2,7 +2,7 @@
 
 
 mixin abcTitle(items)
-  ul.glossary-abc.abc--js
+  ul.glossary-abc.abc--js(data-aos='fade-up')
     each item in items
       li(data-title=item.title)
         i.icon-ok
@@ -11,7 +11,7 @@ mixin abcTitle(items)
 mixin accGoss(items)
   .acc
     each item in items
-      .acc__card(data-title=item.title)
+      .acc__card(data-title=item.title, data-aos='fade-up')
         .acc__title
           .inner
             = item.title
@@ -33,106 +33,96 @@ mixin menuSubNav(items)
         a.menuSubNav__link(href=item.href, title=item.title)= item.title
 
 mixin menuAdditionalNav(items, page)
-  ul.menuAdditionalNav
+  ul.menuAdditionalNav.revealOut(data-aos='')
     each item in items
       - let active  = ''
       - if(page === item.href) active='active'
-      li.menuAdditionalNav__item: a.menuAdditionalNav__link(href=item.href + '.html', class=active)
+      li.menuAdditionalNav__item.revealIn: a.menuAdditionalNav__link(href=item.href + '.html', class=active)
           = item.title
 
 mixin navTitle(title, parent)
   .nav-title
     .container
-      ul.breadcrumbs
+      ul.breadcrumbs.revealOut(data-aos='')
         li.breadcrumbs__item
-          a.breadcrumbs__link(href="#") Главная
+          a.breadcrumbs__link.revealIn(href="#") Главная
         - if(parent)
           li.breadcrumbs__item
-            a.breadcrumbs__link(href="#")= parent
-        li.breadcrumbs__item.active= title
-      .mainTitle
-        h1= title
-        +img('logo-title.svg')
+            a.breadcrumbs__link.revealIn(href="#")= parent
+        li.breadcrumbs__item.active.revealIn= title
+      .mainTitle.revealOut(data-aos='')
+        h1.revealIn= title
+        +img('logo-title.svg', 'revealIn')
+
+mixin navBread(title, parent)
+  ul.breadcrumbs.revealOut(data-aos='')
+    li.breadcrumbs__item
+      a.breadcrumbs__link.revealIn(href="#") Главная
+    - if(parent)
+      li.breadcrumbs__item
+        a.breadcrumbs__link.revealIn(href="#")= parent
+      li.breadcrumbs__item.active.revealIn= title
 
 mixin navTitleBack(title, parent, src, items)
-  .nav-title.nav-background.parallax-box(data-hook="0")
+  .nav-title.nav-background.nav-background--fullWidth.parallax-box(data-hook="0")
     .setImg.parallax-item(style=src)
     .container
-      ul.breadcrumbs
-        li.breadcrumbs__item
-          a.breadcrumbs__link(href="#") Главная
-        - if(parent)
-          li.breadcrumbs__item
-            a.breadcrumbs__link(href="#")= parent
-        li.breadcrumbs__item.active= title
-      .row.end__xs
-        .col.col__lg-8
-          .mainTitle
-            h1= title
-      .row.m-auto.bottom__xs
-        .col.col__lg-4.nav-background__trade
+      +navBread(title, parent)
+      .row.end__lg.bottom__lg
+        .col.col__lg-8.col__xs-12
+          .mainTitle(data-aos='fade-up')
+            +revealMainTag(title, 'h1')
+          - if(items)
+            .nav-background__img.m-auto(data-aos='fade-up')
+              each item in items
+                +img(item.src)
+        .col.col__lg-4.col__xs-12.nav-background__trade.first__lg(data-aos='fade-up')
           +img('equip/trademarkw.svg', 'spinnerSlow')
-        - if(items)
-          .col.col__lg-7.nav-background__img
-            each item in items
-              +img(item.src)
 
 mixin navTitleBackOne(title, parent, src, logo, desc, pdf)
-  .nav-title.nav-background.parallax-box(data-hook="0")
+  .nav-title.nav-background.nav-background--fullWidth.parallax-box(data-hook="0")
     .setImg.parallax-item(style=src)
     .container
-      ul.breadcrumbs
-        li.breadcrumbs__item
-          a.breadcrumbs__link(href="#") Главная
-        - if(parent)
-          li.breadcrumbs__item
-            a.breadcrumbs__link(href="#")= parent
-        li.breadcrumbs__item.active= title
-      .row.end__xs
-        .col.col__lg-8
-          .mainTitle
-            h1= title
+      +navBread(title, parent)
+      .row.end__lg
+        .col.col__lg-8.col__xs-12
+          .mainTitle(data-aos='fade-up')
+            +revealMainTag(title, 'h1')
           - if(desc)
-            .nav-background__desc= desc
-      .row.m-auto.bottom__xs
-        .col.col__lg-4.nav-background__link
-          a(href='#')
+            .nav-background__desc(data-aos='fade-up')= desc
+      .row.m-auto.bottom__xs.between__xs
+        .col.col__lg-4.col__xs-6.nav-background__link.revealOut(data-aos='')
+          a.revealIn(href='#')
             +img(pdf)
             | Скачать #[br] презентацию
         - if(logo)
-          .col.col__lg-7.nav-background__img
+          .col.col__lg-8.nav-background__img(data-aos='fade-up')
             +img(logo)
 
 mixin navTitleBackOneArray(title, parent, src, items, pdf)
   .nav-title.nav-background.parallax-box(data-hook="0")
     .setImg.parallax-item(style=src)
-    .container
-      ul.breadcrumbs
-        li.breadcrumbs__item
-          a.breadcrumbs__link(href="#") Главная
-        - if(parent)
-          li.breadcrumbs__item
-            a.breadcrumbs__link(href="#")= parent
-        li.breadcrumbs__item.active= title
+    .setBack
+    .container.relative
+      +navBread(title, parent)
       .row.end__xs
-        .col.col__lg-8
-          .mainTitle
-            h1= title
+        .col.col__lg-8.col__xs-12
+          .mainTitle(data-aos='fade-up')
+            +revealMainTag(title, 'h1')
           - if(items)
-            ul.list--bullet.row.between__xs
+            ul.list--bullet.row.between__xs.revealOut(data-aos='')
               each item in items
-                li.col.col__xl-5.col__lg-6.col__xs-12
+                li.col.col__xl-5.col__lg-6.col__xs-12.revealIn
                   span.long-arrow-right
                   = item
       if(pdf)
-        .row.m-auto.bottom__xs
-          .col.col__lg-4.nav-background__link
-            a(href='#')
-              +img(pdf)
-              | Скачать #[br] презентацию
+        .nav-background__link.nav-bottom.revealOut(data-aos='')
+          a.revealIn(href='#')
+            +img(pdf)
+            | Скачать #[br] презентацию
 
 mixin nextBlock(title)
-  .container
+  .container(data-aos='fade-up')
     a.nextBlock.combineArr(href='#')
       .nextBlock-desc Смотрите также
       .nextBlock-title= title
@@ -140,10 +130,10 @@ mixin nextBlock(title)
 
 mixin backLink(title)
   .publications-soc
-    a.link-icon(href='#')
+    a.link-icon(href='#', data-aos='fade-up')
       +img('icons/backLink.svg')
       span= title
-    .social
+    .social(data-aos='fade-up')
       p Поделиться
       ul.social-list
         li: a(href='#'): i.icon-fa
@@ -152,8 +142,8 @@ mixin backLink(title)
 
 mixin nextItem(title, src, link, date)
   .nextItem
-    .row.row-add.nextItem-inner
-      .col.col__lg-8.col__md-6.col__xs-12
+    .row.row-add.nextItem-inner(data-aos='fade-up')
+      .col.col__lg-8.col__md-6.col__xs-12.first__md.last__xs
         +img(src)
       a.col.col__lg-4.col__md-6.col__xs-12.nextItem-desc.combineArr(href='#')
         .publications-item-top
@@ -166,28 +156,28 @@ mixin nextItem(title, src, link, date)
 mixin projects(items)
   .projects-main.filter-container
     each item in items
-      a.projects-item.filtr-item(data-category=item.category, href='project.html')
-        .projects-item-left
+      .projects-item.filtr-item(data-category=item.category, data-aos='fade-up')
+        a.projects-item-left(href='project.html')
           .projects-item--title
             h3= item.title
             p= item.desc
           .projects-item--bot
             p.text__sm= item.catTitle
             p.text__sm= item.date
-        .projects-item-right
+        a.projects-item-right(href='project.html')
           .projects-item--img
             +img(item.image)
 
 mixin technology(items)
   .equipmentList
     each item in items
-      .equipmentList-item
-        .equipmentList-item__top
+      .equipmentList-item(data-aos='fade-up')
+        .equipmentList-item__top(data-aos='fade-up')
           .equipmentList-item__num: +img(item.ico)
-          .equipmentList-item__title
-            h3: a(href='#')= item.title
-            p.text__sm= item.desc
-        .equipmentList-item__bottom
+          .equipmentList-item__title.revealOut(data-aos='')
+            h3.revealIn: a(href='#')= item.title
+            p.text__sm.revealIn= item.desc
+        .equipmentList-item__bottom(data-aos='fade-up')
           .equipmentList-item__mark.spinnerSlow: +img('equip/trademark.svg')
           +img(item.image)
 
@@ -197,10 +187,13 @@ mixin button(title, className, src)
     = title
 
 //- reveal
-mixin reveal(items)
-  each item in items
-    .revealOut
-      span.revealIn(data-aos='')= item
+mixin reveal(title, tag)
+  .revealOut(data-aos='')
+    #{tag}(class='revealIn')= title
+
+mixin revealMainTag(title, tag)
+  #{tag}.revealOut(data-aos='')
+    span.revealIn!= title
 
 mixin revealIndep(items)
   each item in items
@@ -210,23 +203,33 @@ mixin revealIndep(items)
 mixin form(title, textarea, mess)
   form.form#form(method='POST', action='')
     .form-inner
-      h3= title
+      +revealMainTag(title, 'h3')
       .row.row-add
-        .col.col__md-6.col__xs-12.form__group: +fieldInput('text', 'name', 'nameVac', 'Имя', true)
-        .col.col__md-6.col__xs-12.form__group: +fieldInput('email', 'email', 'emailVac', 'Email', true)
-        .col.col__xs-12.form__group: +fieldTextarea('content', 'content', textarea, 3)
-        .col.col__md-6.col__xs-12.form__group
+        .col.col__md-6.col__xs-12.form__group(data-aos='fade-up'): +fieldInput('text', 'name', 'nameVac', 'Имя', true)
+        .col.col__md-6.col__xs-12.form__group(data-aos='fade-up'): +fieldInput('email', 'email', 'emailVac', 'Email', true)
+        .col.col__xs-12.form__group(data-aos='fade-up'): +fieldTextarea('content', 'content', textarea, 3)
+        .col.col__md-6.col__xs-12.form__group(data-aos='fade-up')
           .radio
             input(type='radio', name='agreed', id='agreed')
             label(for='agreed') Согласен на обработку персональных данных в соответствии с #[a(href='#') политикой конфиденциальности]
-        .col.col__md-6.col__xs-12.form__group
+        .col.col__md-6.col__xs-12.form__group(data-aos='fade-up')
           button.btn.btn--primary.form--js(type='submit')
             span
             | Отправить
     .form-send
-      h3= mess
-      .form__group.form-back--js: +button('Отправить еще', 'primary', '#')
+      +revealMainTag(mess, 'h3')
+      .form__group.form-back--js(data-aos='fade-up'): +button('Отправить еще', 'primary', '#')
 
+
+mixin sidebar(items)
+  .col.col__lg-4.col__xs-12.hideOnMobileAndTablet
+    .sidebar
+      ul.equipmentNav.anchor(data-aos='fade-up')
+        each item in items
+          li(classname=item.className): a(href=item.href)= item.title
+      a.link-icon(href='#', data-aos='fade-up')
+        +img('icons/backLink.svg')
+        span Ко всем фильтрам
 
 //- form-input
 mixin fieldInput(type, name, id, label, required)

@@ -1,36 +1,61 @@
 .management {
   &-item {
     h4 {
-      margin-top: 90px;
-      margin-bottom: 130px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      @media screen and (min-width: $screen-md-min) {
+        margin-top: 60px;
+        margin-bottom: 60px;
+      }
+      @media screen and (min-width: $screen-lg-min) {
+        margin-top: 90px;
+        margin-bottom: 130px;
+      }
+      @media screen and (max-width: $screen-sm-max) {
+        font-size: 15px;
+      }
     }
   }
   &-acc {
-    margin-bottom: 140px;
+    margin-bottom: 60px;
+    @media screen and (min-width: $screen-lg-min) {
+      margin-bottom: 140px;
+    }
   }
   &-info {
 
   }
   &-desc {
-    margin-bottom: 120px;
+    margin-bottom: 60px;
+    @media screen and (min-width: $screen-lg-min) {
+      margin-bottom: 120px;
+    }
   }
   &-list {
     display: flex;
     flex-wrap: wrap;
     border-top: 1px solid $gray;
-    border-right: 1px solid $gray;
-    margin-top: 60px;
-    margin-bottom: 160px;
+    border-left: 1px solid $gray;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    @media screen and (min-width: $screen-lg-min) {
+      margin-top: 60px;
+      margin-bottom: 160px;
+    }
     &__item {
       @extend .col__lg-4;
       @extend .col__md-6;
       @extend .col__xs-12;
-      border-left: 1px solid $gray;
+      border-right: 1px solid $gray;
       border-bottom: 1px solid $gray;
-      height: 410px;
-      padding: 45px 55px;
+      height: 195px;
+      padding: 15px;
       display: flex;
       flex-direction: column;
+      @media screen and (min-width: $screen-md-min) {
+        height: 410px;
+        padding: 45px 55px;
+      }
       &-title {
         font-weight: 600;
         font-size: 20px;
@@ -44,6 +69,10 @@
       &-img {
         margin-top: auto;
         margin-left: auto;
+        width: 100px;
+        @media screen and (min-width: $screen-md-min) {
+          width: auto;
+        }
       }
     }
   }
@@ -52,19 +81,28 @@
       margin-top: 60px;
       display: flex;
       flex-wrap: wrap;
-      padding-left: 20px;
+      justify-content: center;
+      @media screen and (min-width: $screen-lg-min) {
+        padding-left: 20px;
+        justify-content: flex-start;
+      }
     }
     &__item {
       border: 1px solid $gray;
       height: 200px;
       width: 290px;
       padding: 20px 30px;
-      margin-left: 55px;
       margin-bottom: 10px;
       font-weight: 500;
       font-size: 12px;
       display: block;
       @include transitionEaseInOut(all);
+      @media screen and (min-width: $screen-md-min) {
+        margin-left: 20px;
+      }
+      @media screen and (min-width: $screen-lg-min) {
+        margin-left: 55px;
+      }
 
       &-top {
         display: flex;

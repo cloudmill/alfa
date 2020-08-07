@@ -38,7 +38,7 @@
 
 	<body class="page-main">
 		<!--[if lt IE 9]><p class="browsehappy">Данный сайт построен на передовых, современных технологиях и не поддерживает Ваш браузер. Настоятельно рекомендуем выбрать и установить любой из &nbsp;<a href="http://browsehappy.com/" target="_blank">современных браузеров.</a> Это бесплатно и займет всего несколько минут.</p><![endif]-->
-		<div class="page-menu">
+		<div class="page-menu" data-aos="fade-left" data-aos-delay="300">
 			<div class="page-menu__logo">
 				<div class="card">
 					<div class="card-contents card-front">
@@ -95,18 +95,18 @@
 			</div>
 		</div>
 		<div class="main__section">
-			<header class="page-header">
+			<header class="page-header" data-aos="fade-down">
 				<div class="container"><a class="logo" href="/"></a></div>
 			</header>
 			<main class="projects">
 				<div class="nav-title">
 					<div class="container">
-						<ul class="breadcrumbs">
-							<li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Главная</a></li>
-							<li class="breadcrumbs__item active">Проекты</li>
+						<ul class="breadcrumbs revealOut" data-aos="">
+							<li class="breadcrumbs__item"><a class="breadcrumbs__link revealIn" href="#">Главная</a></li>
+							<li class="breadcrumbs__item active revealIn">Проекты</li>
 						</ul>
-						<div class="mainTitle">
-							<h1>Проекты</h1><img src="assets/images/logo-title.svg" alt="Alfa" />
+						<div class="mainTitle revealOut" data-aos="">
+							<h1 class="revealIn">Проекты</h1><img class="revealIn" src="assets/images/logo-title.svg" alt="Alfa" />
 						</div>
 					</div>
 				</div>
@@ -114,25 +114,25 @@
 					<div class="tabsSimple">
 						<div class="row">
 							<div class="col col__xl-5 col__lg-4 col__xs-12">
-								<ul class="tabs__caption">
-									<li class="active">На карте</li>
-									<li class="activeGrid">Списком</li>
+								<ul class="tabs__caption revealOut" data-aos="">
+									<li class="active revealIn">На&nbsp;карте</li>
+									<li class="activeGrid revealIn">Списком</li>
 								</ul>
 							</div>
 							<div class="col col__xl-7 col__lg-8 col__xs-12">
-								<ul class="filters--js" id="filters">
-									<li data-filter="service" data-icon="assets/images/icons/bubbleb.svg" data-group="assets/images/icons/markerb.svg" data-coordinates="[&quot;59.91701049, 30.31812429&quot;,&quot;59.91916157, 30.3251195&quot;]">Сервис, поставки</li>
-									<li data-filter="conference" data-icon="assets/images/icons/bubblel.svg" data-group="assets/images/icons/markerl.svg" data-coordinates="[&quot;59.91756978, 30.31812429&quot;,&quot;59.92049517, 30.33250093&quot;,&quot;59.91701049, 30.3276515&quot;]">Выставки и конференции</li>
-									<li data-filter="projects" data-icon="assets/images/icons/bubble.svg" data-group="assets/images/icons/marker.svg" data-coordinates="[&quot;59.92256978, 30.31812429&quot;,&quot;59.92349517, 30.33250093&quot;,&quot;59.92401049, 30.3276515&quot;]">Партнерские проекты</li>
+								<ul class="filters--js revealOut" id="filters" data-aos="">
+									<li class="revealIn" data-filter="service" data-icon="assets/images/icons/bubbleb.svg" data-group="assets/images/icons/markerb.svg" data-coordinates="[&quot;59.91701049, 30.31812429&quot;,&quot;59.91916157, 30.3251195&quot;]">Сервис, поставки</li>
+									<li class="revealIn" data-filter="conference" data-icon="assets/images/icons/bubblel.svg" data-group="assets/images/icons/markerl.svg" data-coordinates="[&quot;59.91756978, 30.31812429&quot;,&quot;59.92049517, 30.33250093&quot;,&quot;59.91701049, 30.3276515&quot;]">Выставки и конференции</li>
+									<li class="revealIn" data-filter="projects" data-icon="assets/images/icons/bubble.svg" data-group="assets/images/icons/marker.svg" data-coordinates="[&quot;59.92256978, 30.31812429&quot;,&quot;59.92349517, 30.33250093&quot;,&quot;59.92401049, 30.3276515&quot;]">Партнерские проекты</li>
 								</ul>
 							</div>
 						</div>
-						<div class="tabs__content active">
+						<div class="tabs__content active" data-aos="fade-up">
 							<div id="googleMaps"></div>
 						</div>
 						<div class="tabs__content">
-							<div class="projects-main filter-container"><a class="projects-item filtr-item" data-category="conference" href="project.html">
-									<div class="projects-item-left">
+							<div class="projects-main filter-container">
+								<div class="projects-item filtr-item" data-category="conference" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Нефтегаз 2019</h3>
 											<p>Участие в ежегодной выставке «Нефтегаз»</p>
@@ -141,12 +141,10 @@
 											<p class="text__sm">Выставки и конференции</p>
 											<p class="text__sm">Россия, Москва — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-1.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="conference" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="conference" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>MIOGE 2019</h3>
 											<p>Участие в ежегодной выставке MIOGE </p>
@@ -155,12 +153,10 @@
 											<p class="text__sm">Выставки и конференции</p>
 											<p class="text__sm">Россия, Москва — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-2.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="conference" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="conference" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Конференция SPE Новая эра в бурении</h3>
 											<p>Участие в ежегодной конференции общества SPE</p>
@@ -169,12 +165,10 @@
 											<p class="text__sm">Выставки и конференции</p>
 											<p class="text__sm">Россия, Сочи — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-3.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="conference" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="conference" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Новые технологии для ПАО «Новатэк»</h3>
 											<p>Участие в технологической конференции ПАО «Новатэк» с докладом о технологиях АльфаСелект и AICV</p>
@@ -183,12 +177,10 @@
 											<p class="text__sm">Выставки и конференции</p>
 											<p class="text__sm">Россия, Тюмень — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-4.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="conference" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="conference" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>ТНФ 2019</h3>
 											<p>Участие в ежегодной выставке Тюменский Нейтегазовый форум </p>
@@ -197,12 +189,10 @@
 											<p class="text__sm">Выставки и конференции</p>
 											<p class="text__sm">Россия, Тюмень — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-5.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="conference" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="conference" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Технологический день ПАО «Газпром»</h3>
 											<p>Участие в технологической конференции Технологический день ПАО «Газпром» с докладом о технологиях АльфаСелект и AICV</p>
@@ -211,12 +201,10 @@
 											<p class="text__sm">Выставки и конференции</p>
 											<p class="text__sm">Россия, Тюмень — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-6.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="conference" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="conference" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Технологический день ПАО «Новатэк»</h3>
 											<p>Участие в технологической конференции Технологический день ПАО «Новатэк» с докладом о технологиях АльфаСелект и AICV</p>
@@ -225,12 +213,10 @@
 											<p class="text__sm">Выставки и конференции</p>
 											<p class="text__sm">Россия, Москва — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-4.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="conference" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="conference" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>ADIPEC 2019</h3>
 											<p>Участие в ежегодной выставке ADIPEC</p>
@@ -239,12 +225,10 @@
 											<p class="text__sm">Выставки и конференции</p>
 											<p class="text__sm">ОАЭ, Абу-Даби — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-7.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="conference" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="conference" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>OTC 2019</h3>
 											<p>Участие в конференции OTC</p>
@@ -253,12 +237,10 @@
 											<p class="text__sm">Выставки и конференции</p>
 											<p class="text__sm">США, Хьюстон — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-8.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="conference" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="conference" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Нефтегаз 2019</h3>
 											<p>Участие в ежегодной выставке «Нефтегаз»</p>
@@ -267,12 +249,10 @@
 											<p class="text__sm">Выставки и конференции</p>
 											<p class="text__sm">Россия, Москва — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-1.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="conference" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="conference" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>MIOGE 2019</h3>
 											<p>Участие в ежегодной выставке MIOGE </p>
@@ -281,12 +261,10 @@
 											<p class="text__sm">Выставки и конференции</p>
 											<p class="text__sm">Россия, Москва — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-2.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="conference" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="conference" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Конференция SPE Новая эра в бурении</h3>
 											<p>Участие в ежегодной конференции общества SPE</p>
@@ -295,12 +273,10 @@
 											<p class="text__sm">Выставки и конференции</p>
 											<p class="text__sm">Россия, Сочи — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-3.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="service" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="service" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Поставка оборудования AICV 114</h3>
 											<p>Реализация фильтров с автономными клапанами контроля притока AICV на месторождение в Западной Сибири</p>
@@ -309,12 +285,10 @@
 											<p class="text__sm"></p>
 											<p class="text__sm">Россия, Пурпе — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/gray.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="service" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="service" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Поставка оборудования AICV 114</h3>
 											<p>Реализация фильтров с автономными клапанами контроля притока AICV на месторождение в Западной Сибири</p>
@@ -323,12 +297,10 @@
 											<p class="text__sm"></p>
 											<p class="text__sm">Россия, Пурпе — 2020 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/gray.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="service" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="service" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Поставка оборудования АльфаПорт 114</h3>
 											<p>Реализация управляемых фильтров АльфаПорт для оснащения скважин МГРП</p>
@@ -337,12 +309,10 @@
 											<p class="text__sm"></p>
 											<p class="text__sm">Россия, Нижневартовск — 2018–2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/gray.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="service" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="service" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Поставка оборудования АльфаПорт 114</h3>
 											<p>Реализация управляемых фильтров АльфаПорт для оснащения скважин МГРП</p>
@@ -351,12 +321,10 @@
 											<p class="text__sm"></p>
 											<p class="text__sm">Россия, Сургут — 2018 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/gray.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="service" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="service" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Поставка АльфаШелл 89</h3>
 											<p>Реализация каркасно-щелевых фильтров АльфаШелл</p>
@@ -365,12 +333,10 @@
 											<p class="text__sm"></p>
 											<p class="text__sm">Россия, Московская область — 2016 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/gray.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="service" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="service" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Поставка АльфаСлот 114</h3>
 											<p>Реализация фильтров с продольными щелями по телу базовой трубы АльфаСлот</p>
@@ -379,12 +345,10 @@
 											<p class="text__sm"></p>
 											<p class="text__sm">Россия, Самара — 2016–2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/gray.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="service" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="service" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Поставка АльфаСлот 114</h3>
 											<p>Реализация фильтров с продольными щелями по телу базовой трубы АльфаСлот</p>
@@ -393,12 +357,10 @@
 											<p class="text__sm"></p>
 											<p class="text__sm">Россия, Мегион — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/gray.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="service" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="service" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Поставка АльфаШелл 114</h3>
 											<p>Реализация каркасно-щелевых фильтров АльфаШелл</p>
@@ -407,12 +369,10 @@
 											<p class="text__sm"></p>
 											<p class="text__sm">Россия, Реполово — 2018–2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/gray.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="service" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="service" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Поставка АльфаШелл 114</h3>
 											<p>Реализация каркасно-щелевых фильтров АльфаШелл</p>
@@ -421,12 +381,10 @@
 											<p class="text__sm"></p>
 											<p class="text__sm">Россия, Наб. Челны — 2017–2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/gray.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="service" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="service" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Поставка АльфаШелл 114</h3>
 											<p>Реализация каркасно-щелевых фильтров АльфаШелл</p>
@@ -435,12 +393,10 @@
 											<p class="text__sm"></p>
 											<p class="text__sm">Россия, Самара — 2016–2018 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/gray.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="service" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="service" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Поставка АльфаШелл 114</h3>
 											<p>Реализация каркасно-щелевых фильтров АльфаШелл</p>
@@ -449,12 +405,10 @@
 											<p class="text__sm"></p>
 											<p class="text__sm">Россия, Клявлино — 2018 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/gray.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="service" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="service" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Поставка АльфаШелл 114</h3>
 											<p>Реализация каркасно-щелевых фильтров АльфаШелл</p>
@@ -463,12 +417,10 @@
 											<p class="text__sm"></p>
 											<p class="text__sm">Россия, Каменск–Шахтинский — 2018 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/gray.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="service" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="service" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Поставка АльфаШелл 114</h3>
 											<p>Реализация каркасно-щелевых фильтров АльфаШелл</p>
@@ -477,12 +429,10 @@
 											<p class="text__sm"></p>
 											<p class="text__sm">Россия, Новый Уренгой — 2017 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/gray.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="service" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="service" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Поставка АльфаШелл 114</h3>
 											<p>Реализация каркасно-щелевых фильтров АльфаШелл</p>
@@ -491,12 +441,10 @@
 											<p class="text__sm"></p>
 											<p class="text__sm">Россия, Волжский — 2017 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/gray.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="service" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="service" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Поставка АльфаШелл 114</h3>
 											<p>Реализация каркасно-щелевых фильтров АльфаШелл</p>
@@ -505,12 +453,10 @@
 											<p class="text__sm"></p>
 											<p class="text__sm">Россия, Рязань — 2016 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/gray.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="service" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="service" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Поставка АльфаШелл 168</h3>
 											<p>Реализация каркасно-щелевых фильтров АльфаШелл</p>
@@ -519,12 +465,10 @@
 											<p class="text__sm"></p>
 											<p class="text__sm">Россия, Реполово — 2018 гг</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/gray.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="service" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="service" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Работы по спуску и активации управляемых фильтров АльфаПорт</h3>
 											<p>Реализация сервисных услуг по сопровождению спуска хвостовика с управляемыми фильтрами АльфаПорт, их открытие и закрытие</p>
@@ -533,12 +477,10 @@
 											<p class="text__sm"></p>
 											<p class="text__sm">Россия, р. Мессояха — 2018–2020 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-9.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="service" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="service" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Работы по спуску хвостовика с фильтрами AICV</h3>
 											<p>Сопровождение спуска фильтр- хвостовика с автономными клапанами контроля притока AICV</p>
@@ -547,12 +489,10 @@
 											<p class="text__sm"></p>
 											<p class="text__sm">Россия, Губкинский — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-10.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="projects" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="projects" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Тест открытия/закрытия управляемого элемента АльфаПорт</h3>
 											<p>Реализация механических испытаний управляемого элемента АльфаПорт первого поколения на соответствие требованиям технического задания заказчика</p>
@@ -561,12 +501,10 @@
 											<p class="text__sm">Партнеры</p>
 											<p class="text__sm">Россия, Рязань — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-11.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="projects" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="projects" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Гидравлические испытания, максимально выдерживаемое давление АльфаПорт</h3>
 											<p>Реализация гидравлических испытаний упраляемого фильтра АльфаПорт первого поколения на выдерживаениое давление в закрытом положении для подтверждения паспортным данным</p>
@@ -575,12 +513,10 @@
 											<p class="text__sm">Партнеры</p>
 											<p class="text__sm">Россия, Рязань — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-12.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="projects" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="projects" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Тест открытия/закрытия управляемого элемента АльфаПорт</h3>
 											<p>Реализация механических испытаний управляемого элемента АльфаПорт второго поколения на соответствие требованиям технического задания заказчика в рамках сертификации </p>
@@ -589,12 +525,10 @@
 											<p class="text__sm">Партнеры</p>
 											<p class="text__sm">Россия, Сергиев Посад — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-13.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="projects" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="projects" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Гидравлические испытания, максимально выдерживаемое давление АльфаПорт</h3>
 											<p>Реализация гидравлических испытаний упраляемого фильтра АльфаПорт второго поколения на выдерживаениое давление в закрытом положении для подтверждения паспортным данным в рамках сертификации </p>
@@ -603,12 +537,10 @@
 											<p class="text__sm">Партнеры</p>
 											<p class="text__sm">Россия, Сергиев Посад — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-14.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="projects" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="projects" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Гидравлические испытания пакер-подвески</h3>
 											<p>Реализация гидравлических испытаний пакер-подвески на выдерживаениое давление для подтверждения паспортным данным в рамках сертификации </p>
@@ -617,12 +549,10 @@
 											<p class="text__sm">Партнеры</p>
 											<p class="text__sm">Россия, Сергиев Посад — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-15.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="projects" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="projects" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Гидравлические испытания гидромеханического пакера</h3>
 											<p>Реализация гидравлических испытаний пакера гидромеханического на выдерживаениое давление для подтверждения паспортным данным в рамках сертификации Реализация гидравлических испытаний пакера гидромеханического на выдерживаениое давление для подтверждения паспортным данным в рамках сертификации </p>
@@ -631,12 +561,10 @@
 											<p class="text__sm">Партнеры</p>
 											<p class="text__sm">Россия, Сергиев Посад — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-16.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="projects" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="projects" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Тест на кручение фильтра АльфаДирект</h3>
 											<p>Реализация механических испытаний фильтра прямой намотки АльфаДирект на выдерживаемый крутящий момент</p>
@@ -645,12 +573,10 @@
 											<p class="text__sm">Партнеры</p>
 											<p class="text__sm">Россия, Сергиев Посад — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-17.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="projects" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="projects" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Тест на растяжение АльфаДирект</h3>
 											<p>Реализация механических испытаний фильтра прямой намотки АльфаДирект на выдерживаемое усилие растяжения</p>
@@ -659,12 +585,10 @@
 											<p class="text__sm">Партнеры</p>
 											<p class="text__sm">Россия, Сергиев Посад — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-18.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="projects" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="projects" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Тест на сдвиг замыкающего кольца</h3>
 											<p>Реализация механических испытаний стопорных колец фильтра прямой намотки АльфаДирект на выдерживаемое усилие растяжения </p>
@@ -673,12 +597,10 @@
 											<p class="text__sm">Партнеры</p>
 											<p class="text__sm">Россия, Сергиев Посад — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-19.jpg" alt="Alfa" /></div>
-									</div>
-								</a><a class="projects-item filtr-item" data-category="projects" href="project.html">
-									<div class="projects-item-left">
+									</a></div>
+								<div class="projects-item filtr-item" data-category="projects" data-aos="fade-up"><a class="projects-item-left" href="project.html">
 										<div class="projects-item--title">
 											<h3>Гидравлические испытания муфт ГРП</h3>
 											<p>Реализация гидравлических испытаний упраляемыфт муфт ГРП на выдерживаениое давление в закрытом положении для подтверждения паспортным данным</p>
@@ -687,13 +609,12 @@
 											<p class="text__sm">Партнеры</p>
 											<p class="text__sm">Россия, Сергиев Посад — 2019 г</p>
 										</div>
-									</div>
-									<div class="projects-item-right">
+									</a><a class="projects-item-right" href="project.html">
 										<div class="projects-item--img"><img src="assets/images/projects/img-20.jpg" alt="Alfa" /></div>
-									</div>
-								</a></div>
+									</a></div>
+							</div>
 							<div class="text--center">
-								<div class="showMore more--js">Показать еще<span></span></div>
+								<div class="showMore more--js" data-aos="fade-up">Показать еще<span></span></div>
 							</div>
 						</div>
 					</div>
@@ -701,18 +622,18 @@
 			</main>
 			<footer class="page-footer">
 				<div class="container">
-					<div class="row between__xs">
-						<div class="col col__lg-3 col__xs-12 page-footer-item first__lg last__xs">
+					<div class="row between__xs" data-aos="fade-up">
+						<div class="col col__lg-3 col__md-6 col__xs-12 page-footer-item first__lg last__xs">
 							<div class="page-footer-adr">г. Санкт-Петербург, наб. реки Мойки, <br> 75-79 лит. В, пом. 7Н</div>
 						</div>
-						<div class="col col__lg-8 col__xs-12">
+						<div class="col col__lg-8 col__md-6 col__xs-12">
 							<div class="page-footer-contact">
 								<div><a class="navbar-phone" href="tel:88123290190">8 812 329-01-90</a></div><br>
 								<div><a class="navbar-phone" href="mailto:info@alfahorizont.ru">info@alfahorizont.ru</a></div>
 							</div>
 						</div>
 					</div>
-					<div class="row between__xs page-footer-nav">
+					<div class="row between__xs page-footer-nav" data-aos="fade-up">
 						<div class="col col__lg-3 col__md-4 col__xs-12 page-footer-item page-footer-menuLink">
 							<ul class="page-footer-menu">
 								<li class="showOnMobile"><a href="#">Проекты</a></li>
@@ -763,7 +684,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="row bottom__xs between__xs">
+					<div class="row bottom__xs between__xs" data-aos="fade-up">
 						<div class="col col__lg-3 col__md-4 col__xs-12 page-footer-item page-footer-copylink">
 							<div class="page-footer-copy">© 2020 Альфа Горизонт</div>
 							<div class="page-footer-link">Сделано в <a href="https://cloudmill.ru" target="_blank">CloudMill</a></div>

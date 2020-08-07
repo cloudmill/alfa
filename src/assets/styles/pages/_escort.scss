@@ -1,21 +1,50 @@
 .escort {
+  padding-top: 0;
+  .nav-background .setImg {
+    background-size: auto 70%;
+    background-position: center bottom 40px;
+    @media screen and (min-width: $screen-lg-min) {
+      background-size: auto 100%;
+      background-position: left 140px center;
+    }
+  }
   &-items {
-    margin-top: 170px;
+    margin-top: 60px;
+    @media screen and (min-width: $screen-md-min) {
+      margin-top: 80px;
+    }
+    @media screen and (min-width: $screen-xl-min) {
+      margin-top: 170px;
+    }
+    .col:last-child {
+      .escort-item {
+        @media screen and (max-width: $screen-sm-max) {
+          margin-bottom: 10px;
+        }
+      }
+    }
   }
   &-item {
     border-top: 2px solid $black;
     padding-top: 10px;
-    margin-bottom: $form-group-margin-bottom;
+    margin-bottom: $form-group-margin-bottom / 1.5;
     display: flex;
+    @media screen and (min-width: $screen-lg-min) {
+      margin-bottom: $form-group-margin-bottom;
+    }
     &-num {
-      color: #323232;
+      color: $black;
       -webkit-text-fill-color: white;
       -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: #323232;
-      font-size: 45px;
+      -webkit-text-stroke-color: $black;
+      font-size: 24px;
       line-height: 1.2;
       font-weight: 600;
-      width: 80px;
+      width: 60px;
+      @media screen and (min-width: $screen-md-min) {
+        font-size: 45px;
+        width: 80px;
+      }
     }
     &-desc {
       width: calc(100% - 80px);

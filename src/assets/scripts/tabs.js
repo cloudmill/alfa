@@ -1,3 +1,5 @@
+import AOS from "aos";
+
 tabControl();
 
 let resizeTimer;
@@ -26,9 +28,9 @@ function tabControl() {
         scrollTop: $(href).offset().top - 50
       }, 500);
 
-      // AOS.init({
-      //   offset: -80
-      // });
+      AOS.init({
+        offset: 50,
+      });
     });
   } else {
     $('.item').on('click', function () {
@@ -47,4 +49,8 @@ $('ul.tabs__caption').on('click', 'li:not(.active)', function() {
   $(this)
     .addClass('active').siblings().removeClass('active')
     .closest('.tabsSimple').find('.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
+
+  AOS.init({
+    offset: 50,
+  });
 });

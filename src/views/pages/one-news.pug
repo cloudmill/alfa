@@ -6,33 +6,33 @@ block header
 block content
   main.publications.one-publication
     .container
-      ul.breadcrumbs
+      ul.breadcrumbs.revealOut(data-aos='')
         li.breadcrumbs__item
-          a.breadcrumbs__link(href="#") Главная
+          a.breadcrumbs__link.revealIn(href="#") Главная
         li.breadcrumbs__item
-          a.breadcrumbs__link(href="#") Публикации
-        li.breadcrumbs__item.active Внедрение технологии AICV компании ООО «Альфа Горизонт»
+          a.breadcrumbs__link.revealIn(href="#") Публикации
+        li.breadcrumbs__item.active.revealIn Внедрение технологии AICV компании ООО «Альфа Горизонт»
     .container
       .row.row-add.between__xs
-        aside.col.col__xl-3.col__lg-4
+        aside.col.col__xl-3.col__lg-4.col__xs-12.last__xs.first__lg
           .sidebar: +backLink('Ко всем новостям')
-        section.col.col__xl-8.col__lg-8.content
+        section.col.col__lg-8.col__xs-12.content
           .publications-item
             .publications-item-top
-              h3 Внедрение технологии AICV компании ООО&nbsp;«Альфа Горизонт»
-              .publications-item-date 20 августа #[br] 2020
-            +img('news/item-1.jpg')
-            .col__xl-9.col__lg-10
+              +revealMainTag('Внедрение технологии AICV компании ООО&nbsp;«Альфа Горизонт»', 'h3')
+              .publications-item-date(data-aos='fade-up') 20 августа #[br] 2020
+            div(data-aos='fade-up'): +img('news/item-1.jpg')
+            .col__xl-9.col__lg-10(data-aos='fade-up')
               p Sensia — первая в нефтегазовой отрасли компания, предлагающая комплексные цифровые решения для автоматизации, повышения эффективности, оптимизации производительности и снижения рисков. Совместное предприятие использует глубокие знания Schlumberger в нефтегазовой области и богатый опыт Rockwell Automation в области технологий комплексной автоматизации и информатизации для решения проблем быстрорастущего рынка цифровых решений и автоматизации.
               h4 Эффективность Sensia
-            .equipment-template__block
+            .equipment-template__block(data-aos='fade-up')
               p Sensia будет обеспечивать высочайший уровень автоматизации и цифровизации производства каждой нефтегазовой компании так, чтобы их оборудование работало более эффективно и приносило больше прибыли, — говорит Аллан Ренткам, генеральный директор Sensia — добывать, транспортировать и перерабатывать нефть и газ будет проще, безопаснее и надежнее.
               p Sensia будет обеспечивать высочайший уровень автоматизации и цифровизации производства каждой нефтегазовой компании так, чтобы их оборудование работало более эффективно и приносило больше прибыли, — говорит Аллан Ренткам, генеральный директор Sensia — добывать, транспортировать и перерабатывать нефть и газ будет проще, безопаснее и надежнее.
               br
-            .col__xl-9.col__lg-10
+            .col__xl-9.col__lg-10(data-aos='fade-up')
               p Прогнозируется что Sensia со штаб-квартирой в Хьюстоне, штат Техас, принесет первоначальную годовую прибыль в размере 400 млн. долл. США и обеспечит работой около 1000 сотрудников.
               h4 О компании Rockwell Automation
-            .equipment-template__block
+            .equipment-template__block(data-aos='fade-up')
               p Rockwell Automation, Inc. (NYSE: ROK) – крупнейшая в мире компания, специализирующаяся на разработке решений для промышленной автоматизации и информации, которая делает своих заказчиков более продуктивными тем самым обеспечивает вклад в глобальную мировую устойчивость. Штаб-квартира Rockwell Automation находится в Милуоки, штат Висконсин; в компании работает около 23 000 человек, обслуживая клиентов в более чем 80 странах.
       .stopper: +nextItem('Селективное заканчивание скважин', 'news/item-7.jpg', 'Следующая публикация', true)
     include ../components/_sign

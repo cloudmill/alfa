@@ -9,11 +9,11 @@ block content
     .container.vacancy-container
       .row.row-add.between__xs
         aside.col.col__xl-3.col__lg-4.col__xs-12.hideOnMobileAndTablet
-          .vacancy-link
+          .vacancy-link(data-aos='fade-up')
             div: +img('icons/hh.svg')
             span Всегда активные #[br] вакансии на сайте #[br] #[a(href='#', target='_blank') hh.ru]
         section.col.col__xl-8.col__lg-8.col__xs-12
-          .acc
+          .acc(data-aos='fade-up')
             .acc__card
               .acc__title
                 | Руководитель ОТК/Специалист по качеству
@@ -135,33 +135,33 @@ block content
                   a.text__md.link(href='#') Страница вакансии на HeadHunter
                     +img('icons/link.svg')
           .showOnMobile
-            .vacancy-link
+            .vacancy-link(data-aos='fade-up')
               div: +img('icons/hh.svg')
               span Всегда активные #[br] вакансии на сайте #[br] #[a(href='#', target='_blank') hh.ru]
-          .vacancy-notFound Если вы не нашли подходящей вакансии — присылайте резюме. #[br] Мы всегда ищем талантливых специалистов.
+          .vacancy-notFound(data-aos='fade-up') Если вы не нашли подходящей вакансии — присылайте резюме. #[br] Мы всегда ищем талантливых специалистов.
           form.form#form(method='POST', action='')
             .form-inner
-              h3 Отправить резюме
+              +revealMainTag('Отправить резюме', 'h3')
               .row.row-add
-                .col.col__md-6.col__xs-12.form__group: +fieldInput('text', 'name', 'nameVac', 'Имя', true)
-                .col.col__md-6.col__xs-12.form__group: +fieldInput('email', 'email', 'emailVac', 'Email', true)
-                .col.col__xs-12.form__group: +fieldTextarea('content', 'content', 'Сопроводительное письмо', 3)
-                .col.col__xs-12.form__group
+                .col.col__md-6.col__xs-12.form__group(data-aos='fade-up'): +fieldInput('text', 'name', 'nameVac', 'Имя', true)
+                .col.col__md-6.col__xs-12.form__group(data-aos='fade-up'): +fieldInput('email', 'email', 'emailVac', 'Email', true)
+                .col.col__xs-12.form__group(data-aos='fade-up'): +fieldTextarea('content', 'content', 'Сопроводительное письмо', 3)
+                .col.col__xs-12.form__group(data-aos='fade-up')
                   .input__file
                     input.input__file-js(type='file')
                     .input__text-js Прикрепить файл
                       span: +img('icons/dlink.svg')
-                .col.col__lg-6.col__md-7.col__xs-12.form__group
+                .col.col__lg-6.col__md-7.col__xs-12.form__group(data-aos='fade-up')
                   .radio
                     input(type='radio', name='agreed', id='agreed')
                     label(for='agreed') Согласен на обработку персональных данных в соответствии с #[a(href='#') политикой конфиденциальности]
-                .col.col__lg-6.col__md-5.col__xs-12.form__group
+                .col.col__lg-6.col__md-5.col__xs-12.form__group(data-aos='fade-up')
                   button.btn.btn--primary.form--js(type='submit')
                     span
                     | Отправить
             .form-send
-              h3 Спасибо! Мы получили ваш сообщение. #[br] На ответ на потребуется 2-3 дня. #[br] Мы вышлем его на вашу электронную почту.
-              .form__group.form-back--js: +button('Отправить еще', 'primary', '#')
+              +revealMainTag('Спасибо! Мы получили ваш сообщение. #[br] На ответ на потребуется 2-3 дня. #[br] Мы вышлем его на вашу электронную почту.', 'h3')
+              .form__group.form-back--js(data-aos='fade-up'): +button('Отправить еще', 'primary', '#')
 
 
 block footer

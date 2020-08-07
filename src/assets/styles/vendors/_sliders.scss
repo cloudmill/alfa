@@ -2,61 +2,97 @@ $a-height: 720px;
 
 .accordion {
   width: 100%;
-  height: $a-height;
   overflow: hidden;
+  @media screen and (min-width: $screen-lg-min) {
+    height: $a-height;
+  }
 
   ul {
     width: 100%;
-    display: table;
-    table-layout: fixed;
     margin: 0;
     padding: 0;
+    display: block;
+    @media screen and (min-width: $screen-lg-min) {
+      display: table;
+      table-layout: fixed;
+    }
     li {
       cursor: pointer;
-      display: table-cell;
-      vertical-align: bottom;
       position: relative;
       width: calc(100% / 3);
-      height: $a-height;
+      display: block;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
-
       transition: all 500ms ease;
+      height: $a-height / 8;
+
+      @media screen and (min-width: $screen-md-min) {
+        height: $a-height / 7;
+      }
+      @media screen and (min-width: $screen-lg-min) {
+        display: table-cell;
+        vertical-align: bottom;
+        height: $a-height;
+      }
       div {
         overflow: hidden;
         display: block;
-        height: $a-height;
+        height: $a-height / 8;
         width: 100%;
         position: relative;
         z-index: 3;
-        padding: 30px 10px;
+        padding: 20px 15px;
         transition: all 200ms ease;
+        @media screen and (min-width: $screen-md-min) {
+          height: $a-height / 7;
+          padding: 30px 10px;
+        }
+        @media screen and (min-width: $screen-lg-min) {
+          height: $a-height;
+        }
         @media screen and (min-width: $screen-xxl-min) {
           padding: 30px;
         }
         h2 {
           font-weight: 600;
-          font-size: 22px;
+          font-size: 15px;
           line-height: 130%;
           color: white;
           transition: font-size .5s;
+          margin: 0;
+          @media screen and (min-width: $screen-md-min) {
+            font-size: 22px;
+          }
         }
         a {
           position: absolute;
           bottom: 0;
           right: 0;
+          left: 0;
           background: #222222;
           font-weight: 600;
-          font-size: 20px;
+          font-size: 15px;
           line-height: 150%;
           color: #838383;
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 50px 40px;
+          padding: 10px 15px;
+          @media screen and (min-width: $screen-md-min) {
+            padding: 25px;
+            left: auto;
+          }
+          @media screen and (min-width: $screen-lg-min) {
+            padding: 50px 40px;
+            font-size: 20px;
+          }
           img {
-            margin-left: 50px;
+            width: 29px;
+            @media screen and (min-width: $screen-md-min) {
+              width: auto;
+              margin-left: 50px;
+            }
           }
         }
       }
@@ -76,8 +112,15 @@ $a-height: 720px;
     }
 
     li {
-      width: 15% !important;
-      background-size: auto 100%;
+      width: 100% !important;
+      background-size: cover;
+      @media screen and (min-width: $screen-lg-min) {
+        background-size: auto 100%;
+        width: 21% !important;
+      }
+      @media screen and (min-width: $screen-xl-min) {
+        width: 15% !important;
+      }
       @media screen and (min-width: $screen-xxl-min) {
         width: 12.5% !important;
       }
@@ -90,15 +133,32 @@ $a-height: 720px;
       }
     }
     li.active {
-      width: 70% !important;
+      width: 100% !important;
       background-size: cover;
+      height: $a-height / 1.7;
+      @media screen and (min-width: $screen-md-min) {
+        height: $a-height;
+      }
+      @media screen and (min-width: $screen-lg-min) {
+        width: 70% !important;
+      }
       @media screen and (min-width: $screen-xxl-min) {
         width: 75% !important;
       }
       div {
+        height: $a-height / 1.7;
         background: transparent;
+        @media screen and (min-width: $screen-md-min) {
+          height: $a-height;
+        }
         h2 {
-          font-size: 65px;
+          font-size: 24px;
+          @media screen and (min-width: $screen-md-min) {
+            font-size: 35px;
+          }
+          @media screen and (min-width: $screen-lg-min) {
+            font-size: 65px;
+          }
         }
         a {
           opacity: 1;

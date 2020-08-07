@@ -2,6 +2,165 @@
 // Modules -> Navs
 // --------------------------------------------------
 
+.nav {
+  &-background {
+    padding-top: 70px;
+    padding-bottom: 20px;
+    position: relative;
+    height: 520px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: $screen-md-min) {
+      height: 790px;
+      padding-top: 160px;
+      padding-bottom: 60px;
+    }
+
+    .breadcrumbs {
+      overflow-x: auto;
+      overflow-y: hidden;
+      @media screen and (min-width: $screen-md-min) {
+        overflow: visible;
+      }
+      li:before,
+      a,
+      li {
+        color: white;
+      }
+    }
+
+    .mainTitle {
+      border-top: 2px solid #FFFFFF;
+      margin-top: 15px;
+      padding-top: 15px;
+      margin-bottom: 40px;
+      @media screen and (min-width: $screen-md-min) {
+        margin-bottom: 60px;
+      }
+    }
+
+    ul:not(.breadcrumbs) {
+      color: white;
+      max-width: 980px;
+
+      .long-arrow-right {
+        color: $base-color-main;
+      }
+    }
+
+    .setBack {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: $black;
+      z-index: 0;
+    }
+
+    .setImg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+      background-repeat: no-repeat;
+      background-position: center bottom 80px;
+      background-size: 100% auto;
+      mix-blend-mode: color-burn;
+      @media screen and (min-width: $screen-lg-min) {
+        background-size: 70% auto;
+        background-position: left 140px center;
+      }
+    }
+
+    &--fullWidth {
+      .setImg {
+        background-size: cover;
+        background-position: center;
+      }
+      @media screen and (min-width: $screen-lg-min) {
+        .row.end__lg.bottom__lg {
+          height: 100%;
+        }
+        .col.col__lg-8.col__xs-12 {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+        }
+      }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      //justify-content: space-between;
+    }
+
+    &__link {
+      a {
+        display: flex;
+        align-items: center;
+        color: white;
+        font-size: 11px;
+        @media screen and (min-width: $screen-md-min) {
+          font-size: 16px;
+        }
+        &:hover {
+          color: $base-color-main;
+        }
+      }
+      img {
+        margin-right: 10px;
+        width: 26px;
+        @media screen and (min-width: $screen-md-min) {
+          margin-right: 25px;
+          width: auto;
+        }
+      }
+    }
+
+    &__img {
+      img {
+        max-width: 90px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        @media screen and (min-width: $screen-md-min) {
+          max-width: inherit;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &__trade {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      img {
+        width: 105px;
+        @media screen and (min-width: $screen-md-min) {
+          width: auto;
+        }
+      }
+      @media screen and (min-width: $screen-lg-min) {
+        position: static;
+      }
+    }
+  }
+
+  &-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+  }
+}
+
 .menuNav {
   @include list--unstyled;
   font-weight: 600;
@@ -55,16 +214,26 @@
   @include list--unstyled;
   display: flex;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 13px;
   line-height: 130%;
-  padding: 90px 0;
+  padding: 30px 0;
   border-bottom: 1px solid $gray;
+  overflow-x: auto;
   justify-content: space-between;
+  @media screen and (min-width: $screen-md-min) {
+    font-size: 18px;
+    padding: 60px 0;
+    overflow-x: visible;
+  }
   @media screen and (min-width: $screen-xl-min) {
     justify-content: flex-start;
+    font-size: 25px;
+    padding: 90px 0;
   }
   &__item {
+    white-space: nowrap;
       & + & {
+        margin-left: 20px;
         @media screen and (min-width: $screen-xl-min) {
           margin-left: 40px;
         }

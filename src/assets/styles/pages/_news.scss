@@ -1,6 +1,5 @@
 .news {
   &-container {
-    padding-top: 170px;
-    padding-bottom: 80px;
+    @extend .publications-container;
   }
 }
