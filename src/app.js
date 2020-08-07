@@ -21,6 +21,7 @@ $(document).ready(() => {
   // form
 	require('Scripts/input');
 	require('Scripts/parallax');
+  require('Scripts/video');
 
 	if(!isMobileAndTabletOnly) {
     sticky();
