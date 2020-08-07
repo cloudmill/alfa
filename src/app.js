@@ -50,15 +50,25 @@ $(window).on("load", function() {
       });
     }, 500);
 
+    if(process.env.NODE_ENV === 'production') {
+      window.scrollTo(0, 0);
+    }
   } else {
     $('.loader-hide').addClass('showIt');
+    $('.index-slider').addClass('loading');
     setTimeout(function () {
       $('body').css('overflow', 'visible');
       $('.loader').addClass('hidden');
 
-      AOS.init({
-        offset: 50,
-      });
+      setTimeout(function () {
+        AOS.init({
+          offset: 50,
+        });
+      }, 500);
+
+      setTimeout(function () {
+        $('.index-slider').removeClass('loading');
+      }, 1500);
 
       if(process.env.NODE_ENV === 'production') {
         window.scrollTo(0, 0);

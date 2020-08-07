@@ -15,9 +15,9 @@ if ($('.indexSlider').length > 0) {
       slidesPerView: adaptive ? 'auto' : 1,
       spaceBetween: adaptive ? 15 : 0,
       effect: effect || 'slide',
-      // autoplay: {
-      // delay: 5000,
-      // },
+      autoplay: {
+        delay: 10000,
+      },
       autoHeight: !!autoHeight,
       pagination: {
         el: pagination,

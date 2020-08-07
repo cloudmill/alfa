@@ -11,47 +11,7 @@ block content
     section.index-slider
       .indexSlider.swiper-container(data-effect='fade')
         .swiper-wrapper.parallax-box(data-aos='', data-aos-delay='3000', data-hook="0")
-          - for (let x = 1; x < 3; x++)
-            .swiper-slide
-              .slider-back.parallax-item
-                .image(style='background: url("assets/images/slide.jpg") no-repeat center / cover')
-              .container.relative
-                .index-slider-title
-                  .revealOut(data-aos='')
-                    h2.revealIn Фильтры
-                  .revealOut(data-aos='')
-                    h2.revealIn прямой
-                  .revealOut(data-aos='')
-                    h2.revealIn намотки
-                  .revealOut(data-aos='')
-                    h2.revealIn.title-icon
-                      +img('alfa.svg')
-                      span АльфаДирект
-                .index-slider-desc
-                  p Высокопрочные проволочные #[br] фильтры для наземных #[br] и&nbsp;оффшорных месторождений #[br] нефти и газа
-                  a.btn.btn--primary.btn--transparent(href='#')
-                    span
-                    | Подробнее
-            .swiper-slide
-              .slider-back.parallax-item
-                .image(style='background: url("assets/images/slide1.jpg") no-repeat center / cover')
-              .container.relative
-                .index-slider-title
-                  .revealOut(data-aos='')
-                    h2.revealIn Фильтры
-                  .revealOut(data-aos='')
-                    h2.revealIn прямой
-                  .revealOut(data-aos='')
-                    h2.revealIn намотки
-                  .revealOut(data-aos='')
-                    h2.revealIn.title-icon
-                      +img('alfa.svg')
-                      span АльфаДирект
-                .index-slider-desc
-                  p Высокопрочные проволочные #[br] фильтры для наземных #[br] и&nbsp;оффшорных месторождений #[br] нефти и газа
-                  a.btn.btn--primary(href='#')
-                    span
-                    | Подробнее
+          +mainSlider(['slide.jpg', 'slide1.jpg', 'slide.jpg', 'slide1.jpg'])
         .container.relative
           .swiper-pagination(data-aos='fade-up', data-aos-delay='500')
     section.index-layout

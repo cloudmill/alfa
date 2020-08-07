@@ -38,7 +38,7 @@
     border-radius: 50%;
     background-color: $base-color-main;
     position: absolute;
-    left: -4px;
+    left: -5px;
     top: 0;
     bottom: 0;
     margin: auto;
@@ -52,34 +52,6 @@
     }
   }
 
-  &--natural {
-    vertical-align:baseline;
-    font-size:inherit;
-    line-height:inherit;
-    padding-right:0.5em;
-    padding-left: 0.5em;
-  }
-
-  // Button with icon
-  &__icon {
-    position: relative;
-  }
-  &__icon--left {
-    padding-left: $base-padding * 2;
-    .icon {
-      position: absolute;
-      top: 0;
-      left: $base-padding;
-    }
-  }
-  &__icon--right {
-    padding-left: $base-padding * 2;
-    .icon {
-      position: absolute;
-      top: 0;
-      right: $base-padding;
-    }
-  }
   &--default {
     @include button-variant-tr($btn-default-color, $btn-default-bg, $btn-default-border);
   }
@@ -101,16 +73,18 @@
         width: 30%;
         height: 103%;
         border-radius: $btn-border-radius-base 0 0 $btn-border-radius-base;
-        border: 1px solid $black;
-        transition: width .5s, border-radius .3s, border .2s .2s, border-color .5s;
+        border-style: solid;
+        border-color: $black;
+        border-width: 1px;
+        transition: width .5s .2s, border-radius .3s .2s, border-width .2s, border-color .3s;
       }
       &::after {
-        border-right: none;
-        border-bottom: none;
+        border-right-width: 0;
+        border-bottom-width: 0;
       }
       &::before {
-        border-right: none;
-        border-top: none;
+        border-right-width: 0;
+        border-top-width: 0;
       }
       &:hover {
         color: $base-color-main;
@@ -119,8 +93,11 @@
         &::before {
           width: 101%;
           border-radius: $btn-border-radius-base;
-          border: 1px solid $base-color-main;
-          transition: width .5s, border-radius .3s .2s, border .2s .4s, border-color .5s .5s;
+          border-color: $base-color-main;
+          border-right-width: 1px;
+          border-top-width: 1px;
+          border-bottom-width: 1px;
+          transition: width .5s, border-radius .3s .2s, border-width .2s .35s, border-color .3s .4s;
         }
       }
       &:active {
@@ -132,67 +109,16 @@
       }
     }
     &--transparent {
-      background-color: transparent;
-      color: white;
-      border-color: rgba(#E5E5E5, 0.4);
-    }
-  }
-
-  // Button Sizes
-  @if $use-btn-size == true {
-    &__lg {
-      @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-btn, $btn-border-radius-large);
-      height: 55px;
-    }
-    &__sm {
-      @include button-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-btn, $btn-border-radius-small);
-      height: 40px;
-    }
-    &__xs {
-      @include button-size($padding-tiny-vertical, $padding-tiny-horizontal, $font-size-tiny, $line-height-btn, $btn-border-radius-small);
-      height: 35px;
-    }
-  }
-
-  &--round {
-    @include border-radius(50px);
-  }
-
-  // Button group
-  @if $use-btn-group == true {
-    &-group {
-      position: relative;
-      display: inline-block;
-      vertical-align: middle;
-      > .btn {
-        position: relative;
-        float: left;
-        &:first-child {
-          margin-left: 0;
-          &:not(:last-child) {
-            @include border-right-radius(0);
-          }
-        }
-        &:last-child:not(:first-child) {
-          @include border-left-radius(0);
-        }
-        &:not(:first-child):not(:last-child) {
-          border-radius: 0;
-        }
-        + .btn {
-          margin-left: -1px;
-        }
+      @include button-variant(white, transparent, rgba(#E5E5E5, 0.4));
+      &::after,
+      &::before {
+        left: -1px;
       }
-
-      &--justified {
-        display: table;
-        width: 100%;
-        table-layout: fixed;
-        border-collapse: separate;
-        > .btn {
-          float: none;
-          display: table-cell;
-          width: 1%;
+      &:hover {
+        color: white;
+        &::after,
+        &::before {
+          width: 101%;
         }
       }
     }

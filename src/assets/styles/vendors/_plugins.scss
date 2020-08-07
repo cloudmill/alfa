@@ -272,24 +272,17 @@ $items:
   display: inline-block;
   transform: translateY(100px);
   opacity: 0;
+  .swiper-wrapper[data-aos-delay="3000"]:not(.aos-animate) &,
   .swiper-slide &,
-  .aos-init & {
+  .aos-init:not(.swiper-wrapper) & {
     animation: verticalRevealRevert 1s cubic-bezier(0.19, 1, 0.22, 1);
     animation-fill-mode: both;
   }
   .swiper-slide-active &,
-  .aos-animate & {
+  .aos-animate:not(.swiper-wrapper) & {
     animation: verticalReveal 1s cubic-bezier(0.19, 1, 0.22, 1);
     animation-fill-mode: both;
     animation-delay: 0.2s;
-  }
-}
-
-.index-slider {
-  .swiper-wrapper.aos-animate[data-aos-delay="3000"]{
-    .revealIn {
-      //animation-delay: 3s;
-    }
   }
 }
 
@@ -341,7 +334,6 @@ $items:
 }
 
 
-
 //select
 .select2-container--default .select2-selection--single {
   @extend .control;
@@ -360,7 +352,6 @@ $items:
   background: $base-color-main;
 }
 //select
-
 
 
 .long-arrow-left,
