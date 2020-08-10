@@ -1,4 +1,5 @@
 import { showMoreFunc } from './customscripts';
+import { myModal } from './modal';
 
 let markers = [];
 let map;
@@ -132,29 +133,6 @@ const setMarker =
   NODE_ENV_PATH === 'development'
     ? "assets/images/icons/marker.svg"
     : "/local/templates/main/assets/images/icons/marker.svg";
-const setBubble =
-  NODE_ENV_PATH === 'development'
-    ? "assets/images/icons/bubble.svg"
-    : "/local/templates/main/assets/images/icons/bubble.svg";
-const setBubble2 =
-  NODE_ENV_PATH === 'development'
-    ? "assets/images/icons/bubbleb.svg"
-    : "/local/templates/main/assets/images/icons/bubbleb.svg";
-const setBubble3 =
-  NODE_ENV_PATH === 'development'
-    ? "assets/images/icons/bubblel.svg"
-    : "/local/templates/main/assets/images/icons/bubblel.svg";
-
-const locations = [
-  [59.91701049, 30.31812429, setBubble2],
-  [59.91916157, 30.3251195, setBubble2],
-  [59.91756978, 30.31812429, setBubble3],
-  [59.92049517, 30.33250093, setBubble3],
-  [59.91701049, 30.3276515, setBubble3],
-  [59.92256978, 30.31812429, setBubble],
-  [59.92349517, 30.33250093, setBubble],
-  [59.92401049, 30.3276515, setBubble],
-];
 
 const mcOptions = {
   styles: [{
@@ -169,6 +147,9 @@ const mcOptions = {
 };
 
 function initMap() {
+  const mapID = document.getElementById("googleMaps");
+  const locations = mapID.dataset.locations;
+
   const mapOptions = {
     center: new google.maps.LatLng(59.91916157, 30.3251195),
     zoom: 15,
@@ -178,20 +159,32 @@ function initMap() {
     scrollwheel: false,
     styles: mapStyle,
   };
-  map = new google.maps.Map(document.getElementById("googleMaps"), mapOptions);
 
-  locations.forEach(function (item) {
+  map = new google.maps.Map(mapID, mapOptions);
+
+  JSON.parse(locations).forEach(function (item) {
     addMarker(item);
   });
 
   markerCluster = new MarkerClusterer(map, markers, mcOptions);
 }
 
-function addMarker(location, icon) {
+function addMarker(location, icon, popup) {
   const marker = new google.maps.Marker({
     position: new google.maps.LatLng(parseFloat(location[0]), parseFloat(location[1])),
     icon: icon || location[2],
     map: map
+  });
+  marker.addListener('click', function() {
+    const modal = document.getElementById("projects");
+    modal.setAttribute("data-tool", popup[0] || location[3]);
+    modal.setAttribute("data-title", popup[1] || location[4]);
+    modal.setAttribute("data-content", popup[2] || location[5]);
+    modal.setAttribute("data-cat", popup[3] || location[6]);
+    modal.setAttribute("data-image", popup[4] || location[7]);
+    modal.setAttribute("data-link", popup[5] || location[8]);
+
+    myModal.open();
   });
   markers.push(marker);
 }
@@ -223,6 +216,7 @@ $(document).ready(function () {
     const iconGroup = $(this).data('group');
     const coordinates = $(this).data('coordinates');
     const filter = $(this).data('filter');
+    const popup = $(this).data('popup');
     const itemGrid = $('.filtr-item');
     const filterItemGrid = $(`.filtr-item[data-category=${filter}]`);
 
@@ -235,9 +229,9 @@ $(document).ready(function () {
 
     deleteMarkers();
 
-    coordinates.forEach(function (item) {
+    coordinates.forEach(function (item, index) {
       const splitter = item.split(', ');
-      addMarker(splitter, icon);
+      addMarker(splitter, icon, popup[index]);
     });
 
     $('.more--js').attr('data-filter', filter)

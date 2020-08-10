@@ -117,6 +117,7 @@
   }
 
   &:hover {
+    color: $black;
     background-color: $white-darken;
     .long-arrow-right::before {
       width: 77px;
@@ -509,7 +510,7 @@
     display: inline-flex;
     align-items: center;
     cursor: pointer;
-    @include transitionEaseInOut(all);
+    transition: all .5s cubic-bezier(0.76, 0, 0.24, 1) !important;
     white-space: nowrap;
     margin-right: 20px;
     @media screen and (min-width: $screen-md-min) {

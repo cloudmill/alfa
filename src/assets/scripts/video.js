@@ -6,6 +6,7 @@ const getSrc = NODE_ENV_PATH === 'development'
 
 if(video_model) {
   onloadVideo(video_model, getSrc);
+  video_model.play();
 }
 
 function onloadVideo(videoTag, src) {

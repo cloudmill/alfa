@@ -20,6 +20,8 @@ $(document).ready(() => {
 
   // form
 	require('Scripts/input');
+
+	// anima
 	require('Scripts/parallax');
   require('Scripts/video');
 

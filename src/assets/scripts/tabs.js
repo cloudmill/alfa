@@ -25,7 +25,7 @@ function tabControl() {
       $(target).addClass('active');
 
       $('html, body').animate({
-        scrollTop: $(href).offset().top - 50
+        scrollTop: $(target).offset().top - 50
       }, 500);
 
       AOS.init({

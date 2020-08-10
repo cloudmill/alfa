@@ -8,7 +8,7 @@
   position: fixed;
   right: 15px;
   top: 17px;
-  z-index: 100;
+  z-index: 10000;
   @media screen and (min-width: $screen-md-min) {
     display: flex;
     justify-content: space-between;
@@ -46,6 +46,8 @@
         display: block;
         background-color: $base-color-main;
         @include transitionEaseInOut(all);
+        position: relative;
+        top: 0;
         @media screen and (min-width: $screen-md-min) {
           width: 42px;
           background-color: white;
@@ -88,6 +90,7 @@
     &:hover {
       @media screen and (min-width: $screen-xl-min) {
         span {
+          top: 12px;
           + span {
             margin-top: -2px;
           }
