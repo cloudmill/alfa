@@ -109,8 +109,8 @@ module.exports = env => {
 								data: {
 									menu: require('../src/views/data/menu.json'),
 									index: require('../src/views/data/index.json'),
-                  abc: require('../src/views/data/abc.json'),
-                  list: require('../src/views/data/list.json'),
+									abc: require('../src/views/data/abc.json'),
+									list: require('../src/views/data/list.json'),
 								}
 							}
 						}
@@ -182,6 +182,7 @@ module.exports = env => {
 					{from: 'assets/images/favicons/favicon.ico', to: 'assets/favicon.ico'},
 					{from: 'assets/images', to: 'assets/images'},
 					{from: 'assets/fonts', to: 'assets/fonts'},
+					{from: 'assets/scripts/polyfill.js', to: 'assets/polyfill.js'},
 				]
 			}),
 
@@ -199,9 +200,9 @@ module.exports = env => {
 				]
 			}),
 
-      new webpack.DefinePlugin({
-        NODE_ENV_PATH: JSON.stringify(env.NODE_ENV_PATH)
-      }),
+			new webpack.DefinePlugin({
+				NODE_ENV_PATH: JSON.stringify(env.NODE_ENV_PATH)
+			}),
 
 			new SVGSpriteMapPlugin('src/sprites/**/*.svg', {
 				styles: path.join(__dirname, '../src/assets/styles/_sprites.scss'),
