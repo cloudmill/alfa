@@ -2,7 +2,7 @@ import jBox from "jbox";
 
 export const myModal = new jBox('Modal', {
   attach: '#myModal',
-  content: $('#projects'),
+  content: $('#projectsPopup'),
   animation: {
     open: 'slide:right',
     close: 'slide:right',

@@ -283,6 +283,9 @@
         min-height: 100vh;
         display: flex;
         flex-direction: column;
+        @media screen and (min-width: $screen-xl-min) {
+          height: 100vh;
+        }
       }
     }
     h2 {

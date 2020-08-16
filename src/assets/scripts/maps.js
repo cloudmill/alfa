@@ -176,13 +176,13 @@ function addMarker(location, icon, popup) {
     map: map
   });
   marker.addListener('click', function() {
-    const modal = document.getElementById("projects");
-    modal.setAttribute("data-tool", popup[0] || location[3]);
-    modal.setAttribute("data-title", popup[1] || location[4]);
-    modal.setAttribute("data-content", popup[2] || location[5]);
-    modal.setAttribute("data-cat", popup[3] || location[6]);
-    modal.setAttribute("data-image", popup[4] || location[7]);
-    modal.setAttribute("data-link", popup[5] || location[8]);
+    const modal = document.getElementById("projectsPopup");
+    modal.setAttribute("data-tool", popup ? popup[0] : location[3]);
+    modal.setAttribute("data-title",  popup ? popup[1] : location[4]);
+    modal.setAttribute("data-content",  popup ? popup[2] : location[5]);
+    modal.setAttribute("data-cat",  popup ? popup[3] : location[6]);
+    modal.setAttribute("data-image",  popup ? popup[4] : location[7]);
+    modal.setAttribute("data-link",  popup ? popup[5] : location[8]);
 
     myModal.open();
   });
@@ -234,7 +234,7 @@ $(document).ready(function () {
       addMarker(splitter, icon, popup[index]);
     });
 
-    $('.more--js').attr('data-filter', filter)
+    $('.more--js').attr('data-filter', filter);
     itemGrid.slideUp(500);
     filterItemGrid.slideDown(500);
 

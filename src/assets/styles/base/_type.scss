@@ -107,7 +107,7 @@ h6, .zeta    {
 // Body text
 p { margin: 0 0 $line-height-computed-half; }
 
-b { font-weight: bold; }
+b { font-weight: 600; }
 
 // Alignment
 .text--left           { text-align: left; }
@@ -289,7 +289,7 @@ ol {
         position: absolute;
         left: 10px;
         top: 7px;
-        @include transitionEaseInOut(left);
+        @include transitionEaseInOut(all);
         @media screen and (min-width: $screen-lg-min) {
           left: 0;
         }
