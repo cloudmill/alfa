@@ -288,6 +288,12 @@
         }
       }
     }
+
+    .title-left {
+      @media screen and (min-width: $screen-xl-min) {
+        margin-left: 140px;
+      }
+    }
     h2 {
       font-size: 32px;
       line-height: 1.18;
@@ -309,10 +315,6 @@
         @media screen and (min-width: $screen-md-min) {
           width: auto;
         }
-      }
-
-      &:nth-child(2) {
-        margin-left: 140px;
       }
 
       &.title-icon {

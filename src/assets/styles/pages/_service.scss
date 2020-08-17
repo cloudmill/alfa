@@ -3,12 +3,14 @@
     @extend .mainContainer;
   }
 
-  .equipmentList-item:last-child {
-    @media screen and (min-width: $screen-lg-min) {
-      .equipmentList-item__bottom {
+  @media screen and (min-width: $screen-lg-min) {
+    .equipmentList-item:last-child {
+      .equipmentList-item__top {
         position: relative;
-        top: -100px;
-        z-index: -1;
+        z-index: 1;
+      }
+      .equipmentList-item__bottom {
+        margin-top: -100px;
       }
     }
   }

@@ -44,11 +44,11 @@ mixin navTitle(title, parent)
   .nav-title
     .container
       ul.breadcrumbs.revealOut(data-aos='')
-        li.breadcrumbs__item
-          a.breadcrumbs__link.revealIn(href="#") Главная
+        li.breadcrumbs__item.revealIn
+          a.breadcrumbs__link(href="#") Главная
         - if(parent)
-          li.breadcrumbs__item
-            a.breadcrumbs__link.revealIn(href="#")= parent
+          li.breadcrumbs__item.revealIn
+            a.breadcrumbs__link(href="#")= parent
         li.breadcrumbs__item.active.revealIn= title
       .mainTitle.revealOut(data-aos='')
         h1.revealIn= title
@@ -56,11 +56,11 @@ mixin navTitle(title, parent)
 
 mixin navBread(title, parent)
   ul.breadcrumbs.revealOut(data-aos='')
-    li.breadcrumbs__item
-      a.breadcrumbs__link.revealIn(href="#") Главная
+    li.breadcrumbs__item.revealIn
+      a.breadcrumbs__link(href="#") Главная
     - if(parent)
-      li.breadcrumbs__item
-        a.breadcrumbs__link.revealIn(href="#")= parent
+      li.breadcrumbs__item.revealIn
+        a.breadcrumbs__link(href="#")= parent
       li.breadcrumbs__item.active.revealIn= title
 
 mixin navTitleBack(title, parent, src, items)
@@ -209,7 +209,7 @@ mixin mainSlider(items)
       .index-slider-title
         .revealOut
           h2 Фильтры
-        .revealOut
+        .revealOut.title-left
           h2 прямой
         .revealOut
           h2 намотки
@@ -225,21 +225,21 @@ mixin mainSlider(items)
   each item in items
     .swiper-slide
       .slider-back.parallax-item
-        .image(style=`background: url("assets/images/${item}") no-repeat center / cover`)
+        .image(style=`background: url("assets/images/${item.img}") no-repeat center / cover`)
       .container.relative
         .index-slider-title
-          .revealOut
-            h2 Фильтры
-          .revealOut
-            h2 прямой
-          .revealOut
-            h2 намотки
-          .revealOut
-            h2.title-icon
-              +img('alfa.svg')
-              span АльфаДирект
+          each title in item.titles
+            - let active  = ''
+            - let left  = ''
+            - if(title.black === true) active='title-icon'
+            - if(title.left === true) left='title-left'
+            .revealOut(class=left)
+              h2(class=active)
+                - if(title.img === true)
+                  +img('alfa.svg')
+                = title.text
         .index-slider-desc
-          p Высокопрочные проволочные #[br] фильтры для наземных #[br] и&nbsp;оффшорных месторождений #[br] нефти и газа
+          p!= item.desc
           a.btn.btn--primary.btn--transparent(href='#')
             span
             | Подробнее
@@ -305,18 +305,3 @@ mixin fieldRadio(name, id, label, checked)
 //- img
 mixin img(src, className)
   img(src=`assets/images/${src}`, alt='Alfa', class=className)
-
-
-//- maps-iframe
-- var map = 'iframe src="putMapURLhere" width="100%" height="400" frameborder="0" style="pointer-events: none;" allowfullscreen></iframe';
-
-
-//- article
-mixin article(title)
-  .article
-    .article-wrapper
-      h1= title
-      if block
-        block
-      else
-        p No content provided

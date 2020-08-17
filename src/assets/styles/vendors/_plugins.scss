@@ -376,7 +376,7 @@ $items:
     width: 29px;
     -webkit-transform-origin: right top;
     transform-origin: right top;
-    @include transitionEaseInOut(width);
+    @include transitionEaseInOut(all);
   }
 }
 .long-arrow-left {

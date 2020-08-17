@@ -364,5 +364,121 @@
       "image": "technology/item-1.jpg",
       "desc": "Компоновочное устройство, основанное на использовании комбинации технологии многостадийного гидроразрыва пласта (МГРП), фильтрации флюида от твердой примеси и регулирования зонального притока в нефтяной скважине."
     }
+  ],
+  "slider": [
+    {
+      "img": "slide.jpg",
+      "desc": "Эффективное решение для <br /> борьбы с&nbsp;прорывами воды и&nbsp;газа",
+      "titles": [
+        {
+          "img": false,
+          "black": false,
+          "left": false,
+          "text": "Устройства"
+        },
+        {
+          "img": false,
+          "black": false,
+          "left": true,
+          "text": "контроля"
+        },
+        {
+          "img": false,
+          "black": false,
+          "left": false,
+          "text": "притока"
+        },
+        {
+          "img": true,
+          "black": true,
+          "left": false,
+          "text": "AICV"
+        }
+      ]
+    },
+    {
+      "img": "slide1.jpg",
+      "desc": "Фильтры с муфтами переключения <br /> для регулирования профиля <br /> притока",
+      "titles": [
+        {
+          "img": false,
+          "black": false,
+          "left": false,
+          "text": "Управляемые"
+        },
+        {
+          "img": false,
+          "black": false,
+          "left": true,
+          "text": "фильтры"
+        },
+        {
+          "img": false,
+          "black": true,
+          "left": false,
+          "text": "АльфаСелект"
+        }
+      ]
+    },
+    {
+      "img": "slide.jpg",
+      "desc": "Услуги анализа, проектирования, <br /> моделирования, расчетов системы <br /> заканчивания скважин",
+      "titles": [
+        {
+          "img": false,
+          "black": false,
+          "left": false,
+          "text": "Услуги"
+        },
+        {
+          "img": false,
+          "black": false,
+          "left": true,
+          "text": "тестирования"
+        },
+        {
+          "img": false,
+          "black": false,
+          "left": false,
+          "text": "скважинного"
+        },
+        {
+          "img": false,
+          "black": false,
+          "left": true,
+          "text": "оборудования"
+        }
+      ]
+    },
+    {
+      "img": "slide1.jpg",
+      "desc": "Услуги анализа, проектирования, <br /> моделирования, расчетов системы <br /> заканчивания скважин",
+      "titles": [
+        {
+          "img": false,
+          "black": false,
+          "left": false,
+          "text": "Подбор"
+        },
+        {
+          "img": false,
+          "black": false,
+          "left": true,
+          "text": "фильтров"
+        },
+        {
+          "img": false,
+          "black": false,
+          "left": false,
+          "text": "скважинного"
+        },
+        {
+          "img": false,
+          "black": false,
+          "left": true,
+          "text": "оборудования"
+        }
+      ]
+    }
   ]
 }

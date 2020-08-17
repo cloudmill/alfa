@@ -440,6 +440,9 @@
           top: -5px;
           position: relative;
           display: none;
+          &:before {
+            color: #c4c4c4;
+          }
           @media screen and (min-width: $screen-md-min) {
             display: inline-block;
           }
@@ -458,6 +461,7 @@
           color: $base-color-main;
           &::before {
             width: 49px;
+            color: $base-color-main;
           }
         }
       }

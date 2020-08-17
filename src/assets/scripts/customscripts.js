@@ -110,10 +110,10 @@ function filterLogic(value, condition, isCharacter, elem) {
         if(regex) counter++;
         return regex;
       }).slideDown(500);
-    $(".abc--js li").removeClass('active');
     if(isCharacter) {
       elem.addClass('active');
     }
+    $(".abc--js li").removeClass('active');
     $('.glossary-results').addClass('active');
     $('.glossary-results-title span').text(counter);
     $('.glossary-results-desc span').text(value);
@@ -140,12 +140,14 @@ $(".abc--js li").click(function () {
 
 $(".search--js").click(function () {
   const value = $(this).parent().find('input')[0].value;
+  if(!value) return;
   filterLogic(value, value, false);
 });
 
 $(document).on('keypress',function(e) {
   if($('.glossary-search').length && e.which == 13) {
     const value = $('.glossary-search input')[0].value;
+    if(!value) return;
     filterLogic(value, value, false);
   }
 });

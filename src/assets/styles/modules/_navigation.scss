@@ -46,6 +46,9 @@
 
       .long-arrow-right {
         color: $base-color-main;
+        &:before {
+          color: $base-color-main;
+        }
       }
     }
 
@@ -80,6 +83,7 @@
       .setImg {
         background-size: cover;
         background-position: center;
+        mix-blend-mode: normal;
       }
       @media screen and (min-width: $screen-lg-min) {
         .row.end__lg.bottom__lg {

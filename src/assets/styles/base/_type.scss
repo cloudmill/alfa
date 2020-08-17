@@ -294,6 +294,7 @@ ol {
           left: 0;
         }
         &::before {
+          color: #c4c4c4;
           width: 13px;
         }
       }
@@ -309,6 +310,7 @@ ol {
             left: 10px;
           }
           &::before {
+            color: $base-color-main;
             width: 23px;
           }
         }
