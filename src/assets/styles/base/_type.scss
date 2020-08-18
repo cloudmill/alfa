@@ -282,37 +282,41 @@ ol {
         display: block;
         @include transitionEaseInOut(color);
       }
-      .long-arrow-right {
-        width: 10px;
-        height: 10px;
+      .long-arrow-line {
         color: #c4c4c4;
+        width: 13px;
+        right: 0px;
+      }
+      .long-arrow-inner {
         position: absolute;
         left: 10px;
         top: 7px;
+        color: #c4c4c4;
         @include transitionEaseInOut(all);
         @media screen and (min-width: $screen-lg-min) {
           left: 0;
         }
-        &::before {
-          color: #c4c4c4;
-          width: 13px;
-        }
+      }
+      .long-arrow-right {
+        width: 10px;
+        height: 10px;
+        @include transitionEaseInOut(all);
       }
       &:hover {
         padding-left: 45px;
         a {
           color: $base-color-main;
         }
-        .long-arrow-right {
+        .long-arrow-inner {
           color: $base-color-main;
           left: 20px;
           @media screen and (min-width: $screen-lg-min) {
             left: 10px;
           }
-          &::before {
-            color: $base-color-main;
-            width: 23px;
-          }
+        }
+        .long-arrow-line {
+          color: $base-color-main;
+          width: 23px;
         }
       }
     }
@@ -434,9 +438,13 @@ ol {
       padding-left: 140px;
     }
     > li {
-      margin-bottom: 20px;
-      padding-left: 60px;
+      margin-bottom: 10px;
+      padding-left: 30px;
       position: relative;
+      @media screen and (min-width: $screen-md-min) {
+        margin-bottom: 20px;
+        padding-left: 60px;
+      }
       &::before {
         counter-increment: items 1;
         content: counter(items, decimal) ".";

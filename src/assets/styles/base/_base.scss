@@ -58,6 +58,10 @@ body {
   @media screen and (min-width: $screen-md-min) {
     font-size: $base-font-size;
   }
+
+  &.fixed {
+    overflow: hidden;
+  }
 }
 
 section {

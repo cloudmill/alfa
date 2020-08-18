@@ -378,8 +378,11 @@
 .equipmentList {
   &-item {
     border-top: 2px solid $black;
-    padding-top: 30px;
+    padding-top: 10px;
     display: block;
+    @media screen and (min-width: $screen-md-min) {
+      padding-top: 30px;
+    }
 
     &:not(:last-child) {
       margin-bottom: 50px;
@@ -429,7 +432,6 @@
 
       > * {
         margin-top: 0;
-        margin-bottom: 30px;
         position: relative;
         @media screen and (min-width: $screen-md-min) {
           margin-bottom: 40px;
@@ -473,7 +475,9 @@
 
     &__bottom {
       position: relative;
-      margin-top: 30px;
+      @media screen and (min-width: $screen-md-min) {
+        margin-top: 30px;
+      }
     }
 
     &__mark {
@@ -554,6 +558,7 @@
 .equipmentNav {
   margin-bottom: 170px;
   padding-left: 54px;
+  padding-top: 90px;
 
   li {
     margin-bottom: 20px;

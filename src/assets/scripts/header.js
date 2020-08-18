@@ -1,16 +1,19 @@
-import {isMobileOnly} from "./utils";
+import {isMobileOnly, isMobileAndTabletOnly} from "./utils";
 
 // menu
 $('.menu--js').click(function() {
+	$('body').toggleClass('fixed');
 	$(this).find('.menu').toggleClass('open');
 	$('.navbar').toggleClass('open');
 });
 $(document).mouseup(function (e) {
   const container = $(".navbar.open");
   const menu = $(".menu");
-  if (container.has(e.target).length === 0){
-    container.removeClass("open");
-    menu.removeClass("open");
+  if(!isMobileAndTabletOnly) {
+    if (container.has(e.target).length === 0) {
+      container.removeClass("open");
+      menu.removeClass("open");
+    }
   }
 });
 //  menu

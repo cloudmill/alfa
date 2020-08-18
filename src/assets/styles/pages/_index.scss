@@ -63,7 +63,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  margin: 60px 0;
+  margin: 50px 0 60px;
   color: $black;
   @include transitionEaseInOut(background-color);
   @media screen and (min-width: $screen-md-min) {
@@ -103,26 +103,30 @@
   }
 
   .long-arrow-inner {
-    width: 43px;
-    height: 43px;
-  }
-
-  .long-arrow-line {
-    background-color: $base-color-main;
-    width: 54px;
-  }
-  .long-arrow-right {
-    color: $base-color-main;
+    display: flex;
+    vertical-align: middle;
     top: -10px;
     @media screen and (min-width: $screen-md-min) {
       top: 0;
     }
+  }
+
+  .long-arrow-line {
+    background-color: $base-color-main;
+    width: 20px;
+    right: -1px;
+    @media screen and (min-width: $screen-md-min) {
+      width: 57px;
+      right: -6px;
+    }
+  }
+  .long-arrow-right {
+    color: $base-color-main;
+    width: 20px;
+    height: 20px;
     @media screen and (min-width: $screen-lg-min) {
       width: 43px;
       height: 43px;
-      &::before {
-        width: 57px;
-      }
     }
   }
 
@@ -131,7 +135,10 @@
     background-color: $white-darken;
     .long-arrow-line,
     .long-arrow-right::before {
-      width: 77px;
+      width: 37px;
+      @media screen and (min-width: $screen-md-min) {
+        width: 77px;
+      }
     }
   }
 }
@@ -218,6 +225,9 @@
       @media screen and (min-width: $screen-md-min) {
         flex: inherit;
         padding-left: 20px;
+        padding-right: 40px;
+      }
+      @media screen and (min-width: $screen-xl-min) {
         padding-right: 75px;
         padding-bottom: 50px;
       }
@@ -225,7 +235,7 @@
       &-active {
         font-size: 40px;
         padding-bottom: 50px;
-        @media screen and (min-width: $screen-md-min) {
+        @media screen and (min-width: $screen-xl-min) {
           padding-bottom: 80px;
         }
         &:before {
@@ -338,6 +348,9 @@
         margin-top: 25vh;
       }
       @media screen and (min-width: $screen-lg-min) {
+        margin-top: 20vh;
+      }
+      @media screen and (min-width: $screen-xl-min)  and (min-height: 1000px) {
         margin: auto 0;
       }
     }
@@ -387,7 +400,7 @@
         right: 20px;
         margin: 0;
       }
-      @media screen and (min-width: $screen-lg-min) {
+      @media screen and (min-width: $screen-xxl-min) {
         bottom: 60px;
         right: 90px;
       }
@@ -462,7 +475,7 @@
 
       img {
         margin-top: 20px;
-        @media screen and (min-width: $screen-md-min) {
+        @media screen and (min-width: $screen-xxl-min) {
           margin-top: -20px;
         }
       }
@@ -516,6 +529,12 @@
   display: flex;
   width: 100%;
   overflow-x: auto;
+
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar-thumb,
+  &::-webkit-scrollbar {
+    background-color: transparent;
+  }
   @media screen and (min-width: $screen-md-min) {
     font-size: 20px;
     display: block;

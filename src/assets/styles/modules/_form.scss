@@ -21,6 +21,12 @@
     .form__group {
       margin-left: auto;
     }
+    h3 {
+      padding-top: 40px;
+      @media screen and (min-width: $screen-md-min) {
+        padding-top: 0;
+      }
+    }
     &--inline {
       justify-content: space-between;
       max-width: inherit;

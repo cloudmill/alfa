@@ -1,4 +1,5 @@
 import AOS from "aos";
+import {isMobileOnly} from "./utils";
 
 // accordion
 $('.accordion li').click(function (e) {
@@ -23,11 +24,11 @@ $('.acc__title').click(function(e) {
 
   dropDown.slideToggle();
 
-  // setTimeout(() => {
-  //   AOS.init({
-  //     offset: 50,
-  //   });
-  // }, 500);
+  setTimeout(() => {
+    AOS.init({
+      offset: 50,
+    });
+  }, 1000);
 });
 // accordion
 
@@ -122,6 +123,11 @@ function filterLogic(value, condition, isCharacter, elem) {
     }
   }
 
+  if(isMobileOnly) {
+    const top = $('.glossary-results').offset().top;
+    $('body,html').animate({scrollTop: top - 70}, 1000);
+  }
+
   setTimeout(() => {
     AOS.init({
       offset: 50,
@@ -161,18 +167,6 @@ $('.input__file-js').change(function() {
     $('.input__text-js').text(fileTitle);
   });
 });
-
-
-//test form
-$('.form--js').click(function () {
-  $(this).closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
-  return false;
-});
-$('.form-back--js').click(function () {
-  $(this).closest('.form-send').hide().prev().css('opacity', 1);
-  return false;
-});
-//test form
 
 
 // sticky

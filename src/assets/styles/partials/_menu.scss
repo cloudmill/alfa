@@ -102,18 +102,26 @@
   &__language {
     font-weight: 500;
     font-size: 20px;
-    @extend .hidden__sm;
-    @extend .hidden__xs;
     a {
       display: block;
       text-decoration: none;
-      color: $base-color-dark;
+      color: #818181;
       + a {
-        margin-top: 30px;
+        margin-left: 20px;
+      }
+      @media screen and (min-width: $screen-md-min) {
+        color: $base-color-dark;
+        + a {
+          margin-top: 30px;
+          margin-left: 0;
+        }
       }
       &:hover,
       &.active {
-        color: white;
+        color: $base-color-main;
+        @media screen and (min-width: $screen-md-min) {
+          color: white;
+        }
       }
     }
   }

@@ -72,12 +72,13 @@
 				<div class="menu"><span></span><span></span></div>
 				<div>Меню</div>
 			</div>
-			<div class="page-menu__language"><a class="active" href="#">Ru</a><a href="#">En</a></div>
+			<div class="page-menu__language hideOnMobile"><a class="active" href="#">Ru</a><a href="#">En</a></div>
 		</div>
 		<nav class="navbar">
 			<div class="navbar-inner">
 				<div class="row">
 					<div class="col col__lg-6 col__md-5 col__xs-12 navbar-item">
+						<div class="page-menu__language"><a class="active" href="#">Ru</a><a href="#">En</a></div>
 						<ul class="menuNav">
 							<li class="menuNav__item"><a class="menuNav__link" href="#" title="Технологии">Технологии</a></li>
 							<li class="menuNav__item"><a class="menuNav__link" href="#" title="Оборудование">Оборудование</a></li>
@@ -134,7 +135,7 @@
 							</div>
 						</div>
 						<div class="row m-auto bottom__xs between__xs">
-							<div class="col col__lg-4 col__xs-6 nav-background__link revealOut" data-aos=""><a class="revealIn" href="#"><img src="assets/images/icons/pdf.svg" alt="Alfa" />Скачать <br /> презентацию</a></div>
+							<div class="col col__lg-4 col__xs-6 nav-background__link revealOut" data-aos=""><a class="revealIn" href="#"><i class="icon-pdf"></i>Скачать <br /> презентацию</a></div>
 						</div>
 					</div>
 				</div>
@@ -266,7 +267,7 @@
 												<div class="input input--hoshi"><textarea class="control input__field input__field--hoshi" name="content" id="content"></textarea><label class="input__label input__label--hoshi" for="content"><span class="input__label-content input__label-content--hoshi">Вопрос</span></label></div>
 											</div>
 											<div class="col col__md-6 col__xs-12 form__group" data-aos="fade-up">
-												<div class="radio"><input type="radio" name="agreed" id="agreed" /><label for="agreed">Согласен на обработку персональных данных в соответствии с <a href="#">политикой конфиденциальности</a></label></div>
+												<div class="checkbox"><input type="checkbox" name="agreed" id="agreed" required="required" /><label for="agreed">Согласен на обработку персональных данных в соответствии с <a href="#">политикой конфиденциальности</a></label></div>
 											</div>
 											<div class="col col__md-6 col__xs-12 form__group" data-aos="fade-up"><button class="btn btn--primary form--js" type="submit"><span></span>Отправить</button></div>
 										</div>

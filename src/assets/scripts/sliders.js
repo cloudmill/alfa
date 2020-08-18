@@ -4,39 +4,42 @@ if ($('.indexSlider').length > 0) {
   let swiperInstances = [];
   $('.indexSlider').each(function(index) {
     const $this = $(this);
+    const $slider = $(this)[0];
     const pagination = $this.parent().find(".swiper-pagination")[0];
     const prev = $this.parent().find(".swiper-prev")[0] || $('.swiper-prev-lab')[0];
     const next = $this.parent().find(".swiper-next")[0] || $('.swiper-next-lab')[0];
     const effect = $this.data('effect');
     const adaptive = $this.data('adaptive');
     const autoHeight = $this.data('autoheight');
-
-    swiperInstances[index] = new Swiper($(this)[0], {
+    const options = {
       slidesPerView: adaptive ? 'auto' : 1,
       spaceBetween: adaptive ? 15 : 0,
       effect: effect || 'slide',
+      simulateTouch: false,
       autoplay: {
-        delay: 10000,
-      },
-      autoHeight: !!autoHeight,
+      delay: 10000,
+    },
+    autoHeight: !!autoHeight,
       pagination: {
-        el: '.swiper-pagination',
+      el: pagination,
         clickable: true,
         renderBullet: function (index, className) {
-          return '<span class="' + className + '">0' + (index + 1) + '</span>';
-        },
+        return '<span class="' + className + '">0' + (index + 1) + '</span>';
       },
-      navigation: {
-        prevEl: prev,
+    },
+    navigation: {
+      prevEl: prev,
         nextEl: next,
-      },
-      breakpoints: {
-        768: {
-          spaceBetween: 0,
+    },
+    breakpoints: {
+      768: {
+        spaceBetween: 0,
           slidesPerView: 1,
-        }
       }
-    });
+    }
+  }
+
+    swiperInstances[index] = new Swiper($slider, options);
 
     let previousIndex;
     swiperInstances[index].on('slideChange', function () {
@@ -47,6 +50,13 @@ if ($('.indexSlider').length > 0) {
       setTimeout(() => {
         $(previousSlide).removeClass('swiper-slide-last');
       }, 2000);
+    });
+
+
+    $(window).on("orientationchange", function() {
+      setTimeout(() => {
+        swiperInstances[index].update();
+      }, 800);
     });
   });
 

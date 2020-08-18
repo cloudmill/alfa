@@ -12,13 +12,17 @@ export function validatePhone(phone) {
 
 function validateField(element, event) {
   const isRequired = element.attr('required');
-  const value = event.target.value;
+  const checkbox = element.attr('type') === 'checkbox';
+  const value = event;
   const tmpval = element.val();
+  let result;
 
   if (tmpval == '') {
     element.closest('.input').removeClass('input--filled');
+    result = false;
   } else {
     element.closest('.input').addClass('input--filled');
+    result = true;
   }
 
   if (value) {
@@ -26,29 +30,72 @@ function validateField(element, event) {
       if (validateEmail(value)) {
         element.closest('.input').removeClass('error');
         element.closest('.input').find('.error-content').text('');
+        result = true;
       } else {
         element.closest('.input').addClass('error');
         element.closest('.input').find('.error-content').text('Поле заполнено некорректно');
+        result = false;
       }
     } else if (element.prop('name') === 'phone') {
       if (validatePhone(value)) {
         element.closest('.input').removeClass('error');
         element.closest('.input').find('.error-content').text('');
+        result = true;
       } else {
         element.closest('.input').addClass('error');
         element.closest('.input').find('.error-content').text('Поле заполнено некорректно');
+        result = false;
       }
     } else {
       element.closest('.input').removeClass('error');
       element.closest('.input').find('.error-content').text('');
+      result = true;
+    }
+  }
+  if(checkbox && isRequired) {
+    if(element.prop('checked')) {
+      element.closest('.checkbox').removeClass('error');
+      result = true;
+    } else {
+      element.closest('.checkbox').addClass('error');
+      result = false;
     }
   }
   if (!value && isRequired) {
     element.closest('.input').addClass('error');
     element.closest('.input').find('.error-content').text('Пожалуйста, заполните поле');
+    result = false;
   }
+  return result;
 }
 
 $(document).on("blur", '.input input, .textarea textarea', function (event) {
-  validateField($(this), event);
+  validateField($(this), event.target.value);
 });
+$(document).on("change", '.checkbox input', function (event) {
+  validateField($(this), event.target.value);
+});
+
+
+//test form
+$('.form--js').click(function (e) {
+  e.preventDefault()
+  const result = [];
+  $(this).closest('form').find('input').each(function(){
+    const input = $(this)[0];
+    result.push(validateField($(this), input.value));
+  });
+  const isNONValid = result.includes(false);
+  if(isNONValid) {
+    return false;
+  }
+  $(this).closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
+});
+$('.form-back--js').click(function () {
+  const form = $(this).closest('form');
+  form.trigger("reset");
+  form.find('input').parent().removeClass('input--filled');
+  $(this).closest('.form-send').hide().prev().css('opacity', 1);
+  return false;
+});
+//test form

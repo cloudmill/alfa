@@ -20,6 +20,7 @@
     .breadcrumbs {
       overflow-x: auto;
       overflow-y: hidden;
+
       @media screen and (min-width: $screen-md-min) {
         overflow: visible;
       }
@@ -43,6 +44,16 @@
     ul:not(.breadcrumbs) {
       color: white;
       max-width: 980px;
+      a {
+        color: white;
+      }
+
+
+      .col__xl-5 {
+        @media screen and (min-width: $screen-xl-min) {
+          width: 42.66667%;
+        }
+      }
 
       .long-arrow-right {
         color: $base-color-main;
@@ -120,12 +131,12 @@
           color: $base-color-main;
         }
       }
-      img {
+      i {
         margin-right: 10px;
-        width: 26px;
+        font-size: 33px;
         @media screen and (min-width: $screen-md-min) {
           margin-right: 25px;
-          width: auto;
+          font-size: 58px;
         }
       }
     }
@@ -220,14 +231,20 @@
   font-weight: 600;
   font-size: 13px;
   line-height: 130%;
-  padding: 30px 0;
-  border-bottom: 1px solid $gray;
+  padding: 30px 0 0;
   overflow-x: auto;
   justify-content: space-between;
+
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar-thumb,
+  &::-webkit-scrollbar {
+    background-color: transparent;
+  }
   @media screen and (min-width: $screen-md-min) {
     font-size: 18px;
     padding: 60px 0;
     overflow-x: visible;
+    border-bottom: 1px solid $gray;
   }
   @media screen and (min-width: $screen-xl-min) {
     justify-content: flex-start;
@@ -289,6 +306,13 @@
       transition: opacity .5s .2s;
     }
   }
+  .page-menu__language {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    top: 30px;
+  }
+
 
   &:after {
     content: '';
@@ -306,7 +330,7 @@
   &-inner {
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 90px 15px 40px;
+    padding: 70px 15px 40px;
 
     @media screen and (min-width: $screen-md-min) {
       padding: 0;

@@ -170,6 +170,12 @@
     margin-bottom: 50px;
     @media screen and (max-width: $screen-md-max) {
       overflow-x: auto;
+
+      &::-webkit-scrollbar-track,
+      &::-webkit-scrollbar-thumb,
+      &::-webkit-scrollbar {
+        background-color: transparent;
+      }
     }
   }
   .publications-item h3 {

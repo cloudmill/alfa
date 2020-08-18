@@ -76,6 +76,9 @@
     display: flex;
     @media screen and (min-width: $screen-md-min) {
       position: static;
+      margin-top: 30px;
+    }
+    @media screen and (min-width: $screen-xxl-min) {
       margin-top: auto;
     }
     .swiper-prev {
