@@ -9,8 +9,8 @@
             .col.col__md-6.col__xs-12.form__group(data-aos='fade-up'): +fieldInput('text', 'name', 'nameVac', 'Имя', true)
             .col.col__md-6.col__xs-12.form__group(data-aos='fade-up'): +fieldInput('email', 'email', 'emailVac', 'Email', true)
             .col.col__md-6.col__xs-12.form__group(data-aos='fade-up')
-              .radio
-                input(type='radio', name='agreed', id='agreed')
+              .checkbox
+                input(type='checkbox', name='agreed', id='agreed')
                 label(for='agreed') Согласен на обработку персональных данных в соответствии с #[a(href='#') политикой конфиденциальности]
             .col.col__md-6.col__xs-12.form__group(data-aos='fade-up')
               button.btn.btn--primary.form--js(type='submit')

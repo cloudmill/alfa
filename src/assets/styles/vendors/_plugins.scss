@@ -133,6 +133,7 @@ $items:
         margin-bottom: 30px;
         overflow: hidden;
         position: relative;
+        @include transitionEaseInOut(padding-left);
         @media screen and (min-width: $screen-lg-min) {
           font-size: 25px;
         }
@@ -143,14 +144,18 @@ $items:
         &:after {
           content: '';
           background: url("../images/icons/rightArrowBlue.svg") no-repeat center right;
-          width: 31px;
-          height: 31px;
+          width: 21px;
+          height: 21px;
           position: absolute;
-          top: 0;
-          bottom: 0;
+          top: 7px;
           margin: auto;
           left: -50px;
           @include transitionEaseInOut(left);
+          @media screen and (min-width: $screen-xxl-min) {
+            width: 31px;
+            height: 31px;
+            top: 16px;
+          }
         }
         &.active {
           padding-left: 50px;
@@ -353,6 +358,23 @@ $items:
 }
 //select
 
+.long-arrow-inner {
+  //width: 24px;
+  //height: 24px;
+  position: relative;
+}
+
+.long-arrow-line {
+  right: -6px;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  height: 2px;
+  background-color: #c4c4c4;
+  width: 29px;
+  margin: auto;
+  @include transitionEaseInOut(all);
+}
 
 .long-arrow-left,
 .long-arrow-right {
@@ -366,7 +388,7 @@ $items:
   color: #c4c4c4;
   @include transitionEaseInOut(color);
   &::before {
-    content: '';
+    //content: '';
     right: 0;
     top: -2px;
     position: absolute;

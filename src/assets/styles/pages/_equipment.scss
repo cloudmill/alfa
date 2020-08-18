@@ -435,16 +435,18 @@
           margin-bottom: 40px;
         }
 
-        .long-arrow-right {
-          left: -20px;
-          top: -5px;
-          position: relative;
-          display: none;
-          &:before {
-            color: #c4c4c4;
+        .long-arrow {
+          &-inner {
+            left: -20px;
+            top: -1px;
+            display: none;
+            @media screen and (min-width: $screen-md-min) {
+              display: inline-flex;
+            }
           }
-          @media screen and (min-width: $screen-md-min) {
-            display: inline-block;
+          &-line {
+            right: -2px;
+            background-color: #c4c4c4;
           }
         }
       }
@@ -457,11 +459,13 @@
 
       a:hover {
         color: $base-color-main;
-        .long-arrow-right {
-          color: $base-color-main;
-          &::before {
-            width: 49px;
+        .long-arrow {
+          &-right {
             color: $base-color-main;
+          }
+          &-line {
+            width: 49px;
+            background-color: $base-color-main;
           }
         }
       }

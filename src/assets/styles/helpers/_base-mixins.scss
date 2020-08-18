@@ -20,6 +20,9 @@
 @mixin transitionEaseInOut($animation-name: all, $animation-time: .5s) {
   transition: $animation-name $animation-time cubic-bezier(0.76, 0, 0.24, 1);
 }
+@mixin transitionEaseInOutSec($animation-name: all, $animation-time: .5s) {
+  transition: $animation-name $animation-time cubic-bezier(0.65, 0, 0.35, 1);
+}
 
 
 //

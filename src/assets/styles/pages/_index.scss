@@ -101,6 +101,16 @@
       font-size: 35px;
     }
   }
+
+  .long-arrow-inner {
+    width: 43px;
+    height: 43px;
+  }
+
+  .long-arrow-line {
+    background-color: $base-color-main;
+    width: 54px;
+  }
   .long-arrow-right {
     color: $base-color-main;
     top: -10px;
@@ -119,6 +129,7 @@
   &:hover {
     color: $black;
     background-color: $white-darken;
+    .long-arrow-line,
     .long-arrow-right::before {
       width: 77px;
     }
@@ -457,6 +468,8 @@
       }
 
       .list--bullet {
+        position: relative;
+        z-index: 1;
         @media screen and (min-width: $screen-lg-min) {
           span {
             display: block;
@@ -580,7 +593,7 @@
 .paginationAnimate {
   animation-name: paginationAnimate;
   animation-duration: 10s;
-  animation-timing-function: ease;
+  animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
 

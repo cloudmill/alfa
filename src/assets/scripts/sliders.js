@@ -15,12 +15,12 @@ if ($('.indexSlider').length > 0) {
       slidesPerView: adaptive ? 'auto' : 1,
       spaceBetween: adaptive ? 15 : 0,
       effect: effect || 'slide',
-      // autoplay: {
-      //   delay: 10000,
-      // },
+      autoplay: {
+        delay: 10000,
+      },
       autoHeight: !!autoHeight,
       pagination: {
-        el: pagination,
+        el: '.swiper-pagination',
         clickable: true,
         renderBullet: function (index, className) {
           return '<span class="' + className + '">0' + (index + 1) + '</span>';
@@ -60,6 +60,7 @@ if ($('.aboutSlider').length > 0) {
   }
   new Swiper('.aboutSlider', {
     slidesPerView: 1,
+    loop: true,
     pagination: {
       el: '.swiper-pagination-about',
       clickable: true,

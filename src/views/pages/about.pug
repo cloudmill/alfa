@@ -31,13 +31,13 @@ block content
     section.harmonicSlider
       .accordion(data-aos='fade-up')
         ul
-          li.active(tabindex='1')
+          li(tabindex='1')
             div
               h2 Производство
               a.button(href='#')
                 | Подробнее #[br] о производстве
                 +img('about/link-arrow.svg')
-          li(tabindex='2')
+          li.active(tabindex='2')
             div
               h2 Проектный офис
           li(tabindex='3')

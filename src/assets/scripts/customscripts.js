@@ -7,31 +7,27 @@ $('.accordion li').click(function (e) {
   $(this).addClass('active');
 });
 
-$(function() {
-  $('.acc__title').click(function(j) {
+$('.acc__title').click(function(e) {
+  e.preventDefault();
+  const dropDown = $(this).next();
 
-    const dropDown = $(this).closest('.acc__card').find('.acc__panel');
-    $(this).closest('.acc').find('.acc__panel').not(dropDown).slideUp();
+  if ($(this).hasClass('active')) {
+    $(this).removeClass('active');
+    $(this).parent().removeClass('active');
+  } else {
+    $('.acc__panel').slideUp(800);
+    $(this).closest('.acc').find('.acc__title.active').removeClass('active').parent().removeClass('active');
+    $(this).addClass('active');
+    $(this).parent().addClass('active');
+  }
 
-    if ($(this).hasClass('active')) {
-      $(this).removeClass('active');
-      $(this).parent().removeClass('active');
-    } else {
-      $(this).closest('.acc').find('.acc__title.active').removeClass('active').parent().removeClass('active');
-      $(this).addClass('active');
-      $(this).parent().addClass('active');
-    }
+  dropDown.slideToggle();
 
-    dropDown.stop(false, true).slideToggle();
-
-    setTimeout(() => {
-      AOS.init({
-        offset: 50,
-      });
-    }, 500);
-
-    j.preventDefault();
-  });
+  // setTimeout(() => {
+  //   AOS.init({
+  //     offset: 50,
+  //   });
+  // }, 500);
 });
 // accordion
 

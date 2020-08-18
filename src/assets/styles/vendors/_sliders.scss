@@ -136,6 +136,7 @@ $a-height: 720px;
       width: 100% !important;
       background-size: cover;
       height: $a-height / 1.7;
+      cursor: default;
       @media screen and (min-width: $screen-md-min) {
         height: $a-height;
       }

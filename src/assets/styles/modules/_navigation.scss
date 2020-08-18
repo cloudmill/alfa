@@ -285,7 +285,8 @@
     }
     &:after {
       width: 100%;
-      transition: width .5s;
+      opacity: 1;
+      transition: opacity .5s .2s;
     }
   }
 
@@ -297,7 +298,9 @@
     right: 100%;
     width: 0;
     display: block;
+    opacity: 0;
     background: rgba(3, 3, 3, 0.3);
+    transition: opacity .5s;
   }
 
   &-inner {
