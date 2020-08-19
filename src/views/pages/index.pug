@@ -34,21 +34,21 @@ block content
                 .col.col__lg-6.cols__xs-12
                   ul.list--bullet(data-aos='fade-up')
                     li: a(href='#')
-                        span.long-arrow-right
+                        +arrow()
                         | Механические тесты #[span] на&nbsp;прочность фильтров
                     li: a(href='#')
-                        span.long-arrow-right
+                        +arrow()
                         | Лазерно-оптический контроль #[span] щелевых зазоров
                     li: a(href='#')
-                        span.long-arrow-right
+                        +arrow()
                         | Тесты пропускной способности #[span] фильтров
                 .col.col__lg-6.cols__xs-12
                   ul.list--bullet(data-aos='fade-up')
                     li: a(href='#')
-                        span.long-arrow-right
+                        +arrow()
                         | Гидравлические тесты на смятие #[span] и&nbsp;разрыв
                     li: a(href='#')
-                        span.long-arrow-right
+                        +arrow()
                         | Тесты по методикам разрушающего #[span] и&nbsp;неразрущающего контроля
                 .col.col__xs-12.text--center(data-aos='fade-up')
                   +img('tab.jpg')
@@ -58,21 +58,21 @@ block content
                 .col.col__lg-6.cols__xs-12
                   ul.list--bullet(data-aos='fade-up')
                     li: a(href='#')
-                        span.long-arrow-right
+                        +arrow()
                         | Анализ скважинных условий #[span] для&nbsp;разработки дизайна хвостовика
                     li: a(href='#')
-                        span.long-arrow-right
+                        +arrow()
                         | Моделирование работы скважины #[span] кандидата с&nbsp;различными УКП
                     li: a(href='#')
-                        span.long-arrow-right
+                        +arrow()
                         | Подбор и расстановка элементов #[span] компоновки заканчивания по зонам
                 .col.col__lg-6.cols__xs-12
                   ul.list--bullet(data-aos='fade-up')
                     li: a(href='#')
-                        span.long-arrow-right
+                        +arrow()
                         | Гидравличекие расчеты с оценкой появления #[span] потенциальных зон прорыва воды и газа
                     li: a(href='#')
-                        span.long-arrow-right
+                        +arrow()
                         | Моделирование спуска компоновки #[span] хвостовика
                 .col.col__xs-12.text--center(data-aos='fade-up')
                   +img('tab2.jpg')
@@ -82,24 +82,22 @@ block content
                 .col.col__lg-6.cols__xs-12
                   ul.list--bullet(data-aos='fade-up')
                     li: a(href='#')
-                        span.long-arrow-right
+                        +arrow()
                         | Тщательная проработка ТЗ #[span] и&nbsp;условий контракта
                     li: a(href='#')
-                        span.long-arrow-right
+                        +arrow()
                         | Контроль качества на всех #[span] этапах выполнения контракта
                 .col.col__lg-6.cols__xs-12
                   ul.list--bullet(data-aos='fade-up')
                     li: a(href='#')
-                        span.long-arrow-right
+                        +arrow()
                         | Мобилизация персонала #[span] и&nbsp;оборудования для проведения ИТС
                     li: a(href='#')
-                        span.long-arrow-right
+                        +arrow()
                         | Выполнение технологических операций #[span] на&nbsp;месторождениях Заказчика
                 .col.col__xs-12.text--center(data-aos='fade-up')
                   +img('tab3.jpg')
-      a.btn.btn--primary(href='#', data-aos='fade-up')
-        span
-        | Все услуги
+      div(data-aos='fade-up'): +buttonSVG('Все услуги', '', "#323232")
     section.index-projects
       .row
         .col.col__xl-4.col__lg-6.col__md-5.col__xs-12.index-projects__item
@@ -203,15 +201,11 @@ block content
               span
               | Партнерские проекты
           .hideOnMobile
-            a.btn.btn--primary(href='#')
-              span
-              | Все проекты
+            +buttonSVG('Все проекты', '', "#323232")
         .col.col__xl-8.col__lg-6.col__md-7.col__xs-12.index-projects__item(data-aos='fade-up')
           include ../components/_map
       .showOnMobile
-        a.btn.btn--primary(href='#', data-aos='fade-up')
-          span
-          | Все проекты
+        div(data-aos='fade-up'): +buttonSVG('Все проекты', '', "#323232")
 
 block footer
   include ../partials/_footer.pug

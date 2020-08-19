@@ -2,15 +2,17 @@ import {isMobileOnly, isMobileAndTabletOnly} from "./utils";
 
 // menu
 $('.menu--js').click(function() {
-	$('body').toggleClass('fixed');
-	$(this).find('.menu').toggleClass('open');
-	$('.navbar').toggleClass('open');
+  $('body').toggleClass('fixed');
+  $(this).find('.menu').toggleClass('open');
+  $('.navbar').toggleClass('open');
 });
-$(document).mouseup(function (e) {
+$(document).click(function (e) {
   const container = $(".navbar.open");
   const menu = $(".menu");
+  const menuJs = $(".menu--js");
   if(!isMobileAndTabletOnly) {
-    if (container.has(e.target).length === 0) {
+    if (menuJs.has(e.target).length === 0 && container.has(e.target).length === 0) {
+      $('body').removeClass('fixed');
       container.removeClass("open");
       menu.removeClass("open");
     }
