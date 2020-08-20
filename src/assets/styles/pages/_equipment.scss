@@ -292,11 +292,14 @@
         }
       }
       .long-arrow-left {
-        width: 17px;
-        height: 17px;
+        width: 15px;
+        height: 15px;
         color: $black;
+        @include transitionEaseInOut(color);
         &::before {
           width: 54px;
+          color: $black;
+          @include transitionEaseInOut(all);
         }
       }
       &:hover {
@@ -307,6 +310,7 @@
           color: $base-color-main;
           &::before {
             width: 34px;
+            color: $base-color-main;
           }
         }
       }
@@ -521,6 +525,9 @@
     &:first-child {
       .equipMenu li {
         width: calc(100% / 2);
+        @media screen and (min-width: $screen-lg-min) {
+          width: calc(100% / 3);
+        }
       }
     }
   }

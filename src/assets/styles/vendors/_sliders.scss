@@ -79,6 +79,7 @@ $a-height: 720px;
           justify-content: space-between;
           align-items: center;
           padding: 10px 15px;
+          transition: all .5s cubic-bezier(0.76, 0, 0.24, 1) !important;
           @media screen and (min-width: $screen-md-min) {
             padding: 25px;
             left: auto;
@@ -87,11 +88,24 @@ $a-height: 720px;
             padding: 50px 40px;
             font-size: 20px;
           }
+          span {
+            position: relative;
+            left: 0;
+            @include transitionEaseInOut(left);
+          }
           img {
             width: 29px;
             @media screen and (min-width: $screen-md-min) {
               width: auto;
               margin-left: 50px;
+            }
+          }
+          &:hover {
+            color: white;
+            background-color: $base-color-main;
+            padding-left: 70px;
+            span {
+              left: -30px;
             }
           }
         }

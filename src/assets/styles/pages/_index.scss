@@ -106,6 +106,8 @@
     display: flex;
     vertical-align: middle;
     top: -10px;
+    left: 0;
+    @include transitionEaseInOut(left);
     @media screen and (min-width: $screen-md-min) {
       top: 0;
     }
@@ -133,6 +135,12 @@
   &:hover {
     color: $black;
     background-color: $white-darken;
+    .long-arrow-inner {
+      left: 17px;
+      @media screen and (min-width: $screen-md-min) {
+        left: 20px;
+      }
+    }
     .long-arrow-line,
     .long-arrow-right::before {
       width: 37px;

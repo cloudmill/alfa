@@ -115,7 +115,7 @@
       position: relative;
       z-index: 1;
       height: 100%;
-      width: 100%;
+      //width: 100%;
       display: flex;
       flex-direction: column;
       //justify-content: space-between;
@@ -441,8 +441,8 @@
   padding: 20px;
   color: $black;
   @include transitionEaseInOut(all);
-  @media screen and (min-width: $screen-xxl-min) {
-    padding: 25px 60px;
+  @media screen and (min-width: 1600px) {
+    padding: 25px 40px;
   }
   &__title {
     font-weight: 600;
@@ -453,6 +453,9 @@
     }
     @media screen and (min-width: $screen-lg-min) {
       font-size: 25px;
+    }
+    @media screen and (min-width: 1600px) {
+      font-size: 35px;
     }
   }
   &__img {

@@ -330,9 +330,6 @@ input[type="search"] {
 
 .input__field:focus + .input__label .input__label-content,
 .input--filled .input__label-content {
-  font-size: 12px;
-  line-height: 15px;
-  -webkit-animation: anim-1 0.3s forwards;
   animation: anim-1 0.3s forwards;
 }
 
@@ -371,8 +368,9 @@ input[type="search"] {
   }
   100% {
     opacity: 1;
+    font-size: 12px;
+    line-height: 15px;
     -webkit-transform: translate3d(0, -40%, 0);
     transform: translate3d(0, -30%, 0);
   }
 }
-

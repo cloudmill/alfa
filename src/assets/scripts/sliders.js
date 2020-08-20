@@ -2,7 +2,7 @@ import Swiper from 'swiper/bundle';
 
 if ($('.indexSlider').length > 0) {
   let swiperInstances = [];
-  $('.indexSlider').each(function(index) {
+  $('.indexSlider').each(function (index) {
     const $this = $(this);
     const $slider = $(this)[0];
     const pagination = $this.parent().find(".swiper-pagination")[0];
@@ -16,28 +16,29 @@ if ($('.indexSlider').length > 0) {
       spaceBetween: adaptive ? 15 : 0,
       effect: effect || 'slide',
       simulateTouch: false,
+      loop: true,
       autoplay: {
-      delay: 10000,
-    },
-    autoHeight: !!autoHeight,
+        delay: 10000,
+      },
+      autoHeight: !!autoHeight,
       pagination: {
-      el: pagination,
+        el: pagination,
         clickable: true,
         renderBullet: function (index, className) {
-        return '<span class="' + className + '">0' + (index + 1) + '</span>';
+          return '<span class="' + className + '">0' + (index + 1) + '</span>';
+        },
       },
-    },
-    navigation: {
-      prevEl: prev,
+      navigation: {
+        prevEl: prev,
         nextEl: next,
-    },
-    breakpoints: {
-      768: {
-        spaceBetween: 0,
+      },
+      breakpoints: {
+        768: {
+          spaceBetween: 0,
           slidesPerView: 1,
+        }
       }
     }
-  }
 
     swiperInstances[index] = new Swiper($slider, options);
 
@@ -53,7 +54,7 @@ if ($('.indexSlider').length > 0) {
     });
 
 
-    $(window).on("orientationchange", function() {
+    $(window).on("orientationchange", function () {
       setTimeout(() => {
         swiperInstances[index].update();
       }, 800);

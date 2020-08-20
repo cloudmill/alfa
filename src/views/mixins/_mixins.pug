@@ -272,7 +272,7 @@ mixin sidebar(items)
         each item in items
           li(classname=item.className): a(href=item.href)= item.title
       a.link-icon(href='#', data-aos='fade-up')
-        +img('icons/backLink.svg')
+        i.long-arrow-left
         span Ко всем фильтрам
 
 //- form-input

@@ -182,6 +182,9 @@
   }
 
   .link-block {
+    @media screen and (min-width: 1600px) {
+      padding: 25px 60px;
+    }
     &__title {
       line-height: 110%;
       @media screen and (min-width: $screen-xl-min) {
