@@ -118,7 +118,7 @@ mixin navTitleBackOneArray(title, parent, src, items, pdf)
               each item in items
                 li.col.col__xl-5.col__lg-6.col__xs-12.revealIn
                   a(href='#')
-                    span.long-arrow-right
+                    +arrow()
                     != item
       if(pdf)
         .nav-background__link.nav-bottom.revealOut(data-aos='')

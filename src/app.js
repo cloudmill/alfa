@@ -79,7 +79,7 @@ $(window).on("load", function() {
       if(process.env.NODE_ENV === 'production') {
         window.scrollTo(0, 0);
       }
-    }, 1600);
+    }, 1700);
   }
 });
 

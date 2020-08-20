@@ -156,18 +156,32 @@
       border-radius: 15px;
       margin-right: 20px;
     }
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      width: 0;
+      @include transitionEaseInOut(width);
+    }
 
     &:first-child {
+      &:after,
       &:before {
         background-color: $base-color-main;
       }
     }
     &:nth-child(2) {
+      &:after,
       &:before {
         background-color: $color-type-1a;
       }
     }
     &:last-child {
+      &:after,
       &:before {
         background-color: $color-type-4a;
       }
@@ -175,14 +189,8 @@
 
     &.active,
     &:hover {
-      &:first-child {
-        border-color: $base-color-main;
-      }
-      &:nth-child(2) {
-        border-color:  $color-type-1a;
-      }
-      &:last-child {
-        border-color:  $color-type-4a;
+      &:after {
+        width: 100%;
       }
     }
 

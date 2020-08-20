@@ -140,7 +140,10 @@ $items:
         @media screen and (min-width: $screen-lg-min) {
           font-size: 25px;
         }
-        @media screen and (min-width: $screen-xxl-min) {
+        @media screen and (min-width: $screen-xl-min) {
+          font-size: 35px;
+        }
+        @media screen and (min-width: 1600px) {
           font-size: 45px;
         }
 
@@ -417,4 +420,9 @@ $items:
     transform-origin: right top;
     @include transitionEaseInOut(all);
   }
+}
+
+
+.jBox-wrapper {
+  opacity: 1 !important;
 }

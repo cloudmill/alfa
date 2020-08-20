@@ -497,6 +497,7 @@
     &__item {
       @extend .indexItems;
       padding-left: 0;
+      border-bottom: none;
       .index-services-title {
         margin-left: 0;
         margin-top: 40px;
@@ -549,10 +550,22 @@
     cursor: pointer;
     transition: all .5s cubic-bezier(0.76, 0, 0.24, 1) !important;
     white-space: nowrap;
+    position: relative;
     margin-right: 20px;
     @media screen and (min-width: $screen-md-min) {
       white-space: normal;
       margin-right: 0;
+    }
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      width: 0;
+      @include transitionEaseInOut(width);
     }
 
     span {
@@ -565,25 +578,28 @@
         margin-right: 20px;
       }
     }
-    &:first-child span {
-      background: $base-color-main;
+    &:first-child {
+      span,
+      &:after {
+        background-color: $base-color-main;
+      }
     }
-    &:nth-child(2) span {
-      background: $color-type-1a;
+    &:nth-child(2) {
+      span,
+      &:after {
+        background: $color-type-1a;
+      }
     }
-    &:last-child span {
-      background: $color-type-4a;
+    &:last-child {
+      span,
+      &:after {
+        background: $color-type-4a;
+      }
     }
     &.active,
     &:hover {
-      &:first-child {
-        border-color: $base-color-main;
-      }
-      &:nth-child(2) {
-        border-color:  $color-type-1a;
-      }
-      &:last-child {
-        border-color:  $color-type-4a;
+      &:after {
+        width: 100%;
       }
     }
 

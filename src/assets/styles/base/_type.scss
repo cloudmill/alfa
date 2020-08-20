@@ -52,7 +52,7 @@ h1, .alpha   {
   @media screen and (min-width: $screen-lg-min) {
     font-size: $font-size-h1 * 0.7;
   }
-  @media screen and (min-width: $screen-xxl-min) {
+  @media screen and (min-width: 1600px) {
     font-size: $font-size-h1;
   }
 }

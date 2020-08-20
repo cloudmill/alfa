@@ -132,7 +132,8 @@ $a-height: 720px;
         }
       }
     }
-    li.active {
+    li:hover,
+    &:not(:hover) li.active {
       width: 100% !important;
       background-size: cover;
       height: $a-height / 1.7;
