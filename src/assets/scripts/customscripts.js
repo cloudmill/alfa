@@ -17,7 +17,7 @@ $('.acc__title').click(function(e) {
   dropDown.slideToggle();
 
   setTimeout(() => {
-    AOS.init({
+    AOS.refresh({
       offset: 50,
     });
   }, 1000);
@@ -64,7 +64,7 @@ export function showMoreFunc(block, counter, button, firstInit, filter) {
       }
 
       setTimeout(() => {
-        AOS.init({
+        AOS.refresh({
           offset: 50,
         });
       }, 500);
@@ -98,7 +98,8 @@ function filterLogic(value, condition, isCharacter, elem) {
 
         if(regex) counter++;
         return regex;
-      }).slideDown(500);
+      })
+      .slideDown(500);
     if(isCharacter) {
       elem.addClass('active');
     }
@@ -121,7 +122,7 @@ function filterLogic(value, condition, isCharacter, elem) {
   }
 
   setTimeout(() => {
-    AOS.init({
+    AOS.refresh({
       offset: 50,
     });
   }, 500);

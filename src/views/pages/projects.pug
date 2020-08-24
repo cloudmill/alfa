@@ -103,8 +103,8 @@ block content
                     ]
                   ]
                 ).revealIn Партнерские проекты
-        .tabs__content.active(data-aos='fade-up')
-          include ../components/_map
+        .tabs__content.active
+          div(data-aos='fade-up'): include ../components/_map
         .tabs__content
           .container
             +projects(index.project)

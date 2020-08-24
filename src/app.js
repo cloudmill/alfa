@@ -37,7 +37,7 @@ $(document).ready(() => {
 $(window).on("orientationchange", function() {
   setTimeout(() => {
     sticky();
-    AOS.init({
+    AOS.refresh({
       offset: 50,
     });
   }, 800);

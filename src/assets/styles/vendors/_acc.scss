@@ -33,13 +33,35 @@
       display: block;
       width: 19px;
       height: 19px;
-      background: url("../images/icons/plus.svg") no-repeat center;
-      transition: background .5s;
+      position: relative;
+      &::before,
+      &::after {
+        content: '';
+        background-color: $black;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        display: block;
+      }
+      &::before {
+        height: 2px;
+        width: 19px;
+      }
+      &::after {
+        width: 2px;
+        height: 19px;
+        @include transitionEaseInOut(height);
+      }
     }
     &:hover,
     &.active {
       span {
-        background: url("../images/icons/minus.svg") no-repeat center;
+        &::after {
+          height: 0;
+        }
       }
     }
   }

@@ -1,16 +1,16 @@
-import { showMoreFunc } from './customscripts';
-import { myModal } from './modal';
+import {showMoreFunc} from './customscripts';
+import {myModal} from './modal';
 
 let markers = [];
 let map;
 let markerCluster;
 const mapStyle = [
   {
-  elementType: "geometry",
-  stylers: [{
-    color: "#f5f5f5"
-  }]
-},
+    elementType: "geometry",
+    stylers: [{
+      color: "#f5f5f5"
+    }]
+  },
   {
     elementType: "labels.icon",
     stylers: [{
@@ -175,14 +175,14 @@ function addMarker(location, icon, popup) {
     icon: icon || location[2],
     map: map
   });
-  marker.addListener('click', function() {
+  marker.addListener('click', function () {
     const modal = document.getElementById("projectsPopup");
     modal.setAttribute("data-tool", popup ? popup[0] : location[3]);
-    modal.setAttribute("data-title",  popup ? popup[1] : location[4]);
-    modal.setAttribute("data-content",  popup ? popup[2] : location[5]);
-    modal.setAttribute("data-cat",  popup ? popup[3] : location[6]);
-    modal.setAttribute("data-image",  popup ? popup[4] : location[7]);
-    modal.setAttribute("data-link",  popup ? popup[5] : location[8]);
+    modal.setAttribute("data-title", popup ? popup[1] : location[4]);
+    modal.setAttribute("data-content", popup ? popup[2] : location[5]);
+    modal.setAttribute("data-cat", popup ? popup[3] : location[6]);
+    modal.setAttribute("data-image", popup ? popup[4] : location[7]);
+    modal.setAttribute("data-link", popup ? popup[5] : location[8]);
 
     myModal.open();
   });
@@ -194,6 +194,7 @@ function setMapOnAll(map) {
     markers[i].setMap(map);
   }
 }
+
 function clearMarkers() {
   setMapOnAll(null);
 }
@@ -220,7 +221,7 @@ $(document).ready(function () {
     const itemGrid = $('.filtr-item');
     const filterItemGrid = $(`.filtr-item[data-category=${filter}]`);
 
-    if($(this).hasClass('active')) {
+    if ($(this).hasClass('active')) {
       return;
     }
 
@@ -235,8 +236,11 @@ $(document).ready(function () {
     });
 
     $('.more--js').attr('data-filter', filter);
+    // console.log('1');
     itemGrid.slideUp(500);
     filterItemGrid.slideDown(500);
+    // itemGrid.hide(0);
+    // filterItemGrid.fadeIn(1000);
 
     setTimeout(() => {
       showMoreFunc(".filtr-item", 7, '.more--js', false, filter);

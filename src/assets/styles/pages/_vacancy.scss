@@ -3,18 +3,21 @@
     @extend .mainContainer;
   }
   &-link {
-    margin-top: 60px;
-    border-top: 2px solid $black;
-    padding-top: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding-top: 60px;
     @media screen and (min-width: $screen-md-min) {
-      margin-top: 92px;
+      padding-top: 92px;
       min-width: 270px;
     }
     @media screen and (min-width: $screen-xl-min) {
       min-width: 330px;
+    }
+    &-inner {
+      width: 100%;
+      border-top: 2px solid $black;
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     a {
       text-decoration: underline;

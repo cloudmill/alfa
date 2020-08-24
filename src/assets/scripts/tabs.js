@@ -28,7 +28,7 @@ function tabControl() {
       //   scrollTop: $(target).offset().top - 50
       // }, 500);
 
-      AOS.init({
+      AOS.refresh({
         offset: 50,
       });
     });
@@ -46,11 +46,12 @@ function tabControl() {
 }
 
 $('ul.tabs__caption').on('click', 'li:not(.active)', function() {
+  $('.tabs__content .aos-init').removeClass('aos-animate');
   $(this)
     .addClass('active').siblings().removeClass('active')
     .closest('.tabsSimple').find('.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
 
-  AOS.init({
+  AOS.refreshHard({
     offset: 50,
   });
 });
