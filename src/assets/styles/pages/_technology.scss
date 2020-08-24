@@ -21,7 +21,13 @@
       margin-bottom: 70px;
     }
     @media screen and (min-width: $screen-xl-min) {
-      margin-bottom: 200px;
+      margin-bottom: 110px;
+    }
+  }
+
+  &-content {
+    @media screen and (min-width: $screen-xl-min) {
+      margin-top: 89px;
     }
   }
 

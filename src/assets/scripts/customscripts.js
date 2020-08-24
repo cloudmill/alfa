@@ -11,16 +11,8 @@ $('.accordion li').click(function (e) {
 $('.acc__title').click(function(e) {
   e.preventDefault();
   const dropDown = $(this).next();
-
-  if ($(this).hasClass('active')) {
-    $(this).removeClass('active');
-    $(this).parent().removeClass('active');
-  } else {
-    $('.acc__panel').slideUp(800);
-    $(this).closest('.acc').find('.acc__title.active').removeClass('active').parent().removeClass('active');
-    $(this).addClass('active');
-    $(this).parent().addClass('active');
-  }
+  $(this).toggleClass('active');
+  $(this).parent().toggleClass('active');
 
   dropDown.slideToggle();
 

@@ -11,6 +11,7 @@ class ParalaxItem {
   update(y) {
     this.startPos = this.parent.offset().top * this.hook;
     this.endPos = this.startPos + window.innerHeight * this.duration;
+    console.log(this.hook);
     if (y - this.startPos >= 0 && this.endPos - y >= 0) {
       this.currentOffset =
         (this.way / (this.endPos - this.startPos)) * (y - this.startPos);

@@ -268,7 +268,8 @@ ol {
       padding-left: 35px;
       position: relative;
       font-size: 13px;
-      @include transitionEaseInOut(padding-left);
+      left: 0;
+      @include transitionEaseInOut(left);
       @media screen and (min-width: $screen-md-min) {
         margin-bottom: 25px;
         font-size: 16px;
@@ -303,7 +304,8 @@ ol {
         @include transitionEaseInOut(all);
       }
       &:hover {
-        padding-left: 45px;
+        //padding-left: 45px;
+        left: 10px;
         a {
           color: $base-color-main;
         }
@@ -311,7 +313,7 @@ ol {
           color: $base-color-main;
           left: 20px;
           @media screen and (min-width: $screen-lg-min) {
-            left: 10px;
+            left: 0;
           }
         }
         .long-arrow-line {

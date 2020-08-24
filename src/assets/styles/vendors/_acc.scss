@@ -81,4 +81,10 @@
       background: url("../images/icons/plusb.svg") no-repeat center;
     }
   }
+  &--np {
+    @media screen and (min-width: $screen-md-min) {
+      margin-top: 0;
+      margin-bottom: 90px;
+    }
+  }
 }

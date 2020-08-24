@@ -1,4 +1,5 @@
 import Swiper from 'swiper/bundle';
+import {sticky} from "./customscripts";
 
 if ($('.indexSlider').length > 0) {
   let swiperInstances = [];
@@ -37,7 +38,7 @@ if ($('.indexSlider').length > 0) {
           spaceBetween: 0,
           slidesPerView: 1,
         }
-      }
+      },
     }
 
     swiperInstances[index] = new Swiper($slider, options);

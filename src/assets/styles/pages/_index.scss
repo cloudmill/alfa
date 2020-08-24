@@ -57,14 +57,14 @@
 
 .nextBlock {
   padding: 20px 0;
-  border-top: 2px solid $black;
-  border-bottom: 2px solid $black;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   margin: 50px 0 60px;
   color: $black;
+  position: relative;
+  overflow: hidden;
   @include transitionEaseInOut(background-color);
   @media screen and (min-width: $screen-md-min) {
     margin: 90px 0;
@@ -75,6 +75,22 @@
   }
   @media screen and (min-width: $screen-xl-min) {
     margin: 170px 0;
+  }
+  &::after,
+  &::before {
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-color: $black;
+    position: absolute;
+    left: 0;
+    @include transitionEaseInOut(left);
+  }
+  &::after {
+    top: 0;
+  }
+  &::before {
+    bottom: 0;
   }
   &-desc {
     font-weight: 500;
@@ -147,6 +163,10 @@
       @media screen and (min-width: $screen-md-min) {
         width: 77px;
       }
+    }
+    &::after,
+    &::before {
+      left: 100%;
     }
   }
 }

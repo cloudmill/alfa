@@ -97,6 +97,9 @@
     margin-left: -4%;
     margin-right: -4%;
     width: 108%;
+    @media screen and (min-width: $screen-lg-min) {
+      height: 750px;
+    }
   }
 
   .showMore {
@@ -223,6 +226,11 @@
 
 .project {
   padding-top: 0;
+  .equipment-content {
+    @media screen and (min-width: $screen-xl-min) {
+      margin-top: 63px;
+    }
+  }
   &-dates {
     position: relative;
     color: $gray-darken;
@@ -232,7 +240,7 @@
       margin-bottom: 0;
     }
     @media screen and (min-width: $screen-xl-min) {
-      top: -140px;
+      top: -120px;
     }
   }
   .nav-background {

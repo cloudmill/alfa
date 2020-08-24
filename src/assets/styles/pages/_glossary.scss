@@ -16,7 +16,7 @@
     button {
       position: absolute;
       top: 2px;
-      bottom: 2px;
+      bottom: 3px;
       right: 0;
       margin: auto;
       z-index: 9;
@@ -27,6 +27,9 @@
       @media screen and (min-width: $screen-xl-min) {
         right: 30px;
       }
+    }
+    .input__label-content {
+      white-space: nowrap;
     }
   }
 
@@ -53,9 +56,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 0 0 40px;
+    margin: 0 0 40px !important;
     @media screen and (min-width: $screen-lg-min) {
-      margin: 0 -15px 0;
+      margin: 0 -15px 0 !important;
+      max-width: 27.5vw;
+    }
+    @media screen and (min-width: 1600px) {
+      max-width: 28vw;
+    }
+    @media screen and (min-width: $screen-xxl-min) {
+      max-width: 526px;
     }
     li {
       cursor: pointer;
@@ -72,12 +82,16 @@
       transition: border-color .5s;
       @media screen and (min-width: $screen-md-min) {
         margin: 0 5px 10px;
+        max-width: 49px;
       }
       @media screen and (min-width: $screen-lg-min) {
         margin: 0 7px 10px;
+        max-width: 51px;
+        width: calc(100% * (1/4) - 30px - 1px);
       }
       @media screen and (min-width: $screen-xl-min) {
         margin: 0 15px 10px;
+        width: calc(100% * (1/5) - 30px - 1px);
       }
       i {
         font-size: 15px;

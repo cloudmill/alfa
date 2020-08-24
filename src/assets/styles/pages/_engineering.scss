@@ -11,15 +11,18 @@
       display: flex;
     }
     @media screen and (min-width: $screen-xl-min) {
-      top: 380px;
+      top: 360px;
       width: 50%;
       left: calc(50% + 15px);
+    }
+    @media screen and (min-width: 1600px) {
+      top: 420px;
     }
     @media screen and (min-width: $screen-xxl-min) {
       top: 460px;
     }
   }
-  [data-autoheight='true'] {
+  [data-autoheight='false'] {
     .equipment-template__card {
       img {
         @media screen and (min-width: $screen-md-min) {
@@ -37,16 +40,6 @@
       top: 2px;
       @media screen and (min-width: $screen-md-min) {
         top: 10px;
-      }
-    }
-  }
-  .indexSlider {
-    h5 {
-      font-size: 18px;
-      margin-bottom: 10px;
-      @media screen and (min-width: $screen-md-min) {
-        font-size: 20px;
-        margin-top: 30px;
       }
     }
   }

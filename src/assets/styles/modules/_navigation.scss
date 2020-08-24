@@ -17,6 +17,10 @@
       padding-bottom: 60px;
     }
 
+    &.nav-title {
+      border-bottom: none;
+    }
+
     .breadcrumbs {
       overflow-x: auto;
       overflow-y: hidden;
