@@ -31,15 +31,15 @@ export function showMoreFunc(block, counter, button, firstInit, filter) {
   const items = $(block+':lt('+x+')');
   const itemsGrid =  $(block + '[data-category='+filter+']:lt('+x+')');
   const itemGridLength = $(block + '[data-category='+filter+']').length;
-  $(block).hide();
+  $(block).velocity({ scaleX: 0, scaleY: 0 }, { display: "none", duration: 0 });
 
   if(filter) {
-    itemsGrid.show();
+    itemsGrid.velocity({ scaleX: 1, scaleY: 1 }, { display: "block", duration: 300 });
     if(x < itemGridLength) {
       $(button).show();
     }
   } else {
-    items.show();
+    items.velocity({ scaleX: 1, scaleY: 1 }, { display: "block", duration: 0 });
   }
   if(firstInit) {
     $(button).click(function () {
@@ -50,14 +50,14 @@ export function showMoreFunc(block, counter, button, firstInit, filter) {
         x = (x + 5 <= filterItemGridLength) ? x + 5 : filterItemGridLength;
         const filterItemGrid = $(block + '[data-category='+getFilter+']:lt('+x+')');
 
-        filterItemGrid.slideDown(500);
+        filterItemGrid.velocity({ scaleX: 1, scaleY: 1 }, { display: "block", duration: 300 });
         if (x >= filterItemGridLength && x !== 0) {
           $(this).hide();
         }
       } else {
         x = (x + 5 <= length) ? x + 5 : length;
 
-        $(block + ':lt(' + x + ')').slideDown(500);
+        $(block + ':lt(' + x + ')').velocity({ scaleX: 1, scaleY: 1 }, { display: "block", duration: 300 });
         if (x >= length && x !== 0) {
           $(this).hide();
         }
@@ -67,12 +67,12 @@ export function showMoreFunc(block, counter, button, firstInit, filter) {
         AOS.refresh({
           offset: 50,
         });
-      }, 500);
+      }, 600);
     });
   }
 }
 if($('.acc .acc__card').length) showMoreFunc(".acc .acc__card", 9, '.more--js', true);
-if($('.publications-item').length) showMoreFunc(".publications-item", 7, '.moreP--js', true);
+if($('.more__item').length) showMoreFunc(".more__item", 7, '.moreP--js', true);
 if($('.filtr-item').length) showMoreFunc(".filtr-item", 7, '.more--js', true);
 // show more
 
@@ -88,7 +88,7 @@ function filterLogic(value, condition, isCharacter, elem) {
 
   // filter it
   if(condition) {
-    list.hide();
+    list.velocity({ scaleX: 0, scaleY: 0 }, { display: "none", duration: 300 });
     $(list)
       .filter(function (index, item) {
         const getTitle = $(item)[0].dataset.title;
@@ -99,18 +99,20 @@ function filterLogic(value, condition, isCharacter, elem) {
         if(regex) counter++;
         return regex;
       })
-      .slideDown(500);
+      .velocity({ scaleX: 1, scaleY: 1 }, { display: "block", duration: 300, delay: 200 });
+    $(".abc--js li").removeClass('active');
     if(isCharacter) {
       elem.addClass('active');
     }
-    $(".abc--js li").removeClass('active');
-    $('.glossary-results').addClass('active');
+    if(!$('.glossary-results').hasClass('active')) {
+      $('.glossary-results').addClass('active').velocity("slideDown", {duration: 500, delay: 400});
+    }
     $('.glossary-results-title span').text(counter);
     $('.glossary-results-desc span').text(value);
     $('.more--js').hide();
   } else {
     if(!isCharacter) {
-      $('.glossary-results').removeClass('active');
+      $('.glossary-results').removeClass('active').velocity("slideUp", { duration: 500 });
       $('.more--js').show();
       showMoreFunc(".acc .acc__card", 9, '.more--js', false);
     }
@@ -122,10 +124,13 @@ function filterLogic(value, condition, isCharacter, elem) {
   }
 
   setTimeout(() => {
+    const top = $('.glossary-results').offset().top;
+    $('body,html').animate({scrollTop: top - 70}, 1000);
+    sticky();
     AOS.refresh({
       offset: 50,
     });
-  }, 500);
+  }, 700);
 }
 
 $(".abc--js li").click(function () {
@@ -185,11 +190,13 @@ export function sticky() {
         $sidebar.addClass("fixed");
       } else {
         $sidebar.removeClass("fixed");
+        // $sidebar.css({ position: 'static' });
       }
       if (windScroll + $sidebarHeight > $footerOffsetTop) {
         $sidebar.css({"top": -(windScroll + $sidebarHeight - $footerOffsetTop)});
+        // $sidebar.css({"top": 'auto', position: 'absolute', bottom: 0});
       } else {
-        $sidebar.css({"top": "10px",});
+        $sidebar.css({ "top": "10px" });
       }
     });
   }

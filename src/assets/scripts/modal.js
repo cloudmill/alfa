@@ -7,6 +7,7 @@ export const myModal = new jBox('Modal', {
     open: 'slide:right',
     close: 'slide:right',
   },
+  delayOpen: 300,
   onOpen: function () {
     const el = this.content[0].children[0];
 

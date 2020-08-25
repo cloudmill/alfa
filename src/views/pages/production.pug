@@ -8,7 +8,7 @@ block content
     +navTitle('Производство', 'О компании')
     .container
       +menuAdditionalNav(menu.aboutMenu, 'production')
-    .parallax-box.text--center(data-aos='fade-up'): .parallax-item: +img('about/prod/main.jpg')
+    .parallax-box.text--center(data-aos='fade-up', data-hook='0.4'): .parallax-item: +img('about/prod/main.jpg')
     .container
       section.production-item(data-aos='fade-up')
         h4 Производственная компания ООО «Альфа Горизонт» разрабатывает, #[span.br-style] производит и реализует весь комплекс оборудования для систем нижнего #[span.br-style] заканчивания скважин в нефтегазовой отрасли, для использования #[span.br-style] на объектах месторождений в России и за рубежом, используя современные #[span.br-style] и технологичные подходы,  внедряя лучшие мировые тенденции в области #[span.br-style] проектирования и разработок.
@@ -53,7 +53,7 @@ block content
               li Линия гидравлических испытательных #[span.br-style] стендов V0 и гидравлический ключ
               li Линия фрезеровочных станков (Германия)
               li Линии сварочных постов с использованием #[span.br-style] аргона, электрод в газовой среде
-    .indexSlider.swiper-container(data-effect='fade', data-aos='fade-up')
+    .indexSlider.swiper-container.mainSlider(data-effect='fade', data-aos='fade-up')
       .container.relative
         .swiper-pagination.swiper-pagination--dr
         .swiper-button.swiper-button--bg

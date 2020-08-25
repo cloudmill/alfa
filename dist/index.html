@@ -37,7 +37,7 @@
 		<!--[if lt IE 9]><p class="browsehappy">Данный сайт построен на передовых, современных технологиях и не поддерживает Ваш браузер. Настоятельно рекомендуем выбрать и установить любой из &nbsp;<a href="http://browsehappy.com/" target="_blank">современных браузеров.</a> Это бесплатно и займет всего несколько минут.</p><![endif]-->
 		<div class="popup" id="projectsPopup" style="display: none">
 			<div class="popup-inner">
-				<div class="popup-image"><img src="" alt=""></div>
+				<div class="popup-image"><img src="assets/images/popup.jpg" alt=""></div>
 				<div class="popup-body">
 					<div class="popup-tool">
 						<div class="text__sm text--gray"></div>
@@ -121,11 +121,13 @@
 			</header>
 			<main class="page-main">
 				<section class="index-slider">
-					<div class="indexSlider swiper-container" data-effect="fade" data-paginator="true">
+					<div class="indexSlider swiper-container mainSlider" data-effect="fade" data-paginator="true" data-duration="2000">
 						<div class="swiper-wrapper parallax-box" data-aos="" data-aos-delay="3000" data-hook="0">
 							<div class="swiper-slide">
-								<div class="slider-back parallax-item"><iframe width="110%" height="110%" src="https://www.youtube.com/embed/37Sc_24Kg9g?controls=0&amp;autoplay=1&amp;loop=1&amp;playlist=37Sc_24Kg9g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;" allowfullscreen="allowfullscreen"></iframe>
-									<!--video.video#video(width="120%" height="120%", autoplay, loop, mute)source(src="assets/images/video/video.mp4" type="video/mp4")-->
+								<div class="parallax-item">
+									<!--iframe(width="110%" height="110%" src="https://www.youtube.com/embed/37Sc_24Kg9g?controls=0&autoplay=1&loop=1&playlist=37Sc_24Kg9g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;" allowfullscreen)-->
+									<div class="slider-back"><video class="video" id="video" width="100%" height="100%" autoplay="autoplay" loop="loop" mute="mute">
+											<source src="assets/images/video/video.mp4" type="video/mp4" /></video></div>
 								</div>
 								<div class="container relative">
 									<div class="index-slider-title">
@@ -152,8 +154,10 @@
 								</div>
 							</div>
 							<div class="swiper-slide">
-								<div class="slider-back parallax-item">
-									<div class="image" style="background: url(&quot;assets/images/slide.jpg&quot;) no-repeat center / cover"></div>
+								<div class="parallax-item">
+									<div class="slider-back">
+										<div class="image" style="background: url(&quot;assets/images/slide.jpg&quot;) no-repeat center / cover"></div>
+									</div>
 								</div>
 								<div class="container relative">
 									<div class="index-slider-title">
@@ -180,8 +184,10 @@
 								</div>
 							</div>
 							<div class="swiper-slide">
-								<div class="slider-back parallax-item">
-									<div class="image" style="background: url(&quot;assets/images/slide1.jpg&quot;) no-repeat center / cover"></div>
+								<div class="parallax-item">
+									<div class="slider-back">
+										<div class="image" style="background: url(&quot;assets/images/slide1.jpg&quot;) no-repeat center / cover"></div>
+									</div>
 								</div>
 								<div class="container relative">
 									<div class="index-slider-title">
@@ -205,8 +211,10 @@
 								</div>
 							</div>
 							<div class="swiper-slide">
-								<div class="slider-back parallax-item">
-									<div class="image" style="background: url(&quot;assets/images/slide.jpg&quot;) no-repeat center / cover"></div>
+								<div class="parallax-item">
+									<div class="slider-back">
+										<div class="image" style="background: url(&quot;assets/images/slide.jpg&quot;) no-repeat center / cover"></div>
+									</div>
 								</div>
 								<div class="container relative">
 									<div class="index-slider-title">
@@ -233,8 +241,10 @@
 								</div>
 							</div>
 							<div class="swiper-slide">
-								<div class="slider-back parallax-item">
-									<div class="image" style="background: url(&quot;assets/images/slide1.jpg&quot;) no-repeat center / cover"></div>
+								<div class="parallax-item">
+									<div class="slider-back">
+										<div class="image" style="background: url(&quot;assets/images/slide1.jpg&quot;) no-repeat center / cover"></div>
+									</div>
 								</div>
 								<div class="container relative">
 									<div class="index-slider-title">

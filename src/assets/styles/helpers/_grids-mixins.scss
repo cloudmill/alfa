@@ -11,13 +11,13 @@
     width: $container-sm;
   }
   @media screen and (min-width: $screen-md-min) {
-    width: calc(100% - 40px);
+    width: calc(100% - 30px);
     max-width: $container-xxl;
     padding-left: ($grid-gutter-width-md / 2);
     padding-right: ($grid-gutter-width-md / 2);
   }
   @media screen and (min-width: 1440px) {
-    width: calc(100% - 80px);
+    width: calc(100% - 90px);
   }
 }
 

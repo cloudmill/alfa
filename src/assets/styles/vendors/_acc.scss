@@ -1,8 +1,10 @@
 .acc {
   &__card {
+    margin-bottom: 30px;
+  }
+  &__inner {
     border-bottom: 2px solid $black;
     transition: border-color .5s;
-    margin-bottom: 30px;
     &:hover,
     &.active {
       border-color: $base-color-main;

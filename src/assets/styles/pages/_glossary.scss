@@ -5,6 +5,7 @@
 
   &-list {
     margin-top: -30px;
+    min-height: 550px;
   }
 
   &-search {
@@ -48,7 +49,7 @@
       color: $gray-darken;
     }
     &.active {
-      display: block;
+      //display: block;
     }
   }
 
@@ -62,10 +63,10 @@
       max-width: 27.5vw;
     }
     @media screen and (min-width: 1600px) {
-      max-width: 28vw;
+      max-width: 27.75vw;
     }
     @media screen and (min-width: $screen-xxl-min) {
-      max-width: 526px;
+      max-width: 525px;
     }
     li {
       cursor: pointer;

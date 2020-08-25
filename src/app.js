@@ -1,6 +1,8 @@
 /* src/app.js */
 
 import AOS from 'aos';
+import 'Scripts/isotope.pkgd.min';
+import "velocity-animate";
 
 // Styles
 import 'Styles/_app.scss';
@@ -25,7 +27,7 @@ $(document).ready(() => {
 	require('Scripts/parallax');
   require('Scripts/video');
 
-	if(!isMobileAndTabletOnly) {
+  if(!isMobileAndTabletOnly) {
     sticky();
   }
 

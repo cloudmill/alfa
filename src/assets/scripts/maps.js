@@ -1,5 +1,11 @@
 import {showMoreFunc} from './customscripts';
 import {myModal} from './modal';
+import AOS from "aos";
+const $ = require('jquery');
+const jQueryBridget = require('jquery-bridget');
+const Isotope = require('isotope-layout');
+// make Isotope a jQuery plugin
+jQueryBridget( 'isotope', Isotope, $ );
 
 let markers = [];
 let map;
@@ -128,7 +134,6 @@ const mapStyle = [
     }]
   }
 ];
-
 const setMarker =
   NODE_ENV_PATH === 'development'
     ? "assets/images/icons/marker.svg"
@@ -211,42 +216,39 @@ $(function () {
   }
 });
 
-$(document).ready(function () {
-  $('.filters--js li').click(function () {
-    const icon = $(this).data('icon');
-    const iconGroup = $(this).data('group');
-    const coordinates = $(this).data('coordinates');
-    const filter = $(this).data('filter');
-    const popup = $(this).data('popup');
-    const itemGrid = $('.filtr-item');
-    const filterItemGrid = $(`.filtr-item[data-category=${filter}]`);
+$('.filters--js li').click(function () {
+  const icon = $(this).data('icon');
+  const iconGroup = $(this).data('group');
+  const coordinates = $(this).data('coordinates');
+  const filter = $(this).data('filter');
+  const popup = $(this).data('popup');
+  const itemGrid = $('.filtr-item');
+  const filterItemGrid = $(`.filtr-item[data-category=${filter}]`);
 
-    if ($(this).hasClass('active')) {
-      return;
-    }
+  if ($(this).hasClass('active')) {
+    return;
+  }
 
-    $('.filters--js li').removeClass('active');
-    $(this).addClass('active');
+  $('.filters--js li').removeClass('active');
+  $(this).addClass('active');
 
-    deleteMarkers();
+  deleteMarkers();
 
-    coordinates.forEach(function (item, index) {
-      const splitter = item.split(', ');
-      addMarker(splitter, icon, popup[index]);
-    });
-
-    $('.more--js').attr('data-filter', filter);
-    // console.log('1');
-    itemGrid.slideUp(500);
-    filterItemGrid.slideDown(500);
-    // itemGrid.hide(0);
-    // filterItemGrid.fadeIn(1000);
-
-    setTimeout(() => {
-      showMoreFunc(".filtr-item", 7, '.more--js', false, filter);
-    }, 600);
-
-    mcOptions.styles[0].url = iconGroup;
-    markerCluster = new MarkerClusterer(map, markers, mcOptions);
+  coordinates.forEach(function (item, index) {
+    const splitter = item.split(', ');
+    addMarker(splitter, icon, popup[index]);
   });
+
+  $('.more--js').attr('data-filter', filter);
+  itemGrid.velocity({ scaleX: 0, scaleY: 0 }, { display: "none", duration: 300 });
+  // filterItemGrid.velocity({ scaleX: 1, scaleY: 1 }, { display: "block", duration: 300, delay: 200 });
+  // itemGrid.slideUp(500);
+  // filterItemGrid.slideDown(500);
+
+  setTimeout(() => {
+    showMoreFunc(".filtr-item", 7, '.more--js', false, filter);
+  }, 200);
+
+  mcOptions.styles[0].url = iconGroup;
+  markerCluster = new MarkerClusterer(map, markers, mcOptions);
 });

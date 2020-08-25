@@ -51,7 +51,7 @@ $('ul.tabs__caption').on('click', 'li:not(.active)', function() {
     .addClass('active').siblings().removeClass('active')
     .closest('.tabsSimple').find('.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
 
-  AOS.refreshHard({
+  AOS.refresh({
     offset: 50,
   });
 });

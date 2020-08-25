@@ -1,5 +1,4 @@
 import Swiper from 'swiper/bundle';
-import {sticky} from "./customscripts";
 
 if ($('.indexSlider').length > 0) {
   let swiperInstances = [];
@@ -10,6 +9,7 @@ if ($('.indexSlider').length > 0) {
     const prev = $this.parent().find(".swiper-prev")[0] || $('.swiper-prev-lab')[0];
     const next = $this.parent().find(".swiper-next")[0] || $('.swiper-next-lab')[0];
     const effect = $this.data('effect');
+    const duration = $this.data('duration');
     const adaptive = $this.data('adaptive');
     const autoHeight = $this.data('autoheight');
     const options = {
@@ -18,9 +18,9 @@ if ($('.indexSlider').length > 0) {
       effect: effect || 'slide',
       simulateTouch: false,
       loop: true,
-      autoplay: {
-        delay: 10000,
-      },
+      // autoplay: {
+      //   delay: 10000,
+      // },
       autoHeight: !!autoHeight,
       pagination: {
         el: pagination,
@@ -51,7 +51,7 @@ if ($('.indexSlider').length > 0) {
       $(previousSlide).addClass('swiper-slide-last');
       setTimeout(() => {
         $(previousSlide).removeClass('swiper-slide-last');
-      }, 2000);
+      }, duration || 2000);
     });
 
 

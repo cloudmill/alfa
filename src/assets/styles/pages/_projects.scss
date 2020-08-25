@@ -9,14 +9,11 @@
     }
   }
 
-  &-main {}
+  &-main {
+    min-height: 50vh;
+  }
   &-item {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     margin-bottom: 40px;
-    border-top: 2px solid $black;
-    padding-top: 20px;
     @media screen and (min-width: $screen-md-min) {
       margin-bottom: 60px;
     }
@@ -92,6 +89,13 @@
       }
     }
   }
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 2px solid $black;
+    padding-top: 20px;
+  }
 
   #googleMaps {
     margin-left: -4%;
@@ -129,7 +133,7 @@
   @media screen and (min-width: $screen-xl-min) {
     margin-bottom: 90px;
   }
-  @media screen and (min-width: $screen-xxl-min) {
+  @media screen and (min-width: 1600px) {
     font-size: 20px;
     padding-top: 20px;
     margin-top: 0;
@@ -221,6 +225,9 @@
 .filter-container {
   .filtr-item {
     width: 100% !important;
+    &.hidden {
+      display: none;
+    }
   }
 }
 

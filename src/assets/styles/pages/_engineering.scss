@@ -48,11 +48,11 @@
     @media screen and (min-width: $screen-lg-min) {
       height: 830px;
     }
-    .setImg {
-      @media screen and (min-width: $screen-md-min) {
-        background-size: auto;
-      }
-    }
+    //.setImg {
+    //  @media screen and (min-width: $screen-md-min) {
+    //    background-size: auto;
+    //  }
+    //}
     .mainTitle {
       margin-bottom: 40px;
     }

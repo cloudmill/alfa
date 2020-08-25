@@ -1,4 +1,7 @@
 .laboratory {
+  .menuAdditionalNav {
+    border-bottom: none;
+  }
   &-item {
     margin-top: 30px;
     border-top: 2px solid $black;
@@ -74,9 +77,10 @@
     top: -50px;
     right: 0;
     display: flex;
+    z-index: 9;
     @media screen and (min-width: $screen-md-min) {
-      position: static;
-      margin-top: auto;
+      top: calc(100% - 43px);
+      left: 0;
     }
     @media screen and (min-width: $screen-xxl-min) {
       margin-top: auto;

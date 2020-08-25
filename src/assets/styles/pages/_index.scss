@@ -328,6 +328,7 @@
     color: white;
     .swiper-slide {
       min-height: 100vh;
+      transition: none !important;
       .container {
         min-height: 100vh;
         display: flex;
@@ -514,6 +515,29 @@
         @media screen and (min-width: $screen-lg-min) {
           span {
             display: block;
+          }
+        }
+
+      }
+      .item-content {
+        .list--bullet li {
+          //@include transitionEaseInOut(padding-left);
+          transition: padding-left .5s;
+          overflow: hidden;
+          .long-arrow-inner {
+            left: 3px;
+            //@include transitionEaseInOut(left);
+            transition: left .5s;
+          }
+          .long-arrow-line {
+            width: 23px !important;
+          }
+          &:hover {
+            left: 0 !important;
+            padding-left: 45px;
+            .long-arrow-inner {
+              left: 13px !important;
+            }
           }
         }
       }
