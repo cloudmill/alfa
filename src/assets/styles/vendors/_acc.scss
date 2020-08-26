@@ -58,7 +58,6 @@
         @include transitionEaseInOut(height);
       }
     }
-    &:hover,
     &.active {
       span {
         &::after {

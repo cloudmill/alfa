@@ -44,10 +44,9 @@ block content
               .swiper-button.swiper-button--bg
                 .swiper-next.swiper-next-proj: i.icon-next
                 .swiper-prev.swiper-prev-proj: i.icon-prev
-              .swiper-wrapper.parallax-box(data-hook='0.8')
+              .swiper-wrapper
                 - for (let x = 1; x < 6; x++)
-                  .swiper-slide
-                    .parallax-item: +img('projects/slider-1.jpg', 'slider-img')
+                  .swiper-slide: +img('projects/slider-1.jpg', 'slider-img')
               .swiper-pagination.swiper-pagination--dr
           #results.equipment-template__item.template__item--js
             +revealMainTag('Первые результаты внедрения', 'h3')
@@ -57,10 +56,9 @@ block content
               .swiper-button.swiper-button--bg
                 .swiper-next.swiper-next-proj: i.icon-next
                 .swiper-prev.swiper-prev-proj: i.icon-prev
-              .swiper-wrapper.parallax-box(data-hook='0.8')
+              .swiper-wrapper
                 - for (let x = 1; x < 6; x++)
-                  .swiper-slide
-                    .parallax-item: +img('projects/slider-2.jpg', 'slider-img')
+                  .swiper-slide: +img('projects/slider-2.jpg', 'slider-img')
               .swiper-pagination.swiper-pagination--dr
           #perspectives.equipment-template__item.template__item--js
             +revealMainTag('Перспективы развития проекта', 'h3')

@@ -163,6 +163,11 @@
         stroke-dasharray .5s cubic-bezier(0.76, 0, 0.24, 1),
         stroke-dashoffset .5s cubic-bezier(0.76, 0, 0.24, 1),
         stroke .5s cubic-bezier(0.76, 0, 0.24, 1) .4s;
+
+      &--big {
+        stroke-dasharray: 232%, 0;
+        stroke-dashoffset: 107%;
+      }
     }
     span {
       color: $base-color-main;
@@ -188,4 +193,8 @@
     stroke-dasharray .5s cubic-bezier(0.76, 0, 0.24, 1) .4s,
     stroke-dashoffset .5s cubic-bezier(0.76, 0, 0.24, 1) .4s,
     stroke .5s cubic-bezier(0.76, 0, 0.24, 1);
+
+  &--big {
+    stroke-dasharray: 126%, 218%;
+  }
 }

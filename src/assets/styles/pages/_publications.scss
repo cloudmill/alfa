@@ -95,6 +95,15 @@
         }
       }
     }
+
+    img {
+      @media screen and (min-width: $screen-md-min) {
+        height: 160px;
+      }
+      @media screen and (min-width: $screen-lg-min) {
+        height: auto;
+      }
+    }
   }
 
 
@@ -279,7 +288,7 @@
       @media screen and (max-width: $screen-sm-max) {
         margin-bottom: 0;
       }
-      @media screen and (min-width: $screen-md-min) {
+      @media screen and (min-width: $screen-lg-min) {
         margin-bottom: 20px;
         margin-top: 0;
       }

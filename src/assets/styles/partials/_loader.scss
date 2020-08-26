@@ -93,9 +93,12 @@
   }
   .card {
     animation: depth 3s ease infinite;
+    iframe {
+      width: 72px;
+    }
 
     &-contents {
-      background: transparent;
+      background-color: white;
     }
   }
 }

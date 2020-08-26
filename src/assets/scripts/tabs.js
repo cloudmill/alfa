@@ -28,9 +28,11 @@ function tabControl() {
       //   scrollTop: $(target).offset().top - 50
       // }, 500);
 
-      AOS.refresh({
-        offset: 50,
-      });
+      setTimeout(() => {
+        AOS.refresh({
+          offset: 50,
+        });
+      }, 600);
     });
   } else {
     $('.item').on('click', function () {

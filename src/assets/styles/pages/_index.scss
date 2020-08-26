@@ -352,9 +352,11 @@
       margin: 0;
       @media screen and (min-width: $screen-md-min) {
         font-size: 60px;
+        line-height: 1.3;
       }
       @media screen and (min-width: $screen-lg-min) {
         font-size: 70px;
+        line-height: 1.18;
       }
       @media screen and (min-width: $screen-xl-min) {
         font-size: 95px;

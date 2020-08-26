@@ -31,6 +31,9 @@
         margin-top: 10px;
       }
     }
+    h1 {
+      margin: 0;
+    }
     &--mini {
       @media screen and (min-width: $screen-md-min) {
         margin-bottom: 20px;

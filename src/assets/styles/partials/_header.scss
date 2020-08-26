@@ -16,11 +16,13 @@
   z-index: 99;
   //background-color: white;
   @media screen and (min-width: $screen-md-min) {
-    position: relative;
-    z-index: 9;
+    //position: relative;
+    //z-index: 9;
     //background-color: transparent;
   }
   @media screen and (min-width: $screen-lg-min) {
+    position: relative;
+    z-index: 9;
     padding: 60px 0;
   }
   .logo {
@@ -31,6 +33,10 @@
     background: url("../images/logo.svg") no-repeat center / 100% auto;
     transition: background 0s;
     @media screen and (min-width: $screen-md-min) {
+      height: 25px;
+      max-width: 190px;
+    }
+    @media screen and (min-width: $screen-lg-min) {
       height: 35px;
       max-width: 290px;
     }
@@ -39,7 +45,7 @@
     top: 0;
     left: 0;
     z-index: 96;
-    @media screen and (min-width: $screen-md-min) {
+    @media screen and (min-width: $screen-lg-min) {
       position: absolute;
       right: 90px;
       .logo {
@@ -57,11 +63,12 @@
   }
 
   &.scrolled {
-    @media screen and (max-width: $screen-sm-max) {
+    @media screen and (max-width: $screen-md-max) {
       background-color: $base-color-main;
 
       .logo {
-        width: 19px;
+        width: 27px;
+        height: 25px;
         background-image: url("../images/icons/logo.svg");
       }
 
@@ -69,6 +76,12 @@
         span {
           background-color: white;
         }
+      }
+    }
+    @media screen and (max-width: $screen-sm-max) {
+      .logo {
+        width: 19px;
+        height: 17px;
       }
     }
   }

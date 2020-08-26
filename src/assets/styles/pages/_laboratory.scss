@@ -18,6 +18,9 @@
     h3 {
       margin-bottom: $form-group-margin-bottom / 3;
       @media screen and (min-width: $screen-md-min) {
+        margin-bottom: $form-group-margin-bottom / 2;
+      }
+      @media screen and (min-width: $screen-lg-min) {
         margin-bottom: $form-group-margin-bottom;
       }
       @media screen and (max-width: $screen-sm-max) {
@@ -79,7 +82,13 @@
     display: flex;
     z-index: 9;
     @media screen and (min-width: $screen-md-min) {
+      position: static;
+      margin-top: 20px;
+    }
+    @media screen and (min-width: 1600px) {
+      position: absolute;
       top: calc(100% - 43px);
+      margin-top: 0;
       left: 0;
     }
     @media screen and (min-width: $screen-xxl-min) {

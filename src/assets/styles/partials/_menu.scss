@@ -10,6 +10,9 @@
   top: 17px;
   z-index: 10001;
   @media screen and (min-width: $screen-md-min) {
+    top: 24px;
+  }
+  @media screen and (min-width: $screen-lg-min) {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -24,8 +27,7 @@
   }
   &__logo {
     perspective: 120px;
-    @extend .hidden__sm;
-    @extend .hidden__xs;
+    @extend .hideOnMobileAndTablet;
   }
   &__menu {
     font-size: 14px;
@@ -34,7 +36,7 @@
     .menu {
       width: 30px;
       height: 12px;
-      @media screen and (min-width: $screen-md-min) {
+      @media screen and (min-width: $screen-lg-min) {
         width: 40px;
         height: 24px;
         margin: 0 auto 20px;
@@ -48,13 +50,13 @@
         @include transitionEaseInOut(all);
         position: relative;
         top: 0;
-        @media screen and (min-width: $screen-md-min) {
+        @media screen and (min-width: $screen-lg-min) {
           width: 42px;
           background-color: white;
         }
         + span {
           margin-top: 8px;
-          @media screen and (min-width: $screen-md-min) {
+          @media screen and (min-width: $screen-lg-min) {
             margin-top: 20px;
           }
         }
@@ -77,13 +79,13 @@
           &:nth-child(2) {
             margin: 0;
             transform: translate(0px, 6px) rotate(-45deg);
-            @media screen and (min-width: $screen-md-min) {
+            @media screen and (min-width: $screen-lg-min) {
               transform: translate(0px, 11px) rotate(-45deg);
             }
           }
           &:nth-child(2) {
             transform: translate(0px, 4px) rotate(45deg);
-            @media screen and (min-width: $screen-md-min) {
+            @media screen and (min-width: $screen-lg-min) {
               transform: translate(0px, 9px) rotate(45deg);
             }
           }
@@ -92,7 +94,7 @@
 
       + div {
         display: none;
-        @media screen and (min-width: $screen-md-min) {
+        @media screen and (min-width: $screen-lg-min) {
           display: inline;
         }
       }
@@ -102,6 +104,7 @@
   &__language {
     font-weight: 500;
     font-size: 20px;
+    @extend .hideOnMobileAndTablet;
     a {
       display: block;
       text-decoration: none;
@@ -109,7 +112,7 @@
       + a {
         margin-left: 20px;
       }
-      @media screen and (min-width: $screen-md-min) {
+      @media screen and (min-width: $screen-lg-min) {
         color: $base-color-dark;
         + a {
           margin-top: 30px;
@@ -119,7 +122,7 @@
       &:hover,
       &.active {
         color: $base-color-main;
-        @media screen and (min-width: $screen-md-min) {
+        @media screen and (min-width: $screen-lg-min) {
           color: white;
         }
       }
@@ -127,7 +130,7 @@
   }
 
   &.scrolled {
-    @media screen and (max-width: $screen-sm-max) {
+    @media screen and (max-width: $screen-md-max) {
       .menu {
         span {
           background-color: white;
@@ -171,5 +174,11 @@
   &-back {
     transform: rotateY(180deg);
     transform-style: preserve-3d;
+  }
+}
+
+.safari {
+  .card-back {
+    display: none;
   }
 }

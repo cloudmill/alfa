@@ -294,8 +294,12 @@ ol {
         top: 7px;
         color: #c4c4c4;
         @include transitionEaseInOut(all);
-        @media screen and (min-width: $screen-lg-min) {
+        @media screen and (min-width: $screen-md-min) {
+          top: 0;
           left: 0;
+        }
+        @media screen and (min-width: $screen-lg-min) {
+          top: 7px;
         }
       }
       .long-arrow-right {
@@ -312,7 +316,7 @@ ol {
         .long-arrow-inner {
           color: $base-color-main;
           left: 20px;
-          @media screen and (min-width: $screen-lg-min) {
+          @media screen and (min-width: $screen-md-min) {
             left: 0;
           }
         }

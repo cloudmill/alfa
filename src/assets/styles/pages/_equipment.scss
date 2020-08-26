@@ -580,6 +580,13 @@
         }
       }
     }
+
+    ul {
+      margin-bottom: 20px;
+      @media screen and (min-width: $screen-lg-min) {
+        margin-bottom: 0;
+      }
+    }
   }
 }
 

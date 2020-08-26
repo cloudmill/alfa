@@ -3,6 +3,10 @@
   padding-bottom: 80px;
   @media screen and (min-width: $screen-md-min) {
     padding-top: 180px;
+    padding-bottom: 180px;
+  }
+  @media screen and (min-width: $screen-lg-min) {
+    padding-top: 180px;
     padding-bottom: 300px;
   }
   &-inner {
@@ -16,7 +20,7 @@
     }
     &-left {
       @extend .col__xl-4;
-      @extend .col__lg-5;
+      @extend .col__lg-4;
       @extend .col__md-5;
       @extend .col__xs-12;
       display: flex;
@@ -44,6 +48,7 @@
       margin-top: 60px;
       @media screen and (min-width: $screen-md-min) {
         margin-top: 0;
+        font-size: 190px;
       }
       @media screen and (min-width: $screen-lg-min) {
         font-size: 240px;
@@ -51,7 +56,7 @@
     }
     &-right {
       @extend .col__xl-4;
-      @extend .col__lg-2;
+      @extend .col__lg-1;
       @extend .hideOnMobileAndTablet;
       text-align: right;
     }

@@ -1,6 +1,7 @@
 /* src/app.js */
 
 import AOS from 'aos';
+import browser from 'browser-detect';
 import 'Scripts/isotope.pkgd.min';
 import "velocity-animate";
 
@@ -8,6 +9,8 @@ import "velocity-animate";
 import 'Styles/_app.scss';
 import { sticky } from 'Scripts/customscripts';
 import { isMobileAndTabletOnly } from "./assets/scripts/utils";
+
+const browserDetect = browser();
 
 $(document).ready(() => {
 	// header
@@ -30,6 +33,10 @@ $(document).ready(() => {
   if(!isMobileAndTabletOnly) {
     sticky();
   }
+
+
+  $('body').addClass(browserDetect.name);
+  $('body').addClass(browserDetect.os);
 
 	// backend
 	require('Scripts/backend');
