@@ -2,9 +2,6 @@
   padding-top: 0;
   &-container {
     @extend .mainContainer;
-    @media screen and (min-width: $screen-xl-min) {
-      padding-top: 80px !important;
-    }
   }
   &-content {
     @media screen and (min-width: $screen-xl-min) {
@@ -325,7 +322,7 @@
         margin-left: 20px;
         white-space: nowrap;
         @include transitionEaseInOut(margin-left);
-        @media screen and (min-width: $screen-xl-min) {
+        @media screen and (min-width: $screen-lg-min) {
           margin-left: 50px;
         }
       }
@@ -409,6 +406,14 @@
 
     .insideBlock {
       margin-bottom: 0;
+    }
+  }
+}
+
+.equipment-container {
+  &:not(.equipment-container--big) {
+    @media screen and (min-width: $screen-xl-min) {
+      padding-top: 80px !important;
     }
   }
 }
@@ -684,6 +689,15 @@
 
 .sidebar {
   padding-bottom: 30px;
+  @media screen and (min-width: $screen-md-min) {
+    padding-bottom: 50px;
+  }
+  @media screen and (min-width: $screen-lg-min) {
+    padding-bottom: 70px;
+  }
+  @media screen and (min-width: $screen-xl-min) {
+    padding-bottom: 170px;
+  }
 
   ul {
     margin-bottom: 50px;

@@ -136,8 +136,12 @@
   span {
     color: $black;
     transition: color .5s;
+    position: relative;
+    z-index: 1;
   }
-
+  circle {
+    transition: transform .9s, fill .5s cubic-bezier(0.76, 0, 0.24, 1) .4s;
+  }
   svg {
     position: absolute;
     top: 0;
@@ -148,10 +152,17 @@
     }
   }
   &:hover {
+    circle {
+      transform: matrix(-1, 0, 0, 1, 20.5, 28.5);
+      fill: white;
+    }
     &.transparent {
       color: white;
+      .btn-animate {
+        fill: $base-color-main;
+      }
       span {
-        color: $base-color-main;
+        color: white;
       }
     }
     color: $black;
@@ -159,10 +170,12 @@
       stroke-dasharray: 203%, 0;
       stroke-dashoffset: 82%;
       stroke: $base-color-main;
+      fill: $base-color-main;
       transition:
         stroke-dasharray .5s cubic-bezier(0.76, 0, 0.24, 1),
         stroke-dashoffset .5s cubic-bezier(0.76, 0, 0.24, 1),
-        stroke .5s cubic-bezier(0.76, 0, 0.24, 1) .4s;
+        stroke .5s cubic-bezier(0.76, 0, 0.24, 1) .4s,
+        fill .5s cubic-bezier(0.76, 0, 0.24, 1) .4s;
 
       &--big {
         stroke-dasharray: 232%, 0;
@@ -170,12 +183,15 @@
       }
     }
     span {
-      color: $base-color-main;
+      color: white;
       transition: color .5s .4s;
     }
   }
 
   &.transparent {
+    .btn-animate {
+      fill: rgba(white, 0);
+    }
     .btn-path {
       opacity: 0.4;
     }
@@ -189,12 +205,17 @@
   stroke-width: 1;
   stroke-dasharray: 126%, 205%;
   stroke-dashoffset: 107%;
+  fill: white;
   transition:
     stroke-dasharray .5s cubic-bezier(0.76, 0, 0.24, 1) .4s,
     stroke-dashoffset .5s cubic-bezier(0.76, 0, 0.24, 1) .4s,
-    stroke .5s cubic-bezier(0.76, 0, 0.24, 1);
+    stroke .5s cubic-bezier(0.76, 0, 0.24, 1),
+    fill .5s cubic-bezier(0.76, 0, 0.24, 1) .4s;
 
   &--big {
     stroke-dasharray: 126%, 218%;
+  }
+  &--md {
+    stroke-dasharray: 126%, 211%;
   }
 }

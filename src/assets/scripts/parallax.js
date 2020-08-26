@@ -1,17 +1,15 @@
-
 class ParalaxItem {
   constructor(opts) {
     this.parent = opts.parent;
     this.child = opts.child;
     this.duration = 1.9;
-    this.way = 250;
+    this.way = 200;
     this.hook = opts.hook || 0.8;
     this.offset = this.parent.hasClass("size-box") ? "-50%" : "0";
   }
   update(y) {
     this.startPos = this.parent.offset().top * this.hook;
     this.endPos = this.startPos + window.innerHeight * this.duration;
-    console.log(this.endPos);
     if (y - this.startPos >= 0 && this.endPos - y >= 0) {
       this.currentOffset =
         (this.way / (this.endPos - this.startPos)) * (y - this.startPos);
@@ -47,3 +45,4 @@ $(window).scroll(() => {
     item.update(scrollPos);
   });
 });
+

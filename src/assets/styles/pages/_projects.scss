@@ -254,6 +254,9 @@
     color: $black;
     a {
       color: $black;
+      &:hover {
+        color: $base-color-main;
+      }
     }
     .mainTitle {
       border-color: $black;

@@ -74,7 +74,7 @@
     li {
       cursor: pointer;
       max-width: 51px;
-      margin: 0 7px 10px;
+      margin: 10px 7px 0;
       flex-grow: 1;
       width: calc(100% * (1/5) - 30px - 1px);
       padding-top: 20px;
@@ -85,14 +85,14 @@
       border-bottom: 2px solid $gray;
       transition: border-color .5s;
       @media screen and (min-width: $screen-md-min) {
-        margin: 0 7px 10px;
+        margin: 10px 7px 0;
         max-width: 51px;
       }
       @media screen and (min-width: $screen-lg-min) {
         width: calc(100% * (1/4) - 30px - 1px);
       }
       @media screen and (min-width: $screen-xl-min) {
-        margin: 0 15px 10px;
+        margin: 10px 15px 0;
         width: calc(100% * (1/5) - 30px - 1px);
       }
       i {

@@ -1,6 +1,10 @@
 .service {
   &-container {
     @extend .mainContainer;
+
+    @media screen and (min-width: $screen-xl-min) {
+      padding-bottom: 0 !important;
+    }
   }
 
   @media screen and (min-width: $screen-lg-min) {
@@ -11,6 +15,27 @@
       }
       .equipmentList-item__bottom {
         margin-top: -100px;
+      }
+    }
+  }
+
+  .equipmentList {
+    &-item {
+      &:first-child {
+        img {
+          max-width: 80%;
+        }
+      }
+      &:last-child {
+        img {
+          max-height: 720px;
+        }
+        ul {
+          @media screen and (min-width: $screen-lg-min) {
+            position: relative;
+            top: -150px;
+          }
+        }
       }
     }
   }

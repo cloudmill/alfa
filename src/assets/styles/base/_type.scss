@@ -44,7 +44,7 @@ h6 {
 }
 
 h1, .alpha   {
-  line-height: 1.2333;
+  line-height: 110%;
   font-size: 24px;
   @media screen and (min-width: $screen-md-min) {
     font-size: $font-size-h1 * 0.5;
@@ -270,11 +270,11 @@ ol {
       font-size: 13px;
       left: 0;
       @include transitionEaseInOut(left);
-      @media screen and (min-width: $screen-md-min) {
+      @media screen and (min-width: $screen-xl-min) {
         margin-bottom: 25px;
         font-size: 16px;
       }
-      @media screen and (min-width: $screen-md-min) {
+      @media screen and (min-width: $screen-xl-min) {
         &:last-child {
           margin-bottom: 0;
         }
@@ -284,7 +284,7 @@ ol {
         @include transitionEaseInOut(color);
       }
       .long-arrow-line {
-        color: #c4c4c4;
+        background-color: #c4c4c4;
         width: 13px;
         right: 0px;
       }
@@ -313,15 +313,17 @@ ol {
         a {
           color: $base-color-main;
         }
-        .long-arrow-inner {
+        .long-arrow-right {
           color: $base-color-main;
+        }
+        .long-arrow-inner {
           left: 20px;
           @media screen and (min-width: $screen-md-min) {
             left: 0;
           }
         }
         .long-arrow-line {
-          color: $base-color-main;
+          background-color: $base-color-main;
           width: 23px;
         }
       }

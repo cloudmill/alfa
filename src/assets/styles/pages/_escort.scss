@@ -18,6 +18,7 @@
     }
     .col:last-child {
       .escort-item {
+        margin-bottom: 0;
         @media screen and (max-width: $screen-sm-max) {
           margin-bottom: 10px;
         }

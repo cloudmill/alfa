@@ -136,7 +136,7 @@ $items:
         padding-bottom: 30px;
         overflow: hidden;
         position: relative;
-        @include transitionEaseInOut(padding-left);
+        @include transitionEaseInOut(all);
         @media screen and (min-width: $screen-lg-min) {
           font-size: 25px;
           padding-bottom: 0;
@@ -165,10 +165,10 @@ $items:
           @media screen and (min-width: $screen-lg-min) {
             top: 7px;
           }
-          @media screen and (min-width: $screen-xxl-min) {
+          @media screen and (min-width: 1600px) {
             width: 31px;
             height: 31px;
-            top: 16px;
+            top: 13px;
           }
         }
         &.active {
@@ -189,7 +189,7 @@ $items:
   }
 
   .item {
-    //@include transitionEaseInOut(opacity, 1s);
+    @include transitionEaseInOut(opacity, 1s);
     width: 100%;
     position: relative;
     + .item {
@@ -200,11 +200,11 @@ $items:
     }
 
     @media screen and (min-width: $screen-md-min) {
-      //opacity: 0;
+      opacity: 0;
     }
     &-content {
       @media screen and (min-width: $screen-md-min) {
-        //display: none;
+        display: none;
       }
       .row {
         padding: 15px;
@@ -212,9 +212,12 @@ $items:
           padding: 0;
         }
       }
-      max-height: 0;
-      overflow: hidden;
-      @include transitionEaseInOut(max-height);
+      @media screen and (max-width: $screen-sm-max) {
+        max-height: 0;
+        overflow: hidden;
+        @include transitionEaseInOut(max-height);
+        background: none !important;
+      }
     }
     &::before {
       content: attr(data-title);
@@ -243,10 +246,13 @@ $items:
       }
     }
     &.active {
-      //opacity: 1;
+      opacity: 1;
+      height: 100%;
       .item-content {
-        //display: block;
-        max-height: 1000px;
+        display: block;
+        @media screen and (max-width: $screen-sm-max) {
+          max-height: 1000px;
+        }
       }
       &::before {
         color: $base-color-main;
@@ -438,4 +444,36 @@ $items:
 
 .unscrollable.page-main {
   overflow: visible !important;
+}
+
+//ratio
+.ratio {
+  width: 100%;
+  position: relative;
+  &1-1 {
+    @media screen and (min-width: $screen-md-min) {
+      padding-top: 120%;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      padding-top: 130%;
+    }
+    @media screen and (min-width: $screen-xl-min) {
+      padding-top: 85%;
+    }
+    @media screen and (min-width: 1600px) {
+      padding-top: 80%;
+    }
+    @media screen and (min-width: $screen-xxl-min) {
+      padding-top: 70%;
+    }
+  }
+  &-inner {
+    @media screen and (min-width: $screen-md-min) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+  }
 }

@@ -6,7 +6,7 @@ block header
 block content
   main.equipment.equipmentMain
     +navTitle('Оборудование')
-    .container.equipment-container
+    .container.equipment-container.equipment-container--big
       .equipmentList
         .equipmentList-item(data-aos='fade-up')
           .equipmentList-item__top(data-aos='fade-up')
@@ -32,15 +32,15 @@ block content
                 li: a(href='#')
                   +arrow()
                   | АльфаКомпакт
-          .equipmentList-item__bottom.parallax-box(data-aos='fade-up', data-hook='0.4')
-            .equipmentList-item__mark.spinnerSlow: +img('equip/trademark.svg')
+          .equipmentList-item__bottom(data-aos='fade-up')
+            .equipmentList-item__mark: .spinnerSlow: +img('equip/trademark.svg')
             .equipmentList-item__logo
               +img('equip/item-1.svg')
               +img('equip/item-2.svg')
               +img('equip/item-3.svg')
               +img('equip/item-4.svg')
               +img('equip/item-5.svg')
-            .parallax-item: +img('equip/cat-1.jpg')
+            .rellax: +img('equip/cat-1.jpg')
         .equipmentList-item(data-aos='fade-up')
           .equipmentList-item__top(data-aos='fade-up')
             .equipmentList-item__num 02.
@@ -59,13 +59,13 @@ block content
                 li: a(href='#')
                   +arrow()
                   | АльфаДирект ICD
-          .equipmentList-item__bottom.parallax-box(data-aos='fade-up', data-hook='0.4')
+          .equipmentList-item__bottom(data-aos='fade-up')
             .equipmentList-item__mark.spinnerSlow: +img('equip/trademark.svg')
             .equipmentList-item__logo
               +img('equip/item-6.svg')
               +img('equip/item-7.svg')
               +img('equip/item-8.svg')
-            .parallax-item: +img('equip/cat-2.jpg')
+            .rellax: +img('equip/cat-2.jpg')
         .equipmentList-item(data-aos='fade-up')
           .equipmentList-item__top(data-aos='fade-up')
             .equipmentList-item__num 03.
@@ -84,9 +84,9 @@ block content
                 li: a(href='#')
                   +arrow()
                   | Гидромеханический пакер
-          .equipmentList-item__bottom.parallax-box(data-aos='fade-up', data-hook='0.4')
+          .equipmentList-item__bottom(data-aos='fade-up')
             .equipmentList-item__mark.spinnerSlow: +img('equip/trademark.svg')
-            .parallax-item: +img('equip/cat-3.jpg')
+            .rellax: +img('equip/cat-3.jpg')
 
 block footer
   include ../partials/_footer.pug

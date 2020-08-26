@@ -1,8 +1,9 @@
 /* src/app.js */
 
 import AOS from 'aos';
+import Rellax from "rellax";
 import browser from 'browser-detect';
-import 'Scripts/isotope.pkgd.min';
+import { isMobileOnly } from 'Scripts/utils';
 import "velocity-animate";
 
 // Styles
@@ -42,7 +43,6 @@ $(document).ready(() => {
 	require('Scripts/backend');
 });
 
-
 $(window).on("orientationchange", function() {
   setTimeout(() => {
     sticky();
@@ -65,6 +65,17 @@ $(window).on("load", function() {
       });
     }, 500);
 
+
+    if (!isMobileOnly && $('.rellax').length) {
+      const rellax = new Rellax('.rellax', {
+        speed: 2,
+        center: true,
+        wrapper:  '.scrollable-content',
+        vertical: true,
+        horizontal: false
+      });
+    }
+
     if(process.env.NODE_ENV === 'production') {
       window.scrollTo(0, 0);
     }
@@ -80,6 +91,16 @@ $(window).on("load", function() {
           offset: 50,
         });
       }, 500);
+
+      if (!isMobileOnly && $('.rellax').length) {
+        const rellax = new Rellax('.rellax', {
+          speed: 2,
+          center: true,
+          wrapper:  '.scrollable-content',
+          vertical: true,
+          horizontal: false
+        });
+      }
 
       setTimeout(function () {
         $('.index-slider').removeClass('loading');

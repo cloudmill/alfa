@@ -43,6 +43,12 @@ function tabControl() {
       items.removeClass('active');
       $(this).addClass('active');
       container.find('.tabs a[href$="#' + currId + '"]').addClass('active');
+
+      setTimeout(() => {
+        AOS.refresh({
+          offset: 50,
+        });
+      }, 600);
     });
   }
 }
