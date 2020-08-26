@@ -8,7 +8,7 @@ block content
     +navTitle('Лаборатория', 'О компании')
     .container
       +menuAdditionalNav(menu.aboutMenu, 'laboratory')
-    .parallax-box.text--center(data-aos='fade-up', data-hook='0.4'): .parallax-item: +img('about/lab/image.jpg')
+    .rellax-box.text--center(data-aos='fade-up'): .rellax: +img('about/lab/image.jpg')
     .container
       section.laboratory-item
         +revealMainTag('Лаборатория Альфа Горизонт тестирования скважинного #[span.br-style] оборудования является производственным #[span.br-style] подразделением компании', 'h3')
@@ -54,9 +54,10 @@ block content
             - for (let x = 1; x < 6; x++)
               .swiper-slide
                 .row.between__xs
-                  .col.col__xl-8.col__lg-7.col__xs-12.overflowH.last__lg
-                    .animaSlider-img
-                      +img('about/lab/slider.jpg', 'slider-img')
+                  .col.col__xl-8.col__lg-7.col__xs-12.last__lg
+                    .overflowH
+                      .animaSlider-img
+                        +img('about/lab/slider.jpg', 'slider-img')
                   .col.col__xl-4.col__lg-5.col__xs-12.laboratory-slide.animaSlider-text
                     +revealMainTag('Механические #[span.br-style] прочностные тесты', 'h3')
                     ul.list--icons(data-aos='fade-up')
@@ -65,9 +66,9 @@ block content
                       li Тест на изгиб конструкции
                       li Тест сдвиг опорных замыкающих колец
                       li Тест на отделение проволочной обмотки
-          .swiper-button
-            .swiper-prev.swiper-prev-lab: i.icon-prev
-            .swiper-next.swiper-next-lab: i.icon-next
+          .swiper-button.swiper-button--ar
+            .swiper-prev.swiper-prev-lab: +sliderArrowPrev()
+            .swiper-next.swiper-next-lab: +sliderArrowNext()
       section.laboratory-item.laboratory-item--sub
         +revealMainTag('Преимущества работы #[span.br-style] лаборатории', 'h3')
         .row.between__xs.row-add

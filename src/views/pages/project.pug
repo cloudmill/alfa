@@ -28,9 +28,9 @@ block content
             .equipment-template__block(data-aos='fade-up')
               p Для одной из закупочных процедур для разработки на рынке компания Альфа Горизонт предложила технологию нового поколения – автономный клапан контроля притока AICV (Inflow Control, Norway).
               p Фильтр с AICV представляет собой скважинный фильтр, клапан которого способен автономно (без воздействия из вне) отсекать попадание в трубное пространство добывающей скважины нежелательного флюида – воды или газа.
-            .imageContainer
+            .imageContainer(data-aos='fade-up')
               .imageContainer-logo: +img('equip/item-1.svg')
-              .parallax-box(data-hook='0.8'): .parallax-item: +img('projects/news.jpg')
+              .rellax-box: .rellax: +img('projects/news.jpg')
               .imageContainer-bot
                 h4 AICV, автономное устройство контроля притока
                 .text__sm Фильтры управляемые
@@ -46,7 +46,7 @@ block content
                 .swiper-prev.swiper-prev-proj: i.icon-prev
               .swiper-wrapper
                 - for (let x = 1; x < 6; x++)
-                  .swiper-slide: +img('projects/slider-1.jpg', 'slider-img')
+                  .swiper-slide: .rellax: +img('projects/slider-1.jpg', 'slider-img')
               .swiper-pagination.swiper-pagination--dr
           #results.equipment-template__item.template__item--js
             +revealMainTag('Первые результаты внедрения', 'h3')
@@ -58,7 +58,7 @@ block content
                 .swiper-prev.swiper-prev-proj: i.icon-prev
               .swiper-wrapper
                 - for (let x = 1; x < 6; x++)
-                  .swiper-slide: +img('projects/slider-2.jpg', 'slider-img')
+                  .swiper-slide: .rellax: +img('projects/slider-2.jpg', 'slider-img')
               .swiper-pagination.swiper-pagination--dr
           #perspectives.equipment-template__item.template__item--js
             +revealMainTag('Перспективы развития проекта', 'h3')
@@ -78,9 +78,7 @@ block content
               li: a(href='#results') Результаты
               li: a(href='#perspectives') Перспективы развития
               li: a(href='#question') Задать вопрос
-            a.link-icon(href='projects.html', data-aos='fade-up')
-              i.long-arrow-left
-              span Ко всем проектам
+            +linkIcon('Ко всем проектам')
     .container.stopper: +nextItem('Внедрение технологии AICV компании ООО «Альфа Горизонт»', 'projects/next.jpg', 'Следующий проект', true)
 
 

@@ -27,15 +27,6 @@
   }
 }
 
-.swiper-slide .parallax-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
-}
-
 .mainSlider {
   .slider-img {
     top: 0;
@@ -71,7 +62,7 @@
       //transform: translate(0, 0%) matrix(1.0, 0, 0, 1.0, 0, 0);
       //left: 100%;
       //transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1), left .3s cubic-bezier(0.76, 0, 0.24, 1) 1s;
-      animation: sliderAnimate 1.4s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+      animation: sliderAnimate 1.5s cubic-bezier(0.76, 0, 0.24, 1) forwards;
     }
   }
 

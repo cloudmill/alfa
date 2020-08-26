@@ -5,6 +5,35 @@ mixin arrow()
     span.long-arrow-right
     span.long-arrow-line
 
+mixin arrowL()
+  span.long-arrow-inner
+    span.long-arrow-left
+    span.long-arrow-line
+
+mixin sideArrowL()
+  .svg-arrow.svg-arrow--left
+    svg(width='55', height='23', viewBox='0 0 55 23', fill='none', xmlns='http://www.w3.org/2000/svg')
+      rect(x='3', y='10', width='52', height='2', fill='#323232')
+      path(d='M3.07037 12.0547L9.0339 21L7.3698 22.1094L0 11.0547L7.3698 0L9.0339 1.1094L3.07037 10.0547V12.0547Z', fill='#323232')
+
+mixin sliderArrowNext()
+  .slider-arrow.next
+    svg(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 60 43', width='60', height='43')
+      path(d='M 38.192 0 L 60 21.547 L 38.192 43.094 L 36.786 41.671 L 56.142 22.547 L 56.142 20.547 L 36.786 1.423 L 38.192 0 Z ', fill='#323232')
+      rect(x='18.786', y='20.547', width='38', height='2', transform='matrix(1,0,0,1,0,0)', fill='#323232')
+
+mixin sliderArrowPrev()
+  .slider-arrow.prev
+    svg(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 60 43', width='60', height='43')
+      path(d=' M 22.701 43.094 L 0.893 21.547 L 22.701 0 L 24.107 1.423 L 4.751 20.547 L 4.751 22.547 L 24.107 41.671 L 22.701 43.094 Z ', fill-rule='evenodd', fill='#323232')
+      rect(x='4.107', y='20.547', width='38', height='2', transform='matrix(-1,0,0,-1,46.214,43.094)', fill='#323232')
+
+
+mixin linkIcon(text)
+  a.link-icon(href='#', data-aos='fade-up')
+    +sideArrowL()
+    span= text
+
 mixin abcTitle(items)
   ul.glossary-abc.abc--js(data-aos='fade-up')
     each item in items
@@ -69,8 +98,8 @@ mixin navBread(title, parent)
       li.breadcrumbs__item.active.revealIn!= title
 
 mixin navTitleBack(title, parent, src, items)
-  .nav-title.nav-background.nav-background--fullWidth.parallax-box(data-hook="0")
-    .setImg.parallax-item(style=src)
+  .nav-title.nav-background.nav-background--fullWidth.rellax-box
+    .setImg.rellax(style=src)
     .container
       +navBread(title, parent)
       .row.end__lg.bottom__lg
@@ -85,8 +114,8 @@ mixin navTitleBack(title, parent, src, items)
           +img('equip/trademarkw.svg', 'spinnerSlow')
 
 mixin navTitleBackOne(title, parent, src, logo, desc, pdf)
-  .nav-title.nav-background.nav-background--fullWidth.parallax-box(data-hook="0")
-    .setImg.parallax-item(style=src)
+  .nav-title.nav-background.nav-background--fullWidth.rellax-box
+    .setImg.rellax(style=src)
     .container
       +navBread(title, parent)
       .row.end__lg
@@ -105,8 +134,8 @@ mixin navTitleBackOne(title, parent, src, logo, desc, pdf)
             +img(logo)
 
 mixin navTitleBackOneArray(title, parent, src, items, pdf)
-  .nav-title.nav-background.parallax-box(data-hook="0")
-    .setImg.parallax-item(style=src)
+  .nav-title.nav-background.rellax-box
+    .setImg.rellax(style=src)
     .setBack
     .container.relative
       +navBread(title, parent)

@@ -216,34 +216,6 @@
         &--adapt {
           display: flex;
         }
-
-        .swiper-prev {
-          margin-right: 20px;
-          @media screen and (min-width: $screen-md-min) {
-            margin-right: 45px;
-          }
-        }
-
-        > * {
-          color: $black;
-          cursor: pointer;
-          font-size: 20px;
-          transition: background .5s, color .5s;
-          line-height: 1;
-          @media screen and (min-width: $screen-md-min) {
-            font-size: 40px;
-          }
-
-          &:hover {
-            color: $base-color-main;
-          }
-        }
-
-        &-disabled {
-          cursor: inherit;
-          opacity: .7;
-          color: $black !important;
-        }
       }
     }
 
@@ -319,35 +291,35 @@
       font-size: 18px;
 
       span {
-        margin-left: 20px;
+        margin-left: 10px;
         white-space: nowrap;
         @include transitionEaseInOut(margin-left);
         @media screen and (min-width: $screen-lg-min) {
-          margin-left: 50px;
+          margin-left: 18px;
         }
       }
-      .long-arrow-left {
-        width: 15px;
-        height: 15px;
-        color: $black;
-        @include transitionEaseInOut(color);
-        &::before {
-          width: 54px;
-          color: $black;
-          @include transitionEaseInOut(all);
-        }
-      }
+      //.long-arrow-left {
+      //  width: 15px;
+      //  height: 15px;
+      //  color: $black;
+      //  @include transitionEaseInOut(color);
+      //  &::before {
+      //    width: 54px;
+      //    color: $black;
+      //    @include transitionEaseInOut(all);
+      //  }
+      //}
       &:hover {
         span {
-          margin-left: 30px;
+          margin-left: -2px;
         }
-        .long-arrow-left {
-          color: $base-color-main;
-          &::before {
-            width: 34px;
-            color: $base-color-main;
-          }
-        }
+        //.long-arrow-left {
+        //  color: $base-color-main;
+        //  &::before {
+        //    width: 34px;
+        //    color: $base-color-main;
+        //  }
+        //}
       }
     }
 
@@ -544,6 +516,7 @@
       width: 40px;
       right: 10px;
       top: 10px;
+      z-index: 9;
       @media screen and (min-width: $screen-md-min) {
         width: 80px;
       }
@@ -558,6 +531,7 @@
       position: absolute;
       top: 10px;
       left: 10px;
+      z-index: 9;
       @media screen and (min-width: $screen-lg-min) {
         top: 30px;
         left: 55px;

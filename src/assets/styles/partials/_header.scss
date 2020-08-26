@@ -33,10 +33,10 @@
     background: url("../images/logo.svg") no-repeat center / 100% auto;
     transition: background 0s;
     @media screen and (min-width: $screen-md-min) {
-      height: 25px;
-      max-width: 190px;
+      //height: 25px;
+      //max-width: 190px;
     }
-    @media screen and (min-width: $screen-lg-min) {
+    @media screen and (min-width: $screen-md-min) {
       height: 35px;
       max-width: 290px;
     }
@@ -45,12 +45,23 @@
     top: 0;
     left: 0;
     z-index: 96;
-    @media screen and (min-width: $screen-lg-min) {
-      position: absolute;
-      right: 90px;
+    @media screen and (min-width: $screen-md-min) {
       .logo {
         background-image: url("../images/logo-white.svg");
       }
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      position: absolute;
+      right: 90px;
+    }
+  }
+  &--index {
+    padding: 15px;
+    @media screen and (min-width: $screen-md-min) {
+      padding: 30px;
+    }
+    @media screen and (min-width: 1440px) {
+      padding: 60px;
     }
   }
   &__fixedB {

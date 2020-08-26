@@ -28,9 +28,9 @@ block content
                   p Моделирование силовых нагрузок на оборудование при спуске хвостовика до забоя
           #character.equipment-template__item.template__item--js
             +revealMainTag('Характеристики', 'h3')
-            .swiper-button(data-aos='fade-up')
-              .swiper-prev.swiper-prev-equip: i.icon-prev
-              .swiper-next.swiper-next-equip: i.icon-next
+            .swiper-button.swiper-button--ar(data-aos='fade-up')
+              .swiper-prev.swiper-prev-equip: +sliderArrowPrev()
+              .swiper-next.swiper-next-equip: +sliderArrowNext()
             .indexSlider.swiper-container.animaSlider(
               data-autoheight='false',
               data-aos='fade-up',
@@ -125,9 +125,7 @@ block content
               li: a(href='#advantages') Преимущества
               li: a(href='#projects') Проекты
               li: a(href='#faq') Задать вопрос
-            a.link-icon(href='#', data-aos='fade-up')
-              i.long-arrow-left
-              span Вернуться к услугам
+            +linkIcon('Ко всем фильтрам')
     .container.stopper: +nextItem('Тестирование', 'service/next2.jpg', 'Следующая услуга', false)
 
 block footer

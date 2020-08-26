@@ -1,0 +1,75 @@
+.svg-arrow {
+  height: 23px;
+  rect {
+    @include transitionEaseInOut(all);
+  }
+  path {
+    @include transitionEaseInOut(fill);
+  }
+  &--left {
+
+  }
+
+  a:hover > & {
+    path {
+      fill: $base-color-main;
+    }
+    rect {
+      fill: $base-color-main;
+      width: 34px;
+    }
+  }
+}
+
+
+.swiper-button--ar {
+  svg {
+    height: 20px;
+    width: 40px;
+    @media screen and (min-width: $screen-md-min) {
+      height: 43px;
+      width: 60px;
+    }
+  }
+  .swiper-prev {
+    @media screen and (min-width: $screen-md-min) {
+      margin-right: 10px;
+    }
+
+    &:hover {
+      rect {
+        x: -8;
+      }
+    }
+  }
+
+  .swiper-next {
+    &:hover {
+      rect {
+        x: 8;
+      }
+    }
+  }
+  > * {
+    cursor: pointer;
+    &:hover {
+      color: $base-color-main;
+      rect,
+      path {
+        fill: $base-color-main;
+      }
+      rect {
+        width: 50px;
+      }
+    }
+  }
+}
+
+.slider-arrow {
+  rect {
+    @include transitionEaseInOut(all);
+  }
+  path {
+    @include transitionEaseInOut(fill);
+  }
+}

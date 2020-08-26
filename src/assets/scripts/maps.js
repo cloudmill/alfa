@@ -1,11 +1,5 @@
 import {showMoreFunc} from './customscripts';
 import {myModal} from './modal';
-import AOS from "aos";
-const $ = require('jquery');
-const jQueryBridget = require('jquery-bridget');
-const Isotope = require('isotope-layout');
-// make Isotope a jQuery plugin
-jQueryBridget( 'isotope', Isotope, $ );
 
 let markers = [];
 let map;

@@ -28,7 +28,6 @@ $(document).ready(() => {
 	require('Scripts/input');
 
 	// anima
-	require('Scripts/parallax');
   require('Scripts/video');
 
   if(!isMobileAndTabletOnly) {
@@ -67,10 +66,9 @@ $(window).on("load", function() {
 
 
     if (!isMobileOnly && $('.rellax').length) {
-      const rellax = new Rellax('.rellax', {
-        speed: 2,
+      new Rellax('.rellax', {
+        speed: -2,
         center: true,
-        wrapper:  '.scrollable-content',
         vertical: true,
         horizontal: false
       });
@@ -93,10 +91,9 @@ $(window).on("load", function() {
       }, 500);
 
       if (!isMobileOnly && $('.rellax').length) {
-        const rellax = new Rellax('.rellax', {
-          speed: 2,
+        new Rellax('.rellax', {
+          speed: -2,
           center: true,
-          wrapper:  '.scrollable-content',
           vertical: true,
           horizontal: false
         });

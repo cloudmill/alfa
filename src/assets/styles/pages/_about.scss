@@ -73,33 +73,16 @@
     }
 
     .swiper-button {
-      font-size: 20px;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 60px;
       position: absolute;
       top: 11px;
       right: 0;
       z-index: 11;
       @media screen and (min-width: $screen-md-min) {
-        font-size: 41px;
         width: 125px;
         bottom: 0;
         right: auto;
         top: auto;
-      }
-      > * {
-        cursor: pointer;
-        i {
-          color: $black;
-          &:hover {
-            color: $base-color-main;
-          }
-        }
-      }
-      &-disabled {
-        opacity: 0.5;
       }
     }
 

@@ -512,8 +512,8 @@
       @media screen and (min-width: $screen-md-min) {
         padding: 20px 30px;
       }
-      @media screen and (min-width: $screen-xl-min) {
-        padding: 60px 50px;
+      @media screen and (min-width: 1440px) {
+        padding: 60px;
       }
 
       .list--bullet {
@@ -572,8 +572,8 @@
 
       &:first-child {
         padding: 20px 30px;
-        @media screen and (min-width: $screen-lg-min) {
-          padding: 60px 50px;
+        @media screen and (min-width: 1440px) {
+          padding: 60px;
         }
       }
     }

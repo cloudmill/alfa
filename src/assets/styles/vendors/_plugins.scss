@@ -146,6 +146,9 @@ $items:
           font-size: 35px;
         }
         @media screen and (min-width: 1600px) {
+          font-size: 42px;
+        }
+        @media screen and (min-width: $screen-xxl-min) {
           font-size: 45px;
         }
 
@@ -311,16 +314,6 @@ $items:
   }
 }
 
-.parallax {
-  &-box {
-    overflow: hidden;
-  }
-
-  &-item {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
 .spinner {
   animation: spin 3s linear infinite;
 }
@@ -474,6 +467,18 @@ $items:
       left: 0;
       bottom: 0;
       right: 0;
+    }
+  }
+}
+
+
+.rellax-box {
+  overflow: hidden;
+
+  &--mb {
+    margin-bottom: 30px;
+    @media screen and (min-width: $screen-md-min) {
+      margin-bottom: 60px;
     }
   }
 }

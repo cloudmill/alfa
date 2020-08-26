@@ -94,30 +94,5 @@
     @media screen and (min-width: $screen-xxl-min) {
       margin-top: auto;
     }
-    .swiper-prev {
-      margin-right: 21px;
-      @media screen and (min-width: $screen-md-min) {
-        margin-right: 45px;
-      }
-    }
-    > * {
-      color: $black;
-      font-size: 20px;
-      transition: all .5s;
-      cursor: pointer;
-      transition: color .5s;
-      line-height: 1;
-      @media screen and (min-width: $screen-md-min) {
-        font-size: 40px;
-      }
-      &:hover {
-        color: $base-color-main;
-      }
-    }
-    &-disabled {
-      cursor: inherit;
-      opacity: .7;
-      color: $black !important;
-    }
   }
 }

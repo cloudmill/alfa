@@ -20,9 +20,13 @@
     z-index: 10;
     opacity: 1;
     transition:
-      top 1s cubic-bezier(0.65, 0, 0.35, 1),
-      left 1s cubic-bezier(0.65, 0, 0.35, 1),
-      opacity .2s cubic-bezier(0.65, 0, 0.35, 1) 1s;
+      opacity .8s cubic-bezier(0.65, 0, 0.35, 1);
+    @media screen and (min-width: $screen-md-min) {
+      transition:
+        top .8s cubic-bezier(0.65, 0, 0.35, 1),
+        left .8s cubic-bezier(0.65, 0, 0.35, 1),
+        opacity .2s cubic-bezier(0.65, 0, 0.35, 1) 1.5s;
+    }
   }
   &-hide {
     position: relative;
@@ -64,9 +68,15 @@
   &.hidden {
     left: 100%;
     .loader-inner {
-      top: 60px;
-      left: 54px;
       opacity: 0;
+      @media screen and (min-width: $screen-md-min) {
+        top: 28px;
+        left: 30px;
+      }
+      @media screen and (min-width: 1440px) {
+        top: 59px;
+        left: 60px;
+      }
     }
     .loader-hide {
       background-color: transparent;
