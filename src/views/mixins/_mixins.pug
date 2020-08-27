@@ -258,7 +258,7 @@ mixin mainSlider(items)
             span АльфаДирект
       .index-slider-desc
         p Высокопрочные проволочные #[br] фильтры для наземных #[br] и&nbsp;оффшорных месторождений #[br] нефти и газа
-        +buttonSVG('Подробнее', 'transparent', "#fff")
+        +buttonSVGMD('Подробнее', 'transparent', "#fff")
   each item in items
     .swiper-slide
       .slider-back: .image(style=`background: url("assets/images/${item.img}") no-repeat center / cover`)
@@ -294,7 +294,7 @@ mixin form(title, textarea, mess)
           +buttonSVGB('Отправить', 'form--js', '#323232')
     .form-send
       +revealMainTag(mess, 'h3')
-      .form__group.form-back--js(data-aos='fade-up'): +buttonSVG('Отправить резюме', '', "#323232", '')
+      .form__group.form-back--js(data-aos='fade-up'): +buttonSVGMD('Отправить резюме', '', "#323232", '')
 
 
 mixin sidebar(items)
