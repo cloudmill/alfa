@@ -348,6 +348,9 @@
         min-height: 600px;
         display: flex;
         flex-direction: column;
+        @media screen and (min-width: $screen-md-min) {
+          height: 100vh;
+        }
         @media screen and (min-width: $screen-xl-min) {
           height: 100vh;
         }
