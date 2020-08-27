@@ -12,6 +12,7 @@ import { sticky } from 'Scripts/customscripts';
 import { isMobileAndTabletOnly } from "./assets/scripts/utils";
 
 const browserDetect = browser();
+const screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 
 $(document).ready(() => {
 	// header
@@ -61,11 +62,11 @@ $(window).on("load", function() {
     setTimeout(function () {
       AOS.init({
         offset: 50,
+        disable: 'mobile'
       });
     }, 500);
 
-
-    if (!isMobileOnly && $('.rellax').length) {
+    if (screenWidth > 767 && $('.rellax').length) {
       new Rellax('.rellax', {
         speed: -2,
         center: true,
@@ -87,10 +88,11 @@ $(window).on("load", function() {
       setTimeout(function () {
         AOS.init({
           offset: 50,
+          disable: 'mobile'
         });
       }, 500);
 
-      if (!isMobileOnly && $('.rellax').length) {
+      if (screenWidth > 767 && $('.rellax').length) {
         new Rellax('.rellax', {
           speed: -2,
           center: true,

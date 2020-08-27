@@ -45,6 +45,14 @@
       }
     }
   }
+
+  .form-inner .btn {
+    width: 100%;
+    text-align: center;
+    @media screen and (min-width: $screen-md-min) {
+      width: auto;
+    }
+  }
 }
 
 

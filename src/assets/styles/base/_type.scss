@@ -287,15 +287,18 @@ ol {
         background-color: #c4c4c4;
         width: 13px;
         right: 0px;
+        top: -1px;
+        @media screen and (min-width: $screen-md-min) {
+          top: 0;
+        }
       }
       .long-arrow-inner {
         position: absolute;
         left: 10px;
-        top: 7px;
+        top: 0;
         color: #c4c4c4;
         @include transitionEaseInOut(all);
         @media screen and (min-width: $screen-md-min) {
-          top: 0;
           left: 0;
         }
         @media screen and (min-width: $screen-lg-min) {
@@ -357,11 +360,18 @@ ol {
         background: url("../images/icons/bullet.svg");
         position: absolute;
         left: 0;
-        top: 8px;
+        top: 3px;
+        @media screen and (min-width: $screen-md-min) {
+          top: 8px;
+        }
       }
     }
     &.row {
       > li {
+        padding-left: 45px;
+        @media screen and (min-width: $screen-md-min) {
+          padding-left: 50px;
+        }
         &::before {
           left: 15px;
         }

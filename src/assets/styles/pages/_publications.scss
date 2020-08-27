@@ -76,9 +76,11 @@
     }
 
     &--inline {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      @media screen and (min-width: $screen-md-min) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
       .publications-item-top {
         width: 100%;
         @media screen and (min-width: $screen-lg-min) {
@@ -202,7 +204,7 @@
   @media screen and (min-width: $screen-lg-min) {
     margin-bottom: 80px;
   }
-  span:not(.revealIn) {
+  span:not(.revealIn):not(.swiper-pagination-bullet) {
     font-style: italic;
     color: $base-color-main;
   }

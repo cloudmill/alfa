@@ -64,6 +64,9 @@
       margin-bottom: 90px;
       height: calc(100% - 90px);
     }
+    &:hover {
+      color: $black;
+    }
 
     &__top {
       padding: 20px 0;
@@ -392,6 +395,9 @@
 
 .equipmentMain {
   padding-top: 80px;
+  @media screen and (min-width: $screen-md-min) {
+    padding-top: 0;
+  }
 }
 
 .equipmentList {

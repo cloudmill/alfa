@@ -1,6 +1,7 @@
 .popup {
   height: 100%;
   overflow-y: auto;
+  position: relative;
   &-inner {
     height: 100%;
     display: flex;
@@ -36,5 +37,22 @@
   }
   &-cat {
     margin-top: 60px;
+  }
+  &-close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include transitionEaseInOut(background-color);
+    @media screen and (min-width: $screen-md-min) {
+      background-color: $black;
+    }
+    &:hover {
+      background-color: $base-color-main;
+    }
   }
 }

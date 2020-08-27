@@ -292,14 +292,25 @@ $items:
   }
 }
 
+.swiper-container-multirow-column > .swiper-wrapper {
+  flex-direction: row;
+  .swiper-slide {
+    @media screen and (min-width: $screen-md-min) {
+      margin-bottom: 30px;
+    }
+  }
+}
+
 .swiper-wrapper {
   transition: all 500ms cubic-bezier(0.76, 0, 0.24, 1) 0s !important;
 }
 
 .revealIn {
-  display: inline-block;
-  transform: translateY(100px);
-  opacity: 0;
+  @media screen and (min-width: $screen-md-min) {
+    display: inline-block;
+    transform: translateY(100px);
+    opacity: 0;
+  }
   .swiper-wrapper[data-aos-delay="3000"]:not(.aos-animate) &,
   .swiper-slide &,
   .aos-init:not(.swiper-wrapper) & {

@@ -12,15 +12,17 @@ if ($('.indexSlider').length > 0) {
     const duration = $this.data('duration');
     const adaptive = $this.data('adaptive');
     const autoHeight = $this.data('autoheight');
+    const column = $this.data('column');
+    const loop = $this.data('loop');
     const options = {
       slidesPerView: adaptive ? 'auto' : 1,
       spaceBetween: adaptive ? 15 : 0,
       effect: effect || 'slide',
       simulateTouch: false,
-      loop: true,
-      // autoplay: {
-      //   delay: 10000,
-      // },
+      loop: loop || true,
+      autoplay: {
+        delay: 10000,
+      },
       autoHeight: !!autoHeight,
       pagination: {
         el: pagination,
@@ -29,6 +31,7 @@ if ($('.indexSlider').length > 0) {
           return '<span class="' + className + '">0' + (index + 1) + '</span>';
         },
       },
+      slidesPerColumn: 1,
       navigation: {
         prevEl: prev,
         nextEl: next,
@@ -37,6 +40,7 @@ if ($('.indexSlider').length > 0) {
         768: {
           spaceBetween: 0,
           slidesPerView: 1,
+          slidesPerColumn: column || 1,
         }
       },
     }

@@ -61,6 +61,7 @@
       position: absolute;
       left: 0;
       top: 58px;
+      transition: all .4s cubic-bezier(0.76, 0, 0.24, 1) 0s !important;
       @media screen and (min-width: $screen-md-min) {
         font-size: 65px;
         margin-top: 80px;
@@ -123,6 +124,23 @@
             left: 0;
           }
         }
+      }
+    }
+
+    .swiper-wrapper {
+      transition-delay: .5s !important;
+    }
+
+    .swiper-slide-next,
+    .swiper-slide-prev {
+      .year {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+    }
+    .swiper-slide-active {
+      .year {
+        opacity: 1;
       }
     }
   }

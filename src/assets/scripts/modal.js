@@ -32,3 +32,7 @@ export const myModal = new jBox('Modal', {
     if(link) linkBlock.setAttribute('href', link);
   }
 });
+
+$('.popup-close--js').click(function () {
+  myModal.close();
+});

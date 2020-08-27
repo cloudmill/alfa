@@ -140,7 +140,11 @@
     z-index: 1;
   }
   circle {
+    transform: matrix(-1, 0, 0, 1, 5.5, 24.5);
     transition: transform .9s, fill .5s cubic-bezier(0.76, 0, 0.24, 1) .4s;
+    @media screen and (min-width: $screen-md-min) {
+      transform: matrix(-1, 0, 0, 1, 4.5, 28.5);
+    }
   }
   svg {
     position: absolute;
@@ -153,8 +157,11 @@
   }
   &:hover {
     circle {
-      transform: matrix(-1, 0, 0, 1, 20.5, 28.5);
+      transform: matrix(-1, 0, 0, 1, 25.5, 24.5);
       fill: white;
+      @media screen and (min-width: $screen-md-min) {
+        transform: matrix(-1, 0, 0, 1, 20.5, 28.5);
+      }
     }
     &.transparent {
       color: white;
@@ -167,7 +174,7 @@
     }
     color: $black;
     .btn-animate {
-      stroke-dasharray: 203%, 0;
+      stroke-dasharray: 217%, 0;
       stroke-dashoffset: 82%;
       stroke: $base-color-main;
       fill: $base-color-main;
@@ -176,6 +183,9 @@
         stroke-dashoffset .5s cubic-bezier(0.76, 0, 0.24, 1),
         stroke .5s cubic-bezier(0.76, 0, 0.24, 1) .4s,
         fill .5s cubic-bezier(0.76, 0, 0.24, 1) .4s;
+      @media screen and (min-width: $screen-md-min) {
+        stroke-dasharray: 203%, 0;
+      }
 
       &--big {
         stroke-dasharray: 232%, 0;
@@ -203,7 +213,7 @@
 
 .btn-animate {
   stroke-width: 1;
-  stroke-dasharray: 126%, 205%;
+  stroke-dasharray: 126%, 228%;
   stroke-dashoffset: 107%;
   fill: white;
   transition:
@@ -211,6 +221,9 @@
     stroke-dashoffset .5s cubic-bezier(0.76, 0, 0.24, 1) .4s,
     stroke .5s cubic-bezier(0.76, 0, 0.24, 1),
     fill .5s cubic-bezier(0.76, 0, 0.24, 1) .4s;
+  @media screen and (min-width: $screen-md-min) {
+    stroke-dasharray: 126%, 205%;
+  }
 
   &--big {
     stroke-dasharray: 126%, 218%;
