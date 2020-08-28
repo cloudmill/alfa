@@ -3,13 +3,11 @@
 import AOS from 'aos';
 import Rellax from "rellax";
 import browser from 'browser-detect';
-import { isMobileOnly } from 'Scripts/utils';
 import "velocity-animate";
 
 // Styles
 import 'Styles/_app.scss';
 import { sticky } from 'Scripts/customscripts';
-import { isMobileAndTabletOnly } from "./assets/scripts/utils";
 
 const browserDetect = browser();
 const screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
@@ -31,7 +29,7 @@ $(document).ready(() => {
 	// anima
   require('Scripts/video');
 
-  if(!isMobileAndTabletOnly) {
+  if(!screenWidth < 1024) {
     sticky();
   }
 
@@ -64,6 +62,10 @@ $(window).on("load", function() {
         offset: 50,
         disable: 'mobile'
       });
+
+      if(process.env.NODE_ENV === 'production') {
+        window.scrollTo(0, 0);
+      }
     }, 500);
 
     if (screenWidth > 767 && $('.rellax').length) {
@@ -73,10 +75,6 @@ $(window).on("load", function() {
         vertical: true,
         horizontal: false
       });
-    }
-
-    if(process.env.NODE_ENV === 'production') {
-      window.scrollTo(0, 0);
     }
   } else {
     $('.loader-hide').addClass('showIt');
