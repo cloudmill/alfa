@@ -13,8 +13,7 @@ $(window).on('resize', function () {
 function tabControl() {
   const tabs = $('.tabbed-content').find('.tabs');
   if (tabs.is(':visible')) {
-    tabs.find('.tab').on('click', function (event) {
-      event.preventDefault();
+    tabs.find('.tab').on('click', function () {
       const target = $(this).attr('href'),
         tabs = $(this).parents('.tabs'),
         buttons = tabs.find('.tab'),
@@ -24,15 +23,13 @@ function tabControl() {
       $(this).addClass('active');
       $(target).addClass('active');
 
-      // $('html, body').animate({
-      //   scrollTop: $(target).offset().top - 50
-      // }, 500);
-
       setTimeout(() => {
         AOS.refresh({
           offset: 50,
         });
       }, 600);
+
+      return false;
     });
   } else {
     $('.item').on('click', function () {
@@ -44,11 +41,17 @@ function tabControl() {
       $(this).addClass('active');
       container.find('.tabs a[href$="#' + currId + '"]').addClass('active');
 
+
       setTimeout(() => {
         AOS.refresh({
           offset: 50,
         });
       }, 600);
+      // setTimeout(() => {
+      //   $('html, body').animate({
+      //     scrollTop: $(`#${currId}`).offset().top - 50
+      //   }, 500);
+      // }, 400);
     });
   }
 }

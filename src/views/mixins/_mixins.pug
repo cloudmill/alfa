@@ -99,8 +99,9 @@ mixin navBread(title, parent)
 
 mixin navTitleBack(title, parent, src, items, srcm)
   .nav-title.nav-background.nav-background--fullWidth.rellax-box
+    .setImg.hideOnMobile(style=src)
     .setImg.rellax.hideOnMobile(style=src)
-    .setImg.rellax.showOnMobile(style=srcm)
+    .setImg.showOnMobile(style=srcm)
     .container
       +navBread(title, parent)
       .row.end__lg.bottom__lg
@@ -116,8 +117,9 @@ mixin navTitleBack(title, parent, src, items, srcm)
 
 mixin navTitleBackOne(title, parent, src, logo, desc, pdf, srcm)
   .nav-title.nav-background.nav-background--fullWidth.rellax-box
+    .setImg.hideOnMobile(style=src)
     .setImg.rellax.hideOnMobile(style=src)
-    .setImg.rellax.showOnMobile(style=srcm)
+    .setImg.showOnMobile(style=srcm)
     .container
       +navBread(title, parent)
       .row.end__lg

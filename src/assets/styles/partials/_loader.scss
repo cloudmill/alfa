@@ -89,7 +89,7 @@
     .loader-inner {
       transition:
         left .5s cubic-bezier(0.65, 0, 0.35, 1) 1s,
-        opacity .2s cubic-bezier(0.65, 0, 0.35, 1) .3s;
+        opacity .2s cubic-bezier(0.65, 0, 0.35, 1) .2s;
       opacity: 0;
       left: -100%;
     }
