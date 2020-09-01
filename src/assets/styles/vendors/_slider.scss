@@ -59,10 +59,11 @@
     .slider-back iframe,
     .slider-back .video,
     .slider-back .image {
+      //right: auto;
       //transform: translate(0, 0%) matrix(1.0, 0, 0, 1.0, 0, 0);
       //left: 100%;
       //transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1), left .3s cubic-bezier(0.76, 0, 0.24, 1) 1s;
-      animation: sliderAnimate 1.5s linear forwards;
+      animation: sliderAnimate 1s linear forwards;
     }
   }
 
@@ -162,10 +163,10 @@
     left: 0;
     transform: translate(0, 0%) scale(1.5);
   }
-  75% {
+  80% {
     left: 0;
   }
-  80% {
+  85% {
     transform: translate(10%, 0%) scale(1.2);
   }
   100% {
