@@ -3,7 +3,6 @@
 import AOS from 'aos';
 import Rellax from "rellax";
 import browser from 'browser-detect';
-import SimpleBar from 'simplebar/dist/simplebar.min';
 import "velocity-animate";
 
 // Styles
@@ -32,8 +31,6 @@ $(document).ready(() => {
 
   if(screenWidth >= 1024) {
     sticky();
-  } else {
-    new SimpleBar($('.menuAdditionalNav')[0]);
   }
 
 
@@ -43,6 +40,7 @@ $(document).ready(() => {
 	// backend
 	require('Scripts/backend');
 });
+
 
 $(window).on("orientationchange", function() {
   setTimeout(() => {
@@ -76,6 +74,7 @@ $(window).on("load", function() {
         horizontal: false
       });
     }
+
   } else {
     $('.loader-hide').addClass('showIt');
     $('.index-slider').addClass('loading');
