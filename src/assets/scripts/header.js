@@ -1,4 +1,4 @@
-import {isMobileOnly, isMobileAndTabletOnly} from "./utils";
+const screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 
 // menu
 $('.menu--js').click(function() {
@@ -7,10 +7,10 @@ $('.menu--js').click(function() {
   $('.navbar').toggleClass('open');
 });
 $(document).click(function (e) {
-  const container = $(".navbar.open");
-  const menu = $(".menu");
-  const menuJs = $(".menu--js");
-  if(!isMobileAndTabletOnly) {
+  if(screenWidth >= 1024) {
+    const container = $(".navbar.open");
+    const menu = $(".menu");
+    const menuJs = $(".menu--js");
     if (menuJs.has(e.target).length === 0 && container.has(e.target).length === 0) {
       $('body').removeClass('fixed');
       container.removeClass("open");
@@ -33,7 +33,7 @@ $('.anchor').on('click', 'a', function(event) {
 
 // footer
 $('.page-footer-smallTitle--js').on('click', 'a', function(event) {
-  if(isMobileOnly) {
+  if(screenWidth < 768) {
     event.preventDefault();
     $(this).parent().next().slideToggle(500);
   }

@@ -3,6 +3,7 @@
 import AOS from 'aos';
 import Rellax from "rellax";
 import browser from 'browser-detect';
+import SimpleBar from 'simplebar/dist/simplebar.min';
 import "velocity-animate";
 
 // Styles
@@ -29,8 +30,10 @@ $(document).ready(() => {
 	// anima
   require('Scripts/video');
 
-  if(!screenWidth < 1024) {
+  if(screenWidth >= 1024) {
     sticky();
+  } else {
+    new SimpleBar($('.menuAdditionalNav')[0]);
   }
 
 
@@ -60,7 +63,6 @@ $(window).on("load", function() {
     setTimeout(function () {
       AOS.init({
         offset: 50,
-        disable: 'mobile'
       });
 
       window.scrollTo(0, 0);
@@ -84,7 +86,6 @@ $(window).on("load", function() {
       setTimeout(function () {
         AOS.init({
           offset: 50,
-          disable: 'mobile'
         });
       }, 500);
 

@@ -262,7 +262,7 @@
       font-weight: 500;
       padding-left: 9px;
       transition: all .5s;
-      padding-bottom: 27px;
+      padding-bottom: 20px;
       position: relative;
       opacity: 1;
       @media screen and (min-width: $screen-md-min) {
@@ -276,8 +276,12 @@
       }
 
       &-active {
-        font-size: 40px;
-        padding-bottom: 50px;
+        font-size: 35px;
+        padding-bottom: 30px;
+        @media screen and (min-width: $screen-md-min) {
+          padding-bottom: 50px;
+          font-size: 40px;
+        }
         @media screen and (min-width: $screen-xl-min) {
           padding-bottom: 80px;
         }
@@ -358,6 +362,10 @@
     }
 
     .title-left {
+      margin-left: 50px;
+      @media screen and (min-width: $screen-md-min) {
+        margin-left: 80px;
+      }
       @media screen and (min-width: $screen-xl-min) {
         margin-left: 140px;
       }
@@ -434,6 +442,11 @@
           margin-bottom: 40px;
         }
       }
+    }
+
+    .btn {
+      width: auto;
+      text-align: left;
     }
   }
 

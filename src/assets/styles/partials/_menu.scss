@@ -203,4 +203,10 @@
   .card-back {
     display: none;
   }
+  .index-slider {
+    .swiper-slide {
+      height: 550px;
+      min-height: inherit;
+    }
+  }
 }

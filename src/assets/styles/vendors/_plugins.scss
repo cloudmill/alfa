@@ -493,3 +493,12 @@ $items:
     }
   }
 }
+
+.simplebar-content {
+  display: flex;
+}
+
+
+.simplebar-scrollbar::before {
+  opacity: 0 !important;
+}
