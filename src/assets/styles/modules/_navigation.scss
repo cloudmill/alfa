@@ -291,7 +291,7 @@
   position: fixed;
   top: 0;
   bottom: 0;
-  z-index: 96;
+  z-index: 1001;
   right: -1200px;
   max-width: 1160px;
   width: 100%;
@@ -351,6 +351,11 @@
     @media screen and (min-width: $screen-lg-min) {
       padding-right: 90px;
       padding-left: calc(90px * 1.66666);
+    }
+    @media screen and (min-width: $screen-lg-min) and (max-height: 700px) {
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 90px;
     }
   }
   &-column {

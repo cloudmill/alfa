@@ -6,6 +6,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
   }
   &-image {
     img {
@@ -21,9 +22,15 @@
     @media screen and (min-width: $screen-md-min) {
       padding: 40px 90px 60px 90px;
     }
+    @media screen and (min-width: $screen-lg-min) and (max-height: 700px) {
+      padding: 40px;
+    }
   }
   &-desc {
     margin-bottom: 60px;
+    @media screen and (min-width: $screen-lg-min) and (max-height: 700px) {
+      margin-bottom: 40px;
+    }
   }
   &-title {
     h5 {
@@ -37,6 +44,9 @@
   }
   &-cat {
     margin-top: 60px;
+    @media screen and (min-width: $screen-lg-min) and (max-height: 700px) {
+      margin-top: 40px;
+    }
   }
   &-close {
     position: absolute;

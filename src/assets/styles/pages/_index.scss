@@ -353,6 +353,7 @@
         display: flex;
         flex-direction: column;
         @media screen and (min-width: $screen-md-min) {
+          min-height: 500px;
           height: 100vh;
         }
         @media screen and (min-width: $screen-xl-min) {
@@ -531,6 +532,9 @@
       @media screen and (min-width: $screen-md-min) {
         padding: 20px 30px;
       }
+      @media screen and (min-width: $screen-lg-min) {
+        padding: 40px 30px;
+      }
       @media screen and (min-width: 1440px) {
         padding: 60px;
       }
@@ -591,6 +595,9 @@
 
       &:first-child {
         padding: 20px 30px;
+        @media screen and (min-width: $screen-lg-min) {
+          padding: 40px 30px;
+        }
         @media screen and (min-width: 1440px) {
           padding: 60px;
         }
@@ -621,7 +628,9 @@
   }
   @media screen and (min-width: $screen-md-min) {
     font-size: 20px;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     overflow-x: visible;
   }
   li {
@@ -700,11 +709,48 @@
   }
 }
 
+#project {
+  .item-content {
+    background-position: center bottom 50px;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    @media screen and (min-width: $screen-lg-min) and (max-height: 700px) {
+      background-position: center bottom;
+    }
+  }
+}
+
+#test {
+  .item-content {
+    background-position: center bottom 30px;
+    background-repeat: no-repeat;
+    background-size: 85% auto;
+    @media screen and (min-width: $screen-lg-min) and (max-height: 700px) {
+      background-position: center bottom;
+    }
+  }
+}
+
+#escort {
+  .item-content {
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: auto 80%;
+    @media screen and (min-width: $screen-lg-min) and (max-height: 700px) {
+      background-position: center bottom -50px;
+    }
+  }
+}
+
+
 #googleMaps {
   width: 100%;
   height: 510px;
   @media screen and (min-width: $screen-lg-min) {
     height: 850px;
+  }
+  @media screen and (min-width: $screen-lg-min) and (max-height: 700px) {
+    height: 100vh;
   }
 }
 

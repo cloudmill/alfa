@@ -461,6 +461,9 @@ $items:
     @media screen and (min-width: $screen-lg-min) {
       padding-top: 130%;
     }
+    @media screen and (min-width: $screen-lg-min) and (max-height: 700px) {
+      padding-top: 95%;
+    }
     @media screen and (min-width: $screen-xl-min) {
       padding-top: 85%;
     }
