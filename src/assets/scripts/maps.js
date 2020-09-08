@@ -151,7 +151,30 @@ function initMap() {
 
   const mapOptions = {
     center: new google.maps.LatLng(59.91916157, 30.3251195),
-    zoom: 15,
+    zoom: NODE_ENV_PATH === 'development' ? 15 : 5,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    mapTypeControl: false,
+    zoomControl: true,
+    scrollwheel: false,
+    styles: mapStyle,
+  };
+
+  map = new google.maps.Map(mapID, mapOptions);
+
+  JSON.parse(locations).forEach(function (item) {
+    addMarker(item);
+  });
+
+  markerCluster = new MarkerClusterer(map, markers, mcOptions);
+}
+
+function initMapContact() {
+  const mapID = document.getElementById("google");
+  const locations = mapID.dataset.locations;
+
+  const mapOptions = {
+    center: new google.maps.LatLng(59.91916157, 30.3251195),
+    zoom: NODE_ENV_PATH === 'development' ? 15 : 5,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     mapTypeControl: false,
     zoomControl: true,
@@ -174,16 +197,30 @@ function addMarker(location, icon, popup) {
     icon: icon || location[2],
     map: map
   });
-  marker.addListener('click', function () {
-    const modal = document.getElementById("projectsPopup");
-    modal.setAttribute("data-tool", popup ? popup[0] : location[3]);
-    modal.setAttribute("data-title", popup ? popup[1] : location[4]);
-    modal.setAttribute("data-content", popup ? popup[2] : location[5]);
-    modal.setAttribute("data-cat", popup ? popup[3] : location[6]);
-    modal.setAttribute("data-image", popup ? popup[4] : location[7]);
-    modal.setAttribute("data-link", popup ? popup[5] : location[8]);
+  const ifHasSidebar = popup && popup[2] || location && location[5];
+  if(ifHasSidebar) {
+    marker.addListener('click', function () {
+      const modal = document.getElementById("projectsPopup");
+      modal.setAttribute("data-tool", popup ? popup[0] : location[3]);
+      modal.setAttribute("data-title", popup ? popup[1] : location[4]);
+      modal.setAttribute("data-content", popup ? popup[2] : location[5]);
+      modal.setAttribute("data-cat", popup ? popup[3] : location[6]);
+      modal.setAttribute("data-image", popup ? popup[4] : location[7]);
+      modal.setAttribute("data-link", popup ? popup[5] : location[8]);
 
-    myModal.open();
+      myModal.open();
+    });
+  }
+  const title = popup ? popup[1] : location[4];
+  const content = popup ? popup[0] : location[3];
+  const infowindow = new google.maps.InfoWindow({
+    content: `<p><b class="text__xs">${title}</b></p>${content}`
+  });
+  marker.addListener('mouseover', function () {
+    infowindow.open(map,marker);
+  });
+  marker.addListener('mouseout', function () {
+    infowindow.close();
   });
   markers.push(marker);
 }
@@ -207,6 +244,9 @@ function deleteMarkers() {
 $(function () {
   if ($("#googleMaps").length) {
     initMap();
+  }
+  if ($("#google").length) {
+    initMapContact();
   }
 });
 

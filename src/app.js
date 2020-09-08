@@ -54,28 +54,28 @@ $(window).on("orientationchange", function() {
 
 $(window).on("load", function() {
   $('body').css('overflow', 'hidden');
-  if($(".loaderInner").length) {
-    $('body').css('overflow', 'visible');
-    $('.loader').addClass('hideIt');
-
-    setTimeout(function () {
-      AOS.init({
-        offset: 50,
-      });
-
-      window.scrollTo(0, 0);
-    }, 500);
-
-    if (screenWidth > 767 && $('.rellax').length) {
-      new Rellax('.rellax', {
-        speed: -2,
-        center: true,
-        vertical: true,
-        horizontal: false
-      });
-    }
-
-  } else {
+  // if($(".loaderInner").length) {
+  //   $('body').css('overflow', 'visible');
+  //   $('.loader').addClass('hideIt');
+  //
+  //   setTimeout(function () {
+  //     AOS.init({
+  //       offset: 50,
+  //     });
+  //
+  //     window.scrollTo(0, 0);
+  //   }, 500);
+  //
+  //   if (screenWidth > 767 && $('.rellax').length) {
+  //     new Rellax('.rellax', {
+  //       speed: -2,
+  //       center: true,
+  //       vertical: true,
+  //       horizontal: false
+  //     });
+  //   }
+  //
+  // } else {
     $('.loader-hide').addClass('showIt');
     $('.index-slider').addClass('loading');
     setTimeout(function () {
@@ -86,6 +86,7 @@ $(window).on("load", function() {
         AOS.init({
           offset: 50,
         });
+        window.scrollTo(0, 0);
       }, 500);
 
       if (screenWidth > 767 && $('.rellax').length) {
@@ -101,9 +102,8 @@ $(window).on("load", function() {
         $('.index-slider').removeClass('loading');
       }, 1500);
 
-      window.scrollTo(0, 0);
     }, 1700);
-  }
+  // }
 });
 
 

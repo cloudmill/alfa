@@ -8,6 +8,25 @@ block content
     +navTitle('О компании')
     .container
       +menuAdditionalNav(menu.aboutMenu, 'about')
+    section.harmonicSlider
+      .accordion(data-aos='fade-up')
+        ul
+          li(tabindex='1')
+            div
+              h2 Производство
+              a.button(href='#')
+                span Подробнее #[br] о производстве
+                +img('about/link-arrow.svg')
+          li.active(tabindex='2')
+            div
+              h2 Проектный офис
+          li(tabindex='3')
+            div
+              h2 Лаборатория
+              a.button(href='#')
+                span Подробнее #[br] о лаборатории
+                +img('about/link-arrow.svg')
+    .container
       section.about-mission
         +revealMainTag('Миссия и ценности', 'h3')
         .row
@@ -28,25 +47,6 @@ block content
                 p Привлечение инновационных технологий для систем заканчивания в рамках международного партнерства
               .col.col__lg-6.col__md-6.col__xs-12(data-aos='fade-up')
                 p Соответствие производственных процессов в компании требованиям системы качества международного уровня
-    section.harmonicSlider
-      .accordion(data-aos='fade-up')
-        ul
-          li(tabindex='1')
-            div
-              h2 Производство
-              a.button(href='#')
-                span Подробнее #[br] о производстве
-                +img('about/link-arrow.svg')
-          li.active(tabindex='2')
-            div
-              h2 Проектный офис
-          li(tabindex='3')
-            div
-              h2 Лаборатория
-              a.button(href='#')
-                span Подробнее #[br] о лаборатории
-                +img('about/link-arrow.svg')
-    .container
       section.about-history(data-aos='fade-up')
         .row
           .col.col__lg-4.col__md-4.col__xs-3.about-history-items
@@ -86,6 +86,7 @@ block content
               .swiper-button.swiper-button--ar
                 .swiper-prev.swiper-prev-about: +sliderArrowPrev()
                 .swiper-next.swiper-next-about: +sliderArrowNext()
+    .about-rellax-box.rellax-box.text--center(data-aos='fade-up'): .rellax: +img('about/prod/main.jpg')
     +nextBlock('Лаборатория')
 
 

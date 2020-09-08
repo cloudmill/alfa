@@ -257,14 +257,14 @@
   @media screen and (min-width: $screen-md-min) {
     display: flex;
     font-size: 18px;
-    padding: 60px 0;
+    padding: 30px 0;
     overflow-x: visible;
     border-bottom: 1px solid $gray;
   }
   @media screen and (min-width: $screen-xl-min) {
     justify-content: flex-start;
     font-size: 25px;
-    padding: 90px 0;
+    padding: 30px 0;
   }
   &__item {
     white-space: nowrap;

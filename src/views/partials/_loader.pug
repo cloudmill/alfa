@@ -1,3 +1,9 @@
-.loader-inner
-  .loader-hide: +img('loaderMain.svg')
 .loader.loader-main
+  .loader-inner
+    .loader-hide
+      .card
+        .card-contents.card-front
+          .card-depth: +img("icons/logo.svg")
+        .card-contents.card-back
+          .card-depth: +img("icons/logo.svg")
+      +img('loaderMain.svg')

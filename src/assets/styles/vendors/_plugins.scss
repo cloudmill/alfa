@@ -488,6 +488,7 @@ $items:
 
 .rellax-box {
   overflow: hidden;
+  max-height: 720px;
 
   &--mb {
     margin-bottom: 30px;
@@ -495,4 +496,27 @@ $items:
       margin-bottom: 60px;
     }
   }
+}
+
+.gm-style .gm-style-iw-c {
+  max-width: 290px !important;
+  box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.2) !important;
+  border-radius: 0 !important;
+  padding: 20px !important;
+  transition: all .5s !important;
+  button {
+    display: none !important;
+  }
+}
+
+.gm-style .gm-style-iw-t::after {
+  width: 0 !important;
+  height: 0 !important;
+  border-style: solid !important;
+  border-width: 9px 22px 0 22px !important;
+  border-color: #ffffff transparent transparent transparent !important;
+  background: none !important;
+  left: -22px !important;
+  transform: none !important;
+  box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.2) !important;
 }
