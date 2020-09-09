@@ -180,6 +180,7 @@ module.exports = env => {
 			new CopyWebpackPlugin({
 				patterns: [
 					{from: 'assets/images/favicons/favicon.ico', to: 'assets/favicon.ico'},
+					{from: 'assets/images/favicons/apple-touch-icon.png', to: 'assets/apple-touch-icon.png'},
 					{from: 'assets/images', to: 'assets/images'},
 					{from: 'assets/fonts', to: 'assets/fonts'},
 					{from: 'assets/scripts/polyfill.js', to: 'assets/polyfill.js'},
@@ -237,7 +238,7 @@ module.exports = env => {
 				$: 'jquery',
 				jQuery: 'jquery',
 				'window.$': 'jquery',
-				'window.jQuery': 'jquery'
+				'window.jQuery': 'jquery',
 			}),
 
 			// new PurgeCssPlugin({

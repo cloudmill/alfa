@@ -302,7 +302,7 @@ $items:
 }
 
 .swiper-wrapper {
-  transition: all 500ms cubic-bezier(0.76, 0, 0.24, 1) 0s !important;
+  //transition: all 500ms cubic-bezier(0.76, 0, 0.24, 1) 0s !important;
 }
 
 .revealIn {
@@ -488,7 +488,9 @@ $items:
 
 .rellax-box {
   overflow: hidden;
-  max-height: 720px;
+  &:not(.nav-background) {
+    max-height: 720px;
+  }
 
   &--mb {
     margin-bottom: 30px;

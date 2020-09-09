@@ -1,4 +1,4 @@
-import Swiper from 'swiper/bundle';
+import Swiper from 'swiper';
 
 if ($('.indexSlider').length > 0) {
   let swiperInstances = [];
@@ -65,8 +65,81 @@ if ($('.indexSlider').length > 0) {
       }, 800);
     });
   });
-
 }
+
+// index page slider
+if ($('.main-slider').length > 0) {
+  const interleaveOffset = 0.5;
+  const mainSliderOptions = {
+    loop: true,
+    speed: 1200,
+    autoplay: {
+      delay: 7000
+    },
+    simulateTouch: false,
+    loopAdditionalSlides: 10,
+    grabCursor: true,
+    watchSlidesProgress: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">0' + (index + 1) + '</span>';
+      },
+    },
+    on: {
+      init: function () {
+        this.autoplay.stop();
+      },
+      imagesReady: function () {
+        this.el.classList.remove('loading');
+        this.autoplay.start();
+      },
+      slideChangeTransitionStart: function () {
+        $('.caption').addClass('hide');
+        setTimeout(() => {
+          $('.caption').removeClass('hide');
+        }, 1000);
+      },
+      slideChangeTransitionEnd: function () {
+        let swiper = this,
+          captions = swiper.el.querySelectorAll('.caption');
+        for (let i = 0; i < captions.length; ++i) {
+          captions[i].classList.remove('show');
+        }
+        // swiper.slides[swiper.activeIndex].querySelector('.caption').classList.add('show');
+        $('.swiper-slide-active .caption').addClass('show');
+      },
+      progress: function () {
+        let swiper = this;
+        for (let i = 0; i < swiper.slides.length; i++) {
+          let slideProgress = swiper.slides[i].progress,
+            innerOffset = swiper.width * interleaveOffset,
+            innerTranslate = slideProgress * innerOffset;
+
+          swiper.slides[i].querySelector(".slide-bgimg").style.transform =
+            "translateX(" + innerTranslate + "px)";
+        }
+      },
+      touchStart: function () {
+        let swiper = this;
+        for (let i = 0; i < swiper.slides.length; i++) {
+          swiper.slides[i].style.transition = "";
+        }
+      },
+      setTransition: function (speed) {
+        let swiper = this;
+        for (let i = 0; i < swiper.slides.length; i++) {
+          swiper.slides[i].style.transition = speed + "ms";
+          swiper.slides[i].querySelector(".slide-bgimg").style.transition =
+            "all " + speed + "ms ease 0s";
+        }
+      }
+    }
+  };
+  new Swiper('.main-slider', mainSliderOptions);
+}
+
 
 if ($('.aboutSlider').length > 0) {
   const menu = [];
@@ -90,3 +163,4 @@ if ($('.aboutSlider').length > 0) {
     },
   });
 }
+

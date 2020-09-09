@@ -83,11 +83,14 @@ $(window).on("load", function() {
 
       setTimeout(function () {
         $('.loader, .loader-inner').addClass('hidden');
+      }, 500);
+
+      setTimeout(function () {
         AOS.init({
           offset: 50,
         });
         window.scrollTo(0, 0);
-      }, 500);
+      }, 800);
 
       if (screenWidth > 767 && $('.rellax').length) {
         new Rellax('.rellax', {

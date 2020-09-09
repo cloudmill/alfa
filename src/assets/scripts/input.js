@@ -10,7 +10,7 @@ export function validatePhone(phone) {
 }
 
 
-function validateField(element, event) {
+export function validateField(element, event) {
   const isRequired = element.attr('required');
   const checkbox = element.attr('type') === 'checkbox';
   const value = event;
@@ -77,9 +77,9 @@ $(document).on("change", '.checkbox input', function (event) {
 });
 
 
-//test form
+// form
 $('.form--js').click(function (e) {
-  e.preventDefault()
+  e.preventDefault();
   const result = [];
   $(this).closest('form').find('input').each(function(){
     const input = $(this)[0];
@@ -89,8 +89,91 @@ $('.form--js').click(function (e) {
   if(isNONValid) {
     return false;
   }
-  $(this).closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
+  let
+    form = $(this).closest('form'),
+    name = form.find('input[name=name]'),
+    email = form.find('input[name=email]'),
+    message = form.find('textarea[name=content]');
+
+  $.ajax({
+    type: "POST",
+    url: "/local/templates/main/include/ajax/form/form.php",
+    data: ({
+      "name": name.val(),
+      "email": email.val(),
+      "message": message.val()
+    }),
+    success: function (a) {
+      console.log(a);
+      $(this).closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
+    }
+  });
 });
+$('.form--js-sign').click(function (e) {
+  e.preventDefault();
+  const result = [];
+  $(this).closest('form').find('input').each(function(){
+    const input = $(this)[0];
+    result.push(validateField($(this), input.value));
+  });
+  const isNONValid = result.includes(false);
+  if(isNONValid) {
+    return false;
+  }
+  let
+    form = $(this).closest('form'),
+    name = form.find('input[name=name]'),
+    email = form.find('input[name=email]');
+
+  $.ajax({
+    type: "POST",
+    url: "/local/templates/main/include/ajax/form/sign.php",
+    data: ({
+      "name": name.val(),
+      "email": email.val()
+    }),
+    success: function (a) {
+      console.log(a);
+      $(this).closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
+    }
+  });
+});
+$('.form--js-vacancy').click(function (e) {
+  e.preventDefault();
+  const result = [];
+  $(this).closest('form').find('input').each(function(){
+    const input = $(this)[0];
+    result.push(validateField($(this), input.value));
+  });
+  const isNONValid = result.includes(false);
+  if(isNONValid) {
+    return false;
+  }
+  const fd = new FormData();
+  let
+    form = $(this).closest('form'),
+    name = form.find('input[name=name]'),
+    email = form.find('input[name=email]'),
+    files = form.find('input[name=file]')[0].files[0];
+
+  fd.set('name', name);
+  fd.append('email', email);
+  fd.append('file', files);
+
+  $.ajax({
+    type: "POST",
+    url: "/local/templates/main/include/ajax/form/file.php",
+    data: fd,
+    contentType: false,
+    processData: false,
+    success: function (a) {
+      console.log(a);
+      $(this).closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
+    }
+  });
+});
+
+
 $('.form-back--js').click(function () {
   const form = $(this).closest('form');
   form.trigger("reset");
@@ -98,4 +181,4 @@ $('.form-back--js').click(function () {
   $(this).closest('.form-send').hide().prev().css('opacity', 1);
   return false;
 });
-//test form
+// form
