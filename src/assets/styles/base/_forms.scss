@@ -227,13 +227,16 @@ input[type="search"] {
   display: inline-block;
   cursor: pointer;
   @include transitionEaseInOut(color);
+  overflow: hidden;
   &-js {
     position: absolute;
     top: 0;
-    left: 0;
+    left: -90px;
     right: 0;
     bottom: 0;
     z-index: 9;
+    cursor: pointer;
+    width: 150%;
     opacity: 0;
   }
   .input__text-js {

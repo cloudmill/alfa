@@ -291,7 +291,7 @@
   position: fixed;
   top: 0;
   bottom: 0;
-  z-index: 1001;
+  z-index: 10010;
   right: -1200px;
   max-width: 1160px;
   width: 100%;
@@ -309,10 +309,10 @@
     @media screen and (min-width: $screen-lg-min) {
       right: 80px;
     }
-    &:after {
+    + .navbar-background {
       width: 100%;
       opacity: 1;
-      transition: opacity .5s .2s;
+      transition: opacity .5s .2s, width 0s;
     }
   }
   .page-menu__language {
@@ -326,17 +326,18 @@
   }
 
 
-  &:after {
+  &-background {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 100%;
+    left: 0;
     width: 0;
     display: block;
     opacity: 0;
+    z-index: 98;
     background: rgba(3, 3, 3, 0.3);
-    transition: opacity .5s;
+    transition: opacity .5s .2s, width 0s 8s;
   }
 
   &-inner {

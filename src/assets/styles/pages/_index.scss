@@ -173,7 +173,7 @@
     }
     &::after,
     &::before {
-      left: 100%;
+      left: 102%;
     }
   }
 }
@@ -352,9 +352,15 @@
 .index {
   &-slider {
     color: white;
+    @media screen and (min-width: $screen-lg-min) {
+      width: calc(100% + 89px);
+    }
     .swiper-slide {
       min-height: 100vh;
       transition: none !important;
+      @media screen and (min-width: $screen-lg-min) {
+        padding-right: 89px;
+      }
       .container {
         min-height: 600px;
         display: flex;

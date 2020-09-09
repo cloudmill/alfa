@@ -57,6 +57,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     @include transitionEaseInOut(background-color);
     @media screen and (min-width: $screen-md-min) {
       background-color: $black;

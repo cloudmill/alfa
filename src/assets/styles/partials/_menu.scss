@@ -8,7 +8,7 @@
   position: fixed;
   right: 15px;
   top: 17px;
-  z-index: 10001;
+  z-index: 10011;
   @media screen and (min-width: $screen-md-min) {
     top: 37px;
   }
@@ -156,10 +156,10 @@
   position: relative;
   @include transitionEaseInOut(all, 1s);
   transform-style: preserve-3d;
+  transform: rotateY(-180deg);
   //box-shadow: 1px 3px 3px rgba(0,0,0,0.2);
-  &:hover {
-    transform: rotateY(-180deg);
-    animation: depth 3s linear infinite;
+  &.animated {
+    animation: depth 3s linear;
   }
   &-contents {
     width: 100%;

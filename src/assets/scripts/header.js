@@ -20,6 +20,19 @@ $(document).click(function (e) {
 });
 //  menu
 
+
+$(".page-menu__logo .card").bind("webkitAnimationEnd mozAnimationEnd animationend", function(){
+  $(this).removeClass("animated")
+});
+$(".page-menu__logo .card").hover(function(){
+  $(this).css({'animation-iteration-count': 'infinite'});
+  $(this).addClass("animated");
+});
+$(".page-menu__logo .card").mouseleave(function(){
+  $(this).css({'animation-iteration-count': '1'});
+});
+
+
 // anchor
 $('.anchor').on('click', 'a', function(event) {
   event.preventDefault();

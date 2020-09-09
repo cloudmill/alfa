@@ -33,7 +33,6 @@ $(document).ready(() => {
     sticky();
   }
 
-
   $('body').addClass(browserDetect.name);
   $('body').addClass(browserDetect.os);
 
@@ -76,13 +75,14 @@ $(window).on("load", function() {
   //   }
   //
   // } else {
-    $('.loader-hide').addClass('showIt');
+  //   $('.loader-hide').addClass('showIt');
     $('.index-slider').addClass('loading');
-    setTimeout(function () {
+    // setTimeout(function () {
       $('body').css('overflow', 'visible');
-      $('.loader, .loader-inner').addClass('hidden');
+
 
       setTimeout(function () {
+        $('.loader, .loader-inner').addClass('hidden');
         AOS.init({
           offset: 50,
         });
@@ -102,7 +102,7 @@ $(window).on("load", function() {
         $('.index-slider').removeClass('loading');
       }, 1500);
 
-    }, 1700);
+    // }, 1700);
   // }
 });
 
