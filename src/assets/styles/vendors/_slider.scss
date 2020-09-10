@@ -1,17 +1,6 @@
-.slider-back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
-  transform-style: preserve-3d;
-  will-change: transform;
 
-
-  iframe,
-  .video,
-  .image {
+.mainSlider {
+  .slider-back {
     position: absolute;
     top: 0;
     left: 0;
@@ -20,14 +9,26 @@
     z-index: 0;
     transform-style: preserve-3d;
     will-change: transform;
-    transform: matrix(1.5, 0, 0, 1.5, 0, 0);
-  }
-  .video {
-    object-fit: cover;
-  }
-}
 
-.mainSlider {
+
+    iframe,
+    .video,
+    .image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+      transform-style: preserve-3d;
+      will-change: transform;
+      transform: matrix(1.5, 0, 0, 1.5, 0, 0);
+    }
+    .video {
+      object-fit: cover;
+    }
+  }
+
   .slider-img {
     top: 0;
     left: 0;
@@ -182,23 +183,12 @@
   }
 }
 
-.index-slider {
-  &.loading {
-    .caption {
-      &.show {
-        opacity: 0;
-        transform: translateX(50px);
-      }
-    }
-  }
-}
-
 .main-slider {
   .swiper-container {
     width: 100%;
     height: 100vh;
-    float:left;
-    transition:opacity .6s ease, transform .3s ease;
+    float: left;
+    transition: opacity .6s ease, transform .3s ease;
     &.loading {
       opacity:0;
       visibility:hidden;
@@ -231,7 +221,31 @@
     }
   }
 
+  .slider-back {
+    iframe,
+    .video,
+    .image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+      transform: matrix(1.1, 0, 0, 1.1, 0, 0);
+      transition: all 2s ease .3s;
+    }
+    .video {
+      object-fit: cover;
+    }
+  }
   .swiper-slide-active {
+    .slider-back {
+      iframe,
+      .video,
+      .image {
+        transform: matrix(1.0, 0, 0, 1.0, 0, 0);
+      }
+    }
     .index-slider-title {
       .caption {
         &:first-child {
@@ -251,9 +265,27 @@
         }
       }
     }
-
     .index-slider-desc {
-      transition-delay: .35s;
+      .caption {
+        &:first-child {
+          transition-delay: .35s;
+        }
+
+        &:nth-child(2) {
+          transition-delay: .4s;
+        }
+      }
+    }
+  }
+}
+
+.index-slider {
+  &.loading {
+    .caption {
+      &.show {
+        opacity: 0;
+        transform: translateX(50px);
+      }
     }
   }
 }

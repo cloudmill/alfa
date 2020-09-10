@@ -185,19 +185,19 @@ function initMapContact() {
   map = new google.maps.Map(mapID, mapOptions);
 
   JSON.parse(locations).forEach(function (item) {
-    addMarker(item);
+    addMarker(item, null, null, true);
   });
 
   markerCluster = new MarkerClusterer(map, markers, mcOptions);
 }
 
-function addMarker(location, icon, popup) {
+function addMarker(location, icon, popup, isContact = false) {
   const marker = new google.maps.Marker({
     position: new google.maps.LatLng(parseFloat(location[0]), parseFloat(location[1])),
     icon: icon || location[2],
     map: map
   });
-  const ifHasSidebar = popup && popup[2] || location && location[5];
+  const ifHasSidebar = popup && popup[3] || location && location[6];
   if(ifHasSidebar) {
     marker.addListener('click', function () {
       const modal = document.getElementById("projectsPopup");
@@ -211,11 +211,19 @@ function addMarker(location, icon, popup) {
       myModal.open();
     });
   }
-  const title = popup ? popup[1] : location[4];
-  const content = popup ? popup[0] : location[3];
-  const infowindow = new google.maps.InfoWindow({
-    content: `<p><b class="text__xs">${title}</b></p>${content}`
-  });
+  const title = popup ? popup[0] : location[3];
+  const content = popup ? popup[1] : location[4];
+  const link = popup ? popup[2] : location[5];
+  let infowindow;
+  if(isContact) {
+    infowindow = new google.maps.InfoWindow({
+      content: `<p><b class="text__xs">${title}</b></p><p>${content}</p><a href="#" class="text--gray">${link}</a>`
+    });
+  } else {
+    infowindow = new google.maps.InfoWindow({
+      content: `<p><b class="text__xs">${title}</b></p>${content}`
+    });
+  }
   marker.addListener('mouseover', function () {
     infowindow.open(map,marker);
   });

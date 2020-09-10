@@ -83,9 +83,6 @@ $(window).on("load", function() {
 
       setTimeout(function () {
         $('.loader, .loader-inner').addClass('hidden');
-      }, 500);
-
-      setTimeout(function () {
         AOS.init({
           offset: 50,
         });
@@ -103,7 +100,7 @@ $(window).on("load", function() {
 
       setTimeout(function () {
         $('.index-slider').removeClass('loading');
-      }, 1500);
+      }, 1200);
 
     // }, 1700);
   // }

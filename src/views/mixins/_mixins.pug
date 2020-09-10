@@ -261,9 +261,9 @@ mixin mainSlider(items)
           h2.title-icon
             +img('alfa.svg')
             span АльфаДирект
-      .index-slider-desc.caption
-        p Высокопрочные проволочные #[br] фильтры для наземных #[br] и&nbsp;оффшорных месторождений #[br] нефти и газа
-        +buttonSVGM('Подробнее', 'transparent', "#fff")
+      .index-slider-desc
+        p.caption Высокопрочные проволочные #[br] фильтры для наземных #[br] и&nbsp;оффшорных месторождений #[br] нефти и газа
+        .caption: +buttonSVGM('Подробнее', 'transparent', "#fff")
   each item in items
     .swiper-slide
       .slider-back.slide-bgimg: .image(style=`background: url("assets/images/${item.img}") no-repeat center / cover`)

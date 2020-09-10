@@ -107,7 +107,6 @@ if ($('.main-slider').length > 0) {
         for (let i = 0; i < captions.length; ++i) {
           captions[i].classList.remove('show');
         }
-        // swiper.slides[swiper.activeIndex].querySelector('.caption').classList.add('show');
         $('.swiper-slide-active .caption').addClass('show');
       },
       progress: function () {
