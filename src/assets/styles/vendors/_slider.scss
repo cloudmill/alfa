@@ -231,12 +231,12 @@
       right: 0;
       bottom: 0;
       z-index: 0;
-      transform: matrix(1.1, 0.0507, 0, 1.1, 0, 0);
-      transition: all 2s ease .3s;
+      transform: matrix(1.1, 0.0307, 0, 1.1, 0, 0);
+      transition: all 2s ease .3s, opacity 0s;
     }
     .video {
       object-fit: cover;
-      display: none;
+      opacity: 0;
     }
   }
   .playing {
@@ -245,6 +245,7 @@
         display: none;
         @media screen and (min-width: $screen-md-min) {
           display: block;
+          opacity: 1;
         }
       }
     }

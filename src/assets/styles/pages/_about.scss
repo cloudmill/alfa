@@ -2,16 +2,16 @@
   &-mission {
     margin-top: 15px;
     border-top: 2px solid $black;
-    padding-bottom: 50px;
+    //padding-bottom: 50px;
     @media screen and (min-width: $screen-md-min) {
       margin-top: 60px;
-      padding-bottom: 70px;
+      //padding-bottom: 70px;
     }
     @media screen and (min-width: $screen-lg-min) {
       margin-top: 140px;
     }
     @media screen and (min-width: 1600px) {
-      padding-bottom: 150px;
+      //padding-bottom: 150px;
     }
     &-item {
       & + & {

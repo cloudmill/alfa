@@ -20,9 +20,10 @@ if ($('.indexSlider').length > 0) {
       spaceBetween: adaptive ? 15 : 0,
       effect: effect || 'slide',
       simulateTouch: false,
-      loop: loop || true,
+      loop: loop,
       autoplay: {
-        delay: 10000,
+        delay: 6000,
+        disableOnInteraction: true,
       },
       autoHeight: !!autoHeight,
       pagination: {
@@ -58,7 +59,6 @@ if ($('.indexSlider').length > 0) {
         $(previousSlide).removeClass('swiper-slide-last');
       }, duration || 2000);
     });
-
 
     $(window).on("orientationchange", function () {
       setTimeout(() => {
@@ -107,6 +107,7 @@ if ($('.main-slider').length > 0) {
                   const getFirstVideo = blobs.find(x => x.id === 0);
                   videoModel.src = getFirstVideo.vid;
                   $('.swiper-slide-active').addClass('playing');
+                  $('.swiper-slide-next').addClass('playing');
                   videoModel.play();
                 }
               }
@@ -125,7 +126,7 @@ if ($('.main-slider').length > 0) {
         const getVideo = blobs.find(x => x.id === parseFloat(swiperSlideIndex));
 
         if(videoFromActiveIndex && isNotMobile) {
-          videoFromActiveIndex.src = getVideo.vid;
+          videoFromActiveIndex.src = getVideo && getVideo.vid;
           activeSlide.classList.add('playing');
           videoFromActiveIndex.play();
         }

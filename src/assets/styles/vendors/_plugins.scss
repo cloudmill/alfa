@@ -491,6 +491,9 @@ $items:
   &:not(.nav-background) {
     max-height: 720px;
   }
+  &--large:not(.nav-background) {
+    max-height: 940px;
+  }
 
   &--mb {
     margin-bottom: 30px;

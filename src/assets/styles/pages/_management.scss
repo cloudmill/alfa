@@ -1,5 +1,13 @@
 .management {
   &-item {
+    margin-top: 15px;
+    border-top: 2px solid $black;
+    @media screen and (min-width: $screen-md-min) {
+      margin-top: 60px;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      margin-top: 90px;
+    }
     h4 {
       margin-top: 30px;
       margin-bottom: 30px;

@@ -63,7 +63,7 @@ block content
             .swiper-button.swiper-button--ar(data-aos='fade-up')
               .swiper-prev.swiper-prev-tech: +sliderArrowPrev()
               .swiper-next.swiper-next-tech: +sliderArrowNext()
-            .indexSlider.swiper-container(data-adaptive='true', data-aos='fade-up')
+            .indexSlider.swiper-container(data-adaptive='true', data-loop='true', data-aos='fade-up')
               .swiper-wrapper
                 - for (let x = 1; x < 5; x++)
                   .swiper-slide
