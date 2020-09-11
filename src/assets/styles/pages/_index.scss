@@ -400,7 +400,7 @@
         line-height: 1.235;
       }
       @media screen and (min-width: $screen-xl-min) {
-        font-size: 85px;
+        font-size: 80px;
       }
 
       img {
@@ -432,21 +432,18 @@
       line-height: 140%;
       margin-top: 40px;
       @media screen and (min-width: $screen-md-min) {
-        font-size: 26px;
+        font-size: 22px;
       }
       @media screen and (min-width: $screen-lg-min) {
         position: absolute;
         bottom: 3vh;
         right: 25px;
         margin-top: 0;
-        font-size: 22px;
       }
       @media screen and (min-width: $screen-lg-min) and (min-height: $screen-lg-min) {
         bottom: 130px;
-        font-size: 26px;
       }
       @media screen and (min-width: $screen-xl-min) {
-        font-size: 26px;
         bottom: 30px;
       }
       @media screen and (min-width: 1500px) {

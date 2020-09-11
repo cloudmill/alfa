@@ -256,12 +256,9 @@ input[type="search"] {
 }
 
 
-/* Hoshi */
 .input {
   position: relative;
   z-index: 1;
-  //display: inline-block;
-  //vertical-align: top;
   overflow: hidden;
 
   &__field {
@@ -303,12 +300,15 @@ input[type="search"] {
     &-content {
       position: absolute;
       display: block;
-      padding: 1.6em 0;
       width: 100%;
+      padding: 0;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0;
+      transform: translate3d(0, 40px, 0);
+      @include transitionEaseInOut(transform, 0.3s);
     }
-
-    &::before,
-    &::after {
+    &:after,
+    &::before {
       content: '';
       position: absolute;
       top: 0;
@@ -333,9 +333,8 @@ input[type="search"] {
 
 .input__field:focus + .input__label .input__label-content,
 .input--filled .input__label-content {
-  animation: anim-1 0.3s forwards;
-  background: white;
-  padding: .8em 0 0;
+  -webkit-transform: translate3d(0, 0, 0) scale3d(0.7, 0.7, 1);
+  transform: translate3d(0, 0, 0) scale3d(0.7, 0.7, 1);
 }
 
 
@@ -356,8 +355,8 @@ input[type="search"] {
   }
 }
 .error .input__label-content {
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0) scale3d(0.7, 0.7, 1);
+  transform: translate3d(0, 0, 0) scale3d(0.7, 0.7, 1);
 }
 
 @keyframes anim-1 {

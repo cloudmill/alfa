@@ -2,6 +2,9 @@
   &-container {
     @extend .mainContainer;
   }
+  h3 {
+    margin-top: 0;
+  }
 
   .page-footer-adr {
     margin-bottom: 5px;

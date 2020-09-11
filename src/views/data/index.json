@@ -368,31 +368,55 @@
   "slider": [
     {
       "img": "slide.jpg",
+      "desc": "Высокопрочные проволочные #[br] фильтры для наземных #[br] и&nbsp;оффшорных месторождений #[br] нефти и газа",
+      "titles": [
+        {
+          "black": false,
+          "left": false,
+          "text": "Фильтры"
+        },
+        {
+          "black": false,
+          "left": true,
+          "text": "прямой"
+        },
+        {
+          "black": false,
+          "left": false,
+          "text": "намотки"
+        },
+        {
+          "black": true,
+          "left": false,
+          "text": "АльфаДирект",
+          "icon": "alfa.svg"
+        }
+      ]
+    },
+    {
+      "img": "slide.jpg",
       "desc": "Эффективное решение для <br /> борьбы с&nbsp;прорывами воды и&nbsp;газа",
       "titles": [
         {
-          "img": false,
           "black": false,
           "left": false,
           "text": "Устройства"
         },
         {
-          "img": false,
           "black": false,
           "left": true,
           "text": "контроля"
         },
         {
-          "img": false,
           "black": false,
           "left": false,
           "text": "притока"
         },
         {
-          "img": true,
           "black": true,
           "left": false,
-          "text": "AICV"
+          "text": "AICV",
+          "icon": "aicv.svg"
         }
       ]
     },
@@ -401,19 +425,16 @@
       "desc": "Фильтры с муфтами переключения <br /> для регулирования профиля <br /> притока",
       "titles": [
         {
-          "img": false,
           "black": false,
           "left": false,
           "text": "Управляемые"
         },
         {
-          "img": false,
           "black": false,
           "left": true,
           "text": "фильтры"
         },
         {
-          "img": false,
           "black": true,
           "left": false,
           "text": "АльфаСелект"
@@ -425,25 +446,21 @@
       "desc": "Услуги анализа, проектирования, <br /> моделирования, расчетов системы <br /> заканчивания скважин",
       "titles": [
         {
-          "img": false,
           "black": false,
           "left": false,
           "text": "Услуги"
         },
         {
-          "img": false,
           "black": false,
           "left": true,
           "text": "тестирования"
         },
         {
-          "img": false,
           "black": false,
           "left": false,
           "text": "скважинного"
         },
         {
-          "img": false,
           "black": false,
           "left": true,
           "text": "оборудования"
@@ -455,25 +472,21 @@
       "desc": "Услуги анализа, проектирования, <br /> моделирования, расчетов системы <br /> заканчивания скважин",
       "titles": [
         {
-          "img": false,
           "black": false,
           "left": false,
           "text": "Подбор"
         },
         {
-          "img": false,
           "black": false,
           "left": true,
           "text": "фильтров"
         },
         {
-          "img": false,
           "black": false,
           "left": false,
           "text": "скважинного"
         },
         {
-          "img": false,
           "black": false,
           "left": true,
           "text": "оборудования"

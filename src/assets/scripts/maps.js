@@ -130,8 +130,8 @@ const mapStyle = [
 ];
 const setMarker =
   NODE_ENV_PATH === 'development'
-    ? "assets/images/icons/marker.svg"
-    : "/local/templates/main/assets/images/icons/marker.svg";
+    ? "assets/images/icons/markerd.svg"
+    : "/local/templates/main/assets/images/icons/markerd.svg";
 
 const mcOptions = {
   styles: [{
@@ -144,6 +144,7 @@ const mcOptions = {
     textColor: "white"
   }]
 };
+const infoWindow = new google.maps.InfoWindow();
 
 function initMap() {
   const mapID = document.getElementById("googleMaps");
@@ -214,23 +215,28 @@ function addMarker(location, icon, popup, isContact = false) {
   const title = popup ? popup[0] : location[3];
   const content = popup ? popup[1] : location[4];
   const link = popup ? popup[2] : location[5];
-  let infowindow;
   if(isContact) {
-    infowindow = new google.maps.InfoWindow({
-      content: `<p><b class="text__xs">${title}</b></p><p>${content}</p><a href="#" class="text--gray">${link}</a>`
+    infoWindow.setContent(`<p><b class="text__xs">${title}</b></p><p>${content}</p><a href="#" class="text--gray">${link}</a>`);
+    marker.addListener('click', function () {
+      infoWindow.open(map, marker);
+    });
+    google.maps.event.addListener(map, "click", function() {
+      infoWindow.close();
     });
   } else {
-    infowindow = new google.maps.InfoWindow({
-      content: `<p><b class="text__xs">${title}</b></p>${content}`
+    infoWindow.setContent(`<p><b class="text__xs">${title}</b></p>${content}`);
+    marker.addListener('mouseover', function () {
+      infoWindow.open(map,marker);
+    });
+    marker.addListener('mouseout', function () {
+      infoWindow.close();
     });
   }
-  marker.addListener('mouseover', function () {
-    infowindow.open(map,marker);
-  });
-  marker.addListener('mouseout', function () {
-    infowindow.close();
-  });
   markers.push(marker);
+}
+
+function oopenInfoWindow(id){
+  google.maps.event.trigger(markers[id], 'click');
 }
 
 function setMapOnAll(map) {
@@ -256,6 +262,16 @@ $(function () {
   if ($("#google").length) {
     initMapContact();
   }
+});
+
+
+$('.anchorMap').on('click', 'a', function(event) {
+  event.preventDefault();
+  const id = $(this).attr('href');
+  const top = $(id).offset().top;
+  const markerId = $(this).data('id');
+  oopenInfoWindow(markerId);
+  $('body,html').animate({scrollTop: top}, 1000);
 });
 
 $('.filters--js li').click(function () {

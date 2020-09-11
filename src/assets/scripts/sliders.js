@@ -1,4 +1,5 @@
 import Swiper from 'swiper';
+import { onloadVideoPromise } from "./video";
 
 if ($('.indexSlider').length > 0) {
   let swiperInstances = [];
@@ -70,6 +71,10 @@ if ($('.indexSlider').length > 0) {
 // index page slider
 if ($('.main-slider').length > 0) {
   const interleaveOffset = 0.5;
+  const screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  const isNotMobile = screenWidth >= 768;
+  const blobs = [];
+
   const mainSliderOptions = {
     loop: true,
     speed: 1200,
@@ -90,10 +95,40 @@ if ($('.main-slider').length > 0) {
     on: {
       init: function () {
         this.autoplay.stop();
+        const videoData = this.el.dataset.videoUrl;
+        const jsonData = JSON.parse(videoData);
+        const videoModel = $('.swiper-slide-active video')[0];
+        if(isNotMobile) {
+          for(let i =0; i < jsonData.length; i++) {
+            onloadVideoPromise(jsonData[i]).then((e) => {
+              blobs.push(e);
+              if(blobs.length === jsonData.length) {
+                if(videoModel) {
+                  const getFirstVideo = blobs.find(x => x.id === 0);
+                  videoModel.src = getFirstVideo.vid;
+                  $('.swiper-slide-active').addClass('playing');
+                  videoModel.play();
+                }
+              }
+            });
+          }
+        }
       },
       imagesReady: function () {
         this.el.classList.remove('loading');
         this.autoplay.start();
+      },
+      slideChange: function () {
+        const activeSlide = this.slides[this.activeIndex];
+        const videoFromActiveIndex = activeSlide.querySelector('video');
+        const swiperSlideIndex = activeSlide.dataset.swiperSlideIndex;
+        const getVideo = blobs.find(x => x.id === parseFloat(swiperSlideIndex));
+
+        if(videoFromActiveIndex && isNotMobile) {
+          videoFromActiveIndex.src = getVideo.vid;
+          activeSlide.classList.add('playing');
+          videoFromActiveIndex.play();
+        }
       },
       slideChangeTransitionStart: function () {
         $('.caption').addClass('hide');
@@ -102,10 +137,16 @@ if ($('.main-slider').length > 0) {
         }, 1000);
       },
       slideChangeTransitionEnd: function () {
+        const previousSlide = this.slides[this.previousIndex];
+        const videoFromPreviousIndex = previousSlide.querySelector('video');
         let swiper = this,
           captions = swiper.el.querySelectorAll('.caption');
         for (let i = 0; i < captions.length; ++i) {
           captions[i].classList.remove('show');
+        }
+        if(videoFromPreviousIndex) {
+          videoFromPreviousIndex.src = '';
+          previousSlide.classList.remove('playing');
         }
         $('.swiper-slide-active .caption').addClass('show');
       },

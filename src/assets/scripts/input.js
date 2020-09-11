@@ -66,6 +66,9 @@ export function validateField(element, event) {
     element.closest('.input').find('.error-content').text('Пожалуйста, заполните поле');
     result = false;
   }
+  if (element.prop('type') === 'file') {
+    result = true;
+  }
   return result;
 }
 

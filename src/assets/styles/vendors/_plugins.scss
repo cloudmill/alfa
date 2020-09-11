@@ -506,8 +506,16 @@ $items:
   border-radius: 0 !important;
   padding: 20px !important;
   transition: all .5s !important;
-  button {
-    display: none !important;
+}
+
+#google {
+  overflow-anchor:none;
+}
+#googleMaps {
+  .gm-style .gm-style-iw-c {
+    button {
+      display: none !important;
+    }
   }
 }
 

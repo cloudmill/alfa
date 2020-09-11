@@ -241,32 +241,11 @@ mixin revealIndep(items)
       span.revealIn= item
 
 mixin mainSlider(items)
-  .swiper-slide
-    //iframe(width="110%" height="110%" src="https://www.youtube.com/embed/37Sc_24Kg9g?controls=0&autoplay=1&loop=1&playlist=37Sc_24Kg9g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;" allowfullscreen)
-    .slider-back.slide-bgimg
-      .hideOnMobile
-        video.video#video(width="100%" height="100%", autoplay, loop, mute)
-          source(src="assets/images/video/video.mp4" type="video/mp4")
-      .showOnMobile
-        .image(style=`background: url("assets/images/slide.jpg") no-repeat center / cover`)
-    .container.relative
-      .index-slider-title
-        .caption
-          h2 Фильтры
-        .caption.title-left
-          h2 прямой
-        .caption
-          h2 намотки
-        .caption
-          h2.title-icon
-            +img('alfa.svg')
-            span АльфаДирект
-      .index-slider-desc
-        p.caption Высокопрочные проволочные #[br] фильтры для наземных #[br] и&nbsp;оффшорных месторождений #[br] нефти и газа
-        .caption: +buttonSVGM('Подробнее', 'transparent', "#fff")
   each item in items
     .swiper-slide
-      .slider-back.slide-bgimg: .image(style=`background: url("assets/images/${item.img}") no-repeat center / cover`)
+      .slider-back.slide-bgimg
+        .image(style=`background: url("assets/images/${item.img}") no-repeat center / cover`)
+        video.video(width="100%" height="100%", autoplay, loop, mute)
       .container.relative
         .index-slider-title
           each title in item.titles
@@ -276,8 +255,8 @@ mixin mainSlider(items)
             - if(title.left === true) left='title-left'
             .caption(class=left)
               h2(class=active)
-                - if(title.img === true)
-                  +img('alfa.svg')
+                - if(title.icon === true)
+                  +img(icon)
                 = title.text
         .index-slider-desc.caption
           p!= item.desc
