@@ -226,12 +226,20 @@ input[type="search"] {
   position: relative;
   display: inline-block;
   cursor: pointer;
-  @include transitionEaseInOut(color);
   overflow: hidden;
+  &-body {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    @include transitionEaseInOut(color);
+    &:hover {
+      color: $base-color-main;
+    }
+  }
   &-js {
     position: absolute;
     top: 0;
-    left: -94px;
+    left: -90px;
     right: 0;
     bottom: 0;
     z-index: 9;
@@ -250,8 +258,12 @@ input[type="search"] {
       }
     }
   }
-  &:hover {
-    color: $base-color-main;
+  &-close {
+    margin-left: 10px;
+    display: none;
+    &.show {
+      display: block;
+    }
   }
 }
 

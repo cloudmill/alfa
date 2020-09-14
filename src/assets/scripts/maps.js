@@ -235,7 +235,7 @@ function addMarker(location, icon, popup, isContact = false) {
   markers.push(marker);
 }
 
-function oopenInfoWindow(id){
+function openInfoWindow(id){
   google.maps.event.trigger(markers[id], 'click');
 }
 
@@ -270,9 +270,27 @@ $('.anchorMap').on('click', 'a', function(event) {
   const id = $(this).attr('href');
   const top = $(id).offset().top;
   const markerId = $(this).data('id');
-  oopenInfoWindow(markerId);
+  openInfoWindow(markerId);
   $('body,html').animate({scrollTop: top}, 1000);
 });
+
+let getAllCoordinates = {
+  service: {
+    coordinates: null,
+    icon: '',
+    iconGroup: '',
+  },
+  conference:  {
+    coordinates: null,
+    icon: '',
+    iconGroup: '',
+  },
+  projects:  {
+    coordinates: null,
+    icon: '',
+    iconGroup: '',
+  },
+};
 
 $('.filters--js li').click(function () {
   const icon = $(this).data('icon');
@@ -281,21 +299,46 @@ $('.filters--js li').click(function () {
   const filter = $(this).data('filter');
   const popup = $(this).data('popup');
   const itemGrid = $('.filtr-item');
-  const filterItemGrid = $(`.filtr-item[data-category=${filter}]`);
+  // const filterItemGrid = $(`.filtr-item[data-category=${filter}]`);
 
-  if ($(this).hasClass('active')) {
-    return;
+  if(NODE_ENV_PATH === 'development') {
+    $(this).toggleClass('active');
+  } else {
+
+    if ($(this).hasClass('active')) {
+      return;
+    }
+    $('.filters--js li').removeClass('active');
+    $(this).addClass('active');
   }
-
-  $('.filters--js li').removeClass('active');
-  $(this).addClass('active');
 
   deleteMarkers();
 
-  coordinates.forEach(function (item, index) {
-    const splitter = item.split(', ');
-    addMarker(splitter, icon, popup[index]);
-  });
+  if(NODE_ENV_PATH === 'development') {
+    if ($(this).hasClass('active')) {
+      getAllCoordinates[filter].coordinates = coordinates;
+      getAllCoordinates[filter].iconGroup = iconGroup;
+      getAllCoordinates[filter].icon = icon;
+    } else {
+      getAllCoordinates[filter].coordinates = null;
+      getAllCoordinates[filter].iconGroup = '';
+      getAllCoordinates[filter].icon = '';
+    }
+
+    const mergedArrays = [].concat(...Object.values(getAllCoordinates));
+
+    mergedArrays.forEach((item, index) => {
+      !!item.coordinates && item.coordinates.forEach((subItem) => {
+        const splitter = !!subItem && subItem.split(', ');
+        !!splitter && addMarker(splitter, item.icon, popup[index]);
+      });
+    });
+  } else {
+    coordinates.forEach(function (item, index) {
+      const splitter = item.split(', ');
+      addMarker(splitter, icon, popup[index]);
+    });
+  }
 
   $('.more--js').attr('data-filter', filter);
   itemGrid.velocity({ scaleX: 0, scaleY: 0 }, { display: "none", duration: 300 });

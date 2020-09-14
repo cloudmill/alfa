@@ -186,13 +186,15 @@ $('.input__file-js').change(function() {
     const reUnix = /.*\/(.*)/;
     fileTitle = fileTitle.replace(reUnix, "$1");
     $(this).parent().parent().find('.input__name-js').val(fileTitle);
-    $('.input__text-js').html(`${fileTitle} <span class="input__file-close"><img src="assets/images/icons/cancel.svg" alt="Close" /></span>`);
+    $('.input__text-js').text(fileTitle);
+    $('.input__file-close').addClass('show');
   });
 });
 
-$('.input__file').on('click', '.input__file-close', function () {
+$('.input__file-close').on('click', function () {
   $('.input__file-js').val('');
   $('.input__text-js').html('Прикрепить файл <span><i class="icon-dlink"></i></span>')
+  $(this).removeClass('show');
 });
 
 
