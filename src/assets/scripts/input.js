@@ -155,12 +155,14 @@ $('.form--js-vacancy').click(function (e) {
   const fd = new FormData();
   let
     form = $(this).closest('form'),
-    name = form.find('input[name=name]'),
-    email = form.find('input[name=email]'),
+    name = form.find('input[name=name]').val(),
+    email = form.find('input[name=email]').val(),
+    message = form.find('textarea[name=content]').val(),
     files = form.find('input[name=file]')[0].files[0];
 
   fd.set('name', name);
   fd.append('email', email);
+  fd.append('message', message);
   fd.append('file', files);
 
   $.ajax({

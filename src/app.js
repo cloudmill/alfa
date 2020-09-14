@@ -8,6 +8,7 @@ import "velocity-animate";
 // Styles
 import 'Styles/_app.scss';
 import { sticky } from 'Scripts/customscripts';
+import {getResults} from "./assets/scripts/customscripts";
 
 const browserDetect = browser();
 const screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
@@ -38,6 +39,10 @@ $(document).ready(() => {
 
 	// backend
 	require('Scripts/backend');
+
+	if($('.glossary-results').length) {
+    getResults();
+  }
 });
 
 

@@ -76,7 +76,7 @@
       max-width: 51px;
       margin: 10px 7px 0;
       flex-grow: 1;
-      width: calc(100% * (1/5) - 30px - 1px);
+      width: calc(100% * (1 / 5) - 30px - 1px);
       padding-top: 20px;
       padding-bottom: 20px;
       display: flex;
@@ -84,22 +84,26 @@
       justify-content: space-between;
       border-bottom: 2px solid $gray;
       transition: border-color .5s;
+      opacity: .4;
+      cursor: not-allowed;
       @media screen and (min-width: $screen-md-min) {
         margin: 10px 7px 0;
         max-width: 51px;
       }
       @media screen and (min-width: $screen-lg-min) {
-        width: calc(100% * (1/4) - 30px - 1px);
+        width: calc(100% * (1 / 4) - 30px - 1px);
       }
       @media screen and (min-width: $screen-xl-min) {
         margin: 10px 15px 0;
-        width: calc(100% * (1/5) - 30px - 1px);
+        width: calc(100% * (1 / 5) - 30px - 1px);
       }
+
       i {
         font-size: 15px;
         color: $gray;
         transition: color .5s;
       }
+
       span {
         font-weight: 600;
         font-size: 20px;
@@ -107,11 +111,18 @@
         color: $black;
         transition: color .5s;
       }
-      &:hover,
-      &.active {
-        border-color: $base-color-main;
-        i, span {
-          color: $base-color-main;
+
+      &.activated {
+        opacity: 1;
+        cursor: pointer;
+
+        &:hover,
+        &.active {
+          border-color: $base-color-main;
+
+          i, span {
+            color: $base-color-main;
+          }
         }
       }
     }

@@ -74,7 +74,10 @@ block content
                 a(href='#')
                   +arrow()
                   | Дополнительное оборудование
-              ul.equipMenu
+              ul.equipMenu.equipMenu--sup
+                li: a(href='#')
+                  +arrow()
+                  | Гилроеханический паркер
                 li: a(href='#')
                   +arrow()
                   | Муфта ГРП
@@ -83,7 +86,7 @@ block content
                   | Пакер-Подвеска
                 li: a(href='#')
                   +arrow()
-                  | Гидромеханический пакер
+                  | Пакер-Подвеска 2
           .equipmentList-item__bottom(data-aos='fade-up')
             .equipmentList-item__mark.spinnerSlow: +img('equip/trademark.svg')
             .rellax-box: .rellax: +img('equip/cat-3.jpg')

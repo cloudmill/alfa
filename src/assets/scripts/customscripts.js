@@ -92,12 +92,16 @@ function filterLogic(value, condition, isCharacter, elem) {
     $(list)
       .filter(function (index, item) {
         const getTitle = $(item)[0].dataset.title;
+        const getSubTitle = $(item)[0].dataset.subtitle;
         const regex = isCharacter
           ? getTitle.startsWith(value)
           : getTitle.toLowerCase().includes(value.toLowerCase());
+        const regexSub = isCharacter
+          ? getSubTitle.startsWith(value)
+          : getSubTitle.toLowerCase().includes(value.toLowerCase());
 
-        if(regex) counter++;
-        return regex;
+        if(regex || regexSub) counter++;
+        return regex || regexSub;
       })
       .velocity({ scaleX: 1, scaleY: 1 }, { display: "block", duration: 300, delay: 200 });
     $(".abc--js li").removeClass('active');
@@ -133,12 +137,32 @@ function filterLogic(value, condition, isCharacter, elem) {
   }, 700);
 }
 
-$(".abc--js li").click(function () {
+function getABCCharacters() {
+  const abc = $('.abc--js li');
+  const array = [];
+  abc.each(function(index, item) {
+    array.push($(item).data('title'))
+  });
+  return array;
+}
+export function getResults() {
+  const array = getABCCharacters();
+  const item = $('.glossary-list .acc__card');
+  item.each(function(index, item) {
+    const getFirstCharacter = $(item).data('title')[0];
+    const filters = array.filter(v => v === getFirstCharacter);
+    filters.map(function (index) {
+      $('.abc--js li[data-title='+index+']').addClass('activated');
+    })
+  });
+}
+
+$(".abc--js").on('click', 'li.activated', function () {
   const getCharacter = $(this).data('title');
   filterLogic(getCharacter, !$(this).hasClass('active'), true, $(this));
 });
 
-$(".search--js").click(function () {
+$(".search--js").on('click', function () {
   const value = $(this).parent().find('input')[0].value;
   if(!value) return;
   filterLogic(value, value, false);
@@ -162,8 +186,13 @@ $('.input__file-js').change(function() {
     const reUnix = /.*\/(.*)/;
     fileTitle = fileTitle.replace(reUnix, "$1");
     $(this).parent().parent().find('.input__name-js').val(fileTitle);
-    $('.input__text-js').text(fileTitle);
+    $('.input__text-js').html(`${fileTitle} <span class="input__file-close"><img src="assets/images/icons/cancel.svg" alt="Close" /></span>`);
   });
+});
+
+$('.input__file').on('click', '.input__file-close', function () {
+  $('.input__file-js').val('');
+  $('.input__text-js').html('Прикрепить файл <span><i class="icon-dlink"></i></span>')
 });
 
 

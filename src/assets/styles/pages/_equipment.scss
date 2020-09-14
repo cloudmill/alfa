@@ -624,6 +624,15 @@
       }
     }
   }
+
+  &--sup {
+    li {
+      @media screen and (min-width: $screen-lg-min) {
+        width: auto;
+        margin-right: 13%;
+      }
+    }
+  }
 }
 
 .equipmentNav {
