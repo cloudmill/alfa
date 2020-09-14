@@ -1,6 +1,18 @@
 .contacts {
   &-container {
-    @extend .mainContainer;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @media screen and (min-width: $screen-md-min) {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      padding-top: 60px;
+      padding-bottom: 70px;
+    }
+    @media screen and (min-width: $screen-xl-min) {
+      padding-bottom: 170px;
+    }
   }
   h3 {
     margin-top: 0;

@@ -342,9 +342,6 @@ $('.filters--js li').click(function () {
 
   $('.more--js').attr('data-filter', filter);
   itemGrid.velocity({ scaleX: 0, scaleY: 0 }, { display: "none", duration: 300 });
-  // filterItemGrid.velocity({ scaleX: 1, scaleY: 1 }, { display: "block", duration: 300, delay: 200 });
-  // itemGrid.slideUp(500);
-  // filterItemGrid.slideDown(500);
 
   setTimeout(() => {
     showMoreFunc(".filtr-item", 7, '.more--js', false, filter);
