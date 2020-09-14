@@ -135,8 +135,9 @@
 
   span {
     color: $black;
-    transition: color .5s;
+    transition: color .5s, left .5s;
     position: relative;
+    left: 0;
     z-index: 1;
   }
   circle {
@@ -194,7 +195,8 @@
     }
     span {
       color: white;
-      transition: color .5s .4s;
+      left: 5px;
+      transition: color .5s .4s, left .5s;
     }
   }
 
