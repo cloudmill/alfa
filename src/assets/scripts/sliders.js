@@ -108,7 +108,9 @@ if ($('.main-slider').length > 0) {
                   videoModel.src = getFirstVideo.vid;
                   $('.swiper-slide-active').addClass('playing');
                   $('.swiper-slide-next').addClass('playing');
-                  videoModel.play();
+                  setTimeout(() => {
+                    videoModel.play();
+                  }, 1000);
                 }
               }
             });
@@ -128,7 +130,9 @@ if ($('.main-slider').length > 0) {
         if(videoFromActiveIndex && isNotMobile) {
           videoFromActiveIndex.src = getVideo && getVideo.vid;
           activeSlide.classList.add('playing');
-          videoFromActiveIndex.play();
+          setTimeout(() => {
+            videoFromActiveIndex.play();
+          }, 1500);
         }
       },
       slideChangeTransitionStart: function () {

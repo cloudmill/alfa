@@ -109,6 +109,11 @@
       align-self: flex-end;
     }
   }
+  @if ($type == bottom) {
+    .center__#{$class}-self {
+      align-self: center;
+    }
+  }
   @if ($type == around) {
     .around__#{$class} {
       justify-content: space-around;

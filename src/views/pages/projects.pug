@@ -21,6 +21,7 @@ block content
                   data-icon="assets/images/icons/bubbleb.svg",
                   data-group="assets/images/icons/markerb.svg",
                   data-coordinates=['59.91701049, 30.31812429', '59.91916157, 30.3251195']
+                  data-zoom='10'
                   data-popup=[
                     [
                       'Россия, Сергиев Посад — 2019 г',
@@ -44,6 +45,7 @@ block content
                   data-icon="assets/images/icons/bubblel.svg",
                   data-group="assets/images/icons/markerl.svg",
                   data-coordinates=['59.91756978, 30.31812429', '59.92049517, 30.33250093', '59.91701049, 30.3276515']
+                  data-zoom='8'
                   data-popup=[
                     [
                       'Россия, Сергиев Посад — 2018 г',
@@ -76,6 +78,7 @@ block content
                   data-group="assets/images/icons/marker.svg",
                   data-icon="assets/images/icons/bubble.svg",
                   data-coordinates=['59.92256978, 30.31812429', '59.92349517, 30.33250093', '59.92401049, 30.3276515']
+                  data-zoom='5'
                   data-popup=[
                     [
                       'Россия, Сергиев Посад — 2019 г',
@@ -110,6 +113,9 @@ block content
             +projects(index.project)
             .text--center
               .showMore.more--js(data-aos='fade-up')
+                | Показать еще
+                span
+              .showMore.more--js-fl(data-aos='fade-up')
                 | Показать еще
                 span
 

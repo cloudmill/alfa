@@ -1,4 +1,4 @@
-import {showMoreFunc} from './customscripts';
+import {showMoreFunc, showMoreFuncMulti} from './filters';
 import {myModal} from './modal';
 
 let markers = [];
@@ -192,7 +192,7 @@ function initMapContact() {
   markerCluster = new MarkerClusterer(map, markers, mcOptions);
 }
 
-function addMarker(location, icon, popup, isContact = false) {
+function addMarker(location, icon, popup, isContact = false, zoom) {
   const marker = new google.maps.Marker({
     position: new google.maps.LatLng(parseFloat(location[0]), parseFloat(location[1])),
     icon: icon || location[2],
@@ -298,10 +298,11 @@ $('.filters--js li').click(function () {
   const coordinates = $(this).data('coordinates');
   const filter = $(this).data('filter');
   const popup = $(this).data('popup');
+  const zoom = $(this).data('zoom');
   const itemGrid = $('.filtr-item');
   // const filterItemGrid = $(`.filtr-item[data-category=${filter}]`);
 
-  if(NODE_ENV_PATH === 'development') {
+  if(process.env.NODE_ENV === 'development') {
     $(this).toggleClass('active');
   } else {
 
@@ -314,7 +315,7 @@ $('.filters--js li').click(function () {
 
   deleteMarkers();
 
-  if(NODE_ENV_PATH === 'development') {
+  if(process.env.NODE_ENV === 'development') {
     if ($(this).hasClass('active')) {
       getAllCoordinates[filter].coordinates = coordinates;
       getAllCoordinates[filter].iconGroup = iconGroup;
@@ -331,12 +332,14 @@ $('.filters--js li').click(function () {
       !!item.coordinates && item.coordinates.forEach((subItem) => {
         const splitter = !!subItem && subItem.split(', ');
         !!splitter && addMarker(splitter, item.icon, popup[index]);
+        map.setZoom(zoom);
       });
     });
   } else {
     coordinates.forEach(function (item, index) {
       const splitter = item.split(', ');
       addMarker(splitter, icon, popup[index]);
+      map.setZoom(zoom);
     });
   }
 
@@ -344,7 +347,11 @@ $('.filters--js li').click(function () {
   itemGrid.velocity({ scaleX: 0, scaleY: 0 }, { display: "none", duration: 300 });
 
   setTimeout(() => {
-    showMoreFunc(".filtr-item", 7, '.more--js', false, filter);
+    if(process.env.NODE_ENV === 'development') {
+      showMoreFuncMulti(".filtr-item", 7, '.more--js-fl', filter, $(this).hasClass('active'));
+    } else {
+      showMoreFunc(".filtr-item", 7, '.more--js', false, filter);
+    }
   }, 200);
 
   mcOptions.styles[0].url = iconGroup;
