@@ -81,7 +81,8 @@ $(document).on("change", '.checkbox input', function (event) {
 
 
 // form
-$('.form--js').click(function (e) {
+
+$('.form--js--news').click(function (e) {
   e.preventDefault();
   const result = [];
   $(this).closest('form').find('input').each(function(){
@@ -96,23 +97,29 @@ $('.form--js').click(function (e) {
     form = $(this).closest('form'),
     name = form.find('input[name=name]'),
     email = form.find('input[name=email]'),
-    message = form.find('textarea[name=content]');
+    message = form.find('textarea[name=content]'),
+    curForm = $(this);
 
   $.ajax({
     type: "POST",
-    url: "/local/templates/main/include/ajax/form/form.php",
+    url: "/local/templates/main/include/ajax/forms/subscribe_to_news.php",
+    dataType: "json",
     data: ({
       "name": name.val(),
       "email": email.val(),
       "message": message.val()
     }),
     success: function (a) {
-      console.log(a);
-      $(this).closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
+      console.log(a.success);
+      if (a.success == 'true') {
+        curForm.closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
+      }
     }
   });
 });
-$('.form--js-sign').click(function (e) {
+
+
+$('.form--js--projects').click(function (e) {
   e.preventDefault();
   const result = [];
   $(this).closest('form').find('input').each(function(){
@@ -126,21 +133,135 @@ $('.form--js-sign').click(function (e) {
   let
     form = $(this).closest('form'),
     name = form.find('input[name=name]'),
-    email = form.find('input[name=email]');
+    email = form.find('input[name=email]'),
+    message = form.find('textarea[name=content]'),
+    curForm = $(this);
 
   $.ajax({
     type: "POST",
-    url: "/local/templates/main/include/ajax/form/sign.php",
+    url: "/local/templates/main/include/ajax/forms/ask_question_projects.php",
+    dataType: "json",
+    data: ({
+      "name": name.val(),
+      "email": email.val(),
+      "message": message.val()
+    }),
+    success: function (a) {
+      console.log(a.success);
+      if (a.success == 'true') {
+        curForm.closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
+      }
+    }
+  });
+});
+
+$('.form--js--publications').click(function (e) {
+  e.preventDefault();
+  const result = [];
+  $(this).closest('form').find('input').each(function(){
+    const input = $(this)[0];
+    result.push(validateField($(this), input.value));
+  });
+  const isNONValid = result.includes(false);
+  if(isNONValid) {
+    return false;
+  }
+  let
+    form = $(this).closest('form'),
+    name = form.find('input[name=name]'),
+    email = form.find('input[name=email]'),
+    curForm = $(this);
+
+  $.ajax({
+    type: "POST",
+    url: "/local/templates/main/include/ajax/forms/subscribe_to_publications.php",
+    dataType: "json",
     data: ({
       "name": name.val(),
       "email": email.val()
     }),
     success: function (a) {
-      console.log(a);
-      $(this).closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
+      console.log(a.success);
+      if (a.success == 'true') {
+        curForm.closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
+      }
     }
   });
 });
+
+$('.form--js--ask--question').click(function (e) {
+  e.preventDefault();
+  const result = [];
+  $(this).closest('form').find('input').each(function(){
+    const input = $(this)[0];
+    result.push(validateField($(this), input.value));
+  });
+  const isNONValid = result.includes(false);
+  if(isNONValid) {
+    return false;
+  }
+  let
+    form = $(this).closest('form'),
+    name = form.find('input[name=name]'),
+    email = form.find('input[name=email]'),
+    message = form.find('textarea[name=content]'),
+    curForm = $(this);
+
+  $.ajax({
+    type: "POST",
+    url: "/local/templates/main/include/ajax/forms/ask_question.php",
+    dataType: "json",
+    data: ({
+      "name": name.val(),
+      "email": email.val(),
+      "message": message.val()
+    }),
+    success: function (a) {
+      console.log(a.success);
+      if (a.success == 'true') {
+        curForm.closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
+      }
+    }
+  });
+});
+
+$('.form--js-services').click(function (e) {
+  e.preventDefault();
+  const result = [];
+  $(this).closest('form').find('input').each(function(){
+    const input = $(this)[0];
+    result.push(validateField($(this), input.value));
+  });
+  const isNONValid = result.includes(false);
+  if(isNONValid) {
+    return false;
+  }
+  let
+    form = $(this).closest('form'),
+    name = form.find('input[name=name]'),
+    email = form.find('input[name=email]'),
+    message = form.find('textarea[name=content]'),
+    curForm = $(this);
+
+  $.ajax({
+    type: "POST",
+    url: "/local/templates/main/include/ajax/forms/ask_question_services.php",
+    dataType: "json",
+    data: ({
+      "name": name.val(),
+      "email": email.val(),
+      "message": message.val()
+    }),
+    success: function (a) {
+      console.log(a.success);
+      if (a.success == 'true') {
+        curForm.closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
+      }
+    }
+  });
+});
+
+
 $('.form--js-vacancy').click(function (e) {
   e.preventDefault();
   const result = [];
@@ -158,7 +279,8 @@ $('.form--js-vacancy').click(function (e) {
     name = form.find('input[name=name]').val(),
     email = form.find('input[name=email]').val(),
     message = form.find('textarea[name=content]').val(),
-    files = form.find('input[name=file]')[0].files[0];
+    files = form.find('input[name=file]')[0].files[0],
+    curForm = $(this);
 
   fd.set('name', name);
   fd.append('email', email);
@@ -167,13 +289,13 @@ $('.form--js-vacancy').click(function (e) {
 
   $.ajax({
     type: "POST",
-    url: "/local/templates/main/include/ajax/form/file.php",
+    url: "/local/templates/main/include/ajax/forms/send_resume.php",
     data: fd,
     contentType: false,
     processData: false,
     success: function (a) {
       console.log(a);
-      $(this).closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
+      curForm.closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
     }
   });
 });
