@@ -272,8 +272,8 @@ mixin mainSlider(items)
             - if(title.left === true) left='title-left'
             .caption(class=left)
               h2(class=active)
-                - if(title.icon === true)
-                  +img(icon)
+                - if(title.icon)
+                  +img(title.icon)
                 = title.text
         .index-slider-desc.caption
           p!= item.desc
