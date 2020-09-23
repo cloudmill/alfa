@@ -376,6 +376,30 @@
       }
     }
 
+    .parent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+      }
+      &:after {
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 100%);
+      }
+      &:before {
+        background: rgba(0, 0, 0, 0.15);
+      }
+    }
+
     .title-left {
       margin-left: 50px;
       @media screen and (min-width: $screen-md-min) {
@@ -771,7 +795,7 @@
 
 .paginationAnimate {
   animation-name: paginationAnimate;
-  animation-duration: 7s;
+  animation-duration: 10s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }

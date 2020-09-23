@@ -15,12 +15,12 @@ export function onloadVideoPromise(src) {
     xhrReq.onerror = function() {
       reject(arguments);
     };
-    // xhrReq.onprogress = function(e) {
-    //   if (e.lengthComputable) {
-    //     const percentComplete = ((e.loaded / e.total) * 100 | 0) + '%';
-    //     console.log('progress: ', percentComplete);
-    //   }
-    // }
+    xhrReq.onprogress = function(e) {
+      if (e.lengthComputable) {
+        const percentComplete = ((e.loaded / e.total) * 100 | 0) + '%';
+        console.log('progress: ', percentComplete);
+      }
+    }
     xhrReq.send();
   });
 }

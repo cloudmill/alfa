@@ -53,6 +53,10 @@
       .swiper-slide {
         padding-top: 128px;
         position: relative;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         @media screen and (min-width: $screen-md-min) {
           padding-top: 0;
         }

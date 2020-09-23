@@ -170,7 +170,8 @@ mixin navTitleBackOneString(title, parent, src, par, pdf)
         .col.col__lg-8.col__xs-12
           .mainTitle(data-aos='fade-up')
             +revealMainTag(title, 'h1')
-          p=par
+          .col__xl-8.col__lg-10
+            p=par
       if(pdf)
         .nav-background__link.nav-bottom.revealOut(data-aos='')
           a.revealIn(href='#')
@@ -261,7 +262,7 @@ mixin mainSlider(items)
   each item in items
     .swiper-slide
       .slider-back.slide-bgimg
-        .image(style=`background: url("assets/images/${item.img}") no-repeat center / cover`)
+        .parent: .image(style=`background: url("assets/images/${item.img}") no-repeat center / cover`)
         video.video(width="100%" height="100%", loop, muted)
       .container.relative
         .index-slider-title
