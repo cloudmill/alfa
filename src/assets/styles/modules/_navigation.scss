@@ -337,7 +337,7 @@
     opacity: 0;
     z-index: 98;
     background: rgba(3, 3, 3, 0.3);
-    transition: opacity .5s .2s, width 0s 8s;
+    transition: opacity .5s .2s, width 0s .8s;
   }
 
   &-inner {

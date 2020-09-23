@@ -96,21 +96,15 @@ if ($('.main-slider').length > 0) {
       init: function () {
         this.autoplay.stop();
         const videoData = this.el.dataset.videoUrl;
-        console.log(videoData);
         const jsonData = JSON.parse(videoData);
-        console.log(jsonData);
         const videoModel = $('.swiper-slide-active video')[0];
         if(isNotMobile) {
           for(let i =0; i < jsonData.length; i++) {
-            console.log(jsonData[i]);
             onloadVideoPromise(jsonData[i]).then((e) => {
               blobs.push(e);
-              console.log(blobs);
               if(blobs.length === jsonData.length) {
-                console.log(videoModel);
                 if(videoModel) {
                   const getFirstVideo = blobs.find(x => x.id === 0);
-                  console.log(getFirstVideo);
                   videoModel.src = getFirstVideo.vid;
                   $('.swiper-slide-active').addClass('playing');
                   $('.swiper-slide-next').addClass('playing');
