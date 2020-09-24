@@ -150,9 +150,9 @@ function initMap() {
   const mapID = document.getElementById("googleMaps");
   const locations = mapID.dataset.locations;
 
-  const mapOptions = {
+   const mapOptions = {
     center: new google.maps.LatLng(59.91916157, 30.3251195),
-    zoom: NODE_ENV_PATH === 'development' ? 15 : 5,
+    zoom: 2,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     mapTypeControl: false,
     zoomControl: true,
