@@ -30,6 +30,8 @@ $(document).ready(() => {
 	// anima
   require('Scripts/video');
 
+  require('Scripts/nav');
+
   if(screenWidth >= 1024) {
     sticky();
   }

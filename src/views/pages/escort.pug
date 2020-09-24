@@ -12,8 +12,8 @@ block content
     +navTitleBackOneArray('Сопровождение', 'Сервис', 'background-image: url("assets/images/service/escort.png")', list.escort, "icons/pdfw.svg")
     .container.equipment-container
       .row.row-add.equipment-template
-        .col.col__lg-8.col__xs-12.equipment-content
-          #description.equipment-template__item.template__item--js
+        .col.col__lg-8.col__xs-12.equipment-content.page-nav--js
+          #description.equipment-template__item.template__item--js(data-title='Описание', data-href='#description')
             +revealMainTag('Описание', 'h3')
             .equipment-template__block(data-aos='fade-up')
               p Специалисты сервисной компании Альфа Горизонт выполняют весь комплекс услуг, связанный с контрактными обязательствами компании от момента заключения контракта до гарантийного обслуживания поставленного оборудования и инженерно-технических решений.
@@ -55,7 +55,7 @@ block content
                     ul.list--icons
                       li контроль качества исполнения по стандарту ISO
                       li отчеты и документация
-          #advantages.equipment-template__item.template__item--js
+          #advantages.equipment-template__item.template__item--js(data-title='Преимущества', data-href='#advantages')
             +revealMainTag('Преимущества', 'h3')
             .equipment-template__block(data-aos='fade-up')
               ul.list--corner.row.between__xs
@@ -64,17 +64,13 @@ block content
                 li.col.col__md-6.col__xs-12 Снижение рисков для проведения важных технологический операций, например, безопасного спуска хвостовика
                 li.col.col__md-6.col__xs-12 Проработка сценариев использования разных конфигураций для заканчивания скважины стандартами качества
                 li.col.col__md-6.col__xs-12 Экономические обоснования предлагаемых решений
-          #projects.equipment-template__item.template__item--js
+          #projects.equipment-template__item.template__item--js(data-title='Проекты', data-href='#projects')
             +revealMainTag('Ключевые проекты', 'h3')
             include ../components/_projectsSlider
-          #faq.template__item--js: +form('Задать вопрос', 'Вопрос', 'Спасибо! Мы получили ваш сообщение.')
+          #faq.template__item--js(data-title='Задать вопрос', data-href='#faq'): +form('Задать вопрос', 'Вопрос', 'Спасибо! Мы получили ваш сообщение.')
         .col.col__lg-4.col__md-6.col__xs-12.hideOnMobileAndTablet
           .sidebar
             ul.equipmentNav.anchor(data-aos='fade-up')
-              li.active: a(href='#description') Описание
-              li: a(href='#advantages') Преимущества
-              li: a(href='#projects') Проекты
-              li: a(href='#faq') Задать вопрос
             +linkIcon('Вернуться к услугам')
     .container.stopper: +nextItem('Проектирование и инжиниринг', 'service/next1.jpg', 'Следующая услуга', false)
 
