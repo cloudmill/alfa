@@ -37,81 +37,35 @@ block content
           .swiper-pagination(data-aos='fade-up', data-aos-delay='500')
     section.index-layout
     section.index-services
-      .row.tabbed-content
-        .col.col__xl-4.col__lg-6.col__md-5.col__xs-12.index-services__item
+      .row.between__xs.middle__xs
+        .col.col__md-3.col__xs-12
           .revealOut(data-aos='')
-            .index-services-title.revealIn
-              span
-              | Сервис
-              span
-          .tabs.tabs--services(data-aos='fade-up')
-            a.tab.active(href='#project') Проектирование #[br] и инжиниринг
-            a.tab(href='#test') Тестирование
-            a.tab(href='#escort') Сопровождение
-        .col.col__xl-8.col__lg-6.col__md-7.col__xs-12.index-services__item
-          .ratio.ratio1-1
-            .ratio-inner
-              #project.item.active(data-title="Проектирование и инжиниринг")
-                .item-content(style='background-image: url("assets/images/tab11.jpg")')
-                  .row
-                    .col.col__xl-7.col__xs-12
-                      p.text__sm Кроме моделирования работы скважины и #[span.br-style] проведения инженерных расчетов компания #[span.br-style] Альфа-Горизонт предлагает дополнительные #[span.br-style] услуги инженерного сопровождения скважин
-                    .col.col__xs-12.text--center.showOnMobile(data-aos='fade-up')
-                      +img('tab11.jpg')
-              #test.item(data-title="Тестирование")
-                .item-content(style='background-image: url("assets/images/tab12.jpg")')
-                  .row
-                    .col.col__xl-6.col__xs-12
-                      ul.list--bullet(data-aos='fade-up')
-                        li: a(href='#')
-                            +arrow()
-                            | Анализ скважинных условий #[span] для&nbsp;разработки дизайна хвостовика
-                        li: a(href='#')
-                            +arrow()
-                            | Моделирование работы скважины #[span] кандидата с&nbsp;различными УКП
-                        li: a(href='#')
-                            +arrow()
-                            | Подбор и расстановка элементов #[span] компоновки заканчивания по зонам
-                    .col.col__xl-6.col__xs-12
-                      ul.list--bullet(data-aos='fade-up')
-                        li: a(href='#')
-                            +arrow()
-                            | Гидравличекие расчеты с оценкой появления #[span] потенциальных зон прорыва воды и газа
-                        li: a(href='#')
-                            +arrow()
-                            | Моделирование спуска компоновки #[span] хвостовика
-                    .col.col__xs-12.text--center.showOnMobile(data-aos='fade-up')
-                      +img('tab12.jpg')
-              #escort.item(data-title="Сопровождение")
-                .item-content(style='background-image: url("assets/images/tab13.jpg")')
-                  .row
-                    .col.col__xl-6.col__xs-12
-                      ul.list--bullet(data-aos='fade-up')
-                        li: a(href='#')
-                            +arrow()
-                            | Тщательная проработка ТЗ #[span] и&nbsp;условий контракта
-                        li: a(href='#')
-                            +arrow()
-                            | Контроль качества на всех #[span] этапах выполнения контракта
-                    .col.col__xl-6.col__xs-12
-                      ul.list--bullet(data-aos='fade-up')
-                        li: a(href='#')
-                            +arrow()
-                            | Мобилизация персонала #[span] и&nbsp;оборудования для проведения ИТС
-                        li: a(href='#')
-                            +arrow()
-                            | Выполнение технологических операций #[span] на&nbsp;месторождениях Заказчика
-                    .col.col__xs-12.text--center.showOnMobile(data-aos='fade-up')
-                      +img('tab13.jpg')
-      div(data-aos='fade-up', data-aos-offset='-20'): +buttonSVGMD('Все услуги', '', "#323232")
+            .index-services-title.revealIn Сервис
+        .col.col__md-3.col__xs-12(data-aos='fade-up'): +buttonSVGMD('Все услуги', '', "#323232")
+      .row
+        .col.col__lg-4.col__md-6.col__xs-12.index-services__item
+          +img('service-1.jpg')
+          .equipmentList-item__title(data-aos='fade-up')
+            h2: a(href='#')
+              +arrow()
+              | Инжиниринг
+        .col.col__lg-4.col__md-6.col__xs-12.index-services__item
+          +img('service-2.jpg')
+          .equipmentList-item__title(data-aos='fade-up')
+            h2: a(href='#')
+              +arrow()
+              | Тестирование
+        .col.col__lg-4.col__md-6.col__xs-12.index-services__item
+          +img('service-3.jpg')
+          .equipmentList-item__title(data-aos='fade-up')
+            h2: a(href='#')
+              +arrow()
+              | Сопровождение
     section.index-projects
       .row
-        .col.col__xl-4.col__lg-6.col__md-5.col__xs-12.index-projects__item
+        .col.col__lg-4.col__md-5.col__xs-12.index-projects__item
           .revealOut(data-aos='')
-            .index-services-title.revealIn
-              span
-              | Проекты
-              span
+            .index-services-title.revealIn Проекты
           ul.filters--js.menu-maps
             li(
               data-aos='fade-up'
@@ -214,7 +168,7 @@ block content
               | Партнерские проекты
           .hideOnMobile
             div(data-aos='fade-up'): +buttonSVGMD('Все проекты', '', "#323232")
-        .col.col__xl-8.col__lg-6.col__md-7.col__xs-12.index-projects__item(data-aos='fade-up')
+        .col.col__lg-8.col__md-7.col__xs-12.index-projects__item(data-aos='fade-up')
           include ../components/_map
       .showOnMobile
         .index-projects-btn(data-aos='fade-up'): +buttonSVGMD('Все проекты', '', "#323232")

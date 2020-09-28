@@ -373,23 +373,12 @@
         {
           "black": false,
           "left": false,
-          "text": "Фильтры"
-        },
-        {
-          "black": false,
-          "left": true,
-          "text": "прямой"
+          "text": "Фильтры прямой"
         },
         {
           "black": false,
           "left": false,
-          "text": "намотки"
-        },
-        {
-          "black": true,
-          "left": false,
-          "text": "АльфаДирект",
-          "icon": "alfa.svg"
+          "text": "намотки <b>АльфаДирект</b>"
         }
       ]
     },
@@ -400,23 +389,17 @@
         {
           "black": false,
           "left": false,
-          "text": "Устройства"
-        },
-        {
-          "black": false,
-          "left": true,
-          "text": "контроля"
+          "text": "Лазерно-оптическая"
         },
         {
           "black": false,
           "left": false,
-          "text": "притока"
+          "text": "машина тестирования"
         },
         {
-          "black": true,
+          "black": false,
           "left": false,
-          "text": "AICV",
-          "icon": "aicv.svg"
+          "text": "<b>щелей зазоров</b>"
         }
       ]
     },
@@ -427,17 +410,12 @@
         {
           "black": false,
           "left": false,
-          "text": "Управляемые"
+          "text": "Управляемые фильтры"
         },
         {
           "black": false,
-          "left": true,
-          "text": "фильтры"
-        },
-        {
-          "black": true,
           "left": false,
-          "text": "АльфаСелект"
+          "text": "<b>АльфаСелект</b>"
         }
       ]
     },
@@ -448,22 +426,12 @@
         {
           "black": false,
           "left": false,
-          "text": "Услуги"
-        },
-        {
-          "black": false,
-          "left": true,
-          "text": "тестирования"
+          "text": "Услуги тестирования"
         },
         {
           "black": false,
           "left": false,
-          "text": "скважинного"
-        },
-        {
-          "black": false,
-          "left": true,
-          "text": "оборудования"
+          "text": "скважинного оборудования"
         }
       ]
     },
@@ -474,22 +442,12 @@
         {
           "black": false,
           "left": false,
-          "text": "Подбор"
-        },
-        {
-          "black": false,
-          "left": true,
-          "text": "фильтров"
+          "text": "Подбор фильтров"
         },
         {
           "black": false,
           "left": false,
-          "text": "скважинного"
-        },
-        {
-          "black": false,
-          "left": true,
-          "text": "оборудования"
+          "text": "скважинного оборудования"
         }
       ]
     }

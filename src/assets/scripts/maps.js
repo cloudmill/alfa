@@ -155,8 +155,9 @@ function initMap() {
     zoom: 2,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     mapTypeControl: false,
-    zoomControl: true,
+    zoomControl: false,
     scrollwheel: false,
+    disableDefaultUI: true,
     styles: mapStyle,
   };
 

@@ -275,7 +275,7 @@ mixin mainSlider(items)
               h2(class=active)
                 - if(title.icon)
                   +img(title.icon)
-                = title.text
+                != title.text
         .index-slider-desc.caption
           p!= item.desc
           +buttonSVGM('Подробнее', 'transparent', "#fff")
