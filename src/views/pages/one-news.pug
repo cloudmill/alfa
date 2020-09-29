@@ -35,13 +35,13 @@ block content
             .equipment-template__block(data-aos='fade-up')
               p Rockwell Automation, Inc. (NYSE: ROK) – крупнейшая в мире компания, специализирующаяся на разработке решений для промышленной автоматизации и информации, которая делает своих заказчиков более продуктивными тем самым обеспечивает вклад в глобальную мировую устойчивость. Штаб-квартира Rockwell Automation находится в Милуоки, штат Висконсин; в компании работает около 23 000 человек, обслуживая клиентов в более чем 80 странах.
           .project
-            .indexSlider.swiper-container.mainSlider(data-effect='fade', data-loop='false', data-aos='fade-up')
+            .main-slider.swiper-container(data-aos='fade-up')
               .swiper-button.swiper-button--bg
                 .swiper-next.swiper-next-proj: i.icon-next
                 .swiper-prev.swiper-prev-proj: i.icon-prev
               .swiper-wrapper
                 - for (let x = 1; x < 6; x++)
-                  .swiper-slide: .rellax: +img('projects/slider-2.jpg', 'slider-img')
+                  .swiper-slide.rellax-box: .rellax: .slide-bgimg--js: +img('projects/slider-2.jpg', 'slider-img')
               .swiper-pagination.swiper-pagination--dr
       .stopper: +nextItem('Селективное заканчивание скважин', 'news/item-7.jpg', 'Следующая публикация', true)
     include ../components/_signN

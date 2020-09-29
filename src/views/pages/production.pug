@@ -53,7 +53,7 @@ block content
               li Линия гидравлических испытательных #[span.br-style] стендов V0 и гидравлический ключ
               li Линия фрезеровочных станков (Германия)
               li Линии сварочных постов с использованием #[span.br-style] аргона, электрод в газовой среде
-    .indexSlider.swiper-container.mainSlider(data-effect='fade', data-loop='false', data-aos='fade-up')
+    .main-slider.swiper-container(data-aos='fade-up')
       .container.relative
         .swiper-pagination.swiper-pagination--dr
         .swiper-button.swiper-button--bg
@@ -61,8 +61,9 @@ block content
           .swiper-prev.swiper-prev-prod: i.icon-prev
       .swiper-wrapper
         - for (let x = 1; x < 6; x++)
-          .swiper-slide
-            +img('about/prod/slider.jpg', 'slider-img')
+          .swiper-slide.overflowH
+            .slide-bgimg--js
+              +img('about/prod/slider.jpg', 'slider-img')
     +nextBlock('Интегрированная система менеджмента')
 
 

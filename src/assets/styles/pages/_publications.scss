@@ -214,7 +214,7 @@
       text-decoration: none;
     }
   }
-  img,
+  img:not(.slider-img),
   ol,
   ul {
     margin-bottom: 40px;

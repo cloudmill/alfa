@@ -34,78 +34,72 @@ block content
             .swiper-button.swiper-button--ar(data-aos='fade-up')
               .swiper-prev.swiper-prev-equip: +sliderArrowPrev()
               .swiper-next.swiper-next-equip: +sliderArrowNext()
-            .indexSlider.swiper-container.animaSlider(
-              data-autoheight='false',
-              data-aos='fade-up',
-              data-loop='true',
-              data-effect='fade',
-              data-duration=2000
-            )
+            .main-slider.swiper-container(data-autoheight='false', data-aos='fade-up')
               .swiper-wrapper
                 .swiper-slide
                   .equipment-template__card
                     .row
-                      .col.col__xl-6.col__xs-12.animaSlider-text
-                        .equipmentList-item__num  01.
-                        h5 Анализ скважинных условий
-                        p Предварительный анализ данных резервуара месторождения для моделирования системы окончания. К таким данным относятся:
-                        ul.list--icons
+                      .col.col__xl-6.col__xs-12.timing
+                        .equipmentList-item__num.caption  01.
+                        h5.caption Анализ скважинных условий
+                        p.caption Предварительный анализ данных резервуара месторождения для моделирования системы окончания. К таким данным относятся:
+                        ul.caption.list--icons
                           li Характеристики резервуара
                           li Свойства флюида
                           li Данные по скважине
                           li Планируемые показатели производительности
-                        p Данный анализ позволяет построить предварительную модель работы скважины для проведения расчетов профиля притока в зависимости от схемы заканчивания.
+                        p.caption Данный анализ позволяет построить предварительную модель работы скважины для проведения расчетов профиля притока в зависимости от схемы заканчивания.
                       .col.col__xl-6.col__xs-12.overflowH
-                        .animaSlider-imgS
+                        .slide-bgimg--js
                           +img('service/slider-1.jpg')
                 .swiper-slide
                   .equipment-template__card
                     .row
-                      .col.col__xl-6.col__xs-12.animaSlider-text
-                        .equipmentList-item__num  02.
-                        h5 Моделирование профиля притока
-                        p При задании дизайна хвостовика используются фильтры разных типоразмеров, устройства контроля притока (УКП) с разными характеристиками используемых штуцеров.
-                        p Производятся расчеты потерь давления на трение в трубе и на фильтроэлементах.
-                        p Оптимизация работы хвостовика с точки зрения выравнивания притока, повышении дебита.
-                        p Результаты моделирования представляются в виде графиков зонального притока, дебита по нефти и воде, уровню обводненности, а также рекомендаций по системе окончания.
-                        p Проводится анализ потенциальных зон прорыва воды и газа, а также способы их предотвращения.
+                      .col.col__xl-6.col__xs-12.timing
+                        .equipmentList-item__num.caption 02.
+                        h5.caption Моделирование профиля притока
+                        p.caption При задании дизайна хвостовика используются фильтры разных типоразмеров, устройства контроля притока (УКП) с разными характеристиками используемых штуцеров.
+                        p.caption Производятся расчеты потерь давления на трение в трубе и на фильтроэлементах.
+                        p.caption Оптимизация работы хвостовика с точки зрения выравнивания притока, повышении дебита.
+                        p.caption Результаты моделирования представляются в виде графиков зонального притока, дебита по нефти и воде, уровню обводненности, а также рекомендаций по системе окончания.
+                        p.caption Проводится анализ потенциальных зон прорыва воды и газа, а также способы их предотвращения.
                       .col.col__xl-6.col__xs-12.overflowH
-                        .animaSlider-imgS
+                        .slide-bgimg--js
                           +img('service/slider-2.jpg')
                 .swiper-slide
                   .equipment-template__card
                     .row
-                      .col.col__xl-6.col__xs-12.animaSlider-text
-                        .equipmentList-item__num  03.
-                        h5 Подбор и расстановка элементов компоновки
-                        p Использование дополнительных данных бурения скважин для корректировки модели скважины и формирования плана разбивки скважины на зоны с установкой разобщающих пакеров.
-                        p Предварительный дизайн скважины для обоснования количества зон, количества управляемых фильтров
+                      .col.col__xl-6.col__xs-12.timing
+                        .equipmentList-item__num.caption 03.
+                        h5.caption Подбор и расстановка элементов компоновки
+                        p.caption Использование дополнительных данных бурения скважин для корректировки модели скважины и формирования плана разбивки скважины на зоны с установкой разобщающих пакеров.
+                        p.caption Предварительный дизайн скважины для обоснования количества зон, количества управляемых фильтров
                       .col.col__xl-6.col__xs-12.overflowH
-                        .animaSlider-imgS
+                        .slide-bgimg--js
                           +img('service/slider-3.jpg')
                 .swiper-slide
                   .equipment-template__card
                     .row
-                      .col.col__xl-6.col__xs-12.animaSlider-text
-                        .equipmentList-item__num  04.
-                        h5 Гидравлические расчеты
-                        p Гидравлические расчеты систем заканчивания под определенные требования Заказчика, включая:
-                        ul.list--icons
+                      .col.col__xl-6.col__xs-12.timing
+                        .equipmentList-item__num.caption 04.
+                        h5.caption Гидравлические расчеты
+                        p.caption Гидравлические расчеты систем заканчивания под определенные требования Заказчика, включая:
+                        ul.caption.list--icons
                           li Выравнивание профиля притока (приемистости) или профиля депрессии (репрессии)
                           li Расчеты на определенный момент времени для анализа борьбы с прорывами воды и газа
                           li Проработка сценариев работы скважины в условия прорыва воды или газа
                       .col.col__xl-6.col__xs-12.overflowH
-                        .animaSlider-imgS
+                        .slide-bgimg--js
                           +img('service/slider-4.jpg')
                 .swiper-slide
                   .equipment-template__card
                     .row
-                      .col.col__xl-6.col__xs-12.animaSlider-text
-                        .equipmentList-item__num  05.
-                        h5 Моделирование спуска хвостовика
-                        p Расчет силовых нагрузок на элементы хвостовика при операции спуске по заданной при бурении траектории ствола скважины. Определение безопасности спуска компоновки хвостовика и ее элементов.
+                      .col.col__xl-6.col__xs-12.timing
+                        .equipmentList-item__num.caption 05.
+                        h5.caption Моделирование спуска хвостовика
+                        p.caption Расчет силовых нагрузок на элементы хвостовика при операции спуске по заданной при бурении траектории ствола скважины. Определение безопасности спуска компоновки хвостовика и ее элементов.
                       .col.col__xl-6.col__xs-12.overflowH
-                        .animaSlider-imgS
+                        .slide-bgimg--js
                           +img('service/slider-5.jpg')
               .swiper-pagination.swiper-pagination--dr
           #advantages.equipment-template__item.template__item--js

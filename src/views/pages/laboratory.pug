@@ -44,29 +44,22 @@ block content
       .showOnMobile
         h5 Характеристики
       section.laboratory-item
-        .indexSlider.swiper-container.animaSlider(
-          data-autoheight='false',
-          data-aos='fade-up',
-          data-loop='true',
-          data-effect='fade',
-          data-duration=2000
-        )
+        .main-slider.swiper-container(data-aos='fade-up')
           .swiper-wrapper
             - for (let x = 1; x < 6; x++)
               .swiper-slide
                 .row.between__xs
                   .col.col__xl-8.col__lg-7.col__xs-12.last__lg
-                    .overflowH
-                      .animaSlider-img
-                        +img('about/lab/slider.jpg', 'slider-img')
-                  .col.col__xl-4.col__lg-5.col__xs-12.laboratory-slide.animaSlider-text
-                    +revealMainTag('Механические #[span.br-style] прочностные тесты', 'h3')
-                    ul.list--icons(data-aos='fade-up')
-                      li Тест на растяжение
-                      li Тест на кручение
-                      li Тест на изгиб конструкции
-                      li Тест сдвиг опорных замыкающих колец
-                      li Тест на отделение проволочной обмотки
+                    .overflowH.slide-bgimg--js
+                      +img('about/lab/slider.jpg', 'slider-img image')
+                  .col.col__xl-4.col__lg-5.col__xs-12.laboratory-slide
+                    .caption: h3 Механические #[span.br-style] прочностные тесты
+                    ul.list--icons.timing(data-aos='fade-up')
+                      li.caption Тест на растяжение
+                      li.caption Тест на кручение
+                      li.caption Тест на изгиб конструкции
+                      li.caption Тест сдвиг опорных замыкающих колец
+                      li.caption Тест на отделение проволочной обмотки
           .swiper-button.swiper-button--ar
             .swiper-prev.swiper-prev-lab: +sliderArrowPrev()
             .swiper-next.swiper-next-lab: +sliderArrowNext()

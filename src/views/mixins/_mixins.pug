@@ -261,7 +261,7 @@ mixin revealIndep(items)
 mixin mainSlider(items)
   each item in items
     .swiper-slide
-      .slider-back.slide-bgimg
+      .slider-back.slide-bgimg.slide-bgimg--js
         .parent: .image(style=`background: url("assets/images/${item.img}") no-repeat center / cover`)
         video.video(width="100%" height="100%", loop, muted)
       .container.relative
