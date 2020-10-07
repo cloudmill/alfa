@@ -295,8 +295,8 @@
         &:before {
           @extend .paginationAnimate;
         }
-        $a: 2;
-        @while $a < 11 {
+        $a: 0;
+        @while $a < 31 {
           &.dur-#{$a}000 {
             &:before {
               animation-duration: #{$a}s;
