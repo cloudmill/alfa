@@ -238,8 +238,7 @@
   }
 }
 
-.main-slider,
-.indexSlider {
+.main-slider {
   .swiper-pagination {
     text-align: left;
     bottom: 0;
@@ -295,6 +294,15 @@
         }
         &:before {
           @extend .paginationAnimate;
+        }
+        $a: 2;
+        @while $a < 11 {
+          &.dur-#{$a}000 {
+            &:before {
+              animation-duration: #{$a}s;
+            }
+          }
+          $a: $a + 1;
         }
       }
 
@@ -846,7 +854,6 @@
 
 .paginationAnimate {
   animation-name: paginationAnimate;
-  animation-duration: 10s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
