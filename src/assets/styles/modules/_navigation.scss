@@ -389,6 +389,21 @@
       }
     }
   }
+  &-insta {
+    margin-top: 10px;
+    i {
+      background: url("../images/icons/insta.svg") no-repeat center;
+      width: 37px;
+      height: 19px;
+      display: inline-block;
+      @include transitionEaseInOut(background);
+    }
+    &:hover {
+      i {
+        background: url("../images/icons/instab.svg") no-repeat center;
+      }
+    }
+  }
   &-email {
     font-weight: 600;
     font-size: 15px;
