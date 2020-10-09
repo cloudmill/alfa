@@ -38,6 +38,10 @@ $(document).ready(() => {
 
   $('body').addClass(browserDetect.name);
   $('body').addClass(browserDetect.os);
+  $('.cookies--js').click(function (){
+    $(this).closest('.cookies').fadeOut(500);
+    return false;
+  });
 
 	// backend
 	require('Scripts/backend');

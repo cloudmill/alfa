@@ -178,6 +178,10 @@
     @extend .footerLinks;
   }
 
+  &-user {
+    @extend .footerLinks;
+  }
+
   &-link {
     @extend .footerLinks;
 

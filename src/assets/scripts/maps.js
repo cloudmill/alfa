@@ -144,7 +144,7 @@ const mcOptions = {
     textColor: "white"
   }]
 };
-const infoWindow = new google.maps.InfoWindow();
+let infoWindow;
 
 function initMap() {
   const mapID = document.getElementById("googleMaps");
@@ -155,7 +155,7 @@ function initMap() {
     zoom: 2,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     mapTypeControl: false,
-    zoomControl: false,
+    zoomControl: true,
     scrollwheel: false,
     disableDefaultUI: true,
     styles: mapStyle,
@@ -176,7 +176,7 @@ function initMapContact() {
 
   const mapOptions = {
     center: new google.maps.LatLng(59.91916157, 30.3251195),
-    zoom: NODE_ENV_PATH === 'development' ? 15 : 5,
+    zoom: 11,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     mapTypeControl: false,
     zoomControl: true,
@@ -213,20 +213,19 @@ function addMarker(location, icon, popup, isContact = false, zoom) {
       myModal.open();
     });
   }
-  const title = popup ? popup[0] : location[3];
-  const content = popup ? popup[1] : location[4];
-  const link = popup ? popup[2] : location[5];
+  infoWindow = new google.maps.InfoWindow();
+
   if(isContact) {
-    infoWindow.setContent(`<p><b class="text__xs">${title}</b></p><p>${content}</p><a href="#" class="text--gray">${link}</a>`);
     marker.addListener('click', function () {
+      infoWindow.setContent(`<p><b class="text__xs">${popup ? popup[0] : location[3]}</b></p><p>${popup ? popup[1] : location[4]}</p><a href="#" class="text--gray">${popup ? popup[2] : location[5]}</a>`);
       infoWindow.open(map, marker);
     });
     google.maps.event.addListener(map, "click", function() {
       infoWindow.close();
     });
   } else {
-    infoWindow.setContent(`<p><b class="text__xs">${title}</b></p>${content}`);
     marker.addListener('mouseover', function () {
+      infoWindow.setContent(`<p><b class="text__xs">${popup ? popup[0] : location[3]}</b></p>${popup ? popup[1] : location[4]}`);
       infoWindow.open(map,marker);
     });
     marker.addListener('mouseout', function () {

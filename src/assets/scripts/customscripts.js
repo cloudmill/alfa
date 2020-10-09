@@ -2,8 +2,7 @@ import AOS from "aos";
 import {isMobileOnly} from "./utils";
 
 // accordion
-$('.accordion li').click(function (e) {
-  e.preventDefault();
+$('.accordion li').click(function () {
   $('.accordion li').removeClass('active');
   $(this).addClass('active');
 });

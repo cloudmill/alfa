@@ -16,6 +16,54 @@ main {
   }
 }
 
+.cookies {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10012;
+  background: white;
+  padding: 20px 0;
+  box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.2);
+  @media screen and (min-width: $screen-md-min) {
+    padding: 46px 0;
+  }
+
+  &-text {
+    font-weight: 500;
+    font-size: 14px;
+    color: black;
+    margin-bottom: 20px;
+    width: 100%;
+    @media screen and (min-width: $screen-md-min) {
+      margin-bottom: 0;
+      max-width: 490px;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      max-width: 690px;
+    }
+    a {
+      color: black;
+    }
+  }
+  &-btn {
+    width: 100%;
+    @media screen and (min-width: $screen-md-min) {
+      width: auto;
+    }
+  }
+
+  .btn {
+    font-size: 15px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
 
 .hideOnMobile {
   @extend .hidden__sm;

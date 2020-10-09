@@ -123,6 +123,9 @@
     .between__#{$class} {
       justify-content: space-between;
     }
+    .stretch__#{$class} {
+      justify-content: stretch;
+    }
   }
   @if ($type == first) {
     .first__#{$class} {
