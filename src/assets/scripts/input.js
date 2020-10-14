@@ -261,6 +261,41 @@ $('.form--js-services').click(function (e) {
   });
 });
 
+$('.form--js--contacts').click(function (e) {
+  e.preventDefault();
+  const result = [];
+  $(this).closest('form').find('input').each(function(){
+    const input = $(this)[0];
+    result.push(validateField($(this), input.value));
+  });
+  const isNONValid = result.includes(false);
+  if(isNONValid) {
+    return false;
+  }
+  let
+    form = $(this).closest('form'),
+    name = form.find('input[name=name]'),
+    email = form.find('input[name=email]'),
+    message = form.find('textarea[name=content]'),
+    curForm = $(this);
+
+  $.ajax({
+    type: "POST",
+    url: "/local/templates/main/include/ajax/forms/write_us.php",
+    dataType: "json",
+    data: ({
+      "name": name.val(),
+      "email": email.val(),
+      "message": message.val()
+    }),
+    success: function (a) {
+      console.log(a.success);
+      if (a.success == 'true') {
+        curForm.closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
+      }
+    }
+  });
+});
 
 $('.form--js-vacancy').click(function (e) {
   e.preventDefault();
