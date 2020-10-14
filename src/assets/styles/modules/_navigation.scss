@@ -50,6 +50,11 @@
       max-width: 980px;
       a {
         color: white;
+        position: relative;
+        .long-arrow-inner {
+          left: -20px;
+          height: 24px;
+        }
       }
 
 
