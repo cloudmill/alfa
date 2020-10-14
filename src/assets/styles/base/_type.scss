@@ -295,15 +295,19 @@ ol {
       .long-arrow-inner {
         position: absolute;
         left: 10px;
-        top: 0;
+        //top: 0;
         color: #c4c4c4;
         @include transitionEaseInOut(all);
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        height: 23px;
         @media screen and (min-width: $screen-md-min) {
           left: 0;
         }
-        @media screen and (min-width: $screen-lg-min) {
-          top: 7px;
-        }
+        //@media screen and (min-width: $screen-lg-min) {
+        //  top: 7px;
+        //}
       }
       .long-arrow-right {
         width: 10px;
