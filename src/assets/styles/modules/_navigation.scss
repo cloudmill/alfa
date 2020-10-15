@@ -137,6 +137,12 @@
     }
 
     &__link {
+      img + a {
+        margin-top: 30px;
+        @media screen and (min-width: $screen-md-min) {
+          margin-top: 60px;
+        }
+      }
       a {
         display: flex;
         align-items: center;
