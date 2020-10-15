@@ -76,6 +76,7 @@
       &.open {
         span {
           top: 0;
+          background-color: $base-color-main;
           &:nth-child(1),
           &:nth-child(2) {
             margin: 0;
@@ -145,6 +146,11 @@
     .menu {
       span {
         background-color: white;
+      }
+      &.open {
+        span {
+          background-color: $base-color-main;
+        }
       }
     }
   }
