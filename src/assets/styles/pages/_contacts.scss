@@ -85,7 +85,7 @@
 
   &-botet {
     @media screen and (min-width: $screen-md-min) {
-      margin-bottom: 30px;
+      margin-bottom: 30px !important;
     }
   }
   &-bot {

@@ -623,13 +623,18 @@
         }
       }
     }
+
+    &:last-child {
+      margin-right: auto;
+    }
   }
 
   &--sup {
+    justify-content: space-between;
     li {
       @media screen and (min-width: $screen-lg-min) {
         width: auto;
-        margin-right: 13%;
+        margin-right: 10%;
       }
     }
   }
