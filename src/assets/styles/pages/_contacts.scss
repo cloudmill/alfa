@@ -63,7 +63,7 @@
   &-el {
     font-weight: 600;
     font-size: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     @media screen and (min-width: $screen-md-min) {
       font-size: 21px;
     }
@@ -84,6 +84,7 @@
   }
 
   &-botet {
+    margin-bottom: 5px !important;
     @media screen and (min-width: $screen-md-min) {
       margin-bottom: 30px !important;
     }

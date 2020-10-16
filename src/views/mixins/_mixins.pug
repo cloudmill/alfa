@@ -325,6 +325,7 @@ mixin fieldTextarea(name, id, label, rows, required)
     textarea.control.input__field.input__field--hoshi(type=type, name=name, id=id, required=required)
     label.input__label.input__label--hoshi(for=id)
       span.input__label-content.input__label-content--hoshi= label
+    .error-content
 
 //- form-checkbox
 mixin fieldCheckbox(name, id, checked)

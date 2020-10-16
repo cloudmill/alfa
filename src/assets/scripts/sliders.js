@@ -25,7 +25,8 @@ if ($('.main-slider').length > 0) {
       loop: true,
       speed: 1200,
       autoplay: {
-        delay: 10000
+        delay: 10000,
+        disableOnInteraction: false,
       },
       autoHeight: !!autoHeight,
       slidesPerColumn: 1,
@@ -41,7 +42,7 @@ if ($('.main-slider').length > 0) {
         }
       },
       simulateTouch: false,
-      loopAdditionalSlides: 10,
+      // loopAdditionalSlides: 10,
       grabCursor: true,
       watchSlidesProgress: true,
       pagination: {

@@ -31,6 +31,9 @@
     height: 17px;
     display: block;
     //background: url("../images/logo.svg") no-repeat center / 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
     transition: background 0s;
     @media screen and (min-width: $screen-md-min) {
       //height: 25px;
@@ -78,7 +81,10 @@
       .logo {
         width: 27px;
         height: 25px;
-        //background-image: url("../images/icons/logo.svg");
+        background-image: url("../images/icons/logo.svg");
+        img {
+          opacity: 0;
+        }
       }
 
       .menu {

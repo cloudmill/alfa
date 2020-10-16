@@ -67,7 +67,7 @@ $a-height: 720px;
         }
         a {
           position: absolute;
-          bottom: 0;
+          bottom: -100px;
           right: 0;
           left: 0;
           background: #222222;
@@ -83,6 +83,7 @@ $a-height: 720px;
           @media screen and (min-width: $screen-md-min) {
             padding: 25px;
             left: auto;
+            bottom: 0;
           }
           @media screen and (min-width: $screen-lg-min) {
             padding: 50px 40px;
@@ -181,6 +182,7 @@ $a-height: 720px;
         }
         a {
           opacity: 1;
+          bottom: 0;
         }
       }
     }
