@@ -200,7 +200,7 @@ function addMarker(location, icon, popup, isContact = false, zoom) {
     map: map
   });
   const ifHasSidebar = popup && popup[3] || location && location[6];
-  if(ifHasSidebar) {
+  if(!isContact && ifHasSidebar) {
     marker.addListener('click', function () {
       const modal = document.getElementById("projectsPopup");
       modal.setAttribute("data-tool", popup ? popup[0] : location[3]);
@@ -217,7 +217,7 @@ function addMarker(location, icon, popup, isContact = false, zoom) {
 
   if(isContact) {
     marker.addListener('click', function () {
-      infoWindow.setContent(`<p><b class="text__xs">${popup ? popup[0] : location[3]}</b></p><p>${popup ? popup[1] : location[4]}</p><a href="${$('input[name=link_map]').val()}" class="text--gray">${popup ? popup[2] : location[5]}</a>`);
+      infoWindow.setContent(`<p><b class="text__xs">${popup ? popup[0] : location[3]}</b></p><p>${popup ? popup[1] : location[4]}</p><a href=${location[6]} class="text--gray">${popup ? popup[2] : location[5]}</a>`);
       infoWindow.open(map, marker);
     });
     google.maps.event.addListener(map, "click", function() {
