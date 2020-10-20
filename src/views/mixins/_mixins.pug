@@ -264,7 +264,8 @@ mixin mainSlider(items)
   each item in items
     .swiper-slide(data-swiper-autoplay="5000")
       .slider-back.slide-bgimg.slide-bgimg--js.parent
-        .image(style=`background: url("assets/images/${item.img}") no-repeat center / cover`)
+        .image.image--desc(style=`background: url("assets/images/${item.img}") no-repeat center / cover`)
+        .image.image--mob(style=`background: url("assets/images/${item.img}") no-repeat center / cover`)
         video.video(width="100%" height="100%", loop, muted)
       .container.relative
         .index-slider-title

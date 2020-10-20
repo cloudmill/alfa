@@ -85,7 +85,7 @@ $(document).on("change", '.checkbox input', function (event) {
 $('.form--js--news').click(function (e) {
   e.preventDefault();
   const result = [];
-  $(this).closest('form').find('input').each(function(){
+  $(this).closest('form').find('input, textarea').each(function(){
     const input = $(this)[0];
     result.push(validateField($(this), input.value));
   });
@@ -122,7 +122,7 @@ $('.form--js--news').click(function (e) {
 $('.form--js--projects').click(function (e) {
   e.preventDefault();
   const result = [];
-  $(this).closest('form').find('input').each(function(){
+  $(this).closest('form').find('input, textarea').each(function(){
     const input = $(this)[0];
     result.push(validateField($(this), input.value));
   });
@@ -158,7 +158,7 @@ $('.form--js--projects').click(function (e) {
 $('.form--js--publications').click(function (e) {
   e.preventDefault();
   const result = [];
-  $(this).closest('form').find('input').each(function(){
+  $(this).closest('form').find('input, textarea').each(function(){
     const input = $(this)[0];
     result.push(validateField($(this), input.value));
   });
@@ -192,7 +192,7 @@ $('.form--js--publications').click(function (e) {
 $('.form--js--ask--question').click(function (e) {
   e.preventDefault();
   const result = [];
-  $(this).closest('form').find('input').each(function(){
+  $(this).closest('form').find('input, textarea').each(function(){
     const input = $(this)[0];
     result.push(validateField($(this), input.value));
   });
@@ -228,7 +228,7 @@ $('.form--js--ask--question').click(function (e) {
 $('.form--js-services').click(function (e) {
   e.preventDefault();
   const result = [];
-  $(this).closest('form').find('input').each(function(){
+  $(this).closest('form').find('input, textarea').each(function(){
     const input = $(this)[0];
     result.push(validateField($(this), input.value));
   });
@@ -264,7 +264,7 @@ $('.form--js-services').click(function (e) {
 $('.form--js--contacts').click(function (e) {
   e.preventDefault();
   const result = [];
-  $(this).closest('form').find('input').each(function(){
+  $(this).closest('form').find('input, textarea').each(function(){
     const input = $(this)[0];
     result.push(validateField($(this), input.value));
   });
@@ -300,7 +300,7 @@ $('.form--js--contacts').click(function (e) {
 $('.form--js-vacancy').click(function (e) {
   e.preventDefault();
   const result = [];
-  $(this).closest('form').find('input').each(function(){
+  $(this).closest('form').find('input, textarea').each(function(){
     const input = $(this)[0];
     result.push(validateField($(this), input.value));
   });
