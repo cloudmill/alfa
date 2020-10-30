@@ -18,14 +18,6 @@ footer.page-footer
           li: a(href='#') Публикации
           li: a(href='#') Глоссарий
           li: a(href='#') Контакты
-        .m-auto
-          .links
-            a.link-icon.navbar-youtube(href='#', target='_blank')
-              i
-              span YouTube
-            a.link-icon.navbar-insta(href='#', target='_blank')
-              i
-              span Instagram
       .col.col__md-8.col__xs-12
         .row.between__xs
           .col.col__xl-5.col__md-6.col__xs-12
@@ -65,6 +57,10 @@ footer.page-footer
           .page-footer-link Сделано в #[a(href='https://cloudmill.ru' target='_blank') CloudMill]
       .col.col__lg-8.col__md-8.col__xs-12
         .col__xl-12.col__lg-11
-          a.link-block(href='#', target='_blank')
-            .link-block__title.text__lg Следите за нашими #[br] публикациями на LinkedIn
-            .link-block__img: i.icon-in
+          .link-block
+            .link-block__title.text__lg Мы в соц.сетях
+            .link-block__img
+              .links
+                a.link-icon.navbar-inst(href='#', target='_blank'): i
+                a.link-icon.navbar-youtub(href='#', target='_blank'): i
+                a.link-icon.navbar-linked(href='#', target='_blank'): i

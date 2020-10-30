@@ -150,6 +150,9 @@
       &.open {
         span {
           background-color: $base-color-main;
+          @media screen and (min-width: $screen-lg-min) {
+            background-color: white;
+          }
         }
       }
     }

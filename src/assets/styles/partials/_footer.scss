@@ -68,10 +68,22 @@
 
 
   .links {
-    display: inline-block;
-    text-align: left;
+    display: flex;
+    align-items: center;
+    i {
+      width: 55px;
+      height: 28px;
+      @media screen and (min-width: $screen-lg-min) {
+        width: 76px;
+        height: 39px;
+      }
+    }
     > * {
-      display: flex;
+      margin-top: 0;
+      margin-left: 10px;
+      @media screen and (min-width: $screen-md-min) {
+        margin-left: 20px;
+      }
     }
   }
 
@@ -195,11 +207,17 @@
   }
 
   .link-block {
+    @media screen and (min-width: $screen-md-min) {
+      height: 150px;
+    }
     @media screen and (min-width: 1600px) {
       padding: 25px 60px;
     }
     &__title {
       line-height: 110%;
+      @media screen and (min-width: $screen-md-min) {
+        font-size: 31px;
+      }
       @media screen and (min-width: $screen-xl-min) {
         font-size: 45px;
       }
@@ -252,12 +270,8 @@
       }
     }
 
-    .navbar-youtube {
-      margin-top: 20px;
-    }
-
-    .navbar-insta {
-      margin-top: 10px;
+    .link-block {
+      padding: 20px 10px;
     }
 
     .navbar-phone,

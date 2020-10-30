@@ -391,7 +391,7 @@
       margin-bottom: 0;
     }
     i {
-      background: url("../images/icons/youtube.svg") no-repeat center;
+      background: url("../images/icons/youtube.svg") no-repeat center / cover;
       width: 37px;
       height: 19px;
       display: inline-block;
@@ -399,14 +399,14 @@
     }
     &:hover {
       i {
-        background: url("../images/icons/youtubeb.svg") no-repeat center;
+        background: url("../images/icons/youtubeb.svg") no-repeat center / cover;
       }
     }
   }
   &-insta {
     margin-top: 10px;
     i {
-      background: url("../images/icons/insta.svg") no-repeat center;
+      background: url("../images/icons/insta.svg") no-repeat center / cover;
       width: 37px;
       height: 19px;
       display: inline-block;
@@ -414,7 +414,49 @@
     }
     &:hover {
       i {
-        background: url("../images/icons/instab.svg") no-repeat center;
+        background: url("../images/icons/instab.svg") no-repeat center / cover;
+      }
+    }
+  }
+  &-linked {
+    i {
+      background: url("../images/icons/linkedin.svg") no-repeat center / cover;
+      width: 76px;
+      height: 39px;
+      display: inline-block;
+      @include transitionEaseInOut(background);
+    }
+    &:hover {
+      i {
+        background: url("../images/icons/linkedinb.svg") no-repeat center / cover;
+      }
+    }
+  }
+  &-youtub {
+    i {
+      background: url("../images/icons/you.svg") no-repeat center / cover;
+      width: 76px;
+      height: 39px;
+      display: inline-block;
+      @include transitionEaseInOut(background);
+    }
+    &:hover {
+      i {
+        background: url("../images/icons/youb.svg") no-repeat center / cover;
+      }
+    }
+  }
+  &-inst {
+    i {
+      background: url("../images/icons/inst.svg") no-repeat center / cover;
+      width: 76px;
+      height: 39px;
+      display: inline-block;
+      @include transitionEaseInOut(background);
+    }
+    &:hover {
+      i {
+        background: url("../images/icons/instb.svg") no-repeat center / cover;
       }
     }
   }
@@ -518,6 +560,9 @@
       font-size: 80px;
     }
   }
+}
+
+a.link-block {
   &:hover {
     color: $base-color-main;
     background-color: $gray-lighten;
