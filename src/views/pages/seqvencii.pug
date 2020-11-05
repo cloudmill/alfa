@@ -1,0 +1,17 @@
+extends ../layouts/master.pug
+
+block header
+  include ../partials/_header-white.pug
+
+block content
+  main.seqvencii
+    +navTitle('Компоновка АльфаПолимер')
+    .container.seqvencii-container
+      div.description Комбинация управляемых фильтров и муфт для скважин МГРП
+      div.stage1 Спуск компоновки<br />с набухающими фильтрами<br />АльфаПолимер
+      div.stage2 Закачивание в скважину<br />жидкости - активатора<br />набухания АльфаПолимер
+      div.stage3 Набухание фильтра<br />АльфаПолимер по форме<br />открытого ствола
+
+
+block footer
+  include ../partials/_footer.pug

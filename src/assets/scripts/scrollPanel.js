@@ -8,6 +8,9 @@ const defaultOptions = {
 	step: 5,
 	touchStep: 1,
 	changePerMS: 5,
+	onExist: null,
+	setScreenMaxHeight: false,
+	correctConditionElement: false,
 };
 
 class ScrollPanel {
@@ -44,7 +47,8 @@ class ScrollPanel {
 	renderer() {
 		if (this.renderQueue.length) {
 			const index = this.renderQueue.shift();
-			this.drawImage(index);
+			const nextSlide = this.renderQueue[0] || index;
+			this.drawImage(index, nextSlide);
 		} else {
 			this.stopRenderer();
 		}
@@ -75,15 +79,18 @@ class ScrollPanel {
 			this.workOptions.maxPosition = this.options.images.length - 1;
 			this.loadAll(this.options.preloadCount, this.options.images.length);
 			const wrapper = document.querySelector(this.options.target);
+			let onExist = wrapper;
+			if (this.options.onExist) {
+				onExist = document.querySelector(this.options.onExist);
+			}
 
-			if (wrapper) {
+			if (onExist) {
 				this.workOptions.wrapper = wrapper;
 				const canvas = document.createElement('canvas');
 				this.workOptions.target = canvas;
 				canvas.style.position = 'absolute';
 				canvas.style.top = 0;
 				canvas.style.left = 0;
-				canvas.style.zIndex = 50;
 				const rect = canvas.getBoundingClientRect();
 				this.workOptions.startOn = parseInt(rect.top, 10);
 				wrapper.append(canvas);
@@ -159,7 +166,7 @@ class ScrollPanel {
 		}, { passive: false });
 		window.addEventListener('resize', () => {
 			this.applyStyles();
-			this.render();
+			this.render(1);
 		});
 	}
 
@@ -173,9 +180,28 @@ class ScrollPanel {
 
 	}
 
+	getHeightDocument() {
+		return parseInt(window.innerHeight, 10);
+	}
+
+	getWidthDocument() {
+		return parseInt(window.innerWidth, 10);
+	}
+
 	applyStyles() {
-		const width = parseInt(this.workOptions.wrapper.offsetWidth, 10);
-		const height = parseInt(this.workOptions.wrapper.offsetHeight, 10);
+		const width = this.getWidthDocument();
+		let height = parseInt(this.workOptions.wrapper.offsetHeight, 10);
+		if (this.options.setScreenMaxHeight) {
+			height = this.getHeightDocument();
+		}
+		if (this.options.correctConditionElement) {
+			const element = document.querySelector(this.options.onExist);
+			const top = element.offsetTop;
+			const topMargin = parseInt(top, 10);
+			element.style.height = (
+				height - topMargin
+			) + 'px';
+		}
 		this.workOptions.width = width;
 		this.workOptions.height = height;
 		this.workOptions.target.setAttribute('width', width);
@@ -202,8 +228,7 @@ class ScrollPanel {
 		}
 	}
 
-	drawImage(index) {
-		console.log(index);
+	drawImage(index, nextSlide) {
 		this.workOptions.ctx.fillStyle = this.options.backgroundColor;
 		this.workOptions.ctx.clearRect(0, 0, this.workOptions.width, this.workOptions.height);
 		this.workOptions.ctx.fillRect(0, 0, this.workOptions.width, this.workOptions.height);
@@ -214,6 +239,10 @@ class ScrollPanel {
 		const topPosition = parseInt((
 			this.workOptions.height - calculatedHeight
 		) / 2, 10);
+		console.log(index);
+		if (this.options.onScroll) {
+			this.options.onScroll(index, nextSlide - index);
+		}
 		this.workOptions.ctx.drawImage(
 			image,
 			0,
@@ -260,9 +289,6 @@ class ScrollPanel {
 		) {
 			if (delta < 0 && this.current > this.workOptions.minPosition) {
 				this.slidePrev();
-				if (this.options.onScroll) {
-					this.options.onScroll(this.current);
-				}
 				this.render(-1);
 				if (e.cancelable !== false) {
 					e.preventDefault();
@@ -277,9 +303,6 @@ class ScrollPanel {
 			}
 			if (delta > 0 && this.current < this.workOptions.maxPosition) {
 				this.slideNext();
-				if (this.options.onScroll) {
-					this.options.onScroll(this.current);
-				}
 				this.render(1);
 				if (e.cancelable !== false) {
 					e.preventDefault();

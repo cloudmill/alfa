@@ -1,34 +1,9 @@
 import AOS from 'aos';
 import { isMobileOnly } from './utils';
-import ScrollPanel from './scrollPanel';
+import ScrollPanelInit from './scrollPanelInit';
 
 
-function formatInt(int, length = 5) {
-	let result = int.toString();
-	while (result.length < length) {
-		result = '0' + result;
-	}
-
-	return result;
-}
-
-const ScrollTarget = '.nav-title.nav-background';
-if (ScrollTarget && document.querySelector(ScrollTarget)) {
-	const images = [];
-	for (let i = 0; i < 201; i++) {
-		images.push('assets/images/animation/AlfaPolimer_render_' + formatInt(i) + '.jpg');
-	}
-	// eslint-disable-next-line no-new
-	new ScrollPanel({
-		images,
-		target: ScrollTarget,
-		preloadCount: 10,
-		step: 5,
-		touchStep: 5,
-		changePerMS: 5,
-	});
-}
-
+ScrollPanelInit();
 
 // accordion
 $('.accordion li').click(function(e) {

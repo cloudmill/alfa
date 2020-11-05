@@ -1,0 +1,84 @@
+main.seqvencii {
+  position: relative;
+  z-index: 1;
+
+  div.nav-title {
+    border-bottom: none;
+
+    .mainTitle {
+      width: 60%;
+      position: relative;
+      left: 50%;
+      border-top: 2px solid $gray;
+
+      h1 {
+        @media screen and (min-width: $screen-md-min) {
+          font-size: 2rem;
+        }
+        color: $gray;
+      }
+
+      img {
+        display: none;
+      }
+    }
+  }
+
+  .container.seqvencii-container {
+    padding-top: 50px;
+
+    .description {
+      color: $gray;
+      font-size: 1.3rem;
+      width: 40%;
+      position: relative;
+      left: 50%;
+    }
+
+    .stage1, .stage2, .stage3 {
+      @media screen and (min-width: $screen-md-min) {
+        top: -200px;
+      }
+      color: $gray;
+      opacity: 0.0;
+      top: 50px;
+      position: absolute;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.a-showIn {
+  transition-delay: 0s !important;
+  animation: a-showIn-animation 500ms;
+  animation-fill-mode: forwards;
+
+}
+
+.a-showOut {
+  transition-delay: 0s !important;
+  animation: a-showOut-animation 500ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes a-showIn-animation {
+  0% {
+    opacity: 0.0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1.0;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes a-showOut-animation {
+  0% {
+    opacity: 1.0;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0.0;
+    transform: translateY(-100px);
+  }
+}
