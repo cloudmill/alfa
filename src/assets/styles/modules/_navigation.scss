@@ -208,6 +208,8 @@
   font-weight: 600;
   font-size: 24px;
   line-height: 1.22222;
+  position: relative;
+  z-index: 9;
   @media screen and (min-width: $screen-md-min) {
     font-size: 25px;
   }
