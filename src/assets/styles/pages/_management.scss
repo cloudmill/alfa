@@ -66,11 +66,13 @@
       }
       &-title {
         font-weight: 600;
+        font-family: 'montserratsemibold';
         font-size: 20px;
         line-height: 150%;
       }
       &-desc {
         font-weight: 500;
+        font-family: 'montserratmedium';
         font-size: 16px;
         line-height: 150%;
       }
@@ -102,6 +104,7 @@
       padding: 20px 30px;
       margin-bottom: 10px;
       font-weight: 500;
+      font-family: 'montserratmedium';
       font-size: 12px;
       display: block;
       @include transitionEaseInOut(all);

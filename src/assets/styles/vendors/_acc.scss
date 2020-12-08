@@ -13,6 +13,7 @@
   &__title {
     padding: 20px 0;
     font-weight: 600;
+    font-family: 'montserratsemibold';
     font-size: 15px;
     line-height: 130%;
     display: flex;
@@ -26,6 +27,7 @@
     }
     &-desc {
       font-weight: 500;
+      font-family: 'montserratmedium';
       font-size: 14px;
       line-height: 130%;
       color: $gray-darken;

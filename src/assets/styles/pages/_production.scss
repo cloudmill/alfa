@@ -48,6 +48,7 @@
     }
     > span {
       font-weight: 300;
+      font-family: 'montserratregular';
       font-size: 32vw;
       line-height: 110%;
       position: relative;
@@ -56,6 +57,7 @@
       }
       > sub {
         font-weight: 600;
+        font-family: 'montserratsemibold';
         font-size: 8vw;
         line-height: 150%;
         position: absolute;
@@ -78,6 +80,7 @@
     }
     p {
       font-weight: 600;
+      font-family: 'montserratsemibold';
       line-height: 130%;
       margin-bottom: 40px;
       @media screen and (min-width: $screen-lg-min) {

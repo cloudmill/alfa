@@ -32,6 +32,7 @@
   &__menu {
     font-size: 14px;
     font-weight: 500;
+    font-family: 'montserratmedium';
     cursor: pointer;
     min-height: 30px;
     .menu {
@@ -104,6 +105,7 @@
   }
   &__language {
     font-weight: 500;
+    font-family: 'montserratmedium';
     font-size: 20px;
     @extend .hideOnMobileAndTablet;
     a {
@@ -135,6 +137,11 @@
       .menu {
         span {
           background-color: white;
+        }
+        &.open {
+          span {
+            background-color: $base-color-main;
+          }
         }
       }
     }

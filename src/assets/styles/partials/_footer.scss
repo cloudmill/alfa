@@ -4,6 +4,7 @@
 
 .footerTypes {
   font-weight: 600;
+  font-family: 'montserratsemibold';
   font-size: 15px;
   line-height: 130%;
   @media screen and (min-width: $screen-md-min) {
@@ -21,6 +22,7 @@
 
 .footerLinks {
   font-weight: 500;
+  font-family: 'montserratmedium';
   font-size: 14px;
   line-height: 230%;
   color: $gray-darken;
@@ -52,6 +54,7 @@
 
   &-adr {
     font-weight: 500;
+    font-family: 'montserratmedium';
     font-size: 14px;
     line-height: 160%;
     color: $black;
@@ -170,6 +173,7 @@
   &-smallMenu {
     @include list--unstyled;
     font-weight: 500;
+    font-family: 'montserratmedium';
     font-size: 16px;
     line-height: 1.5;
 

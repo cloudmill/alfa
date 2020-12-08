@@ -206,6 +206,7 @@
 .menuNav {
   @include list--unstyled;
   font-weight: 600;
+  font-family: 'montserratsemibold';
   font-size: 24px;
   line-height: 1.22222;
   position: relative;
@@ -233,6 +234,7 @@
 .menuSubNav {
   @include list--unstyled;
   font-weight: 600;
+  font-family: 'montserratsemibold';
   font-size: 15px;
   line-height: 130%;
   margin-top: 20px;
@@ -258,6 +260,7 @@
   @include list--unstyled;
   display: inline-flex;
   font-weight: 600;
+  font-family: 'montserratsemibold';
   font-size: 13px;
   line-height: 130%;
   width: 100%;
@@ -464,6 +467,7 @@
   }
   &-email {
     font-weight: 600;
+    font-family: 'montserratsemibold';
     font-size: 15px;
     line-height: 130%;
     color: $black;
@@ -481,6 +485,7 @@
   }
   &-phone {
     font-weight: 600;
+    font-family: 'montserratsemibold';
     font-size: 24px;
     line-height: 130%;
     color: $black;
@@ -498,6 +503,7 @@
   }
   &-adr {
     font-weight: 500;
+    font-family: 'montserratmedium';
     font-size: 16px;
     line-height: 160%;
     color: $black;
@@ -508,6 +514,7 @@
   display: inline-flex;
   align-items: center;
   font-weight: 600;
+  font-family: 'montserratsemibold';
   font-size: 12px;
   line-height: 130%;
   color: $black;
@@ -537,6 +544,7 @@
   }
   &__title {
     font-weight: 600;
+    font-family: 'montserratsemibold';
     font-size: 15px;
     line-height: 130%;
     @media screen and (min-width: $screen-md-min) {

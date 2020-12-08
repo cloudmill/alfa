@@ -138,6 +138,7 @@ input[type="search"] {
     font-size: 11px;
     color: $black;
     font-weight: 500;
+    font-family: 'montserratmedium';
     line-height: 140%;
     @media screen and (min-width: $screen-md-min) {
       font-size: 14px;
@@ -358,6 +359,7 @@ input[type="search"] {
 .error {
   &-content {
     font-weight: 500;
+    font-family: 'montserratmedium';
     font-size: 12px;
     line-height: 15px;
     color: $color-type-2a;

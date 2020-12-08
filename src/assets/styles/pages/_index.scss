@@ -98,6 +98,7 @@
   }
   &-desc {
     font-weight: 500;
+    font-family: 'montserratmedium';
     font-size: 11px;
     line-height: 150%;
     width: 100%;
@@ -108,6 +109,7 @@
   }
   &-title {
     font-weight: 600;
+    font-family: 'montserratsemibold';
     font-size: 15px;
     line-height: 130%;
     max-width: 70%;
@@ -267,6 +269,7 @@
       width: auto;
       height: auto;
       font-weight: 500;
+      font-family: 'montserratmedium';
       padding-left: 9px;
       transition: all .5s;
       padding-bottom: 20px;
@@ -430,6 +433,7 @@
       font-size: 32px;
       line-height: 1.18;
       font-weight: 400;
+      font-family: 'montserratregular';
       //text-transform: uppercase;
       margin: 0;
       @media screen and (min-width: $screen-md-min) {
@@ -453,6 +457,7 @@
 
       &.title-icon {
         font-weight: 600;
+        font-family: 'montserratsemibold';
       }
     }
     &-title {
@@ -469,6 +474,7 @@
     }
     &-desc {
       font-weight: 500;
+      font-family: 'montserratmedium';
       font-size: 16px;
       line-height: 140%;
       margin-top: 40px;
@@ -544,6 +550,7 @@
     //}
     &-title {
       font-weight: 500;
+      font-family: 'montserratmedium';
       font-size: 20px;
       line-height: 150%;
       color: $gray-darken-2;
@@ -708,6 +715,7 @@
 
 .menu-maps {
   font-weight: 600;
+  font-family: 'montserratsemibold';
   font-size: 13px;
   line-height: 150%;
   color: $black;

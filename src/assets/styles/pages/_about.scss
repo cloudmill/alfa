@@ -64,6 +64,7 @@
     }
     .year {
       font-weight: 600;
+      font-family: 'montserratsemibold';
       font-size: 45px;
       line-height: 0.95;
       text-transform: uppercase;
@@ -103,6 +104,7 @@
       &-bullet {
         opacity: 1;
         font-weight: 600;
+        font-family: 'montserratsemibold';
         margin-bottom: 20px;
         overflow: hidden;
         border-radius: 0;

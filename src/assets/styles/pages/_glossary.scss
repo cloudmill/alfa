@@ -37,6 +37,7 @@
   &-results {
     display: none;
     font-weight: 500;
+    font-family: 'montserratmedium';
     margin-bottom: 60px;
     @media screen and (min-width: $screen-lg-min) {
       margin-bottom: 90px;
@@ -106,6 +107,7 @@
 
       span {
         font-weight: 600;
+        font-family: 'montserratsemibold';
         font-size: 20px;
         line-height: 150%;
         color: $black;
