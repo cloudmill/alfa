@@ -7,6 +7,12 @@
     @media screen and (min-width: $screen-xl-min) {
       margin-top: 89px;
     }
+    a {
+      color: $base-color-main;
+      &:hover {
+        color: $black;
+      }
+    }
   }
 
   .equipmentList-item__num {

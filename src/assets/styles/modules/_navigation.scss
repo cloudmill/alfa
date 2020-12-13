@@ -287,18 +287,19 @@
   }
   &__item {
     white-space: nowrap;
-      & + & {
-        margin-left: 20px;
-        @media screen and (min-width: $screen-xl-min) {
-          margin-left: 40px;
-        }
-        @media screen and (min-width: $screen-xxl-min) {
-          margin-left: 90px;
-        }
+    & + & {
+      margin-left: 20px;
+      @media screen and (min-width: $screen-xl-min) {
+        margin-left: 40px;
       }
+      @media screen and (min-width: $screen-xxl-min) {
+        margin-left: 90px;
+      }
+    }
   }
   &__link {
     color: $black;
+    white-space: nowrap;
     &:hover,
     &.active {
       color: $base-color-main;
