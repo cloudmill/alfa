@@ -5,8 +5,13 @@
     display: flex;
     margin: 80px 0 40px;
 
+    @media screen and (max-width: $screen-md-min){
+      display: block;
+      margin: 40px auto 28px;
+    }
+
     &__line {
-      width: 90%;
+      width: 100%;
       border: none;
       border-bottom: 2px solid #E5E5E5;
       padding-bottom: 30px;
@@ -15,8 +20,17 @@
       color: #323232;
       transition: all .5s;
       margin-right: 109px;
+      font-family: $base-font-family;
       &:focus {
         border-bottom: 2px solid #3700FF;
+      }
+
+      &::placeholder {
+        color: $black;
+      }
+
+      @media screen and (max-width: $screen-md-min){
+        margin-bottom: 20px;
       }
     }
   }
@@ -26,6 +40,7 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
+    font-family: $base-font-family;
   }
 
   .search-res {
@@ -37,6 +52,15 @@
       font-size: 24px;
       line-height: 29px;
       color: #323232;
+
+      &:hover {
+        color: #3700FF;
+      }
+
+      @media screen and (max-width: $screen-sm){
+        font-size: 18px;
+        line-height: 22px;
+      }
     }
 
     &__inform {
@@ -46,6 +70,11 @@
       font-size: 16px;
       line-height: 150%;
       color: #323232;
+      font-family: $base-font-family;
+      @media screen and (max-width: $screen-sm){
+        font-size: 13px;
+        line-height: 150%;
+      }
     }
 
     &__bread {
@@ -58,6 +87,10 @@
       line-height: 150%;
       color: #838383;
       padding-right: 20px;
+      @media screen and (max-width: $screen-sm){
+        font-size: 11px;
+        line-height: 150%;
+      }
     }
 
     &__crumbs {
@@ -65,11 +98,19 @@
       font-size: 16px;
       line-height: 150%;
       color: #323232;
+      @media screen and (max-width: $screen-sm){
+        font-size: 11px;
+        line-height: 150%;
+      }
     }
   }
 
   .search-showMore {
     margin: 60px auto 160px;
+
+    @media screen and (max-width: $screen-sm){
+      margin: 40px auto 80px;
+    }
   }
 }
 

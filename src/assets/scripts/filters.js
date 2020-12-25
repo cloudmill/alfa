@@ -7,7 +7,7 @@ const multiGrid = {
   projects: [],
 };
 
-export function showMoreFuncMulti(block, counter, button, filter, isActive) {
+export function FuncMulti(block, counter, button, filter, isActive) {
   let x = counter;
   let getLength;
   $(block).velocity({ scaleX: 0, scaleY: 0 }, { display: "none", duration: 0 });
@@ -123,6 +123,7 @@ export function showMoreFunc(block, counter, button, firstInit, filter) {
 }
 if($('.acc .acc__card').length) showMoreFunc(".acc .acc__card", 9, '.more--js', true);
 if($('.more__item').length) showMoreFunc(".more__item", 7, '.moreP--js', true);
+if($('.more-search').length) showMoreFunc(".more-search", 4, '.morePP--js', true);
 if(process.env.NODE_ENV === 'development') {
   if($('.filtr-item').length) showMoreFuncMulti(".filtr-item", 7, '.more--js', false);
 } else {
