@@ -14,6 +14,8 @@ const browserDetect = browser();
 const screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 
 $(document).ready(() => {
+  require('Scripts/search');
+
 	// header
 	require('Scripts/header');
 

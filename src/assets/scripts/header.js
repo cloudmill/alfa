@@ -57,8 +57,14 @@ $('.page-footer-smallTitle--js').on('click', 'a', function(event) {
 $(window).scroll(() => {
   const sticky = $('header, .page-menu');
   const scroll = $(window).scrollTop();
+  const search = $('.search--lilac')
 
-  if (scroll >= 1) sticky.addClass('scrolled');
-  else sticky.removeClass('scrolled');
+  if (scroll >= 1){
+    sticky.addClass('scrolled');
+    search.addClass('search--scrolled');
+  }else{
+    sticky.removeClass('scrolled');
+    search.removeClass('search--scrolled');
+  }
 });
 // scroll
