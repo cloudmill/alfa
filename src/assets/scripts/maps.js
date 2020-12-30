@@ -130,7 +130,7 @@ const mapStyle = [
 ];
 const setMarker =
   NODE_ENV_PATH === 'development'
-    ? "assets/images/icons/markerd.svg"
+    ? "/local/templates/main/assets/images/icons/markerd.svg"
     : "/local/templates/main/assets/images/icons/markerd.svg";
 
 const mcOptions = {
