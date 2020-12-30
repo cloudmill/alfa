@@ -196,6 +196,14 @@
         margin-bottom: 170px;
       }
 
+      a {
+        color: #3700FF;
+
+        &:hover {
+          color: black;
+        }
+      }
+
       > [data-aos='fade-up'] > img {
         margin-bottom: $form-group-margin-bottom / 2;
         @media screen and (min-width: $screen-md-min) {
