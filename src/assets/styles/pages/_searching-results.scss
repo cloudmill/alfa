@@ -1,5 +1,4 @@
 .search-content {
-  margin-top: 80px;
 
   .search-input {
     display: flex;
@@ -21,6 +20,11 @@
       transition: all .5s;
       margin-right: 109px;
       font-family: $base-font-family;
+
+      @media screen and (max-width: $screen-md-min){
+        margin-right: 0;
+      }
+
       &:focus {
         border-bottom: 2px solid #3700FF;
       }
