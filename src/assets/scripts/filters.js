@@ -123,7 +123,7 @@ export function showMoreFunc(block, counter, button, firstInit, filter) {
 }
 if($('.acc .acc__card').length) showMoreFunc(".acc .acc__card", 9, '.more--js', true);
 if($('.more__item').length) showMoreFunc(".more__item", 7, '.moreP--js', true);
-if($('.more-search').length) showMoreFunc(".more-search", 4, '.morePP--js', true);
+if($('.more-search').length) showMoreFunc(".more-search", 6, '.morePP--js', true);
 if(process.env.NODE_ENV === 'development') {
   if($('.filtr-item').length) showMoreFuncMulti(".filtr-item", 7, '.more--js', false);
 } else {
