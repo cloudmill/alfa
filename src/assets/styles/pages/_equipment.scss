@@ -468,6 +468,7 @@
           max-width: inherit;
         }
       }
+
     }
 
     &__title {
@@ -569,6 +570,24 @@
         @media screen and (min-width: $screen-lg-min) {
           margin-bottom: 10px;
           height: auto;
+        }
+      }
+    }
+
+    &__label {
+      position: absolute;
+      z-index: 5;
+      bottom: 30px;
+      right: 55px;
+
+      // @media screen and (min-width: $screen-lg-min) {
+      //   bottom: 15px;
+      //   right: 30px;
+      // }
+
+      img {
+        @media screen and (max-width: $screen-md-min) {
+          display: none;
         }
       }
     }
