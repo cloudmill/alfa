@@ -14,11 +14,13 @@
       }
     }
   }
-
-  .equipmentList-item__label {
-    right: 0;
-    bottom: 0;
+  .nav-title{
+    .equipmentList-item__label {
+      right: 15px;
+      bottom: 0;
+    }
   }
+
 
   .equipmentList-item__num {
     display: block;
@@ -592,7 +594,7 @@
 
       img {
         @media screen and (max-width: $screen-md-min) {
-          display: none;
+          height: 30px;
         }
       }
     }
