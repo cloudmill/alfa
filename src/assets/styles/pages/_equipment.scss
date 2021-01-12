@@ -73,6 +73,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: calc(100% - 60px);
+    cursor: pointer;
     @media screen and (min-width: $screen-lg-min) {
       margin-bottom: 90px;
       height: calc(100% - 90px);
