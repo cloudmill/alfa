@@ -339,11 +339,11 @@
     position: relative;
     display: flex;
     justify-content: flex-end;
-    top: 30px;
+    top: -10px;
     width: 100px;
-    left: calc(100% - 100px);
+    left: 0;
     z-index: 10;
-    @media screen and (min-width: $screen-md-min) {
+    @media screen and (min-width: 1024px) {
       display: none;
     }
   }
@@ -373,8 +373,9 @@
       padding-left: 20px;
     }
     @media screen and (min-width: $screen-lg-min) {
+      padding-top: 123px;
       padding-right: 90px;
-      padding-left: calc(90px * 1.66666);
+      padding-left: 90px;
     }
     @media screen and (min-width: $screen-lg-min) and (max-height: 700px) {
       padding-top: 0;
@@ -494,6 +495,7 @@
     line-height: 130%;
     color: $black;
     margin-top: 20px;
+    white-space: nowrap;
     @media screen and (min-width: $screen-md-min) {
       margin-top: 0;
       font-size: 25px;
@@ -511,6 +513,105 @@
     font-size: 16px;
     line-height: 160%;
     color: $black;
+  }
+
+  &-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 80px;
+    border-top: 2px solid #323232;
+
+    @media (max-width: 800px){
+      display: block;
+      padding: 10px 0 50px;
+    }
+
+    &--noborder {
+      border: 0;
+      padding-bottom: 0;
+    }
+
+    &--width-40 {
+      width: 47%;
+
+      @media (max-width: 800px){
+        display: flex;
+        width: 100%;
+      }
+    }
+
+    .page-menu__language {
+      @media (max-width: 800px){
+        display: flex;
+        left: 0;
+        top: -10px;
+      }
+    }
+  }
+
+  &-col {
+    width: 50%;
+    @media (max-width: 800px){
+      width: 100%;
+    }
+
+    &--width-100 {
+      width: 100%;
+    }
+
+    .menuNav__link{
+      font-weight: 600;
+      font-family: 'montserratsemibold';
+      font-size: 25px;
+
+      @media screen and (min-width: $screen-md-min) {
+        font-size: 25px;
+      }
+      @media screen and (min-width: $screen-xl-min) {
+        font-size: 45px;
+      }
+    }
+
+    a {
+      display: block;
+    }
+
+    ul {
+      &:last-child{
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &-li {
+    font-family: 'montserratsemibold';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    padding-bottom: 10px;
+    color: #323232;
+    @include transitionEaseInOut(all);
+
+    &:hover {
+      color: $base-color-main;
+    }
+
+    @media screen and (max-width: $screen-md-min) {
+      font-size: 13px;
+      padding-bottom: 7px;
+    }
+
+    &--big {
+      font-size: 25px;
+      line-height: 30px;
+      padding-bottom: 15px;
+
+      @media screen and (max-width: $screen-md-min) {
+        font-size: 16px;
+        padding-bottom: 12px;
+      }
+    }
   }
 }
 
