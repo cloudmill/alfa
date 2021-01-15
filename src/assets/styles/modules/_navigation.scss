@@ -523,7 +523,7 @@
 
     @media (max-width: 800px){
       display: block;
-      padding: 10px 0 50px;
+      padding: 10px 0 40px;
     }
 
     &--noborder {
@@ -543,7 +543,7 @@
     .page-menu__language {
       @media (max-width: 800px){
         display: flex;
-        left: 0;
+        left: -27px;
         top: -10px;
       }
     }
