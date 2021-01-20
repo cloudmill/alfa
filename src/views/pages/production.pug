@@ -26,7 +26,7 @@ block content
               +img('about/prod/slider.jpg', 'slider-img')
     .container
       .production-row.production-row--sd-cr.production-row--jc-sb(data-aos='fade-up')
-        .production-col.production-col--mg-r-90.production-col--mx-w-780
+        .production-col.production-col--mg-r-90.production-col--mx-w-780.production-col--dp-fl
           +img('production-a.svg')
         .production-col.production-col--mx-w-780
           .production-item
@@ -38,17 +38,36 @@ block content
           +img('production-make1.jpg')
     .production_blue
       .container
+        .arrow-side
+            span.triangle-left
+            span.triangle-right
+        .arrow
+            span.triangle-left
+            span.triangle-right
         .production_blue-area
           .production-info(data-aos='fade-up')
             span 5000
               sub м
                 sub 2
             p производственная #[span.br-style] площадь компании
+        .arrow-sider
+            span.triangle-left
+            span.triangle-right
+        .arrow
+            span.triangle-left
+            span.triangle-right
     .container
       .production-item(data-aos='fade-up')
-        h4 Компания ООО «Альфа Горизонт» в разработках использует комплектующие #[span.br-style] и материалы, соответствующие требованиям национальных #[span.br-style] и международных стандартов качества.
+        .production-title--h4 Компания ООО «Альфа Горизонт» в разработках использует комплектующие #[span.br-style] и материалы, соответствующие требованиям национальных #[span.br-style] и международных стандартов качества.
       .production-row.production-row--jc-fe.production-row--mg-t--140
         .production-col.production-col--mx-w-496 В связи с чем обеспечивается ежегодное расширение номенклатуры высокотехнологичного оборудования прошедшее процессы испытаний, что позволяет декларировать о высоком качестве изделий под требования Заказчиков.
+    .production_iso
+      .production_iso-item.production_iso-item--dota
+        |ISO 14001:2015
+      .production_iso-item
+        |ISO 14001:2015
+      .production_iso-item
+        |ISO 14001:2015
     .production_gray
       .container
         .production-item.production-item--mg-t-0(data-aos='fade-up')
@@ -56,11 +75,31 @@ block content
         .production-row.production-row--jc-sb(data-aos='fade-up')
           .production-col.production-col--mg-r-90.production-col--mx-w-780.production-col--mg-t-90
             +img('production-make2.jpg')
-          .production-col.production-col--mx-w-780
+          .production-col.production-col--mx-w-780.production-col--fl-fd
             +img('production-make3.jpg')
             +img('production-ablue.svg', 'production-ablue')
-        .production-item
-          h4 Продукция предприятия проходит обязательную #[span.br-style] сертификацию на соответствие требованиям #[span.br-style] безопасности к качеству изделий промышленного #[span.br-style] назначения. На технически сложные изделия #[span.br-style] собственной разработки оформляются патенты РФ.
+        .production-item.production-item--mg-t-140
+          .production-title--h4 Продукция предприятия проходит обязательную #[span.br-style] сертификацию на соответствие требованиям #[span.br-style] безопасности к качеству изделий промышленного #[span.br-style] назначения. На технически сложные изделия #[span.br-style] собственной разработки оформляются патенты РФ.
+        .production-row.production-row--jc-fe.production-row--mg-t--250
+          .production-col.production-col--mx-w-490 В процессе проектирования изделий конструкторско–технологической службой осуществляется разработка технических условий (ТУ), КД–документация, методик проведения испытаний серийных изделий, выпуск эталонных изделий, исследование брака, что позволяет проводить корректирующие мероприятия в соответствии с Интегрированной СМК и выпускать высокого качества серийные изделия.
+    .container(data-aos='fade-up')
+      h3.production-title Производственное #[span.br-style] оборудование
+      .production-row.production-row--jc-fe(data-aos='fade-up')
+        .production-col.production-col--mx-w-475.production-col--mg-r-90
+          ul.list--icons
+            li Линии перфорационных станков (дриллинг)
+            li Линии слотонарезных станков (слоттинг)
+            li Линия мультисенсорной лазерно-оптической инспекционной машины по контролю качества Q1 API (Spec Q1)
+            li Линия токарных станков (Германия)
+            li Линия резки металла и электроэрозионной обработки (Германия)
+        .production-col.production-col--mx-w-475
+          ul.list--icons
+            li Линии зачистных станков от стружки (дебаринг)
+            li Линия прямой намотки скважинных фильтров и фильтроэлементов (Франция)
+            li Линия гидравлических испытательных стендов V0 и гидравлический ключ
+            li Линия фрезеровочных станков (Германия)
+            li Линии сварочных постов с использованием аргона, электрод в газовой среде
+
 
 
     +nextBlock('Интегрированная система менеджмента')

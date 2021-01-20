@@ -193,3 +193,25 @@ export function sticky() {
 
 // sticky
 
+
+
+  $(window).on('scroll', function(){
+
+    console.log('fddf')
+
+    let elTop = $('.production_blue-area').offset().top;
+    let elBottom = elTop + $('.production_blue-area').height();
+    let winScrollTop = $(window).scrollTop();
+    let winHeight = winScrollTop + ($(window).height() );
+
+    if (elBottom < winHeight) {
+      $('.arrow').addClass('arrow--active');
+      $('.arrow-side').addClass('arrow-side--active');
+      $('.arrow-sider').addClass('arrow-sider--active');
+
+      console.log(elBottom);
+      console.log('00000');
+      console.log(winHeight);
+    }
+
+  });
