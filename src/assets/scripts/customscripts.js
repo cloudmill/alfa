@@ -245,33 +245,29 @@ export function sticky() {
       // $(window).off('scroll');
     }
 
-    function reset2() {
-      iso.children('div').css("margin-left", "0%");
-      iso.children('div').animate({ "margin-left" : '-200%' }, 12, 'linear', reset);
-      console.log(speed);
-      // $(window).off('scroll');
-    }
+    reset() ;
+
 
 
     // reset.call(iso.children('div'));
 
-    $(window).on('scroll', function(){
+    // $(window).on('scroll', function(){
 
 
 
-      let scrollNow = $(window).scrollTop();
+    //   let scrollNow = $(window).scrollTop();
 
-      if (scrollPrev <= scrollNow){
-        speed = 12000;
-        console.log("2up");
-        reset();
-      }else{
+    //   if (scrollPrev <= scrollNow){
+    //     speed = 12000;
+    //     console.log("2up");
+    //     reset();
+    //   }else{
 
 
-        speed = 120;
-        console.log(speed);
-        reset2();
-      }
-      scrollPrev = scrollNow;
+    //     speed = 120;
+    //     console.log(speed);
+    //     reset2();
+    //   }
+    //   scrollPrev = scrollNow;
 
-    });
+    // });
