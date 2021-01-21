@@ -193,7 +193,9 @@ export function sticky() {
 
 // sticky
 
-
+  var speed = 120000;
+  var direct = 'margin-right';
+  var scrollPrev = 0;
 
   $(window).on('scroll', function(){
 
@@ -208,4 +210,68 @@ export function sticky() {
       $('.arrow-sider').addClass('arrow-sider--active');
     }
 
+    // let scrollPrev = 0;
+    // let scrollNow = $(window).scrollTop();
+
+    // if (scrollPrev < scrollNow){
+    //   direct = 'margin-right';
+    //   speed = 12000;
+    //   console.log("2");
+    // }else{
+    //   direct = 'margin-left';
+    //   speed = 12000;
+    //   console.log("3");
+    // }
+    // scrollPrev = scrollNow;
+
+
   });
+
+
+
+
+
+  let iso = $('#iso');
+    iso.wrapInner('<span>');
+    iso.find("span").css({"display": "inline-flex"});
+    iso.append(iso.find('span').clone());
+    iso.wrapInner('<div>');
+    iso.children('div').css({'width': '200%', 'display': 'flex'});
+
+    function reset() {
+      iso.children('div').css("margin-left", "0%");
+      iso.children('div').animate({ "margin-left" : '-200%' }, speed, 'linear', reset);
+      console.log(speed);
+      // $(window).off('scroll');
+    }
+
+    function reset2() {
+      iso.children('div').css("margin-left", "0%");
+      iso.children('div').animate({ "margin-left" : '-200%' }, 12, 'linear', reset);
+      console.log(speed);
+      // $(window).off('scroll');
+    }
+
+
+    // reset.call(iso.children('div'));
+
+    $(window).on('scroll', function(){
+
+
+
+      let scrollNow = $(window).scrollTop();
+
+      if (scrollPrev <= scrollNow){
+        speed = 12000;
+        console.log("2up");
+        reset();
+      }else{
+
+
+        speed = 120;
+        console.log(speed);
+        reset2();
+      }
+      scrollPrev = scrollNow;
+
+    });
