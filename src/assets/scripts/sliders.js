@@ -182,3 +182,22 @@ if ($('.aboutSlider').length > 0) {
   });
 }
 
+
+var galleryThumbs = new Swiper('.navig-thumbs', {
+  spaceBetween: 50,
+  slidesPerView: 'auto',
+  freeMode: true,
+  // watchSlidesVisibility: true,
+  // watchSlidesProgress: true,
+});
+var galleryTop = new Swiper('.slide-prod__slider-top', {
+  spaceBetween: 0,
+  // navigation: {
+  //   nextEl: '.swiper-button-next',
+  //   prevEl: '.swiper-button-prev',
+  // },
+  thumbs: {
+    swiper: galleryThumbs
+  }
+});
+

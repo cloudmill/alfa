@@ -36,6 +36,92 @@ block content
         .container.relative
           .swiper-pagination(data-aos='fade-up', data-aos-delay='500')
     section.index-layout
+    section.slide-prod
+      .slide-prod__wrapper
+        .slide-prod__navig
+          .slide-prod__navig-title Оборудование
+          .swiper-container.navig-thumbs
+            .swiper-wrapper
+              .swiper-slide.navig-slide Скважинные
+                br
+                |фильтры
+              .swiper-slide.navig-slide Устройства
+                br
+                |контроля притока
+              .swiper-slide.navig-slide Дополнительное
+                br
+                |оборудование
+        .slide-prod__slider
+          .swiper-container.slide-prod__slider-top
+            .swiper-wrapper
+              .swiper-slide.slide-prod__slide
+                +img('slide-prod.png')
+                .slide-prod__link-contein
+                  .slide-prod__link-row
+                    .slide-prod__link-title: a(href="#")
+                      +arrow()
+                      |Скважинные фильтры
+                    +img('01..svg')
+                  .slide-prod__link: a(href="#")
+                    +arrow()
+                    |АльфаКомпактАльфаДирект
+                  .slide-prod__link: a(href="#")
+                    +arrow()
+                    |АльфаКомпактАльфаШелл
+                  .slide-prod__link: a(href="#")
+                    +arrow()
+                    |АльфаСлот
+                  .slide-prod__link: a(href="#")
+                    +arrow()
+                    | АльфаКомпакт
+                  .slide-prod__link: a(href="#")
+                    +arrow()
+                    | АльфаПолимер
+                .slide-prod__reverse
+                  .row-item
+                    .spinnerSlow: +img('equip/trademark.svg')
+              .swiper-slide.slide-prod__slide
+                +img('slide-prod1.png')
+                .slide-prod__link-contein
+                  .slide-prod__link-row
+                    .slide-prod__link-title: a(href="#")
+                      +arrow()
+                      |Устройства контроля притока
+                    +img('02..svg')
+                  .slide-prod__link: a(href="#")
+                    +arrow()
+                    |АльфаДирект
+                  .slide-prod__link: a(href="#")
+                    +arrow()
+                    |АльфаШелл
+                  .slide-prod__link: a(href="#")
+                    +arrow()
+                    |АльфаСлот
+                .slide-prod__reverse
+                  .row-item
+                    .spinnerSlow: +img('equip/trademark.svg')
+              .swiper-slide.slide-prod__slide
+                +img('slide-prod2.png')
+                .slide-prod__link-contein
+                  .slide-prod__link-row
+                    .slide-prod__link-title: a(href="#")
+                      +arrow()
+                      |Дополнительное оборудование
+                    +img('03..svg')
+                  .slide-prod__link: a(href="#")
+                    +arrow()
+                    |Муфта ГРП
+                  .slide-prod__link: a(href="#")
+                    +arrow()
+                    |Пакер-Подвеска
+                  .slide-prod__link: a(href="#")
+                    +arrow()
+                    |Гидромеханический пакер
+                .slide-prod__reverse
+                  .row-item
+                   .spinnerSlow: +img('equip/trademark.svg')
+                  .row-item
+                     +img('progr.svg')
     section.index-services
       .row.between__xs.middle__xs
         .col.col__md-3.col__xs-12
