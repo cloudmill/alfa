@@ -40,17 +40,16 @@ block content
       .slide-prod__wrapper
         .slide-prod__navig
           .slide-prod__navig-title Оборудование
-          .swiper-container.navig-thumbs
-            .swiper-wrapper
-              .swiper-slide.navig-slide Скважинные
-                br
-                |фильтры
-              .swiper-slide.navig-slide Устройства
-                br
-                |контроля притока
-              .swiper-slide.navig-slide Дополнительное
-                br
-                |оборудование
+          .navig-pagination
+            .navig-pagination-item Скважинные
+              br
+              |фильтры
+            .navig-pagination-item Устройства
+              br
+              |контроля притока
+            .navig-pagination-item Дополнительное
+              br
+              |оборудование
         .slide-prod__slider
           .swiper-container.slide-prod__slider-top
             .swiper-wrapper
@@ -61,25 +60,28 @@ block content
                     .slide-prod__link-title: a(href="#")
                       +arrow()
                       |Скважинные фильтры
-                    +img('01..svg')
-                  .slide-prod__link: a(href="#")
-                    +arrow()
-                    |АльфаКомпактАльфаДирект
-                  .slide-prod__link: a(href="#")
-                    +arrow()
-                    |АльфаКомпактАльфаШелл
-                  .slide-prod__link: a(href="#")
-                    +arrow()
-                    |АльфаСлот
-                  .slide-prod__link: a(href="#")
-                    +arrow()
-                    | АльфаКомпакт
-                  .slide-prod__link: a(href="#")
-                    +arrow()
-                    | АльфаПолимер
+                    +img('01..svg', 'link-namb')
+                  .link-wrap
+                    .item
+                      .slide-prod__link: a(href="#")
+                        +arrow()
+                        |АльфаДирект
+                      .slide-prod__link: a(href="#")
+                        +arrow()
+                        |АльфаШелл
+                      .slide-prod__link: a(href="#")
+                        +arrow()
+                        |АльфаСлот
+                    .item
+                      .slide-prod__link: a(href="#")
+                        +arrow()
+                        | АльфаКомпакт
+                      .slide-prod__link: a(href="#")
+                        +arrow()
+                        | АльфаПолимер
                 .slide-prod__reverse
                   .row-item
-                    .spinnerSlow: +img('equip/trademark.svg')
+                    .spinnerSlow: +img('equip/trademark.svg', 'link-namb')
               .swiper-slide.slide-prod__slide
                 +img('slide-prod1.png')
                 .slide-prod__link-contein
@@ -87,7 +89,7 @@ block content
                     .slide-prod__link-title: a(href="#")
                       +arrow()
                       |Устройства контроля притока
-                    +img('02..svg')
+                    +img('02..svg', 'link-namb')
                   .slide-prod__link: a(href="#")
                     +arrow()
                     |АльфаДирект
@@ -99,15 +101,16 @@ block content
                     |АльфаСлот
                 .slide-prod__reverse
                   .row-item
-                    .spinnerSlow: +img('equip/trademark.svg')
+                    .spinnerSlow: +img('equip/trademark.svg', 'link-namb')
               .swiper-slide.slide-prod__slide
                 +img('slide-prod2.png')
                 .slide-prod__link-contein
                   .slide-prod__link-row
                     .slide-prod__link-title: a(href="#")
                       +arrow()
-                      |Дополнительное оборудование
-                    +img('03..svg')
+                      |Дополнительное
+                      span.eq  оборудование
+                    +img('03..svg', 'link-namb')
                   .slide-prod__link: a(href="#")
                     +arrow()
                     |Муфта ГРП
@@ -119,9 +122,9 @@ block content
                     |Гидромеханический пакер
                 .slide-prod__reverse
                   .row-item
-                   .spinnerSlow: +img('equip/trademark.svg')
+                   .spinnerSlow: +img('equip/trademark.svg', 'link-namb')
                   .row-item
-                     +img('progr.svg')
+                     +img('progr.svg', 'link-namb')
     section.index-services
       .row.between__xs.middle__xs
         .col.col__md-3.col__xs-12

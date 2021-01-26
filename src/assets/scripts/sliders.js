@@ -183,21 +183,39 @@ if ($('.aboutSlider').length > 0) {
 }
 
 
-var galleryThumbs = new Swiper('.navig-thumbs', {
-  spaceBetween: 50,
-  slidesPerView: 'auto',
-  freeMode: true,
-  // watchSlidesVisibility: true,
-  // watchSlidesProgress: true,
-});
+// var galleryThumbs = new Swiper('.navig-thumbs', {
+//   spaceBetween: 50,
+//   slidesPerView: 'auto',
+//   freeMode: true,
+//   // watchSlidesVisibility: true,
+//   // watchSlidesProgress: true,
+
+//   pagination: {
+//     el: '.swiper-pagination',
+//   }
+// });
+var paginationItem = $('.navig-pagination-item');
 var galleryTop = new Swiper('.slide-prod__slider-top', {
   spaceBetween: 0,
   // navigation: {
   //   nextEl: '.swiper-button-next',
   //   prevEl: '.swiper-button-prev',
   // },
-  thumbs: {
-    swiper: galleryThumbs
-  }
+  pagination: {
+    el: '.navig-pagination',
+    type: 'custom',
+    renderCustom: function(swiper, current, total) {
+      paginationItem.removeClass('pagination--active');
+      paginationItem.eq(current - 1).addClass('pagination--active');
+    }
+  },
+  // thumbs: {
+  //   swiper: galleryThumbs
+  // }
+});
+
+paginationItem.on('click', function(){
+  let index = $(this).index();
+  galleryTop.slideTo(index);
 });
 
