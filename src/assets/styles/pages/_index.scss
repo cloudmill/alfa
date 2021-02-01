@@ -1060,6 +1060,9 @@
     justify-content: center;
     align-items: flex-end;
     background: linear-gradient(100.31deg, #B0B6B6 44.44%, #C0C5C5 100%);
+    @media screen and (min-width: $screen-lg-min) {
+      min-height: 700px;
+    }
     &-img {
       min-width: 100%;
     }
@@ -1223,6 +1226,22 @@
       img {
         @media (max-width: 800px){
           display: none;
+        }
+      }
+      .equipmentList-item__title {
+        a {
+          color: white;
+          @media (max-width: 1440px){
+            font-size: 30px;
+            line-height: 36px;
+          }
+          @media (max-width: 1024px){
+            font-size: 18px;
+            line-height: 24px;
+          }
+          &:hover {
+            color: $base-color-main;
+          }
         }
       }
     }

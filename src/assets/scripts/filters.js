@@ -7,7 +7,7 @@ const multiGrid = {
   projects: [],
 };
 
-export function FuncMulti(block, counter, button, filter, isActive) {
+export function showMoreFuncMulti(block, counter, button, filter, isActive) {
   let x = counter;
   let getLength;
   $(block).velocity({ scaleX: 0, scaleY: 0 }, { display: "none", duration: 0 });

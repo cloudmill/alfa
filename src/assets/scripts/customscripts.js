@@ -198,6 +198,9 @@ export function sticky() {
   var scrollPrev = 0;
 
   $(window).on('scroll', function(){
+    if(!$('.production_blue-area').length) {
+      return;
+    }
 
     let elTop = $('.production_blue-area').offset().top;
     let elBottom = elTop + $('.production_blue-area').height();

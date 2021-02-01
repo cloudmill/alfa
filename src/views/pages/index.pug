@@ -54,10 +54,12 @@ block content
           .swiper-container.slide-prod__slider-top
             .swiper-wrapper
               .swiper-slide.slide-prod__slide
-                +img('slide-prod.png', 'slide-prod__slide-img')
+                picture
+                  source(srcset="assets/images/slide-prod.png" media="(min-width: 800px)")
+                  img(src="assets/images/slide-prod.png" class='slide-prod__slide-img', alt='')
                 .slide-prod__link-contein
                   .slide-prod__link-row
-                    .slide-prod__link-title: a(href="#")
+                    .equipmentList-item__title: h2: a(href="#")
                       +arrow()
                       |Скважинные фильтры
                     +img('01..svg', 'link-namb')
@@ -83,10 +85,12 @@ block content
                   .row-item
                     .spinnerSlow: +img('equip/trademark.svg', 'link-namb')
               .swiper-slide.slide-prod__slide
-                +img('slide-prod1.png', 'slide-prod__slide-img')
+                picture
+                  source(srcset="assets/images/slide-prod1.png" media="(min-width: 800px)")
+                  img(src="assets/images/slide-prod1.png" class='slide-prod__slide-img', alt='')
                 .slide-prod__link-contein
                   .slide-prod__link-row
-                    .slide-prod__link-title: a(href="#")
+                    .equipmentList-item__title: h2: a(href="#")
                       +arrow()
                       |Устройства контроля притока
                     +img('02..svg', 'link-namb')
@@ -103,13 +107,14 @@ block content
                   .row-item
                     .spinnerSlow: +img('equip/trademark.svg', 'link-namb')
               .swiper-slide.slide-prod__slide
-                +img('slide-prod2.png', 'slide-prod__slide-img')
+                picture
+                  source(srcset="assets/images/slide-prod2.png" media="(min-width: 800px)")
+                  img(src="assets/images/slide-prod2.png" class='slide-prod__slide-img', alt='')
                 .slide-prod__link-contein
                   .slide-prod__link-row
-                    .slide-prod__link-title: a(href="#")
+                    .equipmentList-item__title: h2: a(href="#")
                       +arrow()
-                      |Дополнительное
-                      span.eq  оборудование
+                      |Дополнительное оборудование
                     +img('03..svg', 'link-namb')
                   .slide-prod__link: a(href="#")
                     +arrow()
