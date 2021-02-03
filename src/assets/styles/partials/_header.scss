@@ -278,6 +278,12 @@
   padding-bottom: 20px;
   margin-right: 114px;
   transition: all .5s;
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px #323232 inset !important;
+  }
   @media screen and (max-width: $screen-md-min){
     font-size: 20px;
     line-height: 20px;
