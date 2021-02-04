@@ -384,6 +384,16 @@ mixin buttonSVGMD(text, className, stroke)
       circle(r='4.5' transform='matrix(-1 0 0 1 4.5 28.5)' fill='#3700FF')
     +buttonSVGMob(stroke)
 
+mixin buttonSVGMDS(text, className, stroke, id)
+  button(id=id)
+    .btn-container.btn(class=className, href=anchor)
+      span= text
+      svg.hideOnMobile(width='100%' viewbox='0 0 200 58' fill='none' xmlns='http://www.w3.org/2000/svg')
+        path.btn-path(d='M33.5 0.5H171C186.74 0.5 199.5 13.2599 199.5 29C199.5 44.7401 186.74 57.5 171 57.5H33.5C17.7599 57.5 5 44.7401 5 29C5 13.2599 17.7599 0.5 33.5 0.5Z' stroke='#E5E5E5')
+        path.btn-animate.btn-animate--md(d="M33.5 0.5H171C186.74 0.5 199.5 13.2599 199.5 29C199.5 44.7401 186.74 57.5 171 57.5H33.5C17.7599 57.5 5 44.7401 5 29C5 13.2599 17.7599 0.5 33.5 0.5Z" stroke=stroke)
+        circle(r='4.5' transform='matrix(-1 0 0 1 4.5 28.5)' fill='#3700FF')
+      +buttonSVGMob(stroke)
+
 
 mixin buttonSVGM(text, className, stroke)
   a.btn-container.btn(class=className, href=anchor)

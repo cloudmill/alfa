@@ -6,7 +6,7 @@ header.page-header(data-aos='fade-up', data-aos-delay='500')
   .container
     .item
       .search__close
-    .input-box
-        input(type="text" placeholder="Что вы хотите найти?").search__input#search
-        label(for="search")
-        +buttonSVGMD('Искать', 'buttonSearch search-input__btn', 'none')
+    form.input-box
+      input(type="text" placeholder="Что вы хотите найти?").search__input#search
+      label(for="search")
+      +buttonSVGMDS('Искать', 'buttonSearch search-input__btn', 'none', 'sub')

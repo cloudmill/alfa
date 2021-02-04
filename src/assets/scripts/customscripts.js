@@ -250,27 +250,6 @@ export function sticky() {
 
     reset() ;
 
-
-
-    // reset.call(iso.children('div'));
-
-    // $(window).on('scroll', function(){
-
-
-
-    //   let scrollNow = $(window).scrollTop();
-
-    //   if (scrollPrev <= scrollNow){
-    //     speed = 12000;
-    //     console.log("2up");
-    //     reset();
-    //   }else{
-
-
-    //     speed = 120;
-    //     console.log(speed);
-    //     reset2();
-    //   }
-    //   scrollPrev = scrollNow;
-
-    // });
+$('#sub').on('click', function(){
+  $('.input-box').submit();
+});
