@@ -79,7 +79,7 @@
           top: 0;
           background-color: $base-color-main;
           @media screen and (min-width: $screen-md-min) {
-            background-color: white;
+            background-color: $base-color-main;
           }
           &:nth-child(1),
           &:nth-child(2) {
