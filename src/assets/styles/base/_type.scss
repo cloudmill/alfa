@@ -292,9 +292,9 @@ ol {
         background-color: #c4c4c4;
         width: 13px;
         right: 0px;
-        top: -1px;
+        top: -6px;
         @media screen and (min-width: $screen-md-min) {
-          top: 0;
+          top: -5px;
         }
       }
       .long-arrow-inner {

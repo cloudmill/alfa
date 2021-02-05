@@ -591,6 +591,7 @@
         margin-top: auto;
         text-align: left;
         padding-left: 30px;
+        margin-left: 24px;
       }
 
       h2 {
@@ -1284,10 +1285,10 @@
 
       .link-wrap {
         @media (max-width: 800px){
-          display: flex;
-          .item:last-child {
-            margin-left: 20px;
-          }
+          // display: flex;
+          // .item:last-child {
+          //   margin-left: 20px;
+          // }
         }
       }
       // z-index: 2;
